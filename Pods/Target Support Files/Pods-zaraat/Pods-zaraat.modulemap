@@ -1,0 +1,6 @@
+framework module Pods_zaraat {
+  umbrella header "Pods-zaraat-umbrella.h"
+
+  export *
+  module * { export * }
+}

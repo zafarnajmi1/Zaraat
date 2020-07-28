@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CropsCell" rowHeight="202" id="KGk-i7-Jjw" customClass="CropsCell" customModule="zaraat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="504" height="202"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="504" height="202"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="P41-iH-ye6">
+                        <rect key="frame" x="20" y="10" width="464" height="182"/>
+                        <color key="backgroundColor" red="0.93671804670000003" green="0.95298999549999996" blue="0.95709151029999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="182" id="X4R-5y-N6v"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="10" id="8Wd-HW-NDF">
+                            <size key="itemSize" width="370" height="182"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfa-Il-GFq">
+                        <rect key="frame" x="420" y="137" width="70" height="70"/>
+                        <color key="backgroundColor" red="0.93671804670000003" green="0.95298999549999996" blue="0.95709151029999995" alpha="0.8478167808219178" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="JBj-kW-Qb4"/>
+                            <constraint firstAttribute="height" constant="70" id="kpe-Eb-oIn"/>
+                        </constraints>
+                        <state key="normal" title="Sell All">
+                            <color key="titleColor" red="0.14105221630000001" green="0.33989626169999998" blue="0.17787709830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="28n-Z1-tLF">
+                        <rect key="frame" x="232.5" y="155" width="39" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="39" id="Htf-Za-QBB"/>
+                        </constraints>
+                        <color key="pageIndicatorTintColor" red="0.8664550781" green="0.87058556080000005" blue="0.87461173530000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="currentPageIndicatorTintColor" red="0.75873047110000003" green="0.99901276829999996" blue="0.51176583769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </pageControl>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="qfa-Il-GFq" secondAttribute="bottom" constant="-5" id="11G-sa-2iu"/>
+                    <constraint firstAttribute="trailing" secondItem="P41-iH-ye6" secondAttribute="trailing" constant="20" id="21x-0Z-EfN"/>
+                    <constraint firstAttribute="trailing" secondItem="qfa-Il-GFq" secondAttribute="trailing" constant="14" id="7yA-iJ-C3q"/>
+                    <constraint firstItem="P41-iH-ye6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LEr-jX-RDW"/>
+                    <constraint firstAttribute="bottom" secondItem="28n-Z1-tLF" secondAttribute="bottom" constant="10" id="LiM-oZ-8Iz"/>
+                    <constraint firstAttribute="bottom" secondItem="P41-iH-ye6" secondAttribute="bottom" constant="10" id="cME-tb-qk4"/>
+                    <constraint firstItem="P41-iH-ye6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ku9-3J-E7a"/>
+                    <constraint firstItem="28n-Z1-tLF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="trB-d2-Y8v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93671804670000003" green="0.95298999549999996" blue="0.95709151029999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnSeeAll" destination="qfa-Il-GFq" id="urr-W2-H0s"/>
+                <outlet property="cropClView" destination="P41-iH-ye6" id="myF-dL-Fwh"/>
+                <outlet property="pagerview" destination="28n-Z1-tLF" id="DVs-7F-srd"/>
+            </connections>
+            <point key="canvasLocation" x="153.62318840579712" y="104.46428571428571"/>
+        </tableViewCell>
+    </objects>
+</document>

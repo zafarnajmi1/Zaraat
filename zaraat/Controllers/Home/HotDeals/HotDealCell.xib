@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.otf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotDealCell" rowHeight="421" id="9Sm-X4-UsR" customClass="HotDealCell" customModule="zaraat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="773" height="421"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Sm-X4-UsR" id="DzV-ee-Z9L">
+                <rect key="frame" x="0.0" y="0.0" width="773" height="421"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1q-U8-eIN">
+                        <rect key="frame" x="20" y="10" width="733" height="402"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Pesticides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-eb-OyG">
+                                <rect key="frame" x="8" y="12" width="93" height="26"/>
+                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                <color key="textColor" red="0.14105221630000001" green="0.33989626169999998" blue="0.17787709830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We deal Qualoty Pesticides &amp; Insticides Buy &amp; Get Discount" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dga-CD-zl6">
+                                <rect key="frame" x="8" y="40" width="717" height="26"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" red="0.14105221630000001" green="0.33989626169999998" blue="0.17787709830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMy-f9-22J">
+                                <rect key="frame" x="650" y="10" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fbx-Xh-trf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="View More">
+                                    <color key="titleColor" red="0.14105221630000001" green="0.33989626169999998" blue="0.17787709830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CGy-0U-OeM">
+                                <rect key="frame" x="8" y="95" width="717" height="287"/>
+                                <color key="backgroundColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="287" id="Nfh-bm-C0z"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QVc-iC-KEl">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dga-CD-zl6" firstAttribute="leading" secondItem="3Sm-eb-OyG" secondAttribute="leading" id="2UP-Gp-DQq"/>
+                            <constraint firstAttribute="bottom" secondItem="CGy-0U-OeM" secondAttribute="bottom" constant="20" symbolic="YES" id="2rZ-0q-VGZ"/>
+                            <constraint firstItem="3Sm-eb-OyG" firstAttribute="leading" secondItem="r1q-U8-eIN" secondAttribute="leading" constant="8" id="3Xc-fN-ccz"/>
+                            <constraint firstItem="3Sm-eb-OyG" firstAttribute="top" secondItem="r1q-U8-eIN" secondAttribute="top" constant="12" id="9Ob-kJ-i6n"/>
+                            <constraint firstAttribute="trailing" secondItem="mMy-f9-22J" secondAttribute="trailing" constant="8" id="Bco-m5-neJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Dga-CD-zl6" secondAttribute="trailing" constant="8" id="BhD-KP-aWl"/>
+                            <constraint firstItem="CGy-0U-OeM" firstAttribute="top" secondItem="Dga-CD-zl6" secondAttribute="bottom" constant="29" id="Ut0-9g-09f"/>
+                            <constraint firstItem="mMy-f9-22J" firstAttribute="centerY" secondItem="3Sm-eb-OyG" secondAttribute="centerY" id="YAj-Il-htf"/>
+                            <constraint firstItem="mMy-f9-22J" firstAttribute="top" secondItem="r1q-U8-eIN" secondAttribute="top" constant="10" id="cj8-i8-ncu"/>
+                            <constraint firstItem="Dga-CD-zl6" firstAttribute="top" secondItem="3Sm-eb-OyG" secondAttribute="bottom" constant="2" id="dfh-zL-roM"/>
+                            <constraint firstItem="CGy-0U-OeM" firstAttribute="leading" secondItem="r1q-U8-eIN" secondAttribute="leading" constant="8" id="jaW-Id-2GQ"/>
+                            <constraint firstAttribute="trailing" secondItem="CGy-0U-OeM" secondAttribute="trailing" constant="8" id="rYd-H5-E3T"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="r1q-U8-eIN" secondAttribute="trailing" constant="20" id="FUQ-ow-Tnc"/>
+                    <constraint firstAttribute="bottom" secondItem="r1q-U8-eIN" secondAttribute="bottom" constant="9" id="Lsy-N8-UhO"/>
+                    <constraint firstItem="r1q-U8-eIN" firstAttribute="leading" secondItem="DzV-ee-Z9L" secondAttribute="leading" constant="20" id="aKf-e5-ja3"/>
+                    <constraint firstItem="r1q-U8-eIN" firstAttribute="top" secondItem="DzV-ee-Z9L" secondAttribute="top" constant="10" id="hJ2-4c-GLo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.95240288969999998" green="0.96867722270000001" blue="0.97277599569999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="QK0-Ir-1du"/>
+            <connections>
+                <outlet property="HotDealClView" destination="CGy-0U-OeM" id="tG5-tc-SJY"/>
+                <outlet property="mainView" destination="r1q-U8-eIN" id="ubA-RE-T40"/>
+            </connections>
+            <point key="canvasLocation" x="348.55072463768118" y="206.58482142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
