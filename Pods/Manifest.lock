@@ -148,6 +148,7 @@ PODS:
   - SDWebImage (5.6.0):
     - SDWebImage/Core (= 5.6.0)
   - SDWebImage/Core (5.6.0)
+  - SkyFloatingLabelTextField (3.8.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
@@ -180,6 +181,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - PayPal-iOS-SDK
   - SDWebImage
+  - SkyFloatingLabelTextField
   - Socket.IO-Client-Swift
   - SwiftMessages
   - XLPagerTabStrip
@@ -227,6 +229,7 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - SDWebImage
+    - SkyFloatingLabelTextField
     - Socket.IO-Client-Swift
     - Starscream
     - SwiftMessages
@@ -270,15 +273,16 @@ SPEC CHECKSUMS:
   KWVerificationCodeView: 92cca6ad028546d3232fa75cda3a40d00109a1a2
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
-  PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
+  PayPal-iOS-SDK: 70d56697aef502c130b9840e31dea5c6b8a350e1
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   SDWebImage: 21b19f56b4226cdfe3aefe4e6848dc43ed129a86
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: bd0590a81773ab52793e20028e7a3b827a290ec2
+PODFILE CHECKSUM: 091b3d6d625106087fb37732aa14a3b4917dd311
 
 COCOAPODS: 1.9.1

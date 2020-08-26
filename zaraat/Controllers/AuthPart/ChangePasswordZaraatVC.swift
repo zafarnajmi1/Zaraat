@@ -13,16 +13,15 @@ class ChangePasswordVC: ZaraatBaseVC {
     @IBOutlet weak var btnChange: UIButton!
     @IBOutlet weak var txtreEnterPassword: UITextField!
     @IBOutlet weak var txtpassword: UITextField!
-    @IBOutlet weak var rePasswordView: UIView!
-    @IBOutlet weak var passwordView: UIView!
+//    @IBOutlet weak var rePasswordView: UIView!
+//    @IBOutlet weak var passwordView: UIView!
     var id = 0
     override func viewDidLoad() {
         super.viewDidLoad()
       
 
-        btnChange.roundbuttonRadius(borderwidth: 2)
-        rePasswordView.addInnerShadow(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
-         passwordView.addInnerShadow(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
+        btnChange.roundButton()
+       
     }
     
     

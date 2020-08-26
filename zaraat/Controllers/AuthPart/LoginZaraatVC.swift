@@ -12,14 +12,14 @@ class LoginVC: ZaraatBaseVC {
    
     @IBOutlet weak var txtemail: UITextField!
     
-    @IBOutlet weak var passwordView: UIView!
-    @IBOutlet weak var emailView: UIView!
+   
     @IBOutlet weak var txtpassword: UITextField!
     @IBOutlet weak var btnlogin: UIButton!
-    @IBOutlet weak var twitterView: UIView!
+    
     @IBOutlet weak var gmailView: UIView!
     @IBOutlet weak var fbView: UIView!
     
+    @IBOutlet weak var guestView: UIView!
     
     
     
@@ -27,17 +27,10 @@ class LoginVC: ZaraatBaseVC {
         super.viewDidLoad()
         self.fbView.roundView()
         self.gmailView.roundView()
-        self.twitterView.roundView()
+        self.guestView.roundView()
+        btnlogin.roundButton()
         
-//        fbView.viewconfig(radius: 5)
-//        gmailView.viewconfig(radius: 5)
-//        twitterView.viewconfig(radius: 5)
-        btnlogin.roundbuttonRadius(borderwidth: 2)
-        
-        emailView.addInnerShadow(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
-        passwordView.addInnerShadow(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
-        //lgog.image = UIImage.init(named: "Logo")
-        //headerView.roundCorners([.bottomLeft,.bottomRight], radius: 200)
+      
     }
     
     

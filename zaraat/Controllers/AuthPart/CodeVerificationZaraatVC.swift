@@ -40,11 +40,11 @@ class CodeVerificationVC: ZaraatBaseVC, UITextFieldDelegate {
          txtOne.textContentType = .oneTimeCode
                // 6. set the subClassed textField delegate to each textField
               
-        btnNext.roundbuttonRadius(borderwidth: 2)
-        oneView.addInnerShadowForVerificationCode(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
-        twoView.addInnerShadowForVerificationCode(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
-        threeView.addInnerShadowForVerificationCode(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
-        fourView.addInnerShadowForVerificationCode(topColor: #colorLiteral(red: 0.8939016461, green: 0.8940303922, blue: 0.8938735127, alpha: 1))
+        btnNext.roundButton()
+        oneView.setroundCornerView(corner: 10)
+        twoView.setroundCornerView(corner: 10)
+        threeView.setroundCornerView(corner: 10)
+        fourView.setroundCornerView(corner: 10)
     }
     
     
