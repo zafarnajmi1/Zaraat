@@ -80,8 +80,8 @@ class MenuTabsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BasicCell {
             cell.titleLabel.text = dataArray[indexPath.item]
-            cell.titleLabel.textColor =  #colorLiteral(red: 0.1410522163, green: 0.3398962617, blue: 0.1778770983, alpha: 1)
-            cell.titleLabel.font = UIFont.init(name: "Poppins-SemiBold", size: 17)
+            //cell.titleLabel.textColor =  #colorLiteral(red: 0.9921568627, green: 0.7299582362, blue: 0.007647278253, alpha: 1)
+            cell.titleLabel.font = UIFont.init(name: "Poppins-Regular", size: 15)
             return cell
         }
         

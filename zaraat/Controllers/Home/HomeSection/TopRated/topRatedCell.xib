@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.otf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="Poppins-SemiBold.otf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topRatedCell" rowHeight="259" id="KGk-i7-Jjw" customClass="topRatedCell" customModule="zaraat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="259"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="358" height="259"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash Sale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMo-wj-Ege">
+                        <rect key="frame" x="20" y="10" width="87" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="cwv-aG-EOG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmG-Gn-9tf">
+                        <rect key="frame" x="258" y="10" width="80" height="25"/>
+                        <color key="backgroundColor" red="0.12535291909999999" green="0.1293642223" blue="0.13351523879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Atj-eN-REj"/>
+                            <constraint firstAttribute="height" constant="25" id="wrf-uc-W68"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                        <state key="normal" title="View All">
+                            <color key="titleColor" red="0.9905504584" green="0.7299582362" blue="0.0076472782529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-A5-8IP">
+                        <rect key="frame" x="20" y="46" width="318" height="202"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bnc-7b-Xui">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gA0-A5-8IP" firstAttribute="top" secondItem="RMo-wj-Ege" secondAttribute="bottom" constant="8" id="2Vq-iy-mz8"/>
+                    <constraint firstItem="gA0-A5-8IP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="DWi-2O-3xX"/>
+                    <constraint firstItem="jmG-Gn-9tf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="FkZ-Vo-nJq"/>
+                    <constraint firstItem="RMo-wj-Ege" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Sho-P0-Uhn"/>
+                    <constraint firstAttribute="trailing" secondItem="jmG-Gn-9tf" secondAttribute="trailing" constant="20" id="c8b-Z6-5Et"/>
+                    <constraint firstAttribute="trailing" secondItem="gA0-A5-8IP" secondAttribute="trailing" constant="20" id="qcp-bc-7P6"/>
+                    <constraint firstItem="RMo-wj-Ege" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="rVU-P5-jhj"/>
+                    <constraint firstAttribute="bottom" secondItem="gA0-A5-8IP" secondAttribute="bottom" constant="11" id="xWK-Rc-zHc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="159.42028985507247" y="182.47767857142856"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -44,12 +44,6 @@
 		43C1BBDB243B0F3C0089ED55 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C1BBD9243B0F3C0089ED55 /* CartCell.swift */; };
 		43C1BBDC243B0F3C0089ED55 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C1BBDA243B0F3C0089ED55 /* CartCell.xib */; };
 		CE3A92992418A90D0097B215 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A92982418A90D0097B215 /* ShareData.swift */; };
-		CE3A929D2418C8990097B215 /* VideosAllCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A929B2418C8990097B215 /* VideosAllCell.swift */; };
-		CE3A929E2418C8990097B215 /* VideosAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A929C2418C8990097B215 /* VideosAllCell.xib */; };
-		CE3A92A32418CB840097B215 /* AllCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A92A12418CB840097B215 /* AllCLView.swift */; };
-		CE3A92A42418CB840097B215 /* AllCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A92A22418CB840097B215 /* AllCLView.xib */; };
-		CE3A92A72418CB940097B215 /* VideosCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A92A52418CB940097B215 /* VideosCLView.swift */; };
-		CE3A92A82418CB940097B215 /* VideosCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3A92A62418CB940097B215 /* VideosCLView.xib */; };
 		CE40BAC6240D225B0034C708 /* ZaraatZalert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */; };
 		CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */; };
 		CE49D827240E7682009ECFD5 /* ChangePasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */; };
@@ -60,39 +54,13 @@
 		CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF432410CF25000DAAB4 /* InboxVC.swift */; };
 		CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */; };
 		CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */; };
-		CE4BBF4E24112E78000DAAB4 /* CropsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF4C24112E78000DAAB4 /* CropsCell.swift */; };
-		CE4BBF4F24112E78000DAAB4 /* CropsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4BBF4D24112E78000DAAB4 /* CropsCell.xib */; };
-		CE4BBF5224112E94000DAAB4 /* LiveStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF5024112E94000DAAB4 /* LiveStockCell.swift */; };
-		CE4BBF5324112E94000DAAB4 /* LiveStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4BBF5124112E94000DAAB4 /* LiveStockCell.xib */; };
-		CE4BBF5624112EBA000DAAB4 /* GeneralItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF5424112EBA000DAAB4 /* GeneralItemsCell.swift */; };
-		CE4BBF5724112EBA000DAAB4 /* GeneralItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4BBF5524112EBA000DAAB4 /* GeneralItemsCell.xib */; };
-		CE4BBF5B24112F00000DAAB4 /* FeatueredBidingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF5924112F00000DAAB4 /* FeatueredBidingCell.swift */; };
-		CE4BBF5C24112F00000DAAB4 /* FeatueredBidingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4BBF5A24112F00000DAAB4 /* FeatueredBidingCell.xib */; };
-		CE4BBF6024112F4C000DAAB4 /* HotBidingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF5E24112F4C000DAAB4 /* HotBidingCell.swift */; };
-		CE4BBF6124112F4C000DAAB4 /* HotBidingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4BBF5F24112F4C000DAAB4 /* HotBidingCell.xib */; };
-		CE4BBF6524112F6C000DAAB4 /* LatestProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF6324112F6C000DAAB4 /* LatestProductsCell.swift */; };
-		CE4BBF6624112F6C000DAAB4 /* LatestProductsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4BBF6424112F6C000DAAB4 /* LatestProductsCell.xib */; };
-		CE562C1D24161F0B00420E9B /* latestProductListCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE562C1B24161F0B00420E9B /* latestProductListCLView.swift */; };
-		CE562C1E24161F0B00420E9B /* latestProductListCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE562C1C24161F0B00420E9B /* latestProductListCLView.xib */; };
-		CE562C2124161F3600420E9B /* LatestProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE562C1F24161F3600420E9B /* LatestProductListCell.swift */; };
-		CE562C2224161F3600420E9B /* LatestProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE562C2024161F3600420E9B /* LatestProductListCell.xib */; };
 		CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */; };
 		CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */; };
+		CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */; };
+		CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */; };
+		CE70E9C824F8DA1500FEEF5D /* FlashCellClView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C624F8DA1500FEEF5D /* FlashCellClView.swift */; };
+		CE70E9C924F8DA1500FEEF5D /* FlashCellClView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C724F8DA1500FEEF5D /* FlashCellClView.xib */; };
 		CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */; };
-		CE8B98AF241670B100CAFF6D /* HotDealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B98AD241670B100CAFF6D /* HotDealCell.swift */; };
-		CE8B98B0241670B100CAFF6D /* HotDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8B98AE241670B100CAFF6D /* HotDealCell.xib */; };
-		CE8B98B3241670E200CAFF6D /* HotDealCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B98B1241670E200CAFF6D /* HotDealCLView.swift */; };
-		CE8B98B4241670E200CAFF6D /* HotDealCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8B98B2241670E200CAFF6D /* HotDealCLView.xib */; };
-		CE8DB32D2412101E003770F6 /* CropsCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB32B2412101E003770F6 /* CropsCLView.swift */; };
-		CE8DB32E2412101E003770F6 /* CropsCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB32C2412101E003770F6 /* CropsCLView.xib */; };
-		CE8DB33124123198003770F6 /* LiveStockClView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB32F24123198003770F6 /* LiveStockClView.swift */; };
-		CE8DB33224123198003770F6 /* LiveStockClView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB33024123198003770F6 /* LiveStockClView.xib */; };
-		CE8DB33524123568003770F6 /* GeneralItemsCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB33324123568003770F6 /* GeneralItemsCLView.swift */; };
-		CE8DB33624123568003770F6 /* GeneralItemsCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB33424123568003770F6 /* GeneralItemsCLView.xib */; };
-		CE8DB339241260E4003770F6 /* FeaueredBidingCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB337241260E4003770F6 /* FeaueredBidingCLView.swift */; };
-		CE8DB33A241260E4003770F6 /* FeaueredBidingCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB338241260E4003770F6 /* FeaueredBidingCLView.xib */; };
-		CE8DB33D24127079003770F6 /* HotBidingCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DB33B24127079003770F6 /* HotBidingCLView.swift */; };
-		CE8DB33E24127079003770F6 /* HotBidingCLView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DB33C24127079003770F6 /* HotBidingCLView.xib */; };
 		CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C324092A4B0079C3C5 /* AppDelegate.swift */; };
 		CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C524092A4B0079C3C5 /* SceneDelegate.swift */; };
 		CEAED9C824092A4B0079C3C5 /* SplashZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C724092A4B0079C3C5 /* SplashZaraatVC.swift */; };
@@ -109,6 +77,10 @@
 		CEEB1E51241A65410069104B /* SliderCLCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEB1E4F241A65410069104B /* SliderCLCell.xib */; };
 		CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB1E52241A66220069104B /* TablCLViewCell.swift */; };
 		CEEB1E55241A66220069104B /* TablCLViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEB1E53241A66220069104B /* TablCLViewCell.xib */; };
+		CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBF1F024F90D4F003C1727 /* topRatedClView.swift */; };
+		CEFBF1F324F90D4F003C1727 /* topRatedClView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBF1F124F90D4F003C1727 /* topRatedClView.xib */; };
+		CEFBF1F624F90D65003C1727 /* topRatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBF1F424F90D65003C1727 /* topRatedCell.swift */; };
+		CEFBF1F724F90D65003C1727 /* topRatedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBF1F524F90D65003C1727 /* topRatedCell.xib */; };
 		F7279CB6D640ABF6AC6713BE /* Pods_zaraat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC92B668E9DF10CCB85775E2 /* Pods_zaraat.framework */; };
 /* End PBXBuildFile section */
 
@@ -170,12 +142,6 @@
 		8530F165E031F68218795376 /* Pods-zaraat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaraat.debug.xcconfig"; path = "Target Support Files/Pods-zaraat/Pods-zaraat.debug.xcconfig"; sourceTree = "<group>"; };
 		CC92B668E9DF10CCB85775E2 /* Pods_zaraat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_zaraat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3A92982418A90D0097B215 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
-		CE3A929B2418C8990097B215 /* VideosAllCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosAllCell.swift; sourceTree = "<group>"; };
-		CE3A929C2418C8990097B215 /* VideosAllCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosAllCell.xib; sourceTree = "<group>"; };
-		CE3A92A12418CB840097B215 /* AllCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCLView.swift; sourceTree = "<group>"; };
-		CE3A92A22418CB840097B215 /* AllCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllCLView.xib; sourceTree = "<group>"; };
-		CE3A92A52418CB940097B215 /* VideosCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosCLView.swift; sourceTree = "<group>"; };
-		CE3A92A62418CB940097B215 /* VideosCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideosCLView.xib; sourceTree = "<group>"; };
 		CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaraatZalert.swift; sourceTree = "<group>"; };
 		CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationZaraatVC.swift; sourceTree = "<group>"; };
 		CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordZaraatVC.swift; sourceTree = "<group>"; };
@@ -186,39 +152,13 @@
 		CE4BBF432410CF25000DAAB4 /* InboxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxVC.swift; sourceTree = "<group>"; };
 		CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteVC.swift; sourceTree = "<group>"; };
 		CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
-		CE4BBF4C24112E78000DAAB4 /* CropsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropsCell.swift; sourceTree = "<group>"; };
-		CE4BBF4D24112E78000DAAB4 /* CropsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CropsCell.xib; sourceTree = "<group>"; };
-		CE4BBF5024112E94000DAAB4 /* LiveStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStockCell.swift; sourceTree = "<group>"; };
-		CE4BBF5124112E94000DAAB4 /* LiveStockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveStockCell.xib; sourceTree = "<group>"; };
-		CE4BBF5424112EBA000DAAB4 /* GeneralItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemsCell.swift; sourceTree = "<group>"; };
-		CE4BBF5524112EBA000DAAB4 /* GeneralItemsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralItemsCell.xib; sourceTree = "<group>"; };
-		CE4BBF5924112F00000DAAB4 /* FeatueredBidingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatueredBidingCell.swift; sourceTree = "<group>"; };
-		CE4BBF5A24112F00000DAAB4 /* FeatueredBidingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatueredBidingCell.xib; sourceTree = "<group>"; };
-		CE4BBF5E24112F4C000DAAB4 /* HotBidingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotBidingCell.swift; sourceTree = "<group>"; };
-		CE4BBF5F24112F4C000DAAB4 /* HotBidingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotBidingCell.xib; sourceTree = "<group>"; };
-		CE4BBF6324112F6C000DAAB4 /* LatestProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestProductsCell.swift; sourceTree = "<group>"; };
-		CE4BBF6424112F6C000DAAB4 /* LatestProductsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestProductsCell.xib; sourceTree = "<group>"; };
-		CE562C1B24161F0B00420E9B /* latestProductListCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = latestProductListCLView.swift; sourceTree = "<group>"; };
-		CE562C1C24161F0B00420E9B /* latestProductListCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = latestProductListCLView.xib; sourceTree = "<group>"; };
-		CE562C1F24161F3600420E9B /* LatestProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestProductListCell.swift; sourceTree = "<group>"; };
-		CE562C2024161F3600420E9B /* LatestProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LatestProductListCell.xib; sourceTree = "<group>"; };
 		CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_Ipad.storyboard; sourceTree = "<group>"; };
 		CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordZaraatVC.swift; sourceTree = "<group>"; };
+		CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCell.swift; sourceTree = "<group>"; };
+		CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashSaleCell.xib; sourceTree = "<group>"; };
+		CE70E9C624F8DA1500FEEF5D /* FlashCellClView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCellClView.swift; sourceTree = "<group>"; };
+		CE70E9C724F8DA1500FEEF5D /* FlashCellClView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashCellClView.xib; sourceTree = "<group>"; };
 		CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPasswordZaraatVC.swift; sourceTree = "<group>"; };
-		CE8B98AD241670B100CAFF6D /* HotDealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDealCell.swift; sourceTree = "<group>"; };
-		CE8B98AE241670B100CAFF6D /* HotDealCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotDealCell.xib; sourceTree = "<group>"; };
-		CE8B98B1241670E200CAFF6D /* HotDealCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotDealCLView.swift; sourceTree = "<group>"; };
-		CE8B98B2241670E200CAFF6D /* HotDealCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotDealCLView.xib; sourceTree = "<group>"; };
-		CE8DB32B2412101E003770F6 /* CropsCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropsCLView.swift; sourceTree = "<group>"; };
-		CE8DB32C2412101E003770F6 /* CropsCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CropsCLView.xib; sourceTree = "<group>"; };
-		CE8DB32F24123198003770F6 /* LiveStockClView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStockClView.swift; sourceTree = "<group>"; };
-		CE8DB33024123198003770F6 /* LiveStockClView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveStockClView.xib; sourceTree = "<group>"; };
-		CE8DB33324123568003770F6 /* GeneralItemsCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralItemsCLView.swift; sourceTree = "<group>"; };
-		CE8DB33424123568003770F6 /* GeneralItemsCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralItemsCLView.xib; sourceTree = "<group>"; };
-		CE8DB337241260E4003770F6 /* FeaueredBidingCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaueredBidingCLView.swift; sourceTree = "<group>"; };
-		CE8DB338241260E4003770F6 /* FeaueredBidingCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaueredBidingCLView.xib; sourceTree = "<group>"; };
-		CE8DB33B24127079003770F6 /* HotBidingCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotBidingCLView.swift; sourceTree = "<group>"; };
-		CE8DB33C24127079003770F6 /* HotBidingCLView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotBidingCLView.xib; sourceTree = "<group>"; };
 		CEAED9C024092A4B0079C3C5 /* zaraat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zaraat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAED9C324092A4B0079C3C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEAED9C524092A4B0079C3C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +181,10 @@
 		CEEB1E4F241A65410069104B /* SliderCLCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCLCell.xib; sourceTree = "<group>"; };
 		CEEB1E52241A66220069104B /* TablCLViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablCLViewCell.swift; sourceTree = "<group>"; };
 		CEEB1E53241A66220069104B /* TablCLViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablCLViewCell.xib; sourceTree = "<group>"; };
+		CEFBF1F024F90D4F003C1727 /* topRatedClView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topRatedClView.swift; sourceTree = "<group>"; };
+		CEFBF1F124F90D4F003C1727 /* topRatedClView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topRatedClView.xib; sourceTree = "<group>"; };
+		CEFBF1F424F90D65003C1727 /* topRatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topRatedCell.swift; sourceTree = "<group>"; };
+		CEFBF1F524F90D65003C1727 /* topRatedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topRatedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,36 +266,6 @@
 			path = ShareData;
 			sourceTree = "<group>";
 		};
-		CE3A929A2418C8730097B215 /* VideosAll */ = {
-			isa = PBXGroup;
-			children = (
-				CEF647AE241BA027000B85A8 /* AllHeader */,
-				CE3A92A02418CB6A0097B215 /* All */,
-				CE3A929F2418CB5D0097B215 /* Videos */,
-				CE3A929B2418C8990097B215 /* VideosAllCell.swift */,
-				CE3A929C2418C8990097B215 /* VideosAllCell.xib */,
-			);
-			path = VideosAll;
-			sourceTree = "<group>";
-		};
-		CE3A929F2418CB5D0097B215 /* Videos */ = {
-			isa = PBXGroup;
-			children = (
-				CE3A92A52418CB940097B215 /* VideosCLView.swift */,
-				CE3A92A62418CB940097B215 /* VideosCLView.xib */,
-			);
-			path = Videos;
-			sourceTree = "<group>";
-		};
-		CE3A92A02418CB6A0097B215 /* All */ = {
-			isa = PBXGroup;
-			children = (
-				CE3A92A12418CB840097B215 /* AllCLView.swift */,
-				CE3A92A22418CB840097B215 /* AllCLView.xib */,
-			);
-			path = All;
-			sourceTree = "<group>";
-		};
 		CE4B88B2240CCD2100DB20FD /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,10 +299,14 @@
 		CE4BBF392410C79E000DAAB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE70E9CC24F8DA7A00FEEF5D /* Trends */,
+				CE70E9CB24F8DA6D00FEEF5D /* Chat */,
+				CE70E9CA24F8DA5500FEEF5D /* Category */,
 				4312A108243DADD00041FA82 /* CheckOut */,
 				43C1BBD6243B0F020089ED55 /* Cart */,
 				437BD19F242C8D4E003C55C2 /* Product Detail */,
 				CEEB1E4D241A53CF0069104B /* SliderAndTable */,
+				431AB763242DBD4A002346E7 /* MyAccount */,
 				CE4BBF3A2410C7B9000DAAB4 /* Home */,
 				CEAED9F6240938040079C3C5 /* AuthPart */,
 			);
@@ -398,100 +316,13 @@
 		CE4BBF3A2410C7B9000DAAB4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				431AB763242DBD4A002346E7 /* MyAccount */,
+				CE70E9C124F8D4E500FEEF5D /* HomeSection */,
 				CEDEB1E2241B5740001B5B88 /* PagerTabs */,
-				CE3A929A2418C8730097B215 /* VideosAll */,
-				CE8B98AC2416709900CAFF6D /* HotDeals */,
-				CE4BBF6224112F53000DAAB4 /* LatestProducts */,
-				CE4BBF5D24112F32000DAAB4 /* HotBiding */,
-				CE4BBF5824112EDB000DAAB4 /* FeatueredBiding */,
-				CE4BBF4B24111B63000DAAB4 /* GeneralItems */,
-				CE4BBF4A24111B57000DAAB4 /* LiveStock */,
-				CE4BBF4924111B4C000DAAB4 /* Crops */,
 				CE4BBF3D2410CD2E000DAAB4 /* TabBarVC.swift */,
 				CE4BBF3F2410CEF4000DAAB4 /* HomeVC.swift */,
-				CE4BBF412410CF12000DAAB4 /* TrendsVC.swift */,
-				CE4BBF432410CF25000DAAB4 /* InboxVC.swift */,
 				CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */,
-				CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		CE4BBF4924111B4C000DAAB4 /* Crops */ = {
-			isa = PBXGroup;
-			children = (
-				CE4BBF4C24112E78000DAAB4 /* CropsCell.swift */,
-				CE4BBF4D24112E78000DAAB4 /* CropsCell.xib */,
-				CE8DB32B2412101E003770F6 /* CropsCLView.swift */,
-				CE8DB32C2412101E003770F6 /* CropsCLView.xib */,
-			);
-			path = Crops;
-			sourceTree = "<group>";
-		};
-		CE4BBF4A24111B57000DAAB4 /* LiveStock */ = {
-			isa = PBXGroup;
-			children = (
-				CE4BBF5024112E94000DAAB4 /* LiveStockCell.swift */,
-				CE4BBF5124112E94000DAAB4 /* LiveStockCell.xib */,
-				CE8DB32F24123198003770F6 /* LiveStockClView.swift */,
-				CE8DB33024123198003770F6 /* LiveStockClView.xib */,
-			);
-			path = LiveStock;
-			sourceTree = "<group>";
-		};
-		CE4BBF4B24111B63000DAAB4 /* GeneralItems */ = {
-			isa = PBXGroup;
-			children = (
-				CE4BBF5424112EBA000DAAB4 /* GeneralItemsCell.swift */,
-				CE4BBF5524112EBA000DAAB4 /* GeneralItemsCell.xib */,
-				CE8DB33324123568003770F6 /* GeneralItemsCLView.swift */,
-				CE8DB33424123568003770F6 /* GeneralItemsCLView.xib */,
-			);
-			path = GeneralItems;
-			sourceTree = "<group>";
-		};
-		CE4BBF5824112EDB000DAAB4 /* FeatueredBiding */ = {
-			isa = PBXGroup;
-			children = (
-				CE4BBF5924112F00000DAAB4 /* FeatueredBidingCell.swift */,
-				CE4BBF5A24112F00000DAAB4 /* FeatueredBidingCell.xib */,
-				CE8DB337241260E4003770F6 /* FeaueredBidingCLView.swift */,
-				CE8DB338241260E4003770F6 /* FeaueredBidingCLView.xib */,
-			);
-			path = FeatueredBiding;
-			sourceTree = "<group>";
-		};
-		CE4BBF5D24112F32000DAAB4 /* HotBiding */ = {
-			isa = PBXGroup;
-			children = (
-				CE4BBF5E24112F4C000DAAB4 /* HotBidingCell.swift */,
-				CE4BBF5F24112F4C000DAAB4 /* HotBidingCell.xib */,
-				CE8DB33B24127079003770F6 /* HotBidingCLView.swift */,
-				CE8DB33C24127079003770F6 /* HotBidingCLView.xib */,
-			);
-			path = HotBiding;
-			sourceTree = "<group>";
-		};
-		CE4BBF6224112F53000DAAB4 /* LatestProducts */ = {
-			isa = PBXGroup;
-			children = (
-				CE562C1A24161EC200420E9B /* LatestProductsList */,
-				CE4BBF6324112F6C000DAAB4 /* LatestProductsCell.swift */,
-				CE4BBF6424112F6C000DAAB4 /* LatestProductsCell.xib */,
-			);
-			path = LatestProducts;
-			sourceTree = "<group>";
-		};
-		CE562C1A24161EC200420E9B /* LatestProductsList */ = {
-			isa = PBXGroup;
-			children = (
-				CE562C1F24161F3600420E9B /* LatestProductListCell.swift */,
-				CE562C2024161F3600420E9B /* LatestProductListCell.xib */,
-				CE562C1B24161F0B00420E9B /* latestProductListCLView.swift */,
-				CE562C1C24161F0B00420E9B /* latestProductListCLView.xib */,
-			);
-			path = LatestProductsList;
 			sourceTree = "<group>";
 		};
 		CE5A78E72417B69000796126 /* StoryBoard_Iphone */ = {
@@ -510,15 +341,37 @@
 			path = StoryBoard_Ipad;
 			sourceTree = "<group>";
 		};
-		CE8B98AC2416709900CAFF6D /* HotDeals */ = {
+		CE70E9C124F8D4E500FEEF5D /* HomeSection */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B98AD241670B100CAFF6D /* HotDealCell.swift */,
-				CE8B98AE241670B100CAFF6D /* HotDealCell.xib */,
-				CE8B98B1241670E200CAFF6D /* HotDealCLView.swift */,
-				CE8B98B2241670E200CAFF6D /* HotDealCLView.xib */,
+				CEFBF1EF24F90D0E003C1727 /* TopRated */,
+				CEFBF1EE24F90CF8003C1727 /* FlashSale */,
 			);
-			path = HotDeals;
+			path = HomeSection;
+			sourceTree = "<group>";
+		};
+		CE70E9CA24F8DA5500FEEF5D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CE70E9CB24F8DA6D00FEEF5D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				CE4BBF432410CF25000DAAB4 /* InboxVC.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		CE70E9CC24F8DA7A00FEEF5D /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				CE4BBF412410CF12000DAAB4 /* TrendsVC.swift */,
+			);
+			path = Trends;
 			sourceTree = "<group>";
 		};
 		CEAED9B724092A4B0079C3C5 = {
@@ -627,11 +480,26 @@
 			path = SliderAndTable;
 			sourceTree = "<group>";
 		};
-		CEF647AE241BA027000B85A8 /* AllHeader */ = {
+		CEFBF1EE24F90CF8003C1727 /* FlashSale */ = {
 			isa = PBXGroup;
 			children = (
+				CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */,
+				CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */,
+				CE70E9C624F8DA1500FEEF5D /* FlashCellClView.swift */,
+				CE70E9C724F8DA1500FEEF5D /* FlashCellClView.xib */,
 			);
-			path = AllHeader;
+			path = FlashSale;
+			sourceTree = "<group>";
+		};
+		CEFBF1EF24F90D0E003C1727 /* TopRated */ = {
+			isa = PBXGroup;
+			children = (
+				CEFBF1F024F90D4F003C1727 /* topRatedClView.swift */,
+				CEFBF1F124F90D4F003C1727 /* topRatedClView.xib */,
+				CEFBF1F424F90D65003C1727 /* topRatedCell.swift */,
+				CEFBF1F524F90D65003C1727 /* topRatedCell.xib */,
+			);
+			path = TopRated;
 			sourceTree = "<group>";
 		};
 		F695A65D06ADAA836F682504 /* Frameworks */ = {
@@ -749,54 +617,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3A92A42418CB840097B215 /* AllCLView.xib in Resources */,
 				CEAED9D324092A4E0079C3C5 /* LaunchScreen.storyboard in Resources */,
 				CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */,
 				437BD189242C87D0003C55C2 /* Poppins-ExtraBoldItalic.otf in Resources */,
 				437BD18A242C87D0003C55C2 /* Poppins-Italic.otf in Resources */,
-				CE4BBF5324112E94000DAAB4 /* LiveStockCell.xib in Resources */,
 				CEAED9D024092A4E0079C3C5 /* Assets.xcassets in Resources */,
 				437BD18F242C87D0003C55C2 /* Poppins-Light.ttf in Resources */,
-				CE4BBF6624112F6C000DAAB4 /* LatestProductsCell.xib in Resources */,
 				437BD182242C87D0003C55C2 /* Poppins-Light.otf in Resources */,
 				4312A10E243DC4890041FA82 /* CheckOutCell.xib in Resources */,
-				CE8B98B0241670B100CAFF6D /* HotDealCell.xib in Resources */,
-				CE4BBF5724112EBA000DAAB4 /* GeneralItemsCell.xib in Resources */,
 				437BD183242C87D0003C55C2 /* Poppins-Regular.ttf in Resources */,
 				437BD184242C87D0003C55C2 /* Poppins-Bold.otf in Resources */,
-				CE8DB33E24127079003770F6 /* HotBidingCLView.xib in Resources */,
 				437BD192242C87D0003C55C2 /* Poppins-SemiBold.ttf in Resources */,
-				CE8DB32E2412101E003770F6 /* CropsCLView.xib in Resources */,
-				CE4BBF5C24112F00000DAAB4 /* FeatueredBidingCell.xib in Resources */,
 				437BD187242C87D0003C55C2 /* Poppins-ThinItalic.otf in Resources */,
 				437BD181242C87D0003C55C2 /* Poppins-ExtraLightItalic.otf in Resources */,
-				CE4BBF6124112F4C000DAAB4 /* HotBidingCell.xib in Resources */,
+				CEFBF1F724F90D65003C1727 /* topRatedCell.xib in Resources */,
 				437BD186242C87D0003C55C2 /* Poppins-LightItalic.otf in Resources */,
 				437BD18D242C87D0003C55C2 /* Poppins-SemiBoldItalic.otf in Resources */,
 				437BD194242C87D0003C55C2 /* Poppins-MediumItalic.otf in Resources */,
 				437BD185242C87D0003C55C2 /* Poppins-Thin.otf in Resources */,
 				437BD193242C87D0003C55C2 /* Poppins-Regular.otf in Resources */,
 				CEEB1E51241A65410069104B /* SliderCLCell.xib in Resources */,
-				CE4BBF4F24112E78000DAAB4 /* CropsCell.xib in Resources */,
 				437BD17F242C87D0003C55C2 /* Poppins-BoldItalic.otf in Resources */,
 				437BD17E242C87D0003C55C2 /* Poppins-Black.otf in Resources */,
-				CE8DB33A241260E4003770F6 /* FeaueredBidingCLView.xib in Resources */,
-				CE3A929E2418C8990097B215 /* VideosAllCell.xib in Resources */,
+				CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */,
 				437BD18B242C87D0003C55C2 /* Poppins-BlackItalic.otf in Resources */,
-				CE8DB33224123198003770F6 /* LiveStockClView.xib in Resources */,
 				437BD18C242C87D0003C55C2 /* Poppins-Medium.otf in Resources */,
 				437BD180242C87D0003C55C2 /* Poppins-ExtraBold.otf in Resources */,
-				CE8DB33624123568003770F6 /* GeneralItemsCLView.xib in Resources */,
-				CE562C1E24161F0B00420E9B /* latestProductListCLView.xib in Resources */,
+				CE70E9C924F8DA1500FEEF5D /* FlashCellClView.xib in Resources */,
 				437BD188242C87D0003C55C2 /* Poppins-Medium.ttf in Resources */,
 				43C1BBDC243B0F3C0089ED55 /* CartCell.xib in Resources */,
 				CEEB1E55241A66220069104B /* TablCLViewCell.xib in Resources */,
-				CE3A92A82418CB940097B215 /* VideosCLView.xib in Resources */,
 				CEAED9CB24092A4B0079C3C5 /* Main.storyboard in Resources */,
-				CE8B98B4241670E200CAFF6D /* HotDealCLView.xib in Resources */,
 				437BD191242C87D0003C55C2 /* Poppins-SemiBold.otf in Resources */,
-				CE562C2224161F3600420E9B /* LatestProductListCell.xib in Resources */,
 				437BD190242C87D0003C55C2 /* Poppins-ExtraLight.otf in Resources */,
+				CEFBF1F324F90D4F003C1727 /* topRatedClView.xib in Resources */,
 				437BD18E242C87D0003C55C2 /* Poppins-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -881,16 +735,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE562C2124161F3600420E9B /* LatestProductListCell.swift in Sources */,
-				CE3A929D2418C8990097B215 /* VideosAllCell.swift in Sources */,
-				CE8B98B3241670E200CAFF6D /* HotDealCLView.swift in Sources */,
 				CE4BBF3E2410CD2E000DAAB4 /* TabBarVC.swift in Sources */,
+				CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */,
 				437BD19E242C8A30003C55C2 /* ViewController.swift in Sources */,
-				CE8DB32D2412101E003770F6 /* CropsCLView.swift in Sources */,
 				CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */,
-				CE4BBF4E24112E78000DAAB4 /* CropsCell.swift in Sources */,
 				CE4B88E2240D17B400DB20FD /* SignUpZaraatVC.swift in Sources */,
-				CE3A92A72418CB940097B215 /* VideosCLView.swift in Sources */,
 				CE4BBF422410CF12000DAAB4 /* TrendsVC.swift in Sources */,
 				437BD19A242C8A30003C55C2 /* BasicCell.swift in Sources */,
 				437BD19D242C8A30003C55C2 /* PageControllerVC.swift in Sources */,
@@ -901,16 +750,13 @@
 				4312A10A243DADF20041FA82 /* CheckOutVC.swift in Sources */,
 				437BD1A1242C8D6B003C55C2 /* ProductDetailVC.swift in Sources */,
 				CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */,
-				CE4BBF6524112F6C000DAAB4 /* LatestProductsCell.swift in Sources */,
 				43C1BBDB243B0F3C0089ED55 /* CartCell.swift in Sources */,
-				CE4BBF6024112F4C000DAAB4 /* HotBidingCell.swift in Sources */,
 				CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */,
+				CE70E9C824F8DA1500FEEF5D /* FlashCellClView.swift in Sources */,
+				CEFBF1F624F90D65003C1727 /* topRatedCell.swift in Sources */,
 				CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */,
 				431AB765242DBD5F002346E7 /* MyaccountVC.swift in Sources */,
-				CE562C1D24161F0B00420E9B /* latestProductListCLView.swift in Sources */,
-				CE4BBF5B24112F00000DAAB4 /* FeatueredBidingCell.swift in Sources */,
 				CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */,
-				CE3A92A32418CB840097B215 /* AllCLView.swift in Sources */,
 				CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */,
 				CE4BBF402410CEF4000DAAB4 /* HomeVC.swift in Sources */,
 				CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */,
@@ -920,16 +766,10 @@
 				CE40BAC6240D225B0034C708 /* ZaraatZalert.swift in Sources */,
 				43C1BBD8243B0F210089ED55 /* CartVC.swift in Sources */,
 				CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */,
-				CE8DB339241260E4003770F6 /* FeaueredBidingCLView.swift in Sources */,
 				CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */,
-				CE8DB33524123568003770F6 /* GeneralItemsCLView.swift in Sources */,
 				CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */,
-				CE8DB33124123198003770F6 /* LiveStockClView.swift in Sources */,
+				CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */,
 				CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */,
-				CE4BBF5624112EBA000DAAB4 /* GeneralItemsCell.swift in Sources */,
-				CE8B98AF241670B100CAFF6D /* HotDealCell.swift in Sources */,
-				CE4BBF5224112E94000DAAB4 /* LiveStockCell.swift in Sources */,
-				CE8DB33D24127079003770F6 /* HotBidingCLView.swift in Sources */,
 				437BD19C242C8A30003C55C2 /* Extensions.swift in Sources */,
 				CE49D827240E7682009ECFD5 /* ChangePasswordZaraatVC.swift in Sources */,
 			);

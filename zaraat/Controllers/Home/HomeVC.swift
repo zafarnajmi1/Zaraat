@@ -11,44 +11,69 @@ import UIKit
 class HomeVC: UIViewController {
 
     var pageIndex: Int = 0
-    //@IBOutlet weak var btncart: UIButton!
+   
     @IBOutlet weak var sliderClView: UICollectionView!
     
-    //@IBOutlet weak var tabClView: UICollectionView!
-    @IBOutlet weak var tblView: UITableView!{
-        didSet{
+    @IBOutlet weak var pager: UIPageControl!
+    
+    @IBOutlet weak var womenView: UIView!
+    
+    @IBOutlet weak var menView: UIView!
+    
+    @IBOutlet weak var electronicView: UIView!
+    
+    @IBOutlet weak var homeView: UIView!
+    
+    @IBOutlet weak var zMartView: UIView!
+    
+    @IBOutlet weak var educationView: UIView!
+    
+    
+    
+    
+    
+    
+    
+    @IBOutlet weak var tblView: UITableView! {
+        didSet {
             tblView.estimatedRowHeight = 200
             tblView.rowHeight =  UITableView.automaticDimension
         }
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        womenView.viewconfig(radius: 5)
+        menView.viewconfig(radius: 5)
+        electronicView.viewconfig(radius: 5)
+
+         homeView.viewconfig(radius: 5)
+
+         zMartView.viewconfig(radius: 5)
+
+       educationView.viewconfig(radius: 5)
         
         
         if pageIndex == 0 {
             tblView.isHidden = false
+            print(pageIndex)
         } else{
             tblView.isHidden = true
         }
-        //tabClView.register(UINib.init(nibName: "TablCLViewCell", bundle: nil), forCellWithReuseIdentifier: "TablCLViewCell")
+        
         sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
-//        self.navigationController?.navigationBar.isHidden = false
-//        self.navigationItem.hidesBackButton = true
+
         addNavigationButton()
         setUpUI()
-        navigationController?.navigationBar.shadowImage = UIImage()
+        
 
-        tblView.register(UINib.init(nibName: "CropsCell", bundle: nil), forCellReuseIdentifier: "CropsCell")
-         tblView.register(UINib.init(nibName: "LiveStockCell", bundle: nil), forCellReuseIdentifier: "LiveStockCell")
-        tblView.register(UINib.init(nibName: "GeneralItemsCell", bundle: nil), forCellReuseIdentifier: "GeneralItemsCell")
-        tblView.register(UINib.init(nibName: "FeatueredBidingCell", bundle: nil), forCellReuseIdentifier: "FeatueredBidingCell")
-        tblView.register(UINib.init(nibName: "HotBidingCell", bundle: nil), forCellReuseIdentifier: "HotBidingCell")
-         tblView.register(UINib.init(nibName: "LatestProductsCell", bundle: nil), forCellReuseIdentifier: "LatestProductsCell")
-         tblView.register(UINib.init(nibName: "LatestProductListCell", bundle: nil), forCellReuseIdentifier: "LatestProductListCell")
-        tblView.register(UINib.init(nibName: "HotDealCell", bundle: nil), forCellReuseIdentifier: "HotDealCell")
-        tblView.register(UINib.init(nibName: "VideosAllCell", bundle: nil), forCellReuseIdentifier: "VideosAllCell")
+       // tblView.register(UINib.init(nibName: "FlashSaleCell", bundle: nil), forCellReuseIdentifier: "FlashSaleCell")
+     //tblView.register(UINib.init(nibName: "topRatedCell", bundle: nil), forCellReuseIdentifier: "topRatedCell")
+
+
         
          setSlider()
         
@@ -119,114 +144,38 @@ class HomeVC: UIViewController {
 }
 extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
-//    private func tableView(tableView: UITableView,willDisplayCell cell: UITableViewCell,forRowAtIndexPath indexPath: NSIndexPath) {
-//
-//        guard let tableViewCell = cell as? VideosAllCell else { return }
-//
-//        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-//    }
-    //LatestProductsCell
-    
+
    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return 2
     }
     
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-            if indexPath.section == 9 {
+            if indexPath.section == 0 {
+        return  280
+        } else {
+                let cell =  tableView.dequeueReusableCell(withIdentifier: "topRatedCell") as? topRatedCell
                 
-
-
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "VideosAllCell") as? VideosAllCell {
-
-                       
-
-                        if UIDevice.current.userInterfaceIdiom == .pad{
+                return ((cell?.clView.contentSize.height)! + 150) 
+        }
+    }
     
-                            return cell.allCLView.collectionViewLayout.collectionViewContentSize.height - 2100
-                        }else {
-                            return cell.allCLView.collectionViewLayout.collectionViewContentSize.height + 120
-                        }
 
-
-                } else {
-                   return 280
-                }
-                } else{
-
-                   return UITableView.automaticDimension
-                }
-            
-               }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
-        if section == 6 {
-              return 4
-        } else if section == 7 {
-              return 3
-        }else {
             return 1
         }
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if  indexPath.section == 0 {
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "CropsCell") as? CropsCell
+        let cell  = tableView.dequeueReusableCell(withIdentifier: "FlashSaleCell") as? FlashSaleCell
+        return cell!
+        } else {
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "topRatedCell") as? topRatedCell
             return cell!
-            
-        }else if indexPath.section == 1{
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "FeatueredBidingCell") as? FeatueredBidingCell
-                   return cell!
-            
-        } else if indexPath.section == 2{
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "LiveStockCell") as? LiveStockCell
-                   return cell!
-            
-        } else if indexPath.section == 3 {
-                   
-               let cell =  tableView.dequeueReusableCell(withIdentifier: "GeneralItemsCell") as? GeneralItemsCell
-               return cell!
-            
-        }else if indexPath.section == 4{
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "HotBidingCell") as? HotBidingCell
-            return cell!
-            
-        } else if indexPath.section == 5{
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "LatestProductsCell") as? LatestProductsCell
-            return cell!
-        } else if indexPath.section == 6 {
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "LatestProductListCell") as? LatestProductListCell
-            return cell!
-        } else if indexPath.section == 7{
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "HotDealCell") as? HotDealCell
-            return cell!
-        } else if indexPath.section == 8{
-           
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "LatestProductsCell") as? LatestProductsCell
-                    
-            cell?.lbltitle.text = "All Products & Videos"
-            cell?.lblsubtitle.text = "View All Products And Videos"
-             return cell!
         }
-        else {
-            
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "VideosAllCell") as? VideosAllCell
-                       
-            cell?.setUpCell()
-             return cell!
-        }
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -261,6 +210,7 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        self.pager.numberOfPages =  4
             return 4
         
     }
@@ -273,6 +223,9 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
                    return cell!
         
     }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+           self.pager.currentPage = indexPath.row
+       }
     
 }
 

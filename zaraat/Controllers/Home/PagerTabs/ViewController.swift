@@ -11,7 +11,8 @@ import  BadgeHub
 
 class ViewController: UIViewController {
     var notificationBadge : BadgeHub?
-    @IBOutlet weak var btncart: UIButton!
+   
+    @IBOutlet weak var businessView: UIView!
     //@IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var menuBarView: MenuTabsView!
     @IBOutlet weak var searchView: UIView!
@@ -44,6 +45,7 @@ class ViewController: UIViewController {
         //menuBarView.menuDidSelected = myLocalFunc(_:_:)
          setSearchBar()
         cartButton()
+        businessView.roundView()
     }
     
     
@@ -56,16 +58,16 @@ class ViewController: UIViewController {
     //        imageView.image = notification
     //        view.addSubview(imageView)
             
-            btncart.setImage(UIImage(named: "Cart"), for: .normal)
-            btncart.addTarget(self, action: #selector(moveToCart), for: .touchUpInside)
-            notificationBadge = BadgeHub(view: btncart)
+            //btncart.setImage(UIImage(named: "Cart"), for: .normal)
+            //btncart.addTarget(self, action: #selector(moveToCart), for: .touchUpInside)
+           // notificationBadge = BadgeHub(view: btncart)
        
-            notificationBadge?.scaleCircleSize(by: 0.65)
-            notificationBadge?.setCircleColor(#colorLiteral(red: 0.9994444251, green: 0.09782101959, blue: 0.1073825285, alpha: 1), label: nil)
+            //notificationBadge?.scaleCircleSize(by: 0.65)
+            //notificationBadge?.setCircleColor(#colorLiteral(red: 0.9994444251, green: 0.09782101959, blue: 0.1073825285, alpha: 1), label: nil)
     
-           notificationBadge?.moveCircleBy(x: -5, y: 5)
-            notificationBadge?.setCount(1)
-        notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
+           //notificationBadge?.moveCircleBy(x: -5, y: 5)
+           // notificationBadge?.setCount(1)
+        //notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
     //        let backTap = UITapGestureRecognizer(target: self, action: #selector(moveToNotification))
     //        view.addGestureRecognizer(backTap)
            
