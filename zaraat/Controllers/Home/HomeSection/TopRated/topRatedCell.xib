@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Regular.otf">
+        <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
         <array key="Poppins-SemiBold.otf">
@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash Sale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMo-wj-Ege">
-                        <rect key="frame" x="20" y="10" width="87" height="28"/>
+                        <rect key="frame" x="20" y="10" width="89.5" height="28"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="cwv-aG-EOG"/>
                         </constraints>

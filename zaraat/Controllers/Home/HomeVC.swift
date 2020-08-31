@@ -38,6 +38,7 @@ class HomeVC: UIViewController {
         didSet {
             tblView.estimatedRowHeight = 200
             tblView.rowHeight =  UITableView.automaticDimension
+            
         }
     }
     
@@ -45,7 +46,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       self.tblView.contentInset.bottom = 100
         womenView.viewconfig(radius: 5)
         menView.viewconfig(radius: 5)
         electronicView.viewconfig(radius: 5)
@@ -70,8 +71,9 @@ class HomeVC: UIViewController {
         setUpUI()
         
 
-       // tblView.register(UINib.init(nibName: "FlashSaleCell", bundle: nil), forCellReuseIdentifier: "FlashSaleCell")
-     //tblView.register(UINib.init(nibName: "topRatedCell", bundle: nil), forCellReuseIdentifier: "topRatedCell")
+      tblView.register(UINib.init(nibName: "WeeklySellerCell", bundle: nil), forCellReuseIdentifier: "WeeklySellerCell")
+      tblView.register(UINib.init(nibName: "WeeklyViewAll", bundle: nil), forCellReuseIdentifier: "WeeklyViewAll")
+      tblView.register(UINib.init(nibName: "AddsCell", bundle: nil), forCellReuseIdentifier: "AddsCell")
 
 
         
@@ -147,32 +149,63 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 
    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 7
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             if indexPath.section == 0 {
-        return  280
-        } else {
+              return  280
+            } else if indexPath.section ==  1 {
                 let cell =  tableView.dequeueReusableCell(withIdentifier: "topRatedCell") as? topRatedCell
                 
-                return ((cell?.clView.contentSize.height)! + 150) 
+                return ((cell?.clView.contentSize.height)! + 40)
+            } else if indexPath.section == 2 {
+               
+                
+                return 180
+            }  else if indexPath .section == 6 {
+                
+                let cell =  tableView.dequeueReusableCell(withIdentifier: "FeaturedProductsCell") as? FeaturedProductsCell
+                               
+                               return ((cell?.clView.contentSize.height)! + 40)
+            }else {
+                return UITableView.automaticDimension
         }
     }
     
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
+        if  section == 4 {
+            return 10
+        } else {
             return 1
+        }
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if  indexPath.section == 0 {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "FlashSaleCell") as? FlashSaleCell
         return cell!
-        } else {
+        } else if indexPath.section == 1 {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "topRatedCell") as? topRatedCell
+            return cell!
+        } else if indexPath.section == 2 {
+             let cell  = tableView.dequeueReusableCell(withIdentifier: "LifeStyleCell") as? LifeStyleCell
+              
+             return cell!
+        } else if indexPath.section == 3 {
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "WeeklyViewAll") as? WeeklyViewAll
+              return cell!
+        } else if indexPath.section == 4 {
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "WeeklySellerCell") as? WeeklySellerCell
+                return cell!
+        }  else if indexPath.section == 6 {
+            
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "FeaturedProductsCell") as? FeaturedProductsCell
+                 return cell!
+        } else {
+            let cell  = tableView.dequeueReusableCell(withIdentifier: "AddsCell") as? AddsCell
             return cell!
         }
        
@@ -180,18 +213,18 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        if UIDevice.current.userInterfaceIdiom == .pad {
-
-                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
-                self.navigationController?.pushViewController(vc!, animated: true)
-
-        } else {
-
-                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
-                self.navigationController?.pushViewController(vc!, animated: true)
-        }
+//        if UIDevice.current.userInterfaceIdiom == .pad {
+//
+//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+//                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
+//                self.navigationController?.pushViewController(vc!, animated: true)
+//
+//        } else {
+//
+//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+//                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
+//                self.navigationController?.pushViewController(vc!, animated: true)
+//        }
     }
 }
 

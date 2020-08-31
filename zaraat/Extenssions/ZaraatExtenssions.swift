@@ -62,7 +62,7 @@ extension UIViewController {
         navigationItem.hidesBackButton = true
     }
     
-    func addBackButton(backImage: UIImage = #imageLiteral(resourceName: "BackArrow")) {
+    func addBackButton(backImage: UIImage = #imageLiteral(resourceName: "business")) {
         hideBackButton()
         let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem  = backButton
@@ -496,3 +496,5 @@ extension UIViewController {
         }
     }
 }
+
+

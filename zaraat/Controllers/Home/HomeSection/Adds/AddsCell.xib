@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddsCell" rowHeight="104" id="KGk-i7-Jjw" customClass="AddsCell" customModule="zaraat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9cQ-n0-xY6">
+                        <rect key="frame" x="20" y="8" width="280" height="90"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Image 2 ( Video )" translatesAutoresizingMaskIntoConstraints="NO" id="nSY-Md-SZX">
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="90"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Image 2 ( Video )" translatesAutoresizingMaskIntoConstraints="NO" id="Mne-QS-vTm">
+                                <rect key="frame" x="145" y="0.0" width="135" height="90"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="SYv-cP-kd9"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9cQ-n0-xY6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ARw-zA-zMM"/>
+                    <constraint firstItem="9cQ-n0-xY6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CYy-k0-Rdr"/>
+                    <constraint firstAttribute="bottom" secondItem="9cQ-n0-xY6" secondAttribute="bottom" id="TSv-Gu-oaM"/>
+                    <constraint firstAttribute="trailing" secondItem="9cQ-n0-xY6" secondAttribute="trailing" constant="20" id="sja-TF-cWH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="img1" destination="nSY-Md-SZX" id="YJn-2N-ZNc"/>
+                <outlet property="img2" destination="Mne-QS-vTm" id="NRe-yu-6ZZ"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="All Image 2 ( Video )" width="530" height="415"/>
+    </resources>
+</document>
