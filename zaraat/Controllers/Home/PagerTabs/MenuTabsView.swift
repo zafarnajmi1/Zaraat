@@ -98,18 +98,18 @@ class MenuTabsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         if isSizeToFitCellsNeeded {
             
-            let sizeee = CGSize.init(width: 500, height: self.frame.height)
+            let sizeee = CGSize.init(width: self.frame.width, height: self.frame.height)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             
             let str = dataArray[indexPath.item]
             
-            let estimatedRect = NSString.init(string: str).boundingRect(with: sizeee, options: options, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 23)], context: nil)
+            let estimatedRect = NSString.init(string: str).boundingRect(with: sizeee, options: options, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)], context: nil)
         
             return CGSize.init(width: estimatedRect.size.width, height: self.frame.height)
 
         }
         
-        return CGSize.init(width: (self.frame.width - 10)/CGFloat(dataArray.count), height: self.frame.height)
+        return CGSize.init(width: (self.frame.width - 20)/CGFloat(dataArray.count), height: self.frame.height)
     }
     
     

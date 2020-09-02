@@ -10,7 +10,7 @@
 		4312A10A243DADF20041FA82 /* CheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312A109243DADF20041FA82 /* CheckOutVC.swift */; };
 		4312A10D243DC4890041FA82 /* CheckOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4312A10B243DC4890041FA82 /* CheckOutCell.swift */; };
 		4312A10E243DC4890041FA82 /* CheckOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4312A10C243DC4890041FA82 /* CheckOutCell.xib */; };
-		431AB765242DBD5F002346E7 /* MyaccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431AB764242DBD5F002346E7 /* MyaccountVC.swift */; };
+		431AB765242DBD5F002346E7 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431AB764242DBD5F002346E7 /* MenuVC.swift */; };
 		437BD17E242C87D0003C55C2 /* Poppins-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 437BD167242C87BF003C55C2 /* Poppins-Black.otf */; };
 		437BD17F242C87D0003C55C2 /* Poppins-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 437BD168242C87C0003C55C2 /* Poppins-BoldItalic.otf */; };
 		437BD180242C87D0003C55C2 /* Poppins-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 437BD169242C87C1003C55C2 /* Poppins-ExtraBold.otf */; };
@@ -82,6 +82,8 @@
 		CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9F7240938DD0079C3C5 /* LoginZaraatVC.swift */; };
 		CEAED9FB240939380079C3C5 /* ZaraatExtenssions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9FA240939380079C3C5 /* ZaraatExtenssions.swift */; };
 		CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9FC240939BC0079C3C5 /* ZaraatBaseVC.swift */; };
+		CEBBE01324FE755400190E91 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBE01124FE755400190E91 /* MenuCell.swift */; };
+		CEBBE01424FE755400190E91 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBE01224FE755400190E91 /* MenuCell.xib */; };
 		CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB1E4E241A65410069104B /* SliderCLCell.swift */; };
 		CEEB1E51241A65410069104B /* SliderCLCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEB1E4F241A65410069104B /* SliderCLCell.xib */; };
 		CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB1E52241A66220069104B /* TablCLViewCell.swift */; };
@@ -114,7 +116,7 @@
 		4312A109243DADF20041FA82 /* CheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutVC.swift; sourceTree = "<group>"; };
 		4312A10B243DC4890041FA82 /* CheckOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutCell.swift; sourceTree = "<group>"; };
 		4312A10C243DC4890041FA82 /* CheckOutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckOutCell.xib; sourceTree = "<group>"; };
-		431AB764242DBD5F002346E7 /* MyaccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyaccountVC.swift; sourceTree = "<group>"; };
+		431AB764242DBD5F002346E7 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		437BD167242C87BF003C55C2 /* Poppins-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.otf"; sourceTree = "<group>"; };
 		437BD168242C87C0003C55C2 /* Poppins-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-BoldItalic.otf"; sourceTree = "<group>"; };
 		437BD169242C87C1003C55C2 /* Poppins-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -195,6 +197,8 @@
 		CEAED9F7240938DD0079C3C5 /* LoginZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginZaraatVC.swift; sourceTree = "<group>"; };
 		CEAED9FA240939380079C3C5 /* ZaraatExtenssions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaraatExtenssions.swift; sourceTree = "<group>"; };
 		CEAED9FC240939BC0079C3C5 /* ZaraatBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaraatBaseVC.swift; sourceTree = "<group>"; };
+		CEBBE01124FE755400190E91 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		CEBBE01224FE755400190E91 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		CEEB1E4E241A65410069104B /* SliderCLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCLCell.swift; sourceTree = "<group>"; };
 		CEEB1E4F241A65410069104B /* SliderCLCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderCLCell.xib; sourceTree = "<group>"; };
 		CEEB1E52241A66220069104B /* TablCLViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablCLViewCell.swift; sourceTree = "<group>"; };
@@ -241,12 +245,14 @@
 			path = CheckOut;
 			sourceTree = "<group>";
 		};
-		431AB763242DBD4A002346E7 /* MyAccount */ = {
+		431AB763242DBD4A002346E7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				431AB764242DBD5F002346E7 /* MyaccountVC.swift */,
+				431AB764242DBD5F002346E7 /* MenuVC.swift */,
+				CEBBE01124FE755400190E91 /* MenuCell.swift */,
+				CEBBE01224FE755400190E91 /* MenuCell.xib */,
 			);
-			path = MyAccount;
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		437BD19F242C8D4E003C55C2 /* Product Detail */ = {
@@ -324,7 +330,7 @@
 				43C1BBD6243B0F020089ED55 /* Cart */,
 				437BD19F242C8D4E003C55C2 /* Product Detail */,
 				CEEB1E4D241A53CF0069104B /* SliderAndTable */,
-				431AB763242DBD4A002346E7 /* MyAccount */,
+				431AB763242DBD4A002346E7 /* Menu */,
 				CE4BBF3A2410C7B9000DAAB4 /* Home */,
 				CEAED9F6240938040079C3C5 /* AuthPart */,
 			);
@@ -697,6 +703,7 @@
 				437BD194242C87D0003C55C2 /* Poppins-MediumItalic.otf in Resources */,
 				437BD185242C87D0003C55C2 /* Poppins-Thin.otf in Resources */,
 				437BD193242C87D0003C55C2 /* Poppins-Regular.otf in Resources */,
+				CEBBE01424FE755400190E91 /* MenuCell.xib in Resources */,
 				CEEB1E51241A65410069104B /* SliderCLCell.xib in Resources */,
 				437BD17F242C87D0003C55C2 /* Poppins-BoldItalic.otf in Resources */,
 				437BD17E242C87D0003C55C2 /* Poppins-Black.otf in Resources */,
@@ -820,7 +827,7 @@
 				CEFBF1F624F90D65003C1727 /* topRatedCell.swift in Sources */,
 				CE76D99024FD106D005078D6 /* WeeklyViewAll.swift in Sources */,
 				CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */,
-				431AB765242DBD5F002346E7 /* MyaccountVC.swift in Sources */,
+				431AB765242DBD5F002346E7 /* MenuVC.swift in Sources */,
 				CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */,
 				CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */,
 				CE4BBF402410CEF4000DAAB4 /* HomeVC.swift in Sources */,
@@ -835,6 +842,7 @@
 				CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */,
 				CE76D98C24FD0162005078D6 /* WeeklySellerCell.swift in Sources */,
 				CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */,
+				CEBBE01324FE755400190E91 /* MenuCell.swift in Sources */,
 				CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */,
 				CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */,
 				CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */,

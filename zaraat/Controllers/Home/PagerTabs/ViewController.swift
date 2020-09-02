@@ -26,7 +26,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Zaraat"
+      
+
+        
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "Text")
+        imageView.image = image
+        logoContainer.addSubview(imageView)
+        navigationItem.titleView = logoContainer
+        
+        
+        
+        
         menuBarView.dataArray = tabs
         menuBarView.isSizeToFitCellsNeeded = true
         menuBarView.collView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)//UIColor.init(white: 0.97, alpha: 0.97)
@@ -46,32 +60,37 @@ class ViewController: UIViewController {
          setSearchBar()
         cartButton()
         businessView.roundView()
+        addNavigationButton()
+        addMenuButton()
     }
     
     
     
     
-    func cartButton() {
-    //        let view = UIView(frame: CGRect(x: 0, y: 0, width: 25, height: 30))
-    //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 30))
-    //        let notification = UIImage(named: "notifi")
-    //        imageView.image = notification
-    //        view.addSubview(imageView)
-            
-            //btncart.setImage(UIImage(named: "Cart"), for: .normal)
-            //btncart.addTarget(self, action: #selector(moveToCart), for: .touchUpInside)
-           // notificationBadge = BadgeHub(view: btncart)
-       
-            //notificationBadge?.scaleCircleSize(by: 0.65)
-            //notificationBadge?.setCircleColor(#colorLiteral(red: 0.9994444251, green: 0.09782101959, blue: 0.1073825285, alpha: 1), label: nil)
+   
     
-           //notificationBadge?.moveCircleBy(x: -5, y: 5)
-           // notificationBadge?.setCount(1)
-        //notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
-    //        let backTap = UITapGestureRecognizer(target: self, action: #selector(moveToNotification))
-    //        view.addGestureRecognizer(backTap)
-           
-    //        let rightBarButtonItem = UIBarButtonItem(customView: view)
+    
+    func cartButton() {
+//            let view = UIView(frame: CGRect(x: 0, y: 0, width: 25, height: 30))
+//            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 30))
+//            let notification = UIImage(named: "notifi")
+//            imageView.image = notification
+//            view.addSubview(imageView)
+//
+//            btncart.setImage(UIImage(named: "Cart"), for: .normal)
+//            btncart.addTarget(self, action: #selector(moveToCart), for: .touchUpInside)
+//            notificationBadge = BadgeHub(view: btncart)
+//
+//            notificationBadge?.scaleCircleSize(by: 0.65)
+//            notificationBadge?.setCircleColor(#colorLiteral(red: 0.9994444251, green: 0.09782101959, blue: 0.1073825285, alpha: 1), label: nil)
+//
+//           notificationBadge?.moveCircleBy(x: -5, y: 5)
+//            notificationBadge?.setCount(1)
+//        notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
+//            let backTap = UITapGestureRecognizer(target: self, action: #selector(moveToNotification))
+//            view.addGestureRecognizer(backTap)
+//
+//            let rightBarButtonItem = UIBarButtonItem(customView: view)
             
         }
     @objc func moveToCart () {

@@ -38,5 +38,6 @@ target 'zaraat' do
  pod 'Cosmos'
  pod "GMStepper"
  pod 'SkyFloatingLabelTextField'
+ pod 'SideMenu'
  
 end

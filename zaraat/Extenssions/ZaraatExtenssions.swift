@@ -9,27 +9,55 @@
 import Foundation
 import UIKit
 import SDWebImage
-
+import  BadgeHub
 extension UIViewController {
     func addNavigationButton()
        {
            let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-           btn1.setBackgroundImage(UIImage(named: "Cart"), for: .normal)
+           btn1.setBackgroundImage(UIImage(named: "cart"), for: .normal)
            
            btn1.addTarget(self, action: #selector(btnClick(_:)), for: .touchUpInside)
            let btnmsg = UIBarButtonItem(customView: btn1)
            
-        
-        
-        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        btn2.setBackgroundImage(UIImage(named: "SignIn"), for: .normal)
-        
-        btn2.addTarget(self, action: #selector(btnLoginClick(_:)), for: .touchUpInside)
-        let btnLogin = UIBarButtonItem(customView: btn2)
-        self.navigationItem.setRightBarButtonItems([btnLogin,btnmsg], animated: true)
+         var notificationBadge : BadgeHub?
+             notificationBadge = BadgeHub(view: btn1)
+
+            notificationBadge?.scaleCircleSize(by: 0.65)
+            notificationBadge?.setCircleColor(#colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1), label: nil)
+
+           notificationBadge?.moveCircleBy(x: -1, y: -5)
+            notificationBadge?.setCount(1)
+        notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
+
+        self.navigationItem.setRightBarButtonItems([btnmsg], animated: true)
         
            
        }
+    
+    
+    
+        func addMenuButton()
+           {
+               let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+               btn1.setBackgroundImage(UIImage(named: "menu"), for: .normal)
+               
+               btn1.addTarget(self, action: #selector(btnClick(_:)), for: .touchUpInside)
+               let btnmsg = UIBarButtonItem(customView: btn1)
+               
+            
+            
+    //        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+    //        btn2.setBackgroundImage(UIImage(named: "SignIn"), for: .normal)
+    //
+    //        btn2.addTarget(self, action: #selector(btnLoginClick(_:)), for: .touchUpInside)
+    //        let btnLogin = UIBarButtonItem(customView: btn2)
+            self.navigationItem.setLeftBarButtonItems([btnmsg], animated: true)
+            
+               
+           }
+
+    
+    
        @objc func btnClick (_ sender: Any){
           
         print("From Naviagtion ")
