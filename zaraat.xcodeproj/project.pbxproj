@@ -54,6 +54,12 @@
 		CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF432410CF25000DAAB4 /* InboxVC.swift */; };
 		CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */; };
 		CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */; };
+		CE57A61024FF682F00DE9932 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60E24FF682F00DE9932 /* AppLanguage.swift */; };
+		CE57A61124FF682F00DE9932 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60E24FF682F00DE9932 /* AppLanguage.swift */; };
+		CE57A61224FF682F00DE9932 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60E24FF682F00DE9932 /* AppLanguage.swift */; };
+		CE57A61324FF682F00DE9932 /* ZSideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60F24FF682F00DE9932 /* ZSideMenuManager.swift */; };
+		CE57A61424FF682F00DE9932 /* ZSideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60F24FF682F00DE9932 /* ZSideMenuManager.swift */; };
+		CE57A61524FF682F00DE9932 /* ZSideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60F24FF682F00DE9932 /* ZSideMenuManager.swift */; };
 		CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */; };
 		CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */; };
 		CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */; };
@@ -69,6 +75,8 @@
 		CE76D99624FD17BE005078D6 /* AddsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE76D99424FD17BE005078D6 /* AddsCell.xib */; };
 		CE76D99A24FD1FB6005078D6 /* FeaturedProductsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76D99824FD1FB6005078D6 /* FeaturedProductsCell.swift */; };
 		CE76D99E24FD2139005078D6 /* FeaturedProductsClView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76D99C24FD2139005078D6 /* FeaturedProductsClView.swift */; };
+		CE7B6D1B2500FAE100DDDACE /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D192500FAE100DDDACE /* CategoriesCell.swift */; };
+		CE7B6D1C2500FAE100DDDACE /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B6D1A2500FAE100DDDACE /* CategoriesCell.xib */; };
 		CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */; };
 		CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C324092A4B0079C3C5 /* AppDelegate.swift */; };
 		CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C524092A4B0079C3C5 /* SceneDelegate.swift */; };
@@ -163,6 +171,8 @@
 		CE4BBF432410CF25000DAAB4 /* InboxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxVC.swift; sourceTree = "<group>"; };
 		CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteVC.swift; sourceTree = "<group>"; };
 		CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		CE57A60E24FF682F00DE9932 /* AppLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		CE57A60F24FF682F00DE9932 /* ZSideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSideMenuManager.swift; sourceTree = "<group>"; };
 		CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_Ipad.storyboard; sourceTree = "<group>"; };
 		CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCell.swift; sourceTree = "<group>"; };
@@ -178,6 +188,8 @@
 		CE76D99424FD17BE005078D6 /* AddsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddsCell.xib; sourceTree = "<group>"; };
 		CE76D99824FD1FB6005078D6 /* FeaturedProductsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedProductsCell.swift; sourceTree = "<group>"; };
 		CE76D99C24FD2139005078D6 /* FeaturedProductsClView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedProductsClView.swift; sourceTree = "<group>"; };
+		CE7B6D192500FAE100DDDACE /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
+		CE7B6D1A2500FAE100DDDACE /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
 		CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CEAED9C024092A4B0079C3C5 /* zaraat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zaraat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEAED9C324092A4B0079C3C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */,
+				CE7B6D192500FAE100DDDACE /* CategoriesCell.swift */,
+				CE7B6D1A2500FAE100DDDACE /* CategoriesCell.xib */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -515,6 +529,8 @@
 		CEAED9F9240939260079C3C5 /* Extenssions */ = {
 			isa = PBXGroup;
 			children = (
+				CE57A60E24FF682F00DE9932 /* AppLanguage.swift */,
+				CE57A60F24FF682F00DE9932 /* ZSideMenuManager.swift */,
 				CEAED9FA240939380079C3C5 /* ZaraatExtenssions.swift */,
 				CEAED9FC240939BC0079C3C5 /* ZaraatBaseVC.swift */,
 				CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */,
@@ -707,6 +723,7 @@
 				CEEB1E51241A65410069104B /* SliderCLCell.xib in Resources */,
 				437BD17F242C87D0003C55C2 /* Poppins-BoldItalic.otf in Resources */,
 				437BD17E242C87D0003C55C2 /* Poppins-Black.otf in Resources */,
+				CE7B6D1C2500FAE100DDDACE /* CategoriesCell.xib in Resources */,
 				CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */,
 				437BD18B242C87D0003C55C2 /* Poppins-BlackItalic.otf in Resources */,
 				437BD18C242C87D0003C55C2 /* Poppins-Medium.otf in Resources */,
@@ -811,6 +828,7 @@
 				CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */,
 				CE4B88E2240D17B400DB20FD /* SignUpZaraatVC.swift in Sources */,
 				CE4BBF422410CF12000DAAB4 /* TrendsVC.swift in Sources */,
+				CE57A61024FF682F00DE9932 /* AppLanguage.swift in Sources */,
 				437BD19A242C8A30003C55C2 /* BasicCell.swift in Sources */,
 				437BD19D242C8A30003C55C2 /* PageControllerVC.swift in Sources */,
 				CEAED9C824092A4B0079C3C5 /* SplashZaraatVC.swift in Sources */,
@@ -837,12 +855,14 @@
 				CE76D98724FCDCE7005078D6 /* LifeStyleCell.swift in Sources */,
 				CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */,
 				CE40BAC6240D225B0034C708 /* ZaraatZalert.swift in Sources */,
+				CE7B6D1B2500FAE100DDDACE /* CategoriesCell.swift in Sources */,
 				43C1BBD8243B0F210089ED55 /* CartVC.swift in Sources */,
 				CE76D99A24FD1FB6005078D6 /* FeaturedProductsCell.swift in Sources */,
 				CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */,
 				CE76D98C24FD0162005078D6 /* WeeklySellerCell.swift in Sources */,
 				CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */,
 				CEBBE01324FE755400190E91 /* MenuCell.swift in Sources */,
+				CE57A61324FF682F00DE9932 /* ZSideMenuManager.swift in Sources */,
 				CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */,
 				CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */,
 				CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */,
@@ -856,6 +876,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAED9DE24092A4E0079C3C5 /* zaraatTests.swift in Sources */,
+				CE57A61124FF682F00DE9932 /* AppLanguage.swift in Sources */,
+				CE57A61424FF682F00DE9932 /* ZSideMenuManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +886,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAED9E924092A4E0079C3C5 /* zaraatUITests.swift in Sources */,
+				CE57A61224FF682F00DE9932 /* AppLanguage.swift in Sources */,
+				CE57A61524FF682F00DE9932 /* ZSideMenuManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

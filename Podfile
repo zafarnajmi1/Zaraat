@@ -39,5 +39,6 @@ target 'zaraat' do
  pod "GMStepper"
  pod 'SkyFloatingLabelTextField'
  pod 'SideMenu'
+  pod 'AnimatableReload'
  
 end

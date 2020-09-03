@@ -11,12 +11,15 @@ import UIKit
 import SDWebImage
 import  BadgeHub
 extension UIViewController {
+    
+    
+    
     func addNavigationButton()
        {
            let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
            btn1.setBackgroundImage(UIImage(named: "cart"), for: .normal)
            
-           btn1.addTarget(self, action: #selector(btnClick(_:)), for: .touchUpInside)
+           btn1.addTarget(self, action: #selector(btnCartClick(_:)), for: .touchUpInside)
            let btnmsg = UIBarButtonItem(customView: btn1)
            
          var notificationBadge : BadgeHub?
@@ -36,38 +39,45 @@ extension UIViewController {
     
     
     
-        func addMenuButton()
-           {
-               let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-               btn1.setBackgroundImage(UIImage(named: "menu"), for: .normal)
-               
-               btn1.addTarget(self, action: #selector(btnClick(_:)), for: .touchUpInside)
-               let btnmsg = UIBarButtonItem(customView: btn1)
-               
-            
-            
-    //        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-    //        btn2.setBackgroundImage(UIImage(named: "SignIn"), for: .normal)
-    //
-    //        btn2.addTarget(self, action: #selector(btnLoginClick(_:)), for: .touchUpInside)
-    //        let btnLogin = UIBarButtonItem(customView: btn2)
-            self.navigationItem.setLeftBarButtonItems([btnmsg], animated: true)
-            
-               
-           }
-
+//        func addMenuButton()
+//           {
+//               let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//               btn1.setBackgroundImage(UIImage(named: "menu"), for: .normal)
+//               
+//               btn1.addTarget(self, action: #selector(btnClick(_:)), for: .touchUpInside)
+//               let btnmsg = UIBarButtonItem(customView: btn1)
+//               
+//            
+//            
+//    //        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//    //        btn2.setBackgroundImage(UIImage(named: "SignIn"), for: .normal)
+//    //
+//    //        btn2.addTarget(self, action: #selector(btnLoginClick(_:)), for: .touchUpInside)
+//    //        let btnLogin = UIBarButtonItem(customView: btn2)
+//            self.navigationItem.setLeftBarButtonItems([btnmsg], animated: true)
+//            
+//               
+//           }
+//      @objc func btnClick (_ sender: Any){
+//              let manager = ZSideMenuManager(isRTL: AppLanguage.shared.isRTL)
+//              manager.openSideMenu(vc: self)
+//            print("From Naviagtion ")
+//    //               let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//    //               let vc =  storyboard.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
+//    //               self.navigationController?.pushViewController(vc, animated: true)
+//               
+//               
+//           }
+//        
     
     
-       @objc func btnClick (_ sender: Any){
-          
+    @objc func btnCartClick (_ sender: Any){
         print("From Naviagtion ")
-//               let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//               let vc =  storyboard.instantiateViewController(withIdentifier: "ChatVC") as! ChatVC
-//               self.navigationController?.pushViewController(vc, animated: true)
-           
-           
-       }
+    }
     
+    
+    
+     
     
      @objc func btnLoginClick (_ sender: Any){
               

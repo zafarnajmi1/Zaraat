@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.0.2)
   - AlamofireImage (4.0.3):
     - Alamofire (< 6.0.0, >= 5.0.2)
+  - AnimatableReload (0.2.0)
   - AppAuth (1.3.0):
     - AppAuth/Core (= 1.3.0)
     - AppAuth/ExternalUserAgent (= 1.3.0)
@@ -148,6 +149,7 @@ PODS:
   - SDWebImage (5.6.0):
     - SDWebImage/Core (= 5.6.0)
   - SDWebImage/Core (5.6.0)
+  - SideMenu (6.4.9)
   - SkyFloatingLabelTextField (3.8.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
@@ -160,6 +162,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - AnimatableReload
   - BadgeHub
   - Cosmos
   - DLRadioButton
@@ -181,6 +184,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - PayPal-iOS-SDK
   - SDWebImage
+  - SideMenu
   - SkyFloatingLabelTextField
   - Socket.IO-Client-Swift
   - SwiftMessages
@@ -190,6 +194,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - AnimatableReload
     - AppAuth
     - BadgeHub
     - CardIO
@@ -229,6 +234,7 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - SDWebImage
+    - SideMenu
     - SkyFloatingLabelTextField
     - Socket.IO-Client-Swift
     - Starscream
@@ -238,6 +244,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   AlamofireImage: 3d1a2010519e58675318735580eb856e88840ff7
+  AnimatableReload: 9576d3019bfb103f76b5f37fa6f8915bd8307527
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   BadgeHub: 8632dc9ab9cfb1bee903ebd40f9de77d29323dc7
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
@@ -277,12 +284,13 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
   SDWebImage: 21b19f56b4226cdfe3aefe4e6848dc43ed129a86
+  SideMenu: 8ef57a3cfc024a2d3fc1c036c7fe98537baec9e0
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftMessages: b577dc7043be8b299857ab35bb663dbff6483bd0
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 091b3d6d625106087fb37732aa14a3b4917dd311
+PODFILE CHECKSUM: 195108b395a1f423c40e38bcf6f99c257997ca3b
 
 COCOAPODS: 1.9.1
