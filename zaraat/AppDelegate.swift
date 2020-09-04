@@ -16,12 +16,7 @@ var menuViewController:MenuVC!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-         let rootView = MenuVC()
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            let storyboard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-        } else {
-            let storyboard =  UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-        }
+         
         
      
         

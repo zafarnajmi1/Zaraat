@@ -64,7 +64,11 @@ class ViewController: UIViewController {
        // addMenuButton()
     }
     
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//              super.viewWillAppear(animated)
+//              setNavigationBarWhiteColor()
+//        
+//          }
     
 //    func addMenuButton()
 //           {

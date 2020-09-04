@@ -22,9 +22,7 @@ class ZaraatBaseVC: UIViewController {
         hidnavigationbar()
     }
     
-    func setnavigationbar() {
-        
-    }
+    
     
     func hidnavigationbar() {
         self.navigationController?.navigationBar.isHidden =  true

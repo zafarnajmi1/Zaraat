@@ -90,6 +90,14 @@
 		CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9F7240938DD0079C3C5 /* LoginZaraatVC.swift */; };
 		CEAED9FB240939380079C3C5 /* ZaraatExtenssions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9FA240939380079C3C5 /* ZaraatExtenssions.swift */; };
 		CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9FC240939BC0079C3C5 /* ZaraatBaseVC.swift */; };
+		CEB5CA422502572A00137E48 /* SubcategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5CA412502572A00137E48 /* SubcategoriesVC.swift */; };
+		CEB5CA4525025B8200137E48 /* SubcateGoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5CA4325025B8200137E48 /* SubcateGoriesCell.swift */; };
+		CEB5CA4625025B8200137E48 /* SubcateGoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB5CA4425025B8200137E48 /* SubcateGoriesCell.xib */; };
+		CEB5CA4B25025D5500137E48 /* SubCateCellTb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5CA4925025D5500137E48 /* SubCateCellTb.swift */; };
+		CEB5CA4C25025D5500137E48 /* SubCateCellTb.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB5CA4A25025D5500137E48 /* SubCateCellTb.xib */; };
+		CEB5CA4F25027F4600137E48 /* ProductListsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5CA4E25027F4600137E48 /* ProductListsVC.swift */; };
+		CEB5CA5225027F9E00137E48 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB5CA5025027F9E00137E48 /* ProductListCell.swift */; };
+		CEB5CA5325027F9E00137E48 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEB5CA5125027F9E00137E48 /* ProductListCell.xib */; };
 		CEBBE01324FE755400190E91 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBE01124FE755400190E91 /* MenuCell.swift */; };
 		CEBBE01424FE755400190E91 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEBBE01224FE755400190E91 /* MenuCell.xib */; };
 		CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB1E4E241A65410069104B /* SliderCLCell.swift */; };
@@ -209,6 +217,14 @@
 		CEAED9F7240938DD0079C3C5 /* LoginZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginZaraatVC.swift; sourceTree = "<group>"; };
 		CEAED9FA240939380079C3C5 /* ZaraatExtenssions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaraatExtenssions.swift; sourceTree = "<group>"; };
 		CEAED9FC240939BC0079C3C5 /* ZaraatBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaraatBaseVC.swift; sourceTree = "<group>"; };
+		CEB5CA412502572A00137E48 /* SubcategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoriesVC.swift; sourceTree = "<group>"; };
+		CEB5CA4325025B8200137E48 /* SubcateGoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcateGoriesCell.swift; sourceTree = "<group>"; };
+		CEB5CA4425025B8200137E48 /* SubcateGoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubcateGoriesCell.xib; sourceTree = "<group>"; };
+		CEB5CA4925025D5500137E48 /* SubCateCellTb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCateCellTb.swift; sourceTree = "<group>"; };
+		CEB5CA4A25025D5500137E48 /* SubCateCellTb.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCateCellTb.xib; sourceTree = "<group>"; };
+		CEB5CA4E25027F4600137E48 /* ProductListsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListsVC.swift; sourceTree = "<group>"; };
+		CEB5CA5025027F9E00137E48 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		CEB5CA5125027F9E00137E48 /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
 		CEBBE01124FE755400190E91 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		CEBBE01224FE755400190E91 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		CEEB1E4E241A65410069104B /* SliderCLCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCLCell.swift; sourceTree = "<group>"; };
@@ -335,6 +351,7 @@
 		CE4BBF392410C79E000DAAB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEB5CA4D25027F2100137E48 /* ProductList */,
 				CE70E9CC24F8DA7A00FEEF5D /* Trends */,
 				CE70E9CB24F8DA6D00FEEF5D /* Chat */,
 				CE70E9CA24F8DA5500FEEF5D /* Category */,
@@ -393,6 +410,7 @@
 		CE70E9CA24F8DA5500FEEF5D /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				CEB5CA402502569700137E48 /* SubCategories */,
 				CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */,
 				CE7B6D192500FAE100DDDACE /* CategoriesCell.swift */,
 				CE7B6D1A2500FAE100DDDACE /* CategoriesCell.xib */,
@@ -536,6 +554,28 @@
 				CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */,
 			);
 			path = Extenssions;
+			sourceTree = "<group>";
+		};
+		CEB5CA402502569700137E48 /* SubCategories */ = {
+			isa = PBXGroup;
+			children = (
+				CEB5CA412502572A00137E48 /* SubcategoriesVC.swift */,
+				CEB5CA4325025B8200137E48 /* SubcateGoriesCell.swift */,
+				CEB5CA4425025B8200137E48 /* SubcateGoriesCell.xib */,
+				CEB5CA4925025D5500137E48 /* SubCateCellTb.swift */,
+				CEB5CA4A25025D5500137E48 /* SubCateCellTb.xib */,
+			);
+			path = SubCategories;
+			sourceTree = "<group>";
+		};
+		CEB5CA4D25027F2100137E48 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				CEB5CA4E25027F4600137E48 /* ProductListsVC.swift */,
+				CEB5CA5025027F9E00137E48 /* ProductListCell.swift */,
+				CEB5CA5125027F9E00137E48 /* ProductListCell.xib */,
+			);
+			path = ProductList;
 			sourceTree = "<group>";
 		};
 		CEDEB1E2241B5740001B5B88 /* PagerTabs */ = {
@@ -698,6 +738,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB5CA5325027F9E00137E48 /* ProductListCell.xib in Resources */,
 				CE76D99124FD106D005078D6 /* WeeklyViewAll.xib in Resources */,
 				CEAED9D324092A4E0079C3C5 /* LaunchScreen.storyboard in Resources */,
 				CE76D98D24FD0162005078D6 /* WeeklySellerCell.xib in Resources */,
@@ -705,6 +746,7 @@
 				437BD189242C87D0003C55C2 /* Poppins-ExtraBoldItalic.otf in Resources */,
 				437BD18A242C87D0003C55C2 /* Poppins-Italic.otf in Resources */,
 				CEAED9D024092A4E0079C3C5 /* Assets.xcassets in Resources */,
+				CEB5CA4625025B8200137E48 /* SubcateGoriesCell.xib in Resources */,
 				437BD18F242C87D0003C55C2 /* Poppins-Light.ttf in Resources */,
 				437BD182242C87D0003C55C2 /* Poppins-Light.otf in Resources */,
 				4312A10E243DC4890041FA82 /* CheckOutCell.xib in Resources */,
@@ -736,6 +778,7 @@
 				CE76D99624FD17BE005078D6 /* AddsCell.xib in Resources */,
 				437BD191242C87D0003C55C2 /* Poppins-SemiBold.otf in Resources */,
 				437BD190242C87D0003C55C2 /* Poppins-ExtraLight.otf in Resources */,
+				CEB5CA4C25025D5500137E48 /* SubCateCellTb.xib in Resources */,
 				CEFBF1F324F90D4F003C1727 /* topRatedClView.xib in Resources */,
 				437BD18E242C87D0003C55C2 /* Poppins-Bold.ttf in Resources */,
 			);
@@ -826,10 +869,12 @@
 				CE76D99E24FD2139005078D6 /* FeaturedProductsClView.swift in Sources */,
 				437BD19E242C8A30003C55C2 /* ViewController.swift in Sources */,
 				CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */,
+				CEB5CA4F25027F4600137E48 /* ProductListsVC.swift in Sources */,
 				CE4B88E2240D17B400DB20FD /* SignUpZaraatVC.swift in Sources */,
 				CE4BBF422410CF12000DAAB4 /* TrendsVC.swift in Sources */,
 				CE57A61024FF682F00DE9932 /* AppLanguage.swift in Sources */,
 				437BD19A242C8A30003C55C2 /* BasicCell.swift in Sources */,
+				CEB5CA422502572A00137E48 /* SubcategoriesVC.swift in Sources */,
 				437BD19D242C8A30003C55C2 /* PageControllerVC.swift in Sources */,
 				CEAED9C824092A4B0079C3C5 /* SplashZaraatVC.swift in Sources */,
 				CEAED9FB240939380079C3C5 /* ZaraatExtenssions.swift in Sources */,
@@ -839,6 +884,8 @@
 				437BD1A1242C8D6B003C55C2 /* ProductDetailVC.swift in Sources */,
 				CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */,
 				43C1BBDB243B0F3C0089ED55 /* CartCell.swift in Sources */,
+				CEB5CA4525025B8200137E48 /* SubcateGoriesCell.swift in Sources */,
+				CEB5CA5225027F9E00137E48 /* ProductListCell.swift in Sources */,
 				CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */,
 				CE70E9C824F8DA1500FEEF5D /* FlashCellClView.swift in Sources */,
 				CE76D99524FD17BE005078D6 /* AddsCell.swift in Sources */,
@@ -848,6 +895,7 @@
 				431AB765242DBD5F002346E7 /* MenuVC.swift in Sources */,
 				CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */,
 				CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */,
+				CEB5CA4B25025D5500137E48 /* SubCateCellTb.swift in Sources */,
 				CE4BBF402410CEF4000DAAB4 /* HomeVC.swift in Sources */,
 				CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */,
 				CE3A92992418A90D0097B215 /* ShareData.swift in Sources */,

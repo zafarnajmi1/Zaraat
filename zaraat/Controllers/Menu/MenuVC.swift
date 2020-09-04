@@ -30,6 +30,11 @@ class MenuVC: UIViewController {
         configMenu()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//           super.viewWillAppear(animated)
+//           setNavigationBarWhiteColor()
+//       }
+     
     func configMenu() {
         self.menuarray.removeAll()
         menuarray.append(menuDate(title: "Edit Profile", imgae: UIImage.init(named: "myaccount")))

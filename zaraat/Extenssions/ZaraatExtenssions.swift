@@ -68,8 +68,51 @@ extension UIViewController {
 //               
 //               
 //           }
-//        
+//
     
+    
+    
+       public func setNavigationBar(){
+            self.navigationItem.hidesBackButton =  false
+            self.navigationController?.isNavigationBarHidden = false
+             self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1)
+             let navColor = #colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1)
+             let color: UIColor = navColor
+             self.navigationController?.navigationBar.isTranslucent = false
+             self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1) //UIColor(red: 223/255, green: 48/255, blue: 81/255, alpha: 1.0)
+             self.navigationController?.navigationBar.barTintColor = color
+            
+    //        let navigationBar = navigationController?.navigationBar
+    //        let navigationBarAppearence = UINavigationBarAppearance()
+    //        //navBarAppearence.shadowColor = .clear
+    //        navigationBar!.scrollEdgeAppearance = navigationBarAppearence
+            
+             //self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:UIFont(name: "Poppins-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.white]
+             self.navigationController?.navigationBar.barStyle = .blackTranslucent
+             
+         }
+    
+    public func setNavigationBarWhiteColor(){
+              self.navigationItem.hidesBackButton =  false
+              self.navigationController?.isNavigationBarHidden = false
+               
+               let navColor = #colorLiteral(red: 0.9686265588, green: 0.9647503495, blue: 0.9645444751, alpha: 1)
+               let color: UIColor = navColor
+               self.navigationController?.navigationBar.isTranslucent = false
+               self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1137254902, green: 0.1137254902, blue: 0.1137254902, alpha: 1) //UIColor(red: 223/255, green: 48/255, blue: 81/255, alpha: 1.0)
+               self.navigationController?.navigationBar.barTintColor = color
+        
+      //        let navigationBar = navigationController?.navigationBar
+      //        let navigationBarAppearence = UINavigationBarAppearance()
+      //        //navBarAppearence.shadowColor = .clear
+      //        navigationBar!.scrollEdgeAppearance = navigationBarAppearence
+              
+               //self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+               self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:UIFont(name: "Poppins-SemiBold", size: 17)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+               self.navigationController?.navigationBar.barStyle = .blackTranslucent
+               
+           }
     
     @objc func btnCartClick (_ sender: Any){
         print("From Naviagtion ")
@@ -100,7 +143,7 @@ extension UIViewController {
         navigationItem.hidesBackButton = true
     }
     
-    func addBackButton(backImage: UIImage = #imageLiteral(resourceName: "business")) {
+    func addBackButton(backImage: UIImage = #imageLiteral(resourceName: "Backarrow (1)")) {
         hideBackButton()
         let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem  = backButton
@@ -536,3 +579,36 @@ extension UIViewController {
 }
 
 
+
+extension UIApplication {
+    
+
+    var statusBarView: UIView? {
+        if #available(iOS 13.0, *) {
+            let tag = 38482458
+            if let statusBar = self.keyWindow?.viewWithTag(tag) {
+                return statusBar
+            } else {
+                let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+                statusBarView.tag = tag
+                
+                self.keyWindow?.addSubview(statusBarView)
+                return statusBarView
+            }
+        } else {
+            if responds(to: Selector(("statusBar"))) {
+                return value(forKey: "statusBar") as? UIView
+            }
+        }
+        return nil
+    }
+    
+    func setStatusBar(color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)){
+        let view = UIApplication.shared.statusBarView
+        if let statusBarView = view  {
+              statusBarView.backgroundColor = color
+        }
+    }
+    
+    
+}
