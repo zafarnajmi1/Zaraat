@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Regular.ttf">
+        <array key="Poppins-Regular.otf">
             <string>Poppins-Regular</string>
         </array>
     </customFonts>
@@ -25,14 +25,14 @@
                         <rect key="frame" x="16" y="10" width="288" height="73"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="Ab4-sg-0s0">
-                                <rect key="frame" x="12" y="4" width="65" height="65"/>
+                                <rect key="frame" x="2" y="4" width="65" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="GkS-Gr-6zJ"/>
                                     <constraint firstAttribute="height" constant="65" id="Tm8-7n-f0O"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appni Chaki Ataa Number # 384" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAu-3i-8el">
-                                <rect key="frame" x="89" y="17" width="143" height="39.5"/>
+                                <rect key="frame" x="79" y="17" width="143" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="143" id="eMo-eT-KpR"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500/-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGd-2b-a2Q">
                                 <rect key="frame" x="226" y="25.5" width="56" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.99134117359999996" green="0.18979802730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -54,7 +54,7 @@
                             <constraint firstItem="wAu-3i-8el" firstAttribute="leading" secondItem="Ab4-sg-0s0" secondAttribute="trailing" constant="12" id="YYA-1t-Rbw"/>
                             <constraint firstItem="dGd-2b-a2Q" firstAttribute="centerY" secondItem="wAu-3i-8el" secondAttribute="centerY" id="ZJr-9r-GoE"/>
                             <constraint firstItem="Ab4-sg-0s0" firstAttribute="top" secondItem="GIW-FH-fpb" secondAttribute="top" constant="4" id="dqX-KQ-VEz"/>
-                            <constraint firstItem="Ab4-sg-0s0" firstAttribute="leading" secondItem="GIW-FH-fpb" secondAttribute="leading" constant="12" id="h8R-sO-XY4"/>
+                            <constraint firstItem="Ab4-sg-0s0" firstAttribute="leading" secondItem="GIW-FH-fpb" secondAttribute="leading" constant="2" id="h8R-sO-XY4"/>
                             <constraint firstAttribute="trailing" secondItem="dGd-2b-a2Q" secondAttribute="trailing" constant="6" id="xfR-mF-Oit"/>
                         </constraints>
                     </view>

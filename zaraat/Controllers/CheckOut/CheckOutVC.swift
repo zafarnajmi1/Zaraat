@@ -9,67 +9,93 @@
 import UIKit
 
 class CheckOutVC: UIViewController {
-
-    @IBOutlet weak var txtaddress: UITextView!
-    @IBOutlet weak var citView: UIView!
+    @IBOutlet weak var btnPlaceOrder: UIButton!
+    
+    @IBOutlet weak var GrandTotalView: UIView!
+    @IBOutlet weak var btnEdit: UIButton!
+    //@IBOutlet weak var txtaddress: UITextView!
+    //@IBOutlet weak var citView: UIView!
     @IBOutlet weak var tblHeight: NSLayoutConstraint!
     @IBOutlet weak var tblView: UITableView!
-    @IBOutlet weak var orderView: UIView!
+    //@IBOutlet weak var orderView: UIView!
     @IBOutlet weak var ListpaymentView: UIView!
-    @IBOutlet weak var paymentMethdView: UIView!
-    @IBOutlet weak var CounteryView: UIView!
-    @IBOutlet weak var stateView: UIView!
-    @IBOutlet weak var companyView: UIView!
-    @IBOutlet weak var txtView: UIView!
-    @IBOutlet weak var phoneView: UIView!
-    @IBOutlet weak var emailView: UIView!
-    @IBOutlet weak var lastNameView: UIView!
-    @IBOutlet weak var firstNameView: UIView!
-    @IBOutlet weak var bilingView: UIView!
-    @IBOutlet weak var headerView: UIView!
+//    @IBOutlet weak var paymentMethdView: UIView!
+//    @IBOutlet weak var CounteryView: UIView!
+//    @IBOutlet weak var stateView: UIView!
+//    @IBOutlet weak var companyView: UIView!
+//    @IBOutlet weak var txtView: UIView!
+//    @IBOutlet weak var phoneView: UIView!
+//    @IBOutlet weak var emailView: UIView!
+//    @IBOutlet weak var lastNameView: UIView!
+//    @IBOutlet weak var firstNameView: UIView!
+//    @IBOutlet weak var bilingView: UIView!
+//    @IBOutlet weak var headerView: UIView!
+    
+    
+    let yourAttributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont.init(name: "Poppins-SemiBold", size: 16)!,
+        .foregroundColor:#colorLiteral(red: 0.9913411736, green: 0.1897980273, blue: 0, alpha: 1) ,
+    .underlineStyle: NSUnderlineStyle.single.rawValue]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let attributeString = NSMutableAttributedString(string: "Edit",
+                                                            attributes: yourAttributes)
+            btnEdit.setAttributedTitle(attributeString, for: .normal)
+        
+        
+        
+        btnPlaceOrder.roundButton()
         tblView.register(UINib.init(nibName: "CheckOutCell", bundle: nil), forCellReuseIdentifier: "CheckOutCell")
         addBackButton()
         self.title = "CheckOut"
         setUpCehckout()
+        GrandTotalView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
+        sertReviewConfig()
     }
     
     
     func setUpCehckout() {
-        txtaddress.delegate = self
-         txtaddress.textColor = UIColor.lightGray
-         txtaddress.text = "Address"
-        txtaddress.textColor = #colorLiteral(red: 0.5566827655, green: 0.5607631207, blue: 0.5648422837, alpha: 1)
-        headerView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-        bilingView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-        emailView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-        ListpaymentView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-        paymentMethdView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-        CounteryView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-        stateView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-        
-        companyView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-        txtView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-       
-        phoneView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
-        
-        lastNameView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
-        firstNameView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
-        bilingView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-        orderView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-        citView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
+//        txtaddress.delegate = self
+//         txtaddress.textColor = UIColor.lightGray
+//         txtaddress.text = "Address"
+//        txtaddress.textColor = #colorLiteral(red: 0.5566827655, green: 0.5607631207, blue: 0.5648422837, alpha: 1)
+//        headerView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//        bilingView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//        emailView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
+        //ListpaymentView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//        paymentMethdView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//        CounteryView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
+//        stateView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
+//
+//        companyView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
+//        txtView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//
+//        phoneView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
+//
+//        lastNameView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
+//        firstNameView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
+//        bilingView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//        orderView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
+//        citView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
         
         
     }
 
+    
+    @IBAction func PlaceOrderAction(_ sender: UIButton) {
+    }
+    
+    
     func sertReviewConfig() {
                    var tableViewHeight:CGFloat = 0;
                          for i in 0..<self.tblView.numberOfRows(inSection: 0){
-                             tableViewHeight = tableViewHeight + tableView(self.tblView, heightForRowAt: IndexPath(row: i, section: 0))
+                             tableViewHeight = tableViewHeight  + tableView(self.tblView, heightForRowAt: IndexPath(row: i, section: 0))
                          }
-                         tblHeight.constant = tableViewHeight
+                         tblHeight.constant = tableViewHeight +  160
                          self.tblView.setNeedsDisplay()
                }
 

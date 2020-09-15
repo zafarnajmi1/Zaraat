@@ -7,40 +7,32 @@
 //
 
 import UIKit
-
+import  Cosmos
 class ProductDetailVC: UIViewController {
 
-    @IBOutlet weak var btnSendView: UIButton!
-    @IBOutlet weak var txtView: UITextView!
-    @IBOutlet weak var msgView: UIView!
-    @IBOutlet weak var btnprofile: UIButton!
-    @IBOutlet weak var coinView: UIView!
-    @IBOutlet weak var btncart: UIButton!
-    @IBOutlet weak var qtyView: UIView!
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var lbltitle: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var lbldetail: UILabel!
+    @IBOutlet weak var btnaddtocart: UIButton!
+    
+    @IBOutlet weak var lblprice: UILabel!
     @IBOutlet weak var hertView: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
-        setUpView()
+        self.title = "Product Detail"
+        btnaddtocart.roundButton()
+        
+        hertView.layer.borderWidth = 1
+              hertView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
+              hertView.layer.cornerRadius = 5
+        setNavigationBarWhiteColor()
     }
     
-    func setUpView(){
-        txtView.delegate = self
-               txtView.textColor = UIColor.lightGray
-               txtView.text = "Write your message here"
-              txtView.textColor = #colorLiteral(red: 0.5566827655, green: 0.5607631207, blue: 0.5648422837, alpha: 1)
-              
-        btncart.roundbuttonRadius1(borderwidth: 1)
-        btnprofile.roundButton()
-        btnSendView.roundButton()
-        qtyView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
-        coinView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.9410743117, green: 0.9412353635, blue: 0.9410640597, alpha: 1), borderwidth: 1)
-        msgView.viewSetUp(radius: 8, color: #colorLiteral(red: 0.9410743117, green: 0.9412353635, blue: 0.9410640597, alpha: 1), borderwidth: 1)
-        hertView.layer.cornerRadius = 8
-    }
-
+    
     
 
 }

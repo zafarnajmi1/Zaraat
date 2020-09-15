@@ -12,25 +12,29 @@ class CartVC: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     
-    @IBOutlet weak var mainViewProceed: UIView!
-    @IBOutlet weak var btnProceedToChekcout: UIButton!
-    @IBOutlet weak var btnCodeProceed: UIButton!
-    @IBOutlet weak var txtCodeView: UIView!
-    @IBOutlet weak var mainCodeView: UIView!
+    @IBOutlet weak var btnproceed: UIButton!
+    //    @IBOutlet weak var mainViewProceed: UIView!
+//    @IBOutlet weak var btnProceedToChekcout: UIButton!
+//    @IBOutlet weak var btnCodeProceed: UIButton!
+//    @IBOutlet weak var txtCodeView: UIView!
+//    @IBOutlet weak var mainCodeView: UIView!
     @IBOutlet weak var sbTotalView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   addBackButton()
-        self.title = "Cart"
+        self.btnproceed.roundButton()
+        addBackButton()
+        //setNavigationBar()
+        setNavigationBarWhiteColor()
+        self.title = "Shopping Cart"
         tblView.register(UINib.init(nibName: "CartCell", bundle: nil), forCellReuseIdentifier: "CartCell")
         
-        mainCodeView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
+        //mainCodeView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
         
-        mainViewProceed.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
-        txtCodeView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
-        btnCodeProceed.roundButton()
-        btnProceedToChekcout.roundButton()
+//        mainViewProceed.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
+//        txtCodeView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
+//        btnCodeProceed.roundButton()
+//        btnProceedToChekcout.roundButton()
         sbTotalView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
     }
     

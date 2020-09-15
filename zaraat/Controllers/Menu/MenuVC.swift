@@ -38,9 +38,10 @@ class MenuVC: UIViewController {
     func configMenu() {
         self.menuarray.removeAll()
         menuarray.append(menuDate(title: "Edit Profile", imgae: UIImage.init(named: "myaccount")))
-        menuarray.append(menuDate(title: "Notification", imgae: UIImage.init(named: "notification")))
+         menuarray.append(menuDate(title: "My Orders", imgae: UIImage.init(named: "changelanguage")))
+       
         menuarray.append(menuDate(title: "Settings", imgae: UIImage.init(named: "settings")))
-        menuarray.append(menuDate(title: "Change Language", imgae: UIImage.init(named: "changelanguage")))
+        menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "changelanguage")))
         menuarray.append(menuDate(title: "Terms & Condition", imgae: UIImage.init(named: "Terms&Condition")))
         menuarray.append(menuDate(title: "Logout", imgae: UIImage.init(named: "logout")))
     }
@@ -64,5 +65,23 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if  indexPath.row == 0{
+        
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "ViewProfileVC") as? ViewProfileVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+            
+        } else if indexPath.row == 2{
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+        } else if indexPath.row == 3 {
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
     
 }

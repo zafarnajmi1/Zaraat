@@ -15,7 +15,7 @@ class SubcategoriesVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
    addBackButton()
-       setNavigationBar()
+      setNavigationBarWhiteColor()
         self.title = "Sub Categories"
         self.clView.register(UINib.init(nibName: "SubcateGoriesCell", bundle: nil), forCellWithReuseIdentifier: "SubcateGoriesCell")
         self.tblView.register(UINib.init(nibName: "SubCateCellTb", bundle: nil), forCellReuseIdentifier: "SubCateCellTb")
@@ -55,5 +55,11 @@ extension SubcategoriesVC: UICollectionViewDelegate, UICollectionViewDataSource 
         return cell!
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+           
+           self.navigationController?.pushViewController(vc!, animated: true)
+       }
     
 }

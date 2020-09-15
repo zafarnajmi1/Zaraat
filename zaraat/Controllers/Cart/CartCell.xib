@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Regular.ttf">
+        <array key="Poppins-Regular.otf">
             <string>Poppins-Regular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" rowHeight="192" id="KGk-i7-Jjw" customClass="CartCell" customModule="zaraat" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="348" height="192"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartCell" rowHeight="174" id="KGk-i7-Jjw" customClass="CartCell" customModule="zaraat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="348" height="174"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="348" height="192"/>
+                <rect key="frame" x="0.0" y="0.0" width="348" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z04-R2-eh6">
-                        <rect key="frame" x="20" y="21" width="308" height="150"/>
+                        <rect key="frame" x="20" y="0.0" width="308" height="174"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9t-S9-7S5">
-                                <rect key="frame" x="12" y="8" width="66" height="28"/>
+                                <rect key="frame" x="12" y="8" width="66" height="62"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="j3X-Of-W5X">
-                                <rect key="frame" x="12" y="41" width="60" height="60"/>
+                                <rect key="frame" x="12" y="75" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="U95-Kh-iHE"/>
-                                    <constraint firstAttribute="width" constant="60" id="aTb-sV-wyU"/>
+                                    <constraint firstAttribute="height" constant="50" id="U95-Kh-iHE"/>
+                                    <constraint firstAttribute="width" constant="50" id="aTb-sV-wyU"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QTY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu7-0x-uPJ">
-                                <rect key="frame" x="12" y="113" width="33" height="28"/>
+                                <rect key="frame" x="12" y="137" width="29" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="vIy-aS-rhc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH2-Dw-Imm">
-                                <rect key="frame" x="252" y="45" width="41" height="28"/>
+                                <rect key="frame" x="252" y="62" width="41" height="24"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APPNI CHAKHI ATTA  SKU  FRE #1234" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-CB-APd">
-                                <rect key="frame" x="80" y="41" width="150" height="46"/>
+                                <rect key="frame" x="70" y="75" width="150" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="5cl-8q-9P8"/>
                                     <constraint firstAttribute="width" constant="150" id="X3Z-X5-Wjy"/>
@@ -63,13 +63,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500/-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu9-NU-wvO">
-                                <rect key="frame" x="249" y="81" width="51" height="23"/>
+                                <rect key="frame" x="251" y="94" width="49" height="20"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDk-zd-nlC" customClass="GMStepper" customModule="GMStepper">
-                                <rect key="frame" x="197" y="112.5" width="96" height="29"/>
+                                <rect key="frame" x="197" y="136.5" width="96" height="29"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="53L-cu-m6v"/>
@@ -89,26 +89,38 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
-                                        <color key="value" red="0.017231972889999999" green="0.27721291780000001" blue="0.083691380920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="buttonsBackgroundColor">
-                                        <color key="value" red="0.017231972889999999" green="0.27721291780000001" blue="0.083691380920000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.9135090709" green="0.91764718290000002" blue="0.92166519170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonsTextColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.64686971900000001" green="0.65096467729999996" blue="0.65502834320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmY-eT-HdO">
-                                <rect key="frame" x="270" y="7" width="30" height="30"/>
+                                <rect key="frame" x="270" y="24" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7ON-MD-shD"/>
                                     <constraint firstAttribute="width" constant="30" id="wcF-5a-Myt"/>
                                 </constraints>
-                                <state key="normal" image="imgDelet"/>
+                                <state key="normal" image="delete (1)"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.96448427439999995" green="0.96863061189999999" blue="0.97263997790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sDk-zd-nlC" firstAttribute="centerY" secondItem="Mu7-0x-uPJ" secondAttribute="centerY" id="6ls-4G-ZFA"/>
                             <constraint firstAttribute="trailing" secondItem="sDk-zd-nlC" secondAttribute="trailing" constant="15" id="Fbp-oa-bnS"/>
@@ -133,17 +145,17 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="z04-R2-eh6" secondAttribute="trailing" constant="20" id="6th-d4-7Qd"/>
-                    <constraint firstAttribute="bottom" secondItem="z04-R2-eh6" secondAttribute="bottom" constant="21" id="KuY-po-teH"/>
-                    <constraint firstItem="z04-R2-eh6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="fBb-Dj-Q4W"/>
+                    <constraint firstAttribute="bottom" secondItem="z04-R2-eh6" secondAttribute="bottom" id="KuY-po-teH"/>
+                    <constraint firstItem="z04-R2-eh6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fBb-Dj-Q4W"/>
                     <constraint firstItem="z04-R2-eh6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vPX-HW-KZv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="155.07246376811597" y="122.54464285714285"/>
+            <point key="canvasLocation" x="155.07246376811597" y="116.51785714285714"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="All Image 1" width="530" height="415"/>
-        <image name="imgDelet" width="25" height="25"/>
+        <image name="delete (1)" width="25" height="25"/>
     </resources>
 </document>

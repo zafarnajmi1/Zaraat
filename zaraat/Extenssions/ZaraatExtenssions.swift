@@ -37,7 +37,12 @@ extension UIViewController {
            
        }
     
-    
+    @objc func btnCartClick (_ sender: Any){
+           let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+           let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+           
+           self.navigationController?.pushViewController(vc!, animated: true)
+       }
     
 //        func addMenuButton()
 //           {
@@ -114,9 +119,7 @@ extension UIViewController {
                
            }
     
-    @objc func btnCartClick (_ sender: Any){
-        print("From Naviagtion ")
-    }
+   
     
     
     
@@ -143,7 +146,7 @@ extension UIViewController {
         navigationItem.hidesBackButton = true
     }
     
-    func addBackButton(backImage: UIImage = #imageLiteral(resourceName: "Backarrow (1)")) {
+    func addBackButton(backImage: UIImage = UIImage.init(named: "arrow 2")!) {
         hideBackButton()
         let backButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem  = backButton
