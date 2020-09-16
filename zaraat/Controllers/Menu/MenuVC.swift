@@ -73,7 +73,13 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
             let vc =  storyBoard.instantiateViewController(identifier: "ViewProfileVC") as? ViewProfileVC
             self.navigationController?.pushViewController(vc!, animated: true)
             
-        } else if indexPath.row == 2{
+        } else if   indexPath.row == 1{
+        
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "MyOrdersTabVC") as? MyOrdersTabVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+            
+        }else if indexPath.row == 2{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
             self.navigationController?.pushViewController(vc!, animated: true)
