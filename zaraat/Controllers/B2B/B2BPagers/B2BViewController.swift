@@ -9,19 +9,19 @@
 import UIKit
 import  BadgeHub
 
-class ViewController: UIViewController {
+class B2BViewController: UIViewController {
     var notificationBadge : BadgeHub?
    
     @IBOutlet weak var businessView: UIView!
     //@IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var menuBarView: MenuTabsView!
+    @IBOutlet weak var menuBarView: B2BMenuTabsView!
     @IBOutlet weak var searchView: UIView!
     
     @IBOutlet weak var txtsearch: UITextField!
     
     
     var currentIndex: Int = 0
-    var tabs = ["ALL","Agriculture","Consumer Electronics","Apparel","Vehicles","Sports"]
+    var tabs = ["ALL","Live Stocks","Seeds","Pesticides","Irrigation System","Poltery Form"]
     var pageController: UIPageViewController!
 
     override func viewDidLoad() {
@@ -144,10 +144,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func BtwoBAction(_ sender: UIButton) {
-        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "B2BViewController") as? B2BViewController
-        self.navigationController?.pushViewController(vc!, animated: true )
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     
@@ -251,12 +249,12 @@ class ViewController: UIViewController {
  
     func presentPageVCOnView() {
         
-        self.pageController = storyboard?.instantiateViewController(withIdentifier: "PageControllerVC") as! PageControllerVC
+        self.pageController = storyboard?.instantiateViewController(withIdentifier: "B2BPageControllerVC") as! B2BPageControllerVC
         if UIDevice.current.userInterfaceIdiom == .pad {
-          self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 30 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
+          self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 50 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
         } else {
             
-             self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
+             self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 60 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
         }
         self.addChild(self.pageController)
         self.view.addSubview(self.pageController.view)
@@ -272,14 +270,14 @@ class ViewController: UIViewController {
             return nil
         }
         if index == 0 {
-        let contentVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        let contentVC = storyboard?.instantiateViewController(withIdentifier: "B2BHomeVC") as! B2BHomeVC
 //        contentVC.strTitle = tabs[index]
            // contentVC.tblView.isHidden = false
         contentVC.pageIndex = index
         currentIndex = index
         return contentVC
         } else {
-            let contentVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            let contentVC = storyboard?.instantiateViewController(withIdentifier: "B2BHomeVC") as! B2BHomeVC
             //        contentVC.strTitle = tabs[index]
                     contentVC.pageIndex = index
                //contentVC.tblView.isHidden = true
@@ -294,9 +292,11 @@ class ViewController: UIViewController {
 
 
 
-extension ViewController: MenuBarDelegate {
+extension B2BViewController: B2BMenuBarDelegate {
+    
+    
 
-    func menuBarDidSelectItemAt(menu: MenuTabsView, index: Int) {
+    func menuBarDidSelectItemAt(menu: B2BMenuTabsView, index: Int) {
 
         // If selected Index is other than Selected one, by comparing with current index, page controller goes either forward or backward.
         
@@ -317,11 +317,11 @@ extension ViewController: MenuBarDelegate {
 }
 
 
-extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension B2BViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        var index = (viewController as! HomeVC).pageIndex
+        var index = (viewController as! B2BHomeVC).pageIndex
         
         if (index == 0) || (index == NSNotFound) {
             return nil
@@ -333,7 +333,7 @@ extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDe
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        var index = (viewController as! HomeVC).pageIndex
+        var index = (viewController as! B2BHomeVC).pageIndex
         
         if (index == tabs.count) || (index == NSNotFound) {
             return nil
@@ -348,7 +348,7 @@ extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDe
         
         if finished {
             if completed {
-                let cvc = pageViewController.viewControllers!.first as! HomeVC
+                let cvc = pageViewController.viewControllers!.first as! B2BHomeVC
                 let newIndex = cvc.pageIndex
                 menuBarView.collView.selectItem(at: IndexPath.init(item: newIndex, section: 0), animated: true, scrollPosition: .centeredVertically)
                 menuBarView.collView.scrollToItem(at: IndexPath.init(item: newIndex, section: 0), at: .centeredHorizontally, animated: true)

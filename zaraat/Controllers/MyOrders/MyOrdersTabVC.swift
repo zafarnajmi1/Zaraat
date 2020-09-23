@@ -17,15 +17,13 @@ class MyOrdersTabVC: ButtonBarPagerTabStripViewController {
          
         self.navigationController?.navigationBar.isTranslucent =  false
          settings.style.selectedBarHeight = 4 //line
-        settings.style.selectedBarBackgroundColor =  #colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1)
+         settings.style.selectedBarBackgroundColor =  #colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1)
          settings.style.buttonBarMinimumLineSpacing = 0
          settings.style.buttonBarItemsShouldFillAvailableWidth = true
-        settings.style.buttonBarMinimumInteritemSpacing =  0
+         settings.style.buttonBarMinimumInteritemSpacing =  0
          settings.style.buttonBarLeftContentInset = 0
          settings.style.buttonBarRightContentInset = 0
-        
-       
-         //settings.style.selectedBarVerticalAlignment = .middle
+         settings.style.selectedBarVerticalAlignment = .middle
          
          changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
              guard changeCurrentIndex == true else { return }

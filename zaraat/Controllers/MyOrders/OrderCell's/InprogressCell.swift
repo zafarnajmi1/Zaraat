@@ -18,7 +18,7 @@ class InprogressCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
-      mainView.layer.cornerRadius = 8
+        mainView.layer.cornerRadius = 8
         mainView.layer.borderWidth = 1
         mainView.layer.borderColor =  #colorLiteral(red: 0.8628344536, green: 0.8547772765, blue: 0.8628706932, alpha: 1)
         

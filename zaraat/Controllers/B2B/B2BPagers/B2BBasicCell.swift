@@ -8,13 +8,13 @@
 
 import UIKit
 
-class BasicCell: UICollectionViewCell {
+class B2BBasicCell: UICollectionViewCell {
     
     let titleLabel: UILabel = {
         let lbl = UILabel()
         return lbl
     }()
-     
+    
     var indicatorView: UIView!
 
     override var isSelected: Bool {
