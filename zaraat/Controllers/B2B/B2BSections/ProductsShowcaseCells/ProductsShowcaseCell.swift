@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+protocol productShowcaseProtocol {
+    func ShowcaseProductDelegate(cell:ProductsShowcaseCell)
+}
 class ProductsShowcaseCell: UITableViewCell {
 
     @IBOutlet weak var clView: UICollectionView!
-        
+    var Delegate:productShowcaseProtocol?
         override func awakeFromNib() {
             super.awakeFromNib()
             clView.delegate =  self
@@ -43,6 +45,8 @@ class ProductsShowcaseCell: UITableViewCell {
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ClViewProductsShowcase", for: indexPath) as? ClViewProductsShowcase
             return cell!
         }
-        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            self.Delegate?.ShowcaseProductDelegate(cell: self)
+        }
         
     }

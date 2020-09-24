@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+protocol TwocellProtocol{
+    func twoDelegate(cell:TwoCell)
+}
 class TwoCell: UITableViewCell {
 
     @IBOutlet weak var clView: UICollectionView!
-           
+    var delegate :TwocellProtocol?
            override func awakeFromNib() {
                super.awakeFromNib()
                clView.delegate =  self
@@ -44,5 +46,7 @@ class TwoCell: UITableViewCell {
                return cell!
            }
            
-           
+           func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            self.delegate?.twoDelegate(cell: self)
+           }
        }

@@ -23,7 +23,7 @@ class MyOrdersTabVC: ButtonBarPagerTabStripViewController {
          settings.style.buttonBarMinimumInteritemSpacing =  0
          settings.style.buttonBarLeftContentInset = 0
          settings.style.buttonBarRightContentInset = 0
-         settings.style.selectedBarVerticalAlignment = .middle
+         //settings.style.selectedBarVerticalAlignment = .middle
          
          changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
              guard changeCurrentIndex == true else { return }

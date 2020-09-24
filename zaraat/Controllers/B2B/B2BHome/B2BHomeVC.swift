@@ -8,7 +8,14 @@
 
 import UIKit
 
-class B2BHomeVC: UIViewController {
+class B2BHomeVC: UIViewController, OneCellProtocol, TwocellProtocol, otherchanelProtocol, productShowcaseProtocol {
+    
+    
+    
+    
+    
+    
+    
 
     var pageIndex: Int = 0
        
@@ -138,11 +145,34 @@ class B2BHomeVC: UIViewController {
             }
 
         
+        func onecelldelegate(cell: OneCell) {
+            
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "B2BProductDetailVC")as?  B2BProductDetailVC
+            vc?.hidesBottomBarWhenPushed =  true
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
         
+        func twoDelegate(cell: TwoCell) {
+            
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+               let vc =  storyBoard.instantiateViewController(identifier: "B2BProductDetailVC")as?  B2BProductDetailVC
+               vc?.hidesBottomBarWhenPushed =  true
+               self.navigationController?.pushViewController(vc!, animated: true)
+        }
+        func otherDelgate(cell: OtherChanelCell) {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "B2BProductDetailVC")as?  B2BProductDetailVC
+            vc?.hidesBottomBarWhenPushed =  true
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
         
-        
-        
-         
+         func ShowcaseProductDelegate(cell: ProductsShowcaseCell) {
+             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+             let vc =  storyBoard.instantiateViewController(identifier: "B2BProductDetailVC")as?  B2BProductDetailVC
+             vc?.hidesBottomBarWhenPushed =  true
+             self.navigationController?.pushViewController(vc!, animated: true)
+         }
     }
     extension B2BHomeVC : UITableViewDelegate, UITableViewDataSource {
         
@@ -192,9 +222,11 @@ class B2BHomeVC: UIViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if  indexPath.section == 0 {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "OtherChanelCell") as? OtherChanelCell
+                cell!.delegate = self
             return cell!
             } else if indexPath.section == 1 {
                 let cell  = tableView.dequeueReusableCell(withIdentifier: "ProductsShowcaseCell") as? ProductsShowcaseCell
+                cell?.Delegate =  self
                 return cell!
             } else if indexPath.section == 2 {
                  let cell  = tableView.dequeueReusableCell(withIdentifier: "LifeStyleCell") as? LifeStyleCell
@@ -202,10 +234,12 @@ class B2BHomeVC: UIViewController {
                  return cell!
             }  else if indexPath.section == 3 {
                 let cell  = tableView.dequeueReusableCell(withIdentifier: "OneCell") as? OneCell
+                cell?.delegate = self
                     return cell!
             }  else if indexPath.section == 5 {
                 
                 let cell  = tableView.dequeueReusableCell(withIdentifier: "TwoCell") as? TwoCell
+                cell?.delegate = self
                      return cell!
             } else {
                 let cell  = tableView.dequeueReusableCell(withIdentifier: "AddsCell") as? AddsCell
@@ -213,6 +247,21 @@ class B2BHomeVC: UIViewController {
             }
            
         }
+        
+        
+        
+//        private func tableView(tableView: UITableView,willDisplayCell cell: UITableViewCell,forRowAtIndexPath indexPath: NSIndexPath) {
+//
+//            if indexPath.section == 3 {
+//
+//                    guard let tableViewCell = cell as? OneCell else { return }
+//
+//                    tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+//            }
+//        }
+        
+        
+        
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
@@ -233,7 +282,7 @@ class B2BHomeVC: UIViewController {
 
     extension B2BHomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
         
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
         indexPath: IndexPath) -> CGSize {
         
         let height = collectionView.frame.height
@@ -241,10 +290,12 @@ class B2BHomeVC: UIViewController {
         let size = CGSize(width: width , height: height)
         return size
     }
-        func numberOfSections(in collectionView: UICollectionView) -> Int {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
              return 1
         }
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             
             self.pager.numberOfPages =  4
                 return 4

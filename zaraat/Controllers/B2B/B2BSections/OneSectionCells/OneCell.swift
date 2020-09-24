@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+protocol OneCellProtocol {
+    func onecelldelegate(cell:OneCell)
+}
 class OneCell: UITableViewCell {
-
+    
+    var delegate :OneCellProtocol?
     @IBOutlet weak var clView: UICollectionView!
               
               override func awakeFromNib() {
@@ -21,8 +24,16 @@ class OneCell: UITableViewCell {
                   self.clView.reloadData()
                   self.layoutIfNeeded()
                   //self.clView.register(UINib.init(nibName: "topRatedClView", bundle: nil), forCellWithReuseIdentifier: "topRatedClView")
+                
+                
               }
-
+    
+    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
+        clView.delegate = dataSourceDelegate
+        clView.dataSource = dataSourceDelegate
+        clView.tag = row
+        clView.reloadData()
+    }
               override func setSelected(_ selected: Bool, animated: Bool) {
                   super.setSelected(selected, animated: animated)
 
@@ -41,8 +52,14 @@ class OneCell: UITableViewCell {
       
       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
           let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "clViewOneCell", for: indexPath) as? clViewOneCell
+       
+        
+
           return cell!
       }
       
-      
+      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           
+        self.delegate?.onecelldelegate(cell: self)
+      }
   }

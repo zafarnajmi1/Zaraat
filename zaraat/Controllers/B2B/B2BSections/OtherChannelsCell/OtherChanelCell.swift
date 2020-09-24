@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+protocol otherchanelProtocol {
+    func otherDelgate(cell:OtherChanelCell)
+}
 class OtherChanelCell: UITableViewCell {
 
    //@IBOutlet weak var subViewimg: ShadowView!
         //@IBOutlet weak var btnViewAll: UIButton!
         @IBOutlet weak var clView: UICollectionView!
+    var delegate:otherchanelProtocol?
         override func awakeFromNib() {
             super.awakeFromNib()
             //btnViewAll.roundButton()
@@ -33,6 +36,9 @@ class OtherChanelCell: UITableViewCell {
 
             
         }
+    
+    
+   
         
     }
 
@@ -53,5 +59,8 @@ class OtherChanelCell: UITableViewCell {
             return cell!
         }
         
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            self.delegate?.otherDelgate(cell: self)
+        }
         
     }

@@ -9,5 +9,10 @@
 import UIKit
 
 class ClViewProductsShowcase: UICollectionViewCell {
-    
+    @IBOutlet weak var img: UIImageView!
+       override func awakeFromNib() {
+           super.awakeFromNib()
+           self.img.layer.cornerRadius = 8
+           
+       }
 }
