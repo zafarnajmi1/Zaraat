@@ -142,6 +142,16 @@ class HomeVC: UIViewController {
     
     
     
+    @IBAction func ZMallAction(_ sender: UIButton) {
+        
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "ZMallVC") as? ZMallVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+    
      
 }
 extension HomeVC : UITableViewDelegate, UITableViewDataSource {
