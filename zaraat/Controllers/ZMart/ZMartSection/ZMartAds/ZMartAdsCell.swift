@@ -1,16 +1,16 @@
 //
-//  ZMallAddCell.swift
+//  ZMartAdsCell.swift
 //  zaraat
 //
-//  Created by ZafarNajmi on 9/25/20.
+//  Created by ZafarNajmi on 9/28/20.
 //  Copyright © 2020 User. All rights reserved.
 //
 
 import UIKit
 
-class ZMallAddCell: UITableViewCell {
+class ZMartAdsCell: UITableViewCell {
 
-    @IBOutlet weak var img: UIImageView!
+   @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -22,5 +22,6 @@ class ZMallAddCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
 
 }

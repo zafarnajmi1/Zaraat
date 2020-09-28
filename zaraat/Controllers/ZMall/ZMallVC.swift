@@ -11,6 +11,7 @@ import UIKit
 class ZMallVC: UIViewController {
 
     
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var topBrandOneImg: UIImageView!
     @IBOutlet weak var topBrandTwoImage: UIImageView!
     
@@ -30,10 +31,26 @@ class ZMallVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         //sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
+        
+        
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+             imageView.contentMode = .scaleAspectFit
+             let image = UIImage(named: "Zaraat Mall")
+             imageView.image = image
+             logoContainer.addSubview(imageView)
+             navigationItem.titleView = logoContainer
+        
+        
+        self.topBrandOneImg.layer.cornerRadius = 8
+        self.topBrandTwoImage.layer.cornerRadius = 8
+        self.topBrandThreeImg.layer.cornerRadius = 8
+         sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
+        searchView.roundView()
         addBackButton()
         setNavigationBarWhiteColor()
-        //setSlider()
+        setSlider()
     }
     
    
@@ -69,39 +86,39 @@ class ZMallVC: UIViewController {
    
 
 }
-//extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
-//
-//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
-//    indexPath: IndexPath) -> CGSize {
-//
-//    let height = collectionView.frame.height
-//    let width = sliderClView.frame.width
-//    let size = CGSize(width: width , height: height)
-//    return size
-//}
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//         return 1
-//    }
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//        self.pager.numberOfPages =  4
-//            return 4
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//
-//            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
-//
-//                   return cell!
-//
-//    }
-//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//           self.pager.currentPage = indexPath.row
-//       }
-//
-//}
+extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+
+   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
+    indexPath: IndexPath) -> CGSize {
+
+    let height = collectionView.frame.height
+    let width = sliderClView.frame.width
+    let size = CGSize(width: width , height: height)
+    return size
+}
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+         return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+        self.pager.numberOfPages =  4
+            return 4
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+
+            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
+
+                   return cell!
+
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+           self.pager.currentPage = indexPath.row
+       }
+
+}
 
 
 extension ZMallVC :  UITableViewDelegate, UITableViewDataSource {
@@ -115,15 +132,17 @@ extension ZMallVC :  UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 {
+
             let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallPartOneCell") as? ZMallPartOneCell
-            return ((cell?.ClView.contentSize.height)! + 40)
+           
+            return (cell?.ClView.contentSize.height)! + 1500
 
-        } else if indexPath.section == 3 {
-
+        } else if  indexPath.section == 3 {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallPartTwoCell") as? ZMallPartTwoCell
-            return ((cell?.ClView.contentSize.height)! + 40)
-
-        } else {
+            
+             return (cell?.ClView.contentSize.height)! + 1000
+            
+            } else {
              return UITableView.automaticDimension
         }
         
@@ -136,15 +155,19 @@ extension ZMallVC :  UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallStoreForYouCell") as? ZMallStoreForYouCell
             return cell!
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 1  {
             let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallPartOneCell") as? ZMallPartOneCell
-            return cell!
-        } else if indexPath.section == 2 {
-            let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallAddCell") as? ZMallAddCell
-            return cell!
-        } else {
+             return cell!
+        }
+            else if indexPath.section == 3 {
+            
             let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallPartTwoCell") as? ZMallPartTwoCell
             return cell!
+        } else {
+            
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "ZMallAddCell") as? ZMallAddCell
+            return cell!
+            
         }
     
     }

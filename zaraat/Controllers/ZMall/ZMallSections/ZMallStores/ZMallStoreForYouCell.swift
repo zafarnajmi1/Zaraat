@@ -18,20 +18,31 @@ class ZMallStoreForYouCell: UITableViewCell {
         ClView.dataSource = self
               
         ClView.reloadData()
+         self.layoutIfNeeded()
     }
 
-    
-//    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
-//        clView.delegate = dataSourceDelegate
-//        clView.dataSource = dataSourceDelegate
-//        clView.tag = row
-//        clView.reloadData()
+//    @IBOutlet weak var flow: UICollectionViewFlowLayout! {
+//           didSet {
+//               flow.minimumLineSpacing = 8.0
+//            flow.estimatedItemSize = CGSize(width: 155.0, height: 66.0)
+//            flow.scrollDirection = .vertical
+//           }
+//       }
+//       
+//       func setupCell() {
+//           contentView.layoutIfNeeded()
+//       }
+////    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
+////        clView.delegate = dataSourceDelegate
+////        clView.dataSource = dataSourceDelegate
+////        clView.tag = row
+////        clView.reloadData()
+////    }
+//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+//        ClView.frame = CGRect(x: 8.0, y: 8.0, width: targetSize.width, height: CGFloat(MAXFLOAT))
+//        ClView.layoutIfNeeded()
+//        return ClView.collectionViewLayout.collectionViewContentSize
 //    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
 extension ZMallStoreForYouCell :  UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

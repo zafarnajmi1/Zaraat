@@ -15,7 +15,8 @@ class ZMallPartTwoCell: UITableViewCell {
         super.awakeFromNib()
         selectionStyle = .none
         ClView.delegate = self
-               ClView.dataSource = self
+        ClView.dataSource = self
+        layoutIfNeeded()
                      
                //ClView.reloadData()
     }
@@ -25,11 +26,10 @@ class ZMallPartTwoCell: UITableViewCell {
 //           ClView.tag = row
 //           ClView.reloadData()
 //       }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  
+    
+    
 
-        // Configure the view for the selected state
-    }
 
 }
 extension ZMallPartTwoCell :  UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

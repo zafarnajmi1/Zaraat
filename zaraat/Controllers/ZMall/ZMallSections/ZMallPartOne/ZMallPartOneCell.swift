@@ -10,15 +10,16 @@ import UIKit
 
 class ZMallPartOneCell: UITableViewCell {
 
+   
     @IBOutlet weak var ClView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
         ClView.delegate = self
-               ClView.dataSource = self
-                     
-               //ClView.reloadData()
+        ClView.dataSource = self
+        ClView.reloadData()
     }
+    
     
 //    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
 //        ClView.delegate = dataSourceDelegate
@@ -26,11 +27,9 @@ class ZMallPartOneCell: UITableViewCell {
 //        ClView.tag = row
 //        ClView.reloadData()
 //    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+  
+    
 
 }
 extension ZMallPartOneCell :  UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -43,6 +42,7 @@ extension ZMallPartOneCell :  UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ZMallClViewPartOneCell", for: indexPath) as? ZMallClViewPartOneCell
+         
         return cell!
     }
     

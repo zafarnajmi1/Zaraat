@@ -9,9 +9,12 @@
 import UIKit
 
 class ZMallClViewStoreForyouCell: UICollectionViewCell {
+    @IBOutlet weak var mainView: ShadowView!
     @IBOutlet weak var lblbrand: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        mainView.layer.cornerRadius =  10
         
+        contentView.layoutIfNeeded()
     }
 }
