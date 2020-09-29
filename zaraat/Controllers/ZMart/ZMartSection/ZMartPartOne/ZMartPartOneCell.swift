@@ -13,6 +13,7 @@ class ZMartPartOneCell: UITableViewCell {
     @IBOutlet weak var ClView: UICollectionView!
         override func awakeFromNib() {
             super.awakeFromNib()
+            
             selectionStyle = .none
             ClView.delegate = self
             ClView.dataSource = self

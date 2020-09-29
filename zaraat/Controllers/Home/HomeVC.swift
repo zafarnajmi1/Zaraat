@@ -158,6 +158,20 @@ class HomeVC: UIViewController {
     }
     
     
+    @IBAction func ZPharmacyAction(_ sender: UIButton) {
+        
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  StoryBoard.instantiateViewController(identifier: "ZPharmacyVC") as?  ZPharmacyVC
+            self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    @IBAction func ZDigitalAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                   let vc =  StoryBoard.instantiateViewController(identifier: "ZDigitalVC") as?  ZDigitalVC
+                   self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
      
 }
 extension HomeVC : UITableViewDelegate, UITableViewDataSource {
