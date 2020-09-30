@@ -27,8 +27,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-
-        
         let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
 
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
@@ -43,7 +41,7 @@ class ViewController: UIViewController {
         
         menuBarView.dataArray = tabs
         menuBarView.isSizeToFitCellsNeeded = true
-        menuBarView.collView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)//UIColor.init(white: 0.97, alpha: 0.97)
+        //menuBarView.collView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)//UIColor.init(white: 0.97, alpha: 0.97)
         
         presentPageVCOnView()
         
@@ -279,9 +277,9 @@ class ViewController: UIViewController {
         currentIndex = index
         return contentVC
         } else {
-            let contentVC = storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            let contentVC = storyboard?.instantiateViewController(withIdentifier: "HomeCateVC") as! HomeCateVC
             //        contentVC.strTitle = tabs[index]
-                    contentVC.pageIndex = index
+                    //contentVC.pageIndex = index
                //contentVC.tblView.isHidden = true
                     currentIndex = index
                     return contentVC

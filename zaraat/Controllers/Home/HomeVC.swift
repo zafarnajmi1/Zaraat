@@ -58,12 +58,12 @@ class HomeVC: UIViewController {
        educationView.viewconfig(radius: 5)
         
         
-        if pageIndex == 0 {
-            tblView.isHidden = false
-            print(pageIndex)
-        } else{
-            tblView.isHidden = true
-        }
+//        if pageIndex == 0 {
+//            tblView.isHidden = false
+//            print(pageIndex)
+//        } else{
+//            tblView.isHidden = true
+//        }
         
         sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
 
@@ -171,6 +171,47 @@ class HomeVC: UIViewController {
                    let vc =  StoryBoard.instantiateViewController(identifier: "ZDigitalVC") as?  ZDigitalVC
                    self.navigationController?.pushViewController(vc!, animated: true)
     }
+    
+    
+    @IBAction func FashinBeautyAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                   let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                   self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    @IBAction func ElectroincAction(_ sender: UIButton) {
+           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      self.navigationController?.pushViewController(vc!, animated: true)
+       }
+    
+    @IBAction func HomeLifeStyleAction(_ sender: UIButton) {
+           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      self.navigationController?.pushViewController(vc!, animated: true)
+       }
+    
+    
+    
+    @IBAction func EducationAction(_ sender: UIButton) {
+           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      self.navigationController?.pushViewController(vc!, animated: true)
+       }
+    
+    
+    @IBAction func WatchJewllery(_ sender: UIButton) {
+           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      self.navigationController?.pushViewController(vc!, animated: true)
+       }
+    
+    @IBAction func homeAppliances(_ sender: UIButton) {
+           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      self.navigationController?.pushViewController(vc!, animated: true)
+       }
     
      
 }

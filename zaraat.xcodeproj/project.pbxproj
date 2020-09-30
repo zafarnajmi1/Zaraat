@@ -96,6 +96,22 @@
 		CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */; };
 		CE70E9C824F8DA1500FEEF5D /* FlashCellClView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C624F8DA1500FEEF5D /* FlashCellClView.swift */; };
 		CE70E9C924F8DA1500FEEF5D /* FlashCellClView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C724F8DA1500FEEF5D /* FlashCellClView.xib */; };
+		CE73BBC22524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBC12524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift */; };
+		CE73BBC42524704D0069B861 /* HomeButtonsStoreForyouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBC32524704D0069B861 /* HomeButtonsStoreForyouCell.swift */; };
+		CE73BBC6252470670069B861 /* HomeButtonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBC5252470670069B861 /* HomeButtonsVC.swift */; };
+		CE73BBC9252471B10069B861 /* HomeButtonPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBC8252471B10069B861 /* HomeButtonPartOneCell.swift */; };
+		CE73BBCB252471CC0069B861 /* HomeButtonClViewPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBCA252471CC0069B861 /* HomeButtonClViewPartOneCell.swift */; };
+		CE73BBCE252471FB0069B861 /* HomeButtonAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBCD252471FB0069B861 /* HomeButtonAdsCell.swift */; };
+		CE73BBD12524722A0069B861 /* HomeButtonPartTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBD02524722A0069B861 /* HomeButtonPartTwoCell.swift */; };
+		CE73BBD32524725E0069B861 /* HomeButtonClViewPartTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBD22524725E0069B861 /* HomeButtonClViewPartTwoCell.swift */; };
+		CE73BBD62524A0B70069B861 /* HomeCateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBD52524A0B70069B861 /* HomeCateVC.swift */; };
+		CE73BBDA2524ADE80069B861 /* HomeCatePartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBD92524ADE80069B861 /* HomeCatePartOneCell.swift */; };
+		CE73BBDC2524ADFE0069B861 /* HomeCateClViewPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBDB2524ADFE0069B861 /* HomeCateClViewPartOneCell.swift */; };
+		CE73BBDF2524AEFB0069B861 /* HomeCateClViewPartTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBDE2524AEFB0069B861 /* HomeCateClViewPartTwoCell.swift */; };
+		CE73BBE12524AF120069B861 /* HomeCatePartTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBE02524AF120069B861 /* HomeCatePartTwoCell.swift */; };
+		CE73BBE42524AF470069B861 /* HomeCatePartThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBE32524AF470069B861 /* HomeCatePartThreeCell.swift */; };
+		CE73BBE82524AFD40069B861 /* HomeCateClViewPartThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBE72524AFD40069B861 /* HomeCateClViewPartThreeCell.swift */; };
+		CE73BBEB2524AFF50069B861 /* HomeCateAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73BBEA2524AFF50069B861 /* HomeCateAdsCell.swift */; };
 		CE76D98724FCDCE7005078D6 /* LifeStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76D98524FCDCE7005078D6 /* LifeStyleCell.swift */; };
 		CE76D98C24FD0162005078D6 /* WeeklySellerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE76D98A24FD0162005078D6 /* WeeklySellerCell.swift */; };
 		CE76D98D24FD0162005078D6 /* WeeklySellerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE76D98B24FD0162005078D6 /* WeeklySellerCell.xib */; };
@@ -299,6 +315,22 @@
 		CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashSaleCell.xib; sourceTree = "<group>"; };
 		CE70E9C624F8DA1500FEEF5D /* FlashCellClView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCellClView.swift; sourceTree = "<group>"; };
 		CE70E9C724F8DA1500FEEF5D /* FlashCellClView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashCellClView.xib; sourceTree = "<group>"; };
+		CE73BBC12524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonsClViewStoreForYouCell.swift; sourceTree = "<group>"; };
+		CE73BBC32524704D0069B861 /* HomeButtonsStoreForyouCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonsStoreForyouCell.swift; sourceTree = "<group>"; };
+		CE73BBC5252470670069B861 /* HomeButtonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonsVC.swift; sourceTree = "<group>"; };
+		CE73BBC8252471B10069B861 /* HomeButtonPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonPartOneCell.swift; sourceTree = "<group>"; };
+		CE73BBCA252471CC0069B861 /* HomeButtonClViewPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonClViewPartOneCell.swift; sourceTree = "<group>"; };
+		CE73BBCD252471FB0069B861 /* HomeButtonAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonAdsCell.swift; sourceTree = "<group>"; };
+		CE73BBD02524722A0069B861 /* HomeButtonPartTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonPartTwoCell.swift; sourceTree = "<group>"; };
+		CE73BBD22524725E0069B861 /* HomeButtonClViewPartTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonClViewPartTwoCell.swift; sourceTree = "<group>"; };
+		CE73BBD52524A0B70069B861 /* HomeCateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCateVC.swift; sourceTree = "<group>"; };
+		CE73BBD92524ADE80069B861 /* HomeCatePartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCatePartOneCell.swift; sourceTree = "<group>"; };
+		CE73BBDB2524ADFE0069B861 /* HomeCateClViewPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCateClViewPartOneCell.swift; sourceTree = "<group>"; };
+		CE73BBDE2524AEFB0069B861 /* HomeCateClViewPartTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCateClViewPartTwoCell.swift; sourceTree = "<group>"; };
+		CE73BBE02524AF120069B861 /* HomeCatePartTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCatePartTwoCell.swift; sourceTree = "<group>"; };
+		CE73BBE32524AF470069B861 /* HomeCatePartThreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCatePartThreeCell.swift; sourceTree = "<group>"; };
+		CE73BBE72524AFD40069B861 /* HomeCateClViewPartThreeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCateClViewPartThreeCell.swift; sourceTree = "<group>"; };
+		CE73BBEA2524AFF50069B861 /* HomeCateAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCateAdsCell.swift; sourceTree = "<group>"; };
 		CE76D98524FCDCE7005078D6 /* LifeStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleCell.swift; sourceTree = "<group>"; };
 		CE76D98A24FD0162005078D6 /* WeeklySellerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySellerCell.swift; sourceTree = "<group>"; };
 		CE76D98B24FD0162005078D6 /* WeeklySellerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklySellerCell.xib; sourceTree = "<group>"; };
@@ -623,6 +655,8 @@
 		CE4BBF392410C79E000DAAB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE73BBD42524A08B0069B861 /* HomeCateTabs */,
+				CE73BBBF25246CFF0069B861 /* HomeButtons */,
 				CE138EB225235639008DC888 /* ZDigital */,
 				CE792E7525230D6200FF63A1 /* ZPharmacy */,
 				CE92D89625220D4F001C63C8 /* ZMart */,
@@ -794,6 +828,108 @@
 				CE4BBF412410CF12000DAAB4 /* TrendsVC.swift */,
 			);
 			path = Trends;
+			sourceTree = "<group>";
+		};
+		CE73BBBF25246CFF0069B861 /* HomeButtons */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBCF252472080069B861 /* HomeButtonPartTwo */,
+				CE73BBCC252471D20069B861 /* HomeButtonAds */,
+				CE73BBC72524718E0069B861 /* HomeButtonPartOne */,
+				CE73BBC025246DC10069B861 /* HomeButtonStoreForYou */,
+				CE73BBC5252470670069B861 /* HomeButtonsVC.swift */,
+			);
+			path = HomeButtons;
+			sourceTree = "<group>";
+		};
+		CE73BBC025246DC10069B861 /* HomeButtonStoreForYou */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBC12524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift */,
+				CE73BBC32524704D0069B861 /* HomeButtonsStoreForyouCell.swift */,
+			);
+			path = HomeButtonStoreForYou;
+			sourceTree = "<group>";
+		};
+		CE73BBC72524718E0069B861 /* HomeButtonPartOne */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBC8252471B10069B861 /* HomeButtonPartOneCell.swift */,
+				CE73BBCA252471CC0069B861 /* HomeButtonClViewPartOneCell.swift */,
+			);
+			path = HomeButtonPartOne;
+			sourceTree = "<group>";
+		};
+		CE73BBCC252471D20069B861 /* HomeButtonAds */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBCD252471FB0069B861 /* HomeButtonAdsCell.swift */,
+			);
+			path = HomeButtonAds;
+			sourceTree = "<group>";
+		};
+		CE73BBCF252472080069B861 /* HomeButtonPartTwo */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBD02524722A0069B861 /* HomeButtonPartTwoCell.swift */,
+				CE73BBD22524725E0069B861 /* HomeButtonClViewPartTwoCell.swift */,
+			);
+			path = HomeButtonPartTwo;
+			sourceTree = "<group>";
+		};
+		CE73BBD42524A08B0069B861 /* HomeCateTabs */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBD72524AD650069B861 /* HomeCateSections */,
+				CE73BBD52524A0B70069B861 /* HomeCateVC.swift */,
+			);
+			path = HomeCateTabs;
+			sourceTree = "<group>";
+		};
+		CE73BBD72524AD650069B861 /* HomeCateSections */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBE92524AFDD0069B861 /* HomeCateAds */,
+				CE73BBE22524AF190069B861 /* HomeCatePartThree */,
+				CE73BBDD2524AE310069B861 /* HomeCatePartTwo */,
+				CE73BBD82524AD770069B861 /* HomecatePartOne */,
+			);
+			path = HomeCateSections;
+			sourceTree = "<group>";
+		};
+		CE73BBD82524AD770069B861 /* HomecatePartOne */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBD92524ADE80069B861 /* HomeCatePartOneCell.swift */,
+				CE73BBDB2524ADFE0069B861 /* HomeCateClViewPartOneCell.swift */,
+			);
+			path = HomecatePartOne;
+			sourceTree = "<group>";
+		};
+		CE73BBDD2524AE310069B861 /* HomeCatePartTwo */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBDE2524AEFB0069B861 /* HomeCateClViewPartTwoCell.swift */,
+				CE73BBE02524AF120069B861 /* HomeCatePartTwoCell.swift */,
+			);
+			path = HomeCatePartTwo;
+			sourceTree = "<group>";
+		};
+		CE73BBE22524AF190069B861 /* HomeCatePartThree */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBE72524AFD40069B861 /* HomeCateClViewPartThreeCell.swift */,
+				CE73BBE32524AF470069B861 /* HomeCatePartThreeCell.swift */,
+			);
+			path = HomeCatePartThree;
+			sourceTree = "<group>";
+		};
+		CE73BBE92524AFDD0069B861 /* HomeCateAds */ = {
+			isa = PBXGroup;
+			children = (
+				CE73BBEA2524AFF50069B861 /* HomeCateAdsCell.swift */,
+			);
+			path = HomeCateAds;
 			sourceTree = "<group>";
 		};
 		CE76D98424FCDC88005078D6 /* AddsLifeStyle */ = {
@@ -1414,7 +1550,9 @@
 			files = (
 				CE4BBF3E2410CD2E000DAAB4 /* TabBarVC.swift in Sources */,
 				CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */,
+				CE73BBD32524725E0069B861 /* HomeButtonClViewPartTwoCell.swift in Sources */,
 				CE76D99E24FD2139005078D6 /* FeaturedProductsClView.swift in Sources */,
+				CE73BBDC2524ADFE0069B861 /* HomeCateClViewPartOneCell.swift in Sources */,
 				437BD19E242C8A30003C55C2 /* ViewController.swift in Sources */,
 				CE5145AB251DDDE2001BE6AD /* ZMallStoreForYouCell.swift in Sources */,
 				CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */,
@@ -1423,6 +1561,7 @@
 				CE4FA3B52512018A00BA0FBE /* ShipmentVC.swift in Sources */,
 				CE797657251B29D7009A9FC0 /* B2BPageControllerVC.swift in Sources */,
 				CEB5CA4F25027F4600137E48 /* ProductListsVC.swift in Sources */,
+				CE73BBD12524722A0069B861 /* HomeButtonPartTwoCell.swift in Sources */,
 				CE138EA725232DBC008DC888 /* ZPharmacyPartOneCell.swift in Sources */,
 				CE884BF6251B79FB003626C5 /* OneCell.swift in Sources */,
 				CE4B88E2240D17B400DB20FD /* SignUpZaraatVC.swift in Sources */,
@@ -1456,11 +1595,13 @@
 				CE138EB425235663008DC888 /* ZDigitalVC.swift in Sources */,
 				437BD1A1242C8D6B003C55C2 /* ProductDetailVC.swift in Sources */,
 				CE8C9DAB250F660B00973CD1 /* ChatVC.swift in Sources */,
+				CE73BBE42524AF470069B861 /* HomeCatePartThreeCell.swift in Sources */,
 				CE8C9DB3250F661500973CD1 /* SenderTextCell.swift in Sources */,
 				CE5145AD251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift in Sources */,
 				CEAC33B9251CC3F5002D2E9C /* B2BInquireisVC.swift in Sources */,
 				CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */,
 				43C1BBDB243B0F3C0089ED55 /* CartCell.swift in Sources */,
+				CE73BBDA2524ADE80069B861 /* HomeCatePartOneCell.swift in Sources */,
 				CE138EBF2523605D008DC888 /* ZDigitalPartOneCell.swift in Sources */,
 				CE797651251B29D7009A9FC0 /* B2BViewController.swift in Sources */,
 				CE79764B251B29D7009A9FC0 /* B2BBasicCell.swift in Sources */,
@@ -1471,6 +1612,7 @@
 				CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */,
 				CE884BEF251B68E4003626C5 /* ProductsShowcaseCell.swift in Sources */,
 				CE94EC712510DB5F00010DA0 /* ViewProfileVC.swift in Sources */,
+				CE73BBCB252471CC0069B861 /* HomeButtonClViewPartOneCell.swift in Sources */,
 				CE138EA925232DD3008DC888 /* ZPharmacyClViewPartOneCell.swift in Sources */,
 				CE70E9C824F8DA1500FEEF5D /* FlashCellClView.swift in Sources */,
 				CE5145BA251DDFB8001BE6AD /* ZMallAddCell.swift in Sources */,
@@ -1480,6 +1622,8 @@
 				CE797666251B6031009A9FC0 /* OtherChanelCell.swift in Sources */,
 				CE76D99524FD17BE005078D6 /* AddsCell.swift in Sources */,
 				CEFBF1F624F90D65003C1727 /* topRatedCell.swift in Sources */,
+				CE73BBD62524A0B70069B861 /* HomeCateVC.swift in Sources */,
+				CE73BBC6252470670069B861 /* HomeButtonsVC.swift in Sources */,
 				CE76D99024FD106D005078D6 /* WeeklyViewAll.swift in Sources */,
 				CE92D8AB25221151001C63C8 /* ZMartPartTwoCell.swift in Sources */,
 				CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */,
@@ -1497,8 +1641,12 @@
 				CE5145B6251DDF45001BE6AD /* ZMallClViewPartTwoCell.swift in Sources */,
 				CEAED9CE24092A4B0079C3C5 /* zaraat.xcdatamodeld in Sources */,
 				CE76D98724FCDCE7005078D6 /* LifeStyleCell.swift in Sources */,
+				CE73BBC9252471B10069B861 /* HomeButtonPartOneCell.swift in Sources */,
 				CE92D8A72522110E001C63C8 /* ZMartPartOneCell.swift in Sources */,
 				CE5145B2251DDF0C001BE6AD /* ZMallPartOneCell.swift in Sources */,
+				CE73BBC22524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift in Sources */,
+				CE73BBC42524704D0069B861 /* HomeButtonsStoreForyouCell.swift in Sources */,
+				CE73BBEB2524AFF50069B861 /* HomeCateAdsCell.swift in Sources */,
 				CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */,
 				CEEC5072250F5DAE001A774C /* ChatCell.swift in Sources */,
 				CE40BAC6240D225B0034C708 /* ZaraatZalert.swift in Sources */,
@@ -1510,6 +1658,7 @@
 				CE8C9DB2250F661500973CD1 /* SenderImageCell.swift in Sources */,
 				CE76D99A24FD1FB6005078D6 /* FeaturedProductsCell.swift in Sources */,
 				CE449D4C2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift in Sources */,
+				CE73BBCE252471FB0069B861 /* HomeButtonAdsCell.swift in Sources */,
 				CE797662251B5FEE009A9FC0 /* ClviewOtherChenlsCell.swift in Sources */,
 				CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */,
 				CE138EB825235FA6008DC888 /* ZDigitalStoreForYouCell.swift in Sources */,
@@ -1520,13 +1669,16 @@
 				CE138EBD2523603F008DC888 /* ZDigitalClViewPartOneCell.swift in Sources */,
 				CEBBE01324FE755400190E91 /* MenuCell.swift in Sources */,
 				CE138EBA25235FCE008DC888 /* ZDigitalClViewStoreForYouCell.swift in Sources */,
+				CE73BBDF2524AEFB0069B861 /* HomeCateClViewPartTwoCell.swift in Sources */,
 				CE884BF4251B79BF003626C5 /* clViewOneCell.swift in Sources */,
 				CE57A61324FF682F00DE9932 /* ZSideMenuManager.swift in Sources */,
 				CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */,
 				CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */,
+				CE73BBE82524AFD40069B861 /* HomeCateClViewPartThreeCell.swift in Sources */,
 				CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */,
 				CE138EAC252349F4008DC888 /* ZPharmacyAdsCell.swift in Sources */,
 				CE138EB125234BDA008DC888 /* ZPharmacyClViewPartTwoCell.swift in Sources */,
+				CE73BBE12524AF120069B861 /* HomeCatePartTwoCell.swift in Sources */,
 				CE449D48252317FB00313736 /* ZPharmacyShopeCategoriesCell.swift in Sources */,
 				437BD19C242C8A30003C55C2 /* Extensions.swift in Sources */,
 				CE49D827240E7682009ECFD5 /* ChangePasswordZaraatVC.swift in Sources */,
