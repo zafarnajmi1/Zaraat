@@ -65,12 +65,12 @@ class B2BHomeVC: UIViewController, OneCellProtocol, TwocellProtocol, otherchanel
            educationView.viewconfig(radius: 5)
             
             
-            if pageIndex == 0 {
-                tblView.isHidden = false
-                print(pageIndex)
-            } else{
-                tblView.isHidden = true
-            }
+//            if pageIndex == 0 {
+//                tblView.isHidden = false
+//                print(pageIndex)
+//            } else{
+//                tblView.isHidden = true
+//            }
             
             sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
 

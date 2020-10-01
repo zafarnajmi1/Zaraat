@@ -277,9 +277,9 @@ class B2BViewController: UIViewController {
         currentIndex = index
         return contentVC
         } else {
-            let contentVC = storyboard?.instantiateViewController(withIdentifier: "B2BHomeVC") as! B2BHomeVC
+            let contentVC = storyboard?.instantiateViewController(withIdentifier: "HomeButtonsVC") as! HomeButtonsVC
             //        contentVC.strTitle = tabs[index]
-                    contentVC.pageIndex = index
+                    //contentVC.pageIndex = index
                //contentVC.tblView.isHidden = true
                     currentIndex = index
                     return contentVC
