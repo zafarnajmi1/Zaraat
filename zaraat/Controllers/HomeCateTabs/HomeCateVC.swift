@@ -10,7 +10,7 @@ import UIKit
 
 class HomeCateVC: UIViewController {
 
-
+ var pageIndex: Int = 0
               
                  @IBOutlet weak var sliderClView: UICollectionView!
                   @IBOutlet weak var pager: UIPageControl!

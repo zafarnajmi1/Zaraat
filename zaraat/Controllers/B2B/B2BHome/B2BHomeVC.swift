@@ -13,6 +13,7 @@ class B2BHomeVC: UIViewController, OneCellProtocol, TwocellProtocol, otherchanel
     
     
     
+    @IBOutlet weak var B2BConatiner: UIView!
     
     
     
@@ -67,9 +68,11 @@ class B2BHomeVC: UIViewController, OneCellProtocol, TwocellProtocol, otherchanel
             
 //            if pageIndex == 0 {
 //                tblView.isHidden = false
+//                B2BConatiner.isHidden =  true
 //                print(pageIndex)
 //            } else{
 //                tblView.isHidden = true
+//                B2BConatiner.isHidden =  false
 //            }
             
             sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
@@ -173,6 +176,75 @@ class B2BHomeVC: UIViewController, OneCellProtocol, TwocellProtocol, otherchanel
              vc?.hidesBottomBarWhenPushed =  true
              self.navigationController?.pushViewController(vc!, animated: true)
          }
+    
+    
+    @IBAction func LiveStockAction(_ sender: UIButton) {
+        
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+               let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+               self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    @IBAction func SeedsAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func PesticidesAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    @IBAction func IrrigationAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func ColdStorageAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+    @IBAction func TunnelFarmingAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func FertilizersAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func Machinery(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func CropsAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    @IBAction func PrintingPackageAction(_ sender: UIButton) {
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
     }
     extension B2BHomeVC : UITableViewDelegate, UITableViewDataSource {
         

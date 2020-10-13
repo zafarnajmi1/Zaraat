@@ -12,8 +12,10 @@ class SplashVC: ZaraatBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.commerceCateApi()
+        self.b2bCateApi()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.moveOnLogin()
+            self.CheckLogin()
         }
     }
 
@@ -32,42 +34,40 @@ class SplashVC: ZaraatBaseVC {
         }
     }
     
-//    func CheckLogin() {
-//        if ShareData.shareInfo.autologin == true  {
-//            LoginVendor()
-//        } else {
-//           moveOnLogin()
-//        }
-//    }
+    func CheckLogin() {
+        if ShareData.shareInfo.autologin == true  {
+            LoginClient()
+        } else {
+           moveOnLogin()
+        }
+    }
     
-//    func LoginVendor() {
-//
-//              let dic : [String:Any] = ["email" : ShareData.shareInfo.email!,"password":ShareData.shareInfo.password!]
-//           ShareData.showProgress()
-//              userhandler.login(parms: dic, Success: {response in
-//                ShareData.hideProgress()
-//                  ShareData.hideProgress()
-//                  if response.success == 1{
-//                   ShareData.shareInfo.userInfo = response
-//
-//                   if response.vendors?.status == 0 {
-//                       self.moveOnBusinessProfile()
-//                   }else {
-//                        self.movetoHome()
-//                   }
-//
-//                      //Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
-//                  }else {
-//                    ShareData.hideProgress()
-//                      ShareData.hideProgress()
-//                      Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
-//                  }
-//
-//              }, Failure: {error in
-//                  ShareData.hideProgress()
-//                  Zalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
-//              })
-//          }
+    func LoginClient() {
+
+              let dic : [String:Any] = ["email" : ShareData.shareInfo.email!,"password":ShareData.shareInfo.password!]
+           ShareData.showProgress()
+              userhandler.login(parms: dic, Success: {response in
+                ShareData.hideProgress()
+                  ShareData.hideProgress()
+                  if response.success == 1{
+                   ShareData.shareInfo.userInfo = response
+
+                   
+                        self.movetoHome()
+                   
+
+                      //Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+                  }else {
+                    ShareData.hideProgress()
+                      ShareData.hideProgress()
+                      ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+                  }
+
+              }, Failure: {error in
+                  ShareData.hideProgress()
+                  ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+              })
+          }
        
        
        func movetoHome(){
@@ -85,32 +85,30 @@ class SplashVC: ZaraatBaseVC {
            }
        }
        
-//       func moveOnBusinessProfile(){
-//           if UIDevice.current.userInterfaceIdiom == .pad {
-//
-//                   let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-//                   let vc =  storyBoard.instantiateViewController(withIdentifier: "VendorPackageVC") as? VendorPackageVC
-//                   self.navigationController?.pushViewController(vc!, animated: true)
-//
-//           } else {
-//
-//                   let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-//                   let vc =  storyBoard.instantiateViewController(withIdentifier: "VendorPackageVC") as? VendorPackageVC
-//                   self.navigationController?.pushViewController(vc!, animated: true)
-//           }
-//       }
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
     
     
+    
+    func commerceCateApi() {
+        userhandler.getEcommerceCate(Success: {response in
+            if response.success == 1 {
+                ShareData.shareInfo.EcommerceCate =  response
+            }
+        }, Failure: {error in
+            
+        })
+    }
+       
+    
+    func b2bCateApi() {
+        userhandler.getB2BCate(Success: {response in
+            if response.success == 1 {
+                ShareData.shareInfo.b2bCate =  response
+            }
+        }, Failure: {error in
+            
+        })
+    }
     
 }
 

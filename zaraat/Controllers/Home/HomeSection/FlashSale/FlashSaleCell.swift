@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import  SDWebImage
 class FlashSaleCell: UITableViewCell {
 
     //@IBOutlet weak var subViewimg: ShadowView!
     @IBOutlet weak var btnViewAll: UIButton!
     @IBOutlet weak var clView: UICollectionView!
+    var flashSale = [Sales]()
     override func awakeFromNib() {
         super.awakeFromNib()
         btnViewAll.roundButton()
@@ -22,12 +23,12 @@ class FlashSaleCell: UITableViewCell {
         //self.subViewimg.setroundCornerView(corner: 5)
         //self.clView.register(UINib.init(nibName: "FlashCellClView", bundle: nil), forCellWithReuseIdentifier: "FlashCellClView")
     }
-//    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
-//        collectionView.delegate = dataSourceDelegate
-//        collectionView.dataSource = dataSourceDelegate
-//        collectionView.tag = row
-//        collectionView.reloadData()
-//    }
+    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
+        clView.delegate = dataSourceDelegate
+        clView.dataSource = dataSourceDelegate
+        clView.tag = row
+        clView.reloadData()
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -45,11 +46,13 @@ extension FlashSaleCell : UICollectionViewDelegate, UICollectionViewDataSource, 
         return CGSize.init(width: collectionView.frame.width / 3, height: collectionView.frame.height + 100)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return self.flashSale.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "FlashCellClView", for: indexPath) as? FlashCellClView
+        let obj = self.flashSale[indexPath.row]
+        cell?.LoadData(obj: obj)
         return cell!
     }
     

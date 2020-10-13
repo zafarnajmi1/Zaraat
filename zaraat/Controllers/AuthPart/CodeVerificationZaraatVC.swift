@@ -21,7 +21,8 @@ class CodeVerificationVC: ZaraatBaseVC, UITextFieldDelegate {
     @IBOutlet weak var twoView: UIView!
     @IBOutlet weak var oneView: UIView!
     @IBOutlet weak var txtOne: UITextField!
-    var id = 0
+    var email = ""
+    var customerid = 0
     var code = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,51 +51,51 @@ class CodeVerificationVC: ZaraatBaseVC, UITextFieldDelegate {
     
     
     
+    
+    func cehckData() -> Bool {
+       code = txtOne.text! +  txtTwo.text! + txtThree.text! + txtfour.text!
+        if code == "" {
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter  The Code", messagetype: 0)
+            return false
+        }
+        return true
+    }
+    
+    
+    func verifycodeApi(){
+        let dic : [String:Any] = ["customer_id":self.customerid, "code":code]
+        ShareData.showProgress()
+        userhandler.VerificationCode(parms: dic, Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1 {
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+                self.moveOnResetPassword()
+            } else {
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+                       ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
 //    
-//    func cehckData() -> Bool {
-//       code = txtOne.text! +  txtTwo.text! + txtThree.text! + txtfour.text!
-//        if code == "" {
-//            Zalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter  The Code", messagetype: 0)
-//            return false
-//        }
-//        return true
-//    }
-//    
-//    
-//    func verifycodeApi(){
-//        let dic : [String:Any] = ["vendor_id":self.id, "code":code]
-//        ShareData.showProgress()
-//        userhandler.codeVeriFy(params: dic, Success: {response in
-//             ShareData.hideProgress()
-//            if response.success == 1 {
-//                Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
-//                self.moveOnResetPassword()
-//            } else {
-//                ShareData.hideProgress()
-//                Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
-//            }
-//        }, Failure: {error in
-//            ShareData.hideProgress()
-//            Zalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
-//        })
-//    }
-//    
-//    func moveOnResetPassword() {
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//                   
-//               let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-//               let vc =  storyBoard.instantiateViewController(withIdentifier: "ChangePasswordVC") as? ChangePasswordVC
-//            vc!.id = id
-//               self.navigationController?.pushViewController(vc!, animated: true)
-//               
-//        } else {
-//               
-//               let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-//               let vc =  storyBoard.instantiateViewController(withIdentifier: "ChangePasswordVC") as? ChangePasswordVC
-//            vc!.id = id
-//               self.navigationController?.pushViewController(vc!, animated: true)
-//            }
-//    }
+    func moveOnResetPassword() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+                   
+               let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "ChangePasswordVC") as? ChangePasswordVC
+            vc!.id = customerid
+               self.navigationController?.pushViewController(vc!, animated: true)
+               
+        } else {
+               
+               let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "ChangePasswordVC") as? ChangePasswordVC
+            vc!.id = customerid
+               self.navigationController?.pushViewController(vc!, animated: true)
+            }
+    }
 //    
 //    
 //    
@@ -104,16 +105,35 @@ class CodeVerificationVC: ZaraatBaseVC, UITextFieldDelegate {
     
     @IBAction func resendAction(_ sender: UIButton) {
         
-        
+        forgotpasswordApi()
     }
     
+    func forgotpasswordApi() {
+        let dic : [String:Any] = ["email": email]
+        ShareData.showProgress()
+        userhandler.forGotPasswordSet(parms: dic, Success: {response in
+             ShareData.hideProgress()
+            if response.success ==  1 {
+                self.customerid =  (response.user?.customer_id)!
+                self.moveOnResetPassword()
+                self.customerid =  (response.user?.customer_id)!
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+            } else {
+                 ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+            }
+        }, Failure: {error in
+             ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
     
     
     @IBAction func NextAction(_ sender: UIButton) {
         
-//        if cehckData() {
-//            //verifycodeApi()
-//        }
+        if cehckData() {
+            verifycodeApi()
+        }
         
 
         

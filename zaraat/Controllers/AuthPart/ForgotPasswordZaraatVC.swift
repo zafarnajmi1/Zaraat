@@ -23,7 +23,7 @@ class ForgotPasswordVC: ZaraatBaseVC {
     @IBAction func nextAction(_ sender: UIButton) {
         
         if cehckDate(){
-            //forgotpasswordApi()
+            forgotpasswordApi()
         }
     
     }
@@ -59,25 +59,25 @@ class ForgotPasswordVC: ZaraatBaseVC {
     }
     
     
-//    func forgotpasswordApi() {
-//        let dic : [String:Any] = ["email": txtemail.text!]
-//        ShareData.showProgress()
-//        userhandler.forgotPassword(params: dic, Success: {response in
-//             ShareData.hideProgress()
-//            if response.success ==  1 {
-//                self.id =  (response.user?.vendor_id)!
-//                self.movenext()
-//                self.id =  (response.user?.vendor_id)!
-//                Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
-//            } else {
-//                 ShareData.hideProgress()
-//                Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
-//            }
-//        }, Failure: {error in
-//             ShareData.hideProgress()
-//            Zalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
-//        })
-//    }
+    func forgotpasswordApi() {
+        let dic : [String:Any] = ["email": txtemail.text!]
+        ShareData.showProgress()
+        userhandler.forGotPasswordSet(parms: dic, Success: {response in
+             ShareData.hideProgress()
+            if response.success ==  1 {
+                self.id =  (response.user?.customer_id)!
+                self.movenext()
+                self.id =  (response.user?.customer_id)!
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+            } else {
+                 ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+            }
+        }, Failure: {error in
+             ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
 //
     
     func movenext(){
@@ -85,14 +85,17 @@ class ForgotPasswordVC: ZaraatBaseVC {
                           
                       let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
                       let vc =  storyBoard.instantiateViewController(withIdentifier: "CodeVerificationVC") as? CodeVerificationVC
-            vc!.id = id
+                      vc!.customerid = id
+                      vc?.email =  self.txtemail.text!
                       self.navigationController?.pushViewController(vc!, animated: true)
                       
                } else {
                       
                       let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
                       let vc =  storyBoard.instantiateViewController(withIdentifier: "CodeVerificationVC") as? CodeVerificationVC
-            vc!.id = id
+            vc!.customerid = id
+            vc?.email =  self.txtemail.text!
+            
                       self.navigationController?.pushViewController(vc!, animated: true)
                    }
     }

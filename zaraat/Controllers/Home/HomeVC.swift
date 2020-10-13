@@ -7,28 +7,57 @@
 //
 
 import UIKit
-
+import  SDWebImage
 class HomeVC: UIViewController {
 
+    @IBOutlet weak var btnFlash: UIButton!
     var pageIndex: Int = 0
    
+    @IBOutlet weak var btnFeatures: UIButton!
+    @IBOutlet weak var btnWekkly: UIButton!
+    @IBOutlet weak var btntoprated: UIButton!
+    
+    @IBOutlet weak var tblHeight: NSLayoutConstraint!
     @IBOutlet weak var sliderClView: UICollectionView!
+    
+    @IBOutlet weak var FlashClView: UICollectionView!
+    @IBOutlet weak var FlashClViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var pager: UIPageControl!
     
-    @IBOutlet weak var womenView: UIView!
     
-    @IBOutlet weak var menView: UIView!
+    @IBOutlet weak var topProductClView: UICollectionView!
+    @IBOutlet weak var topProductClviewHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var electronicView: UIView!
+    @IBOutlet weak var adimgOne: UIImageView!
     
-    @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var adimgtwo: UIImageView!
     
-    @IBOutlet weak var zMartView: UIView!
-    
-    @IBOutlet weak var educationView: UIView!
+    @IBOutlet weak var adimgthree: UIImageView!
     
     
+    @IBOutlet weak var FeaturedProductsClView: UICollectionView!
+    
+    @IBOutlet weak var FeaturdProductClViewHeight: NSLayoutConstraint!
+    
+    
+    
+    
+    
+//    @IBOutlet weak var womenView: UIView!
+//
+//    @IBOutlet weak var menView: UIView!
+//
+//    @IBOutlet weak var electronicView: UIView!
+//
+//    @IBOutlet weak var homeView: UIView!
+//
+//    @IBOutlet weak var zMartView: UIView!
+//
+//    @IBOutlet weak var educationView: UIView!
+    
+    var homeLanding : HomeLandingModel?
+   
     
     
     
@@ -46,25 +75,27 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.tblView.contentInset.bottom = 100
-        womenView.viewconfig(radius: 5)
-        menView.viewconfig(radius: 5)
-        electronicView.viewconfig(radius: 5)
-
-         homeView.viewconfig(radius: 5)
-
-         zMartView.viewconfig(radius: 5)
-
-       educationView.viewconfig(radius: 5)
+        btnFlash.roundButton()
+        btnFeatures.roundButton()
+      btnWekkly.roundButton()
+         btntoprated.roundButton()
+        adimgOne.layer.cornerRadius = 10
+         adimgtwo.layer.cornerRadius = 10
+         adimgthree.layer.cornerRadius = 10
+       //self.tblView.contentInset.bottom = 100
+        self.tblView.rowHeight = UITableView.automaticDimension;
+//        womenView.viewconfig(radius: 5)
+//        menView.viewconfig(radius: 5)
+//        electronicView.viewconfig(radius: 5)
+//
+//         homeView.viewconfig(radius: 5)
+//
+//         zMartView.viewconfig(radius: 5)
+//
+//       educationView.viewconfig(radius: 5)
         
         
-//        if pageIndex == 0 {
-//            tblView.isHidden = false
-//            print(pageIndex)
-//        } else{
-//            tblView.isHidden = true
-//        }
-        
+    
         sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
 
         addNavigationButton()
@@ -72,13 +103,53 @@ class HomeVC: UIViewController {
         
 
       tblView.register(UINib.init(nibName: "WeeklySellerCell", bundle: nil), forCellReuseIdentifier: "WeeklySellerCell")
-      tblView.register(UINib.init(nibName: "WeeklyViewAll", bundle: nil), forCellReuseIdentifier: "WeeklyViewAll")
-      tblView.register(UINib.init(nibName: "AddsCell", bundle: nil), forCellReuseIdentifier: "AddsCell")
+//      tblView.register(UINib.init(nibName: "WeeklyViewAll", bundle: nil), forCellReuseIdentifier: "WeeklyViewAll")
+//      tblView.register(UINib.init(nibName: "AddsCell", bundle: nil), forCellReuseIdentifier: "AddsCell")
 
 
-        
+//        setViewHeight()
          setSlider()
+        //homeapi()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "MoreTab"), object: nil)
+    }
+    
+    
+    
+    private func setViewHeight(){
+           var tableViewHeight:CGFloat = 0;
+           for i in 0..<self.tblView.numberOfRows(inSection: 0){
+               tableViewHeight = tableViewHeight + tableView(self.tblView, heightForRowAt: IndexPath(row: i, section: 0))
+           }
+           tblHeight.constant = tableViewHeight + 10
+           self.tblView.setNeedsDisplay()
+       }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let newHeighttop : CGFloat = topProductClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
+             topProductClviewHeight.constant = newHeighttop
+        topProductClView.reloadData()
+             self.view.setNeedsLayout()
         
+        let newHeight : CGFloat = FeaturedProductsClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
+        FeaturdProductClViewHeight.constant = newHeight + 40
+        FeaturedProductsClView.reloadData()
+        self.view.setNeedsLayout()
+            // self.view.layoutIfNeeded()
+        
+    }
+    
+    
+    @objc func showSpinningWheel(_ notification: NSNotification) {
+           print(notification.userInfo ?? "")
+           if let dict = notification.userInfo as NSDictionary? {
+            if let id = dict["Index"]{
+                if id as! Int == 0 {
+                    self.homeapi()
+                }
+               }
+           }
     }
     
     func setUpUI() {
@@ -139,8 +210,43 @@ class HomeVC: UIViewController {
 
     
     
+    func homeapi() {
+        ShareData.showProgress()
+        userhandler.getHomeLanding( Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1 {
+                self.homeLanding =  response
+                
+                self.adimgOne.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_1?.category_image ?? "Text"))
+                 self.adimgtwo.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_2?.category_image ?? "Text"))
+                 self.adimgthree.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_3?.category_image ?? "Text"))
+                
+                self.FeaturedProductsClView.reloadData()
+                self.topProductClView.reloadData()
+                self.FeaturedProductsClView.reloadData()
+                self.FlashClView.reloadData()
+                self.tblView.reloadData()
+                self.setViewHeight()
+            } else {
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+            }
+        }, Failure: {error in
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
     
     
+    @IBAction func btnflashViewAll(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func topRatedProducts(_ sender: UIButton) {
+    }
+    
+    @IBAction func WeeklyViewAll(_ sender: UIButton) {
+    }
+    @IBAction func FeatureProducts(_ sender: UIButton) {
+    }
     
     @IBAction func ZMallAction(_ sender: UIButton) {
         
@@ -220,65 +326,39 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 
    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return 1
     }
     
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            if indexPath.section == 0 {
-              return  280
-            } else if indexPath.section ==  1 {
-                let cell =  tableView.dequeueReusableCell(withIdentifier: "topRatedCell") as? topRatedCell
-                
-                return ((cell?.clView.contentSize.height)! + 40)
-            } else if indexPath.section == 2 {
+            
                
                 
                 return 180
-            }  else if indexPath .section == 6 {
-                
-                let cell =  tableView.dequeueReusableCell(withIdentifier: "FeaturedProductsCell") as? FeaturedProductsCell
-                               
-                               return ((cell?.clView.contentSize.height)! + 40)
-            }else {
-                return UITableView.automaticDimension
-        }
+           
     }
     
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if  section == 4 {
-            return 10
-        } else {
-            return 1
-        }
-        }
+       
+            return self.homeLanding?.data?.weekly_products?.count ?? 0
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if  indexPath.section == 0 {
-        let cell  = tableView.dequeueReusableCell(withIdentifier: "FlashSaleCell") as? FlashSaleCell
-        return cell!
-        } else if indexPath.section == 1 {
-            let cell  = tableView.dequeueReusableCell(withIdentifier: "topRatedCell") as? topRatedCell
-            return cell!
-        } else if indexPath.section == 2 {
-             let cell  = tableView.dequeueReusableCell(withIdentifier: "LifeStyleCell") as? LifeStyleCell
-              
-             return cell!
-        } else if indexPath.section == 3 {
-            let cell  = tableView.dequeueReusableCell(withIdentifier: "WeeklyViewAll") as? WeeklyViewAll
-              return cell!
-        } else if indexPath.section == 4 {
+      
             let cell  = tableView.dequeueReusableCell(withIdentifier: "WeeklySellerCell") as? WeeklySellerCell
+            let obj =  self.homeLanding?.data?.weekly_products?[indexPath.row]
+            cell?.loadData(obj: obj!)
                 return cell!
-        }  else if indexPath.section == 6 {
             
-            let cell  = tableView.dequeueReusableCell(withIdentifier: "FeaturedProductsCell") as? FeaturedProductsCell
-                 return cell!
-        } else {
-            let cell  = tableView.dequeueReusableCell(withIdentifier: "AddsCell") as? AddsCell
-            return cell!
-        }
+        
        
     }
     
@@ -297,36 +377,83 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 //                self.navigationController?.pushViewController(vc!, animated: true)
 //        }
     }
-}
+    }
 
 extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
-    indexPath: IndexPath) -> CGSize {
-    
-    let height = collectionView.frame.height
-    let width = sliderClView.frame.width
-    let size = CGSize(width: width , height: height)
-    return size
-}
+//   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
+//    indexPath: IndexPath) -> CGSize {
+//
+//    let height = collectionView.frame.height
+//    let width = sliderClView.frame.width
+//    let size = CGSize(width: width , height: height)
+//    return size
+//
+//
+//
+//
+//}
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-         return 1
+        return 1
+//        if collectionView == sliderClView {
+//         return 1
+//        } else if collectionView ==  FlashClView {
+//            return 1
+//        } else if collectionView == topProductClView {
+//            return 1
+//        } else {
+//            return 1
+//        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        self.pager.numberOfPages =  4
-            return 4
+            if collectionView == sliderClView {
+             self.pager.numberOfPages =  4
+             return 4
+            } else if collectionView ==  FlashClView {
+                return self.homeLanding?.data?.sales?.count ?? 0
+            } else if collectionView == topProductClView {
+                return  self.homeLanding?.data?.top_products?.count ?? 0
+            } else if collectionView == FeaturedProductsClView{
+                return  self.homeLanding?.data?.featured_products?.count ?? 0
+            } else {
+                return 0
+        }
+        
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-       
-            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
-                  
-                   return cell!
+       if collectionView == sliderClView {
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
+        
+         return cell!
+       } else if collectionView ==  FlashClView {
+          let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "FlashCellClView", for: indexPath) as? FlashCellClView
+           let obj = self.homeLanding?.data?.sales![indexPath.row]
+           cell?.LoadData(obj: obj!)
+           return cell!
+        
+       } else if collectionView == topProductClView {
+           let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "topRatedClView", for: indexPath) as? topRatedClView
+        let obj = self.homeLanding?.data?.top_products![indexPath.row]
+        cell?.LoadData(obj:obj!)
+         cell?.contentView.layoutIfNeeded()
+            return cell!
+        
+       } else {
+            let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "FeaturedProductsClView", for: indexPath) as? FeaturedProductsClView
+        let obj = self.homeLanding?.data?.featured_products![indexPath.row]
+        cell?.loadData(obj:obj!)
+         cell?.contentView.layoutIfNeeded()
+                      return cell!
+       }
+            
         
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
            self.pager.currentPage = indexPath.row
        }

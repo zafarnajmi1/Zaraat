@@ -12,6 +12,7 @@ class CategoriesCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var contView: UIView!
     
+    @IBOutlet weak var lbltitle: UILabel!
     //@IBOutlet weak var catImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,9 @@ class CategoriesCell: UITableViewCell {
 //        catImg.layer.cornerRadius = 5
     }
 
+    func loadData(obj:AllCategories) {
+        self.lbltitle.text =  obj.category_title_en
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

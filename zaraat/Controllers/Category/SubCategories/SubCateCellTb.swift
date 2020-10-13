@@ -10,6 +10,7 @@ import UIKit
 
 class SubCateCellTb: UITableViewCell {
 
+    @IBOutlet weak var lbltile: UILabel!
     @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

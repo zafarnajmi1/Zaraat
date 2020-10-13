@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Regular.otf">
+        <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
-        <array key="Poppins-SemiBold.otf">
+        <array key="Poppins-SemiBold.ttf">
             <string>Poppins-SemiBold</string>
         </array>
     </customFonts>
@@ -25,23 +25,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asc-K6-3go">
-                        <rect key="frame" x="20" y="8" width="323" height="122"/>
+                        <rect key="frame" x="20" y="8" width="323" height="130"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="All Image 2 ( Video )" translatesAutoresizingMaskIntoConstraints="NO" id="SH6-Rj-AFf">
-                                <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
+                                <rect key="frame" x="8" y="8" width="108" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="ahY-g9-C02"/>
                                     <constraint firstAttribute="height" constant="108" id="sV2-y0-zzF"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black Nike Air Shoes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHF-VX-pT2">
-                                <rect key="frame" x="116" y="2" width="123" height="32"/>
+                                <rect key="frame" x="124" y="2" width="154" height="32"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-aF-XYz" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="116" y="35" width="120" height="17"/>
+                                <rect key="frame" x="124" y="35" width="120" height="17"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="bn3-OJ-4bs"/>
@@ -89,19 +89,19 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PKR 4200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FF9-tG-qA4">
-                                <rect key="frame" x="116" y="53" width="46" height="14"/>
+                                <rect key="frame" x="124" y="53" width="46" height="14"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PKR 4200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I7-8U-PTi">
-                                <rect key="frame" x="116" y="67" width="55" height="17"/>
+                                <rect key="frame" x="124" y="67" width="55" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpc-OX-ON3">
-                                <rect key="frame" x="116" y="86" width="80" height="25"/>
+                                <rect key="frame" x="124" y="86" width="80" height="25"/>
                                 <color key="backgroundColor" red="0.9905504584" green="0.7299582362" blue="0.0076472782529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Ne2-Ut-ngm"/>
@@ -122,16 +122,17 @@
                             <constraint firstItem="5I7-8U-PTi" firstAttribute="leading" secondItem="FF9-tG-qA4" secondAttribute="leading" id="DbQ-CJ-Ip1"/>
                             <constraint firstItem="5I7-8U-PTi" firstAttribute="top" secondItem="FF9-tG-qA4" secondAttribute="bottom" id="N9a-sm-9Z5"/>
                             <constraint firstItem="NDk-aF-XYz" firstAttribute="leading" secondItem="SH6-Rj-AFf" secondAttribute="trailing" constant="8" id="Sdu-c2-xXf"/>
+                            <constraint firstItem="cqo-HC-fm1" firstAttribute="leading" secondItem="IHF-VX-pT2" secondAttribute="trailing" constant="8" id="U4N-Hi-8M4"/>
                             <constraint firstItem="dpc-OX-ON3" firstAttribute="top" secondItem="5I7-8U-PTi" secondAttribute="bottom" constant="2" id="V4S-3I-QnM"/>
                             <constraint firstItem="NDk-aF-XYz" firstAttribute="top" secondItem="IHF-VX-pT2" secondAttribute="bottom" constant="1" id="dpa-4i-i8f"/>
                             <constraint firstAttribute="bottom" secondItem="SH6-Rj-AFf" secondAttribute="bottom" constant="14" id="gbZ-EJ-geL"/>
-                            <constraint firstItem="SH6-Rj-AFf" firstAttribute="top" secondItem="Asc-K6-3go" secondAttribute="top" id="hfH-Us-Mmc"/>
+                            <constraint firstItem="SH6-Rj-AFf" firstAttribute="top" secondItem="Asc-K6-3go" secondAttribute="top" constant="8" id="hfH-Us-Mmc"/>
                             <constraint firstItem="cqo-HC-fm1" firstAttribute="top" secondItem="Asc-K6-3go" secondAttribute="top" constant="9" id="hxp-TK-HrS"/>
                             <constraint firstItem="cqo-HC-fm1" firstAttribute="centerY" secondItem="IHF-VX-pT2" secondAttribute="centerY" constant="3.5" id="kYA-8v-3hG"/>
                             <constraint firstAttribute="bottom" secondItem="SH6-Rj-AFf" secondAttribute="bottom" constant="14" id="oML-Rh-jOJ"/>
                             <constraint firstItem="FF9-tG-qA4" firstAttribute="top" secondItem="NDk-aF-XYz" secondAttribute="bottom" constant="1" id="syu-dt-Lid"/>
                             <constraint firstItem="IHF-VX-pT2" firstAttribute="leading" secondItem="SH6-Rj-AFf" secondAttribute="trailing" constant="8" id="uPJ-cD-Y0w"/>
-                            <constraint firstItem="SH6-Rj-AFf" firstAttribute="leading" secondItem="Asc-K6-3go" secondAttribute="leading" id="umV-5N-AFX"/>
+                            <constraint firstItem="SH6-Rj-AFf" firstAttribute="leading" secondItem="Asc-K6-3go" secondAttribute="leading" constant="8" id="umV-5N-AFX"/>
                         </constraints>
                     </view>
                 </subviews>

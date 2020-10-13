@@ -13,6 +13,7 @@ class LoginVC: ZaraatBaseVC {
     @IBOutlet weak var txtemail: UITextField!
     
    
+    @IBOutlet weak var appleView: UIView!
     @IBOutlet weak var txtpassword: UITextField!
     @IBOutlet weak var btnlogin: UIButton!
     
@@ -21,26 +22,37 @@ class LoginVC: ZaraatBaseVC {
     
     @IBOutlet weak var guestView: UIView!
     
-    
-    
+    var passClick = true
+     @IBOutlet weak var btnpass: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fbView.roundView()
         self.gmailView.roundView()
         self.guestView.roundView()
+        appleView.roundView()
         btnlogin.roundButton()
         
       
     }
     
-    
+    @IBAction func passAction(sender: AnyObject) {
+        if(passClick == true) {
+            txtpassword.isSecureTextEntry = false
+            btnpass.setBackgroundImage(UIImage.init(named: "grey (1)"), for: .normal)
+        } else {
+            txtpassword.isSecureTextEntry = true
+            btnpass.setBackgroundImage(UIImage.init(named: "unhide password"), for: .normal)
+        }
+
+        passClick = !passClick
+    }
     
 
     @IBAction func loginAction(_ sender: UIButton) {
         
-       // if checkData() {
-          movetoHome()
-       // }
+   if checkData() {
+         LoginClinet()
+      }
               
        
     }
@@ -57,45 +69,42 @@ class LoginVC: ZaraatBaseVC {
         }else if txtpassword.text!.count < 3 || txtpassword.text!.count > 15  {
             ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: " Password length must be 3-15 characters", messagetype: 0)
             return false
-        }else if txtemail.text!.isValidEmail != true  {
-            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter The Valid Email", messagetype: 0)
-            return false
         }
+//        else if txtemail.text!.isValidEmail != true  {
+//            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter The Valid Email", messagetype: 0)
+//            return false
+//        }
         return true
         
     }
     
-//
-//    func LoginVendor() {
-//
-//           let dic : [String:Any] = ["email" : txtemail.text!,"password":txtpassword.text!]
-//        ShareData.showProgress()
-//           userhandler.login(parms: dic, Success: {response in
-//             ShareData.hideProgress()
-//               ShareData.hideProgress()
-//               if response.success == 1{
-//                ShareData.shareInfo.userInfo = response
-//                ShareData.shareInfo.email = self.txtemail.text!
-//                ShareData.shareInfo.password = self.txtpassword.text!
-//                ShareData.shareInfo.autologin =  true
-//                if response.vendors?.status == 0 {
-//                    self.moveOnBusinessProfile()
-//                }else {
-//                     self.movetoHome()
-//                }
-//
-//                   //Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
-//               }else {
-//                 ShareData.hideProgress()
-//                   ShareData.hideProgress()
-//                   Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
-//               }
-//
-//           }, Failure: {error in
-//               ShareData.hideProgress()
-//               Zalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
-//           })
-//       }
+
+    func LoginClinet() {
+
+           let dic : [String:Any] = ["email" : txtemail.text!,"password":txtpassword.text!]
+        ShareData.showProgress()
+           userhandler.login(parms: dic, Success: {response in
+             ShareData.hideProgress()
+               ShareData.hideProgress()
+               if response.success == 1{
+                ShareData.shareInfo.userInfo = response
+                ShareData.shareInfo.email = self.txtemail.text!
+                ShareData.shareInfo.password = self.txtpassword.text!
+                ShareData.shareInfo.autologin =  true
+                self.movetoHome()
+
+                   //Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+               }else {
+                 ShareData.hideProgress()
+                   ShareData.hideProgress()
+                   ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+               }
+
+           }, Failure: {error in
+               ShareData.hideProgress()
+               ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+           })
+       }
     
     
     func movetoHome(){

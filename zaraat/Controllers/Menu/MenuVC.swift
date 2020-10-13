@@ -87,7 +87,35 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
             self.navigationController?.pushViewController(vc!, animated: true)
+        } else {
+            alertForLogout()
+            
         }
     }
     
+    
+    func alertForLogout() {
+          let alert = UIAlertController(title: "Alert", message: "Are You Sure You Want To LogOut?", preferredStyle: UIAlertController.Style.alert)
+
+          // add the actions (buttons)
+          alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {action in
+            self.logout()
+          }))
+          alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+
+         
+          self.present(alert, animated: true, completion: nil)
+      }
+    
+    func logout(){
+        
+        ShareData.shareInfo.email = nil
+        ShareData.shareInfo.password = nil
+         ShareData.shareInfo.autologin =  false
+         ShareData.shareInfo.userInfo = nil
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "LoginVC") as? LoginVC
+        vc?.hidesBottomBarWhenPushed =  true
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }

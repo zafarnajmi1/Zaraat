@@ -13,6 +13,7 @@ class FeaturedProductsCell: UITableViewCell {
     @IBOutlet weak var btnViewAll: UIButton!
     
     @IBOutlet weak var clView: UICollectionView!
+    var featureProduct = [Featured_products]()
     override func awakeFromNib() {
         super.awakeFromNib()
         btnViewAll.roundButton()
@@ -23,6 +24,15 @@ class FeaturedProductsCell: UITableViewCell {
         self.layoutIfNeeded()
     }
 
+    
+    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
+        clView.delegate = dataSourceDelegate
+        clView.dataSource = dataSourceDelegate
+        clView.tag = row
+        clView.reloadData()
+    }
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -35,11 +45,13 @@ extension FeaturedProductsCell :  UICollectionViewDelegate,UICollectionViewDataS
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return featureProduct.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "FeaturedProductsClView", for: indexPath) as? FeaturedProductsClView
+        let obj =  self.featureProduct[indexPath.row]
+        cell?.loadData(obj: obj)
         return cell!
     }
     

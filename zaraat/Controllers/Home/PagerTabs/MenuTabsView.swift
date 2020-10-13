@@ -79,9 +79,8 @@ class MenuTabsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? BasicCell {
+             cell.titleLabel.font = UIFont.init(name: "Poppins-Regular", size: 15)
             cell.titleLabel.text = dataArray[indexPath.item]
-            //cell.titleLabel.textColor =  #colorLiteral(red: 0.9921568627, green: 0.7299582362, blue: 0.007647278253, alpha: 1)
-            cell.titleLabel.font = UIFont.init(name: "Poppins-Regular", size: 15)
             return cell
         }
         
@@ -98,18 +97,18 @@ class MenuTabsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         
         if isSizeToFitCellsNeeded {
             
-            let sizeee = CGSize.init(width: self.frame.width, height: self.frame.height)
+            let sizeee = CGSize.init(width: 500, height: self.frame.height)
             let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
             
             let str = dataArray[indexPath.item]
             
-            let estimatedRect = NSString.init(string: str).boundingRect(with: sizeee, options: options, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 18)], context: nil)
+            let estimatedRect = NSString.init(string: str).boundingRect(with: sizeee, options: options, attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 23)], context: nil)
         
             return CGSize.init(width: estimatedRect.size.width, height: self.frame.height)
 
         }
         
-        return CGSize.init(width: (self.frame.width - 20)/CGFloat(dataArray.count), height: self.frame.height)
+        return CGSize.init(width: (self.frame.width - 10)/CGFloat(dataArray.count), height: self.frame.height)
     }
     
     

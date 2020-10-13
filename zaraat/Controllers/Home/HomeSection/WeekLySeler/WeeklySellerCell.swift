@@ -19,6 +19,8 @@ class WeeklySellerCell: UITableViewCell {
     @IBOutlet weak var fvrtView: UIView!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var btnsubViewAll: UIButton!
+    let weekly_products = [Weekly_products]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -33,10 +35,7 @@ class WeeklySellerCell: UITableViewCell {
         fvrtView.layer.borderWidth = 1
         fvrtView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
         fvrtView.layer.cornerRadius = 5
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR 4200")
-                      attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
-                      
-        lbldiscountPrice.attributedText = attributeString
+        
         
     }
 
@@ -44,6 +43,17 @@ class WeeklySellerCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func loadData(obj:Weekly_products) {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR: \(obj.vendor_price ?? "")")
+                      attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+                      
+        lbldiscountPrice.attributedText = attributeString
+        
+        self.lbltitle.text =  obj.product_title_en
+        self.lblprice.text =  obj.selling_price
+        self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
     }
     
 }

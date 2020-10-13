@@ -8,22 +8,28 @@
 
 import UIKit
 import  DropDown
+import SkyFloatingLabelTextField
 class SignUpVC: ZaraatBaseVC {
    var mydropwdown = DropDown()
     
     
+    @IBOutlet weak var btnconfirmPass: UIButton!
+    @IBOutlet weak var btnpass: UIButton!
     @IBOutlet weak var btnsignUp: UIButton!
    
  
+    @IBOutlet weak var txtFirstName: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var txtuserName: UITextField!
+    @IBOutlet weak var txtLastName: SkyFloatingLabelTextField!
+    
     @IBOutlet weak var txtemail: UITextField!
     @IBOutlet weak var txtpassword: UITextField!
     @IBOutlet weak var txtconfirmpassword: UITextField!
     @IBOutlet weak var txtphonenumber: UITextField!
     
-   
+   var passClick = true
     
+    var ConpassClick = true
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,10 +45,41 @@ class SignUpVC: ZaraatBaseVC {
       
     }
 
+    
+    @IBAction func passAction(sender: AnyObject) {
+        if(passClick == true) {
+            txtpassword.isSecureTextEntry = false
+            btnpass.setBackgroundImage(UIImage.init(named: "grey (1)"), for: .normal)
+        } else {
+            txtpassword.isSecureTextEntry = true
+            btnpass.setBackgroundImage(UIImage.init(named: "unhide password"), for: .normal)
+        }
+
+        passClick = !passClick
+    }
+    
+    @IBAction func ConpassAction(sender: AnyObject) {
+        if(ConpassClick == true) {
+            txtconfirmpassword.isSecureTextEntry = false
+            btnconfirmPass.setBackgroundImage(UIImage.init(named: "grey (1)"), for: .normal)
+        } else {
+            txtconfirmpassword.isSecureTextEntry = true
+            btnconfirmPass.setBackgroundImage(UIImage.init(named: "unhide password"), for: .normal)
+        }
+
+        ConpassClick = !ConpassClick
+    }
+    
+    
+    
+    
+    
+    
+    
     @IBAction func signUpAction(_ sender: UIButton) {
         
         if checkData() {
-           // self.registerVendor()
+          self.registerClient()
         }
         
         
@@ -54,8 +91,11 @@ class SignUpVC: ZaraatBaseVC {
     
 
     func checkData() -> Bool {
-        if  txtuserName.text == "" {
-            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter The Full Name", messagetype: 0)
+        if  txtFirstName.text == "" {
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter The First Name", messagetype: 0)
+            return false
+        } else if  txtLastName.text == "" {
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter The Last Name", messagetype: 0)
             return false
         } else if  txtemail.text == "" {
             ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: "Please Enter The Email", messagetype: 0)
@@ -80,6 +120,31 @@ class SignUpVC: ZaraatBaseVC {
     }
     
     
+    func registerClient() {
+        let dic: [String:Any] = ["email": self.txtemail.text!, "first_name": txtFirstName.text!, "last_name":self.txtLastName.text!, "phone": txtphonenumber.text!, "password": txtpassword.text!]
+        ShareData.showProgress()
+        userhandler.Register(parms: dic, Success: {response in
+          ShareData.hideProgress()
+            ShareData.hideProgress()
+            if response.success == 1{
+             ShareData.shareInfo.userInfo = response
+             ShareData.shareInfo.email = self.txtemail.text!
+             ShareData.shareInfo.password = self.txtpassword.text!
+             ShareData.shareInfo.autologin =  true
+             self.movetoHome()
+
+                //Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+            }else {
+              ShareData.hideProgress()
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+            }
+
+        }, Failure: {error in
+            ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
     
 
     func movetoHome(){

@@ -16,6 +16,15 @@ class ChangePasswordVC: ZaraatBaseVC {
 //    @IBOutlet weak var rePasswordView: UIView!
 //    @IBOutlet weak var passwordView: UIView!
     var id = 0
+    
+    
+    var passClick = true
+    
+    var ConpassClick = true
+    
+    @IBOutlet weak var btnconfirmPass: UIButton!
+      @IBOutlet weak var btnpass: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -23,6 +32,41 @@ class ChangePasswordVC: ZaraatBaseVC {
         btnChange.roundButton()
        
     }
+    
+    
+    
+    
+    
+    @IBAction func passAction(sender: AnyObject) {
+          if(passClick == true) {
+              txtpassword.isSecureTextEntry = false
+              btnpass.setBackgroundImage(UIImage.init(named: "grey (1)"), for: .normal)
+          } else {
+              txtpassword.isSecureTextEntry = true
+              btnpass.setBackgroundImage(UIImage.init(named: "unhide password"), for: .normal)
+          }
+
+          passClick = !passClick
+      }
+      
+      @IBAction func ConpassAction(sender: AnyObject) {
+          if(ConpassClick == true) {
+              txtreEnterPassword.isSecureTextEntry = false
+              btnconfirmPass.setBackgroundImage(UIImage.init(named: "grey (1)"), for: .normal)
+          } else {
+              txtreEnterPassword.isSecureTextEntry = true
+              btnconfirmPass.setBackgroundImage(UIImage.init(named: "unhide password"), for: .normal)
+          }
+
+          ConpassClick = !ConpassClick
+      }
+      
+    
+    
+    
+    
+    
+    
     
     
     
@@ -44,48 +88,48 @@ class ChangePasswordVC: ZaraatBaseVC {
     }
     
     
-//    func  resetPasswordApi() {
-//        let dic : [String:Any] = ["vendor_id":self.id, "password":txtpassword.text!, "password_confirmation":txtreEnterPassword.text!]
-//        ShareData.showProgress()
-//        userhandler.resetPassword(params: dic, Success: {response in
-//            ShareData.hideProgress()
-//            if response.success == 1 {
-//                Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
-//                self.backToLogin(UIButton())
-//            } else {
-//                 ShareData.hideProgress()
-//                Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
-//            }
-//        }, Failure: {error in
-//            ShareData.hideProgress()
-//                          Zalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
-//        })
-//    }
+    func  resetPasswordApi() {
+        let dic : [String:Any] = ["customer_id":self.id, "password":txtpassword.text!, "password_confirmation":txtreEnterPassword.text!]
+        ShareData.showProgress()
+        userhandler.ResetPassword(parms: dic, Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1 {
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+                self.backToLogin(UIButton())
+            } else {
+                 ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+                          ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
 //    
-//    @IBAction func ChnageAction(_ sender: UIButton) {
-//        if checkdata() {
-//            resetPasswordApi()
-//        }
-//    }
+    @IBAction func ChnageAction(_ sender: UIButton) {
+        if checkdata() {
+            resetPasswordApi()
+        }
+    }
 //    
-//    @IBAction func backToLogin(_ sender: UIButton) {
-//        
-//        
-//            if UIDevice.current.userInterfaceIdiom == .pad {
-//                    
-//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-//                let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//                
-//            } else {
-//                
-//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-//                let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//             }
-//
-//        
-//       
-//    }
-//    
+    @IBAction func backToLogin(_ sender: UIButton) {
+        
+        
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                    
+                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+                self.navigationController?.pushViewController(vc!, animated: true)
+                
+            } else {
+                
+                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+                self.navigationController?.pushViewController(vc!, animated: true)
+             }
+
+        
+       
+    }
+    
 }

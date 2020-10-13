@@ -14,14 +14,14 @@ class BasicCell: UICollectionViewCell {
         let lbl = UILabel()
         return lbl
     }()
-     
+    
     var indicatorView: UIView!
 
     override var isSelected: Bool {
         
         didSet{
             UIView.animate(withDuration: 0.30) {
-                self.indicatorView.backgroundColor = self.isSelected ? #colorLiteral(red: 0.9921568627, green: 0.7299582362, blue: 0.007647278253, alpha: 1) : UIColor.clear
+                self.indicatorView.backgroundColor = self.isSelected ? #colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1) : UIColor.clear
                 self.layoutIfNeeded()
             }
         }

@@ -254,7 +254,7 @@ class B2BViewController: UIViewController {
           self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 50 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
         } else {
             
-             self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 60 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
+             self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 50 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
         }
         self.addChild(self.pageController)
         self.view.addSubview(self.pageController.view)
@@ -269,21 +269,14 @@ class B2BViewController: UIViewController {
         if((self.menuBarView.dataArray.count == 0) || (index >= self.menuBarView.dataArray.count)) {
             return nil
         }
-        if index == 0 {
+       
         let contentVC = storyboard?.instantiateViewController(withIdentifier: "B2BHomeVC") as! B2BHomeVC
 //        contentVC.strTitle = tabs[index]
            // contentVC.tblView.isHidden = false
         contentVC.pageIndex = index
         currentIndex = index
         return contentVC
-        } else {
-            let contentVC = storyboard?.instantiateViewController(withIdentifier: "HomeButtonsVC") as! HomeButtonsVC
-            //        contentVC.strTitle = tabs[index]
-                    //contentVC.pageIndex = index
-               //contentVC.tblView.isHidden = true
-                    currentIndex = index
-                    return contentVC
-        }
+       
     }
     
 }

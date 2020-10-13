@@ -40,5 +40,6 @@ target 'zaraat' do
  pod 'SkyFloatingLabelTextField'
  pod 'SideMenu'
   pod 'AnimatableReload'
+  pod 'KRProgressHUD'
  
 end
