@@ -11,6 +11,7 @@ import UIKit
 class TrendsPartThreeCell: UITableViewCell {
 
        @IBOutlet weak var ClView: UICollectionView!
+     let sectiontwo = [TrendingProductsSection_2]()
               override func awakeFromNib() {
                   super.awakeFromNib()
                   self.ClView.delegate =  self

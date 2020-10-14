@@ -50,6 +50,7 @@ class Constant {
         static let ChildCate = "childcategories/"
         static let subcateProducts = "subcategory/"
         static let Trending = "products/trending"
+        static let CateGories = "category/"
     }
     
     struct NetworkErrorType {

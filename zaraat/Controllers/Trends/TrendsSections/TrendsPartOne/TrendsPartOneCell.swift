@@ -7,10 +7,12 @@
 //
 
 import UIKit
-
+import SDWebImage
 class TrendsPartOneCell: UITableViewCell {
 
         @IBOutlet weak var ClView: UICollectionView!
+      var sectionOne = [TrendingProductsSection_1]()
+    
            override func awakeFromNib() {
                super.awakeFromNib()
                self.ClView.delegate =  self
@@ -33,11 +35,15 @@ class TrendsPartOneCell: UITableViewCell {
                return 1
            }
            func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-               return 10
+            return self.sectionOne.count
            }
            
            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrendsClViewPartOneCell", for: indexPath) as? TrendsClViewPartOneCell
+            cell?.lbltitle.text =  self.sectionOne[indexPath.row].product_title_en
+            cell?.lblPrice.text =  self.sectionOne[indexPath.row].selling_price
+            cell?.lblstock.text =  self.sectionOne[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+            cell?.img.sd_setImage(with: URL(string: self.sectionOne[indexPath.row].featured_image ?? "Text"))
                return cell!
            }
            

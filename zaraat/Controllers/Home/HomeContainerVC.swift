@@ -29,7 +29,7 @@ class HomeContainerVC: UIViewController {
         } else{
                   HomeView.alpha =  0
                   HomeCateView.alpha = 1
-            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MoreTab"), object: nil, userInfo: ["Index":pageIndex])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Cate"), object: nil, userInfo: ["Cateid":pageIndex])
                   
               }
     }

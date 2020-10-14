@@ -7,152 +7,147 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeCateVC: UIViewController {
-
  var pageIndex: Int = 0
               
-                 @IBOutlet weak var sliderClView: UICollectionView!
-                  @IBOutlet weak var pager: UIPageControl!
+    @IBOutlet weak var sectwoclView: UICollectionView!
+    @IBOutlet weak var sectwoClViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var adimg: UIImageView!
+    @IBOutlet weak var seconeClViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var seconeClview: UICollectionView!
+    @IBOutlet weak var storeForyouClView: UICollectionView!
+    @IBOutlet weak var bannerimg: UIImageView!
+    var HomeCatedata : HomeCateData?
               
-                 @IBOutlet weak var tblView: UITableView! {
-                     didSet {
-                         tblView.estimatedRowHeight = 200
-                         tblView.rowHeight =  UITableView.automaticDimension
-                         
-                     }
-                 }
-                 
-              
-              override func viewDidLoad() {
-                  super.viewDidLoad()
-               
-                  
-                  let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+        override func viewDidLoad() {
+          super.viewDidLoad()
+            adimg.layer.cornerRadius = 8
+          
+          let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
 
-                       let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-                       imageView.contentMode = .scaleAspectFit
-                       let image = UIImage(named: "Zaraat Mall")
-                       imageView.image = image
-                       logoContainer.addSubview(imageView)
-                       navigationItem.titleView = logoContainer
-                  
-                  
-                  
-               
-                   sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
-                  addBackButton()
-                  setNavigationBarWhiteColor()
-                  setSlider()
-              }
+               let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+               imageView.contentMode = .scaleAspectFit
+               let image = UIImage(named: "Zaraat Mall")
+               imageView.image = image
+               logoContainer.addSubview(imageView)
+               navigationItem.titleView = logoContainer
+            
+          NotificationCenter.default.addObserver(self, selector: #selector(self.CateData(_:)), name: NSNotification.Name(rawValue: "Cate"), object: nil)
+            
+          addBackButton()
+          setNavigationBarWhiteColor()
+          
+        }
               
              
               
-                 func setSlider(){
-                         
-                         Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
-                         
-                         
-                     }
-                     
-                     
-                     @objc func scrollAutomatically(_ timer: Timer) {
-                         
-                         if let coll  = self.sliderClView {
-                             for cell in coll.visibleCells {
-                                 let indexPath: IndexPath? = coll.indexPath(for: cell)
-                                 if ((indexPath?.row)!  < 3 - 1){
-                                     let indexPath1: IndexPath?
-                                     indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
-                                     
-                                     coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
-                                 }
-                                 else{
-                                     let indexPath1: IndexPath?
-                                     indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
-                                     coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
-                                 }
-                                 
-                             }
-                         }
-                     }
+ override func viewDidLayoutSubviews() {
+       super.viewDidLayoutSubviews()
+        storeForyouClView.reloadData()
+    
+     let newHeightsecone : CGFloat = seconeClview.contentSize.height//collectionViewLayout.collectionViewContentSize.height
+          seconeClViewHeight.constant = newHeightsecone
+    self.seconeClview.reloadData()
+          self.view.setNeedsLayout()
+     
+     let newHeightsectwo : CGFloat = sectwoclView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
+                 sectwoClViewHeight.constant = newHeightsectwo
+           self.sectwoclView.reloadData()
+                 self.view.setNeedsLayout()
+     
+ }
+    
+    
+    
+    @objc func CateData(_ notification: NSNotification) {
+           print(notification.userInfo ?? "")
+           if let dict = notification.userInfo as NSDictionary? {
+            if let id = dict["Cateid"]{
+                getHomeCateProductsApi(id:id as! Int)
+               }
+           }
+    }
+    
+    
+    
+    func getHomeCateProductsApi(id:Int) {
+        ShareData.showProgress()
+        userhandler.getCateProducts(Cate: id, Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1 {
+                self.HomeCatedata =  response.data
+                
+                
+                self.adimg.sd_setImage(with: URL(string: self.self.HomeCatedata?.ad_1?.category_image ?? "Text"))
+                
+                self.bannerimg.sd_setImage(with: URL(string:self.HomeCatedata?.ad_2?.category_image ?? "Text"))
+                
+                self.sectwoclView.reloadData()
+                self.seconeClview.reloadData()
+                self.storeForyouClView.reloadData()
+            } else {
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
+    
+    
+    
+}
+  extension HomeCateVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+
+    
+      func numberOfSections(in collectionView: UICollectionView) -> Int {
+           return 1
+      }
+      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView ==  storeForyouClView {
+            return self.HomeCatedata?.sub_categories?.count ?? 0
+        } else if collectionView ==  seconeClview {
+            return self.HomeCatedata?.section_1?.count ?? 0
+        } else {
+            return self.HomeCatedata?.section_2?.count ?? 0
+        }
+
+      }
+
+      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
              
-
-          }
-          extension HomeCateVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
-
-             func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
-              indexPath: IndexPath) -> CGSize {
-
-              let height = collectionView.frame.height
-              let width = sliderClView.frame.width
-              let size = CGSize(width: width , height: height)
-              return size
-          }
-              func numberOfSections(in collectionView: UICollectionView) -> Int {
-                   return 1
-              }
-              func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-                  self.pager.numberOfPages =  4
-                      return 4
-
-              }
-
-              func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-
-                      let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
-
-                             return cell!
-
-              }
-              func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-                     self.pager.currentPage = indexPath.row
+          if collectionView ==  storeForyouClView {
+                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartOneCell", for: indexPath) as? HomeCateClViewPartOneCell
+               cell?.lbltitle.text =  self.HomeCatedata?.sub_categories?[indexPath.row].subcategory_title_en
+            //cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.sub_categories?[indexPath.row]. ?? "Text"))
+                        return cell!
+            
+                 } else if collectionView ==  seconeClview {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartTwoCell", for: indexPath) as? HomeCateClViewPartTwoCell
+            
+                    cell?.lbltitle.text =  self.HomeCatedata?.section_1?[indexPath.row].product_title_en
+                    cell?.lblPrice.text =  self.HomeCatedata?.section_1?[indexPath.row].selling_price
+                    cell?.lblstock.text =  self.HomeCatedata?.section_1?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                    cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.section_1![indexPath.row].featured_image ?? "Text"))
+        
+                    return cell!
+                 } else {
+                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartThreeCell", for: indexPath) as? HomeCateClViewPartThreeCell
+            
+                    cell?.lbltitle.text =  self.HomeCatedata?.section_2?[indexPath.row].product_title_en
+                    cell?.lblPrice.text =  self.HomeCatedata?.section_2?[indexPath.row].selling_price
+                    cell?.lblstock.text =  self.HomeCatedata?.section_2?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                    cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.section_2![indexPath.row].featured_image ?? "Text"))
+                        
+            return cell!
                  }
 
-          }
+      }
+     
+
+  }
 
 
-       extension HomeCateVC :  UITableViewDelegate, UITableViewDataSource {
-           func numberOfSections(in tableView: UITableView) -> Int {
-               return 4
-           }
-           
-           
-           func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-               if indexPath.section == 1 {
-                   let cell =  tableView.dequeueReusableCell(withIdentifier: "HomeCatePartTwoCell") as? HomeCatePartTwoCell
-                   return (cell?.ClView.contentSize.height)! + 1500
-               } else if indexPath.section == 3 {
-                   let cell =  tableView.dequeueReusableCell(withIdentifier: "HomeCatePartThreeCell") as? HomeCatePartThreeCell
-                   return (cell?.ClView.contentSize.height)! + 1500
-               }else  {
-                    return UITableView.automaticDimension
-               }
-           }
-           
-           
-           func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return 1
-           }
-           
-           func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-               
-               if indexPath.section == 0 {
-               let cell =  tableView.dequeueReusableCell(withIdentifier: "HomeCatePartOneCell") as? HomeCatePartOneCell
-               return cell!
-               } else if indexPath.section == 1 {
-                   let cell =  tableView.dequeueReusableCell(withIdentifier: "HomeCatePartTwoCell") as? HomeCatePartTwoCell
-                          return cell!
-               } else if indexPath.section == 2 {
-                   let cell =  tableView.dequeueReusableCell(withIdentifier: "HomeCateAdsCell") as? HomeCateAdsCell
-                   return cell!
-               } else {
-                   let cell =  tableView.dequeueReusableCell(withIdentifier: "HomeCatePartThreeCell") as? HomeCatePartThreeCell
-                   return cell!
-               }
-           }
-           
-           
-       }

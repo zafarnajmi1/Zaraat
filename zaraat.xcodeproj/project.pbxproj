@@ -64,6 +64,7 @@
 		CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */; };
 		CE49D827240E7682009ECFD5 /* ChangePasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */; };
 		CE4A56072510CAFB0060156E /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A56062510CAFB0060156E /* EditProfileVC.swift */; };
+		CE4A7E1E2537298C001F7A7D /* HomeCateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7E1D2537298C001F7A7D /* HomeCateModel.swift */; };
 		CE4B88E2240D17B400DB20FD /* SignUpZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B88E1240D17B400DB20FD /* SignUpZaraatVC.swift */; };
 		CE4BBF3E2410CD2E000DAAB4 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF3D2410CD2E000DAAB4 /* TabBarVC.swift */; };
 		CE4BBF402410CEF4000DAAB4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF3F2410CEF4000DAAB4 /* HomeVC.swift */; };
@@ -321,6 +322,7 @@
 		CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationZaraatVC.swift; sourceTree = "<group>"; };
 		CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE4A56062510CAFB0060156E /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		CE4A7E1D2537298C001F7A7D /* HomeCateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCateModel.swift; sourceTree = "<group>"; };
 		CE4B88E1240D17B400DB20FD /* SignUpZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpZaraatVC.swift; sourceTree = "<group>"; };
 		CE4BBF3D2410CD2E000DAAB4 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		CE4BBF3F2410CEF4000DAAB4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -893,6 +895,7 @@
 				CECB92ED2535BEAF009F0C04 /* ChildCateModel.swift */,
 				CECB92EF2535D247009F0C04 /* SubCateProductsModel.swift */,
 				CECB92F12535E254009F0C04 /* TrendingModel.swift */,
+				CE4A7E1D2537298C001F7A7D /* HomeCateModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1774,6 +1777,7 @@
 				CE5145AD251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift in Sources */,
 				CEAC33B9251CC3F5002D2E9C /* B2BInquireisVC.swift in Sources */,
 				CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */,
+				CE4A7E1E2537298C001F7A7D /* HomeCateModel.swift in Sources */,
 				CE563AD9252CAC5400287511 /* SignUpModel.swift in Sources */,
 				CE2BF474252F459400A1BBD9 /* MenuTabsView.swift in Sources */,
 				CE90751D2527108A002BEFB4 /* TrendsPartThreeCell.swift in Sources */,

@@ -271,7 +271,7 @@ class userhandler {
     
     
     
-    class  func getTrendingProducts( Cate: Int, Success: @escaping (TrendingProductsModels) -> Void, Failure: @escaping(NetworkError) -> Void){
+    class  func getTrendingProducts(Success: @escaping (TrendingProductsModels) -> Void, Failure: @escaping(NetworkError) -> Void){
             let url = Constant.MainUrl + Constant.URLs.Trending
             print("pages Url", url)
             Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
@@ -289,6 +289,29 @@ class userhandler {
                 Failure(Error)
             })
         }
+    
+    
+    
+    class  func getCateProducts( Cate: Int, Success: @escaping (HomeCate) -> Void, Failure: @escaping(NetworkError) -> Void){
+               let url = Constant.MainUrl + Constant.URLs.CateGories + "\(Cate)" + "/products"
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(HomeCate.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+    
+    
 //    
 //    class  func getSubCategries(id:Int?, Success: @escaping (SubCategoryModel) -> Void, Failure: @escaping(NetworkError) -> Void){
 //        let url = Constant.MainUrl + Constant.URLs.pkgCates + "\(id!)"
