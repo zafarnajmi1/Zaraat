@@ -65,7 +65,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var tblView: UITableView! {
         didSet {
-            tblView.estimatedRowHeight = 200
+            tblView.estimatedRowHeight = 100
             tblView.rowHeight =  UITableView.automaticDimension
             
         }
@@ -237,15 +237,32 @@ class HomeVC: UIViewController {
     
     
     @IBAction func btnflashViewAll(_ sender: UIButton) {
+        let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        vc?.viewAll = 1
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
     
     @IBAction func topRatedProducts(_ sender: UIButton) {
+        let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        vc?.viewAll = 2
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func WeeklyViewAll(_ sender: UIButton) {
+        let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        vc?.viewAll = 3
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func FeatureProducts(_ sender: UIButton) {
+        let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        vc?.viewAll = 4
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func ZMallAction(_ sender: UIButton) {
@@ -338,7 +355,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
             
                
                 
-                return 180
+                return 140
            
     }
     

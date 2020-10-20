@@ -10,6 +10,15 @@ import UIKit
 
 class ZDigitalClViewPartOneCell: UICollectionViewCell {
     
+   @IBOutlet weak var sellerimg: UIImageView!
+                 @IBOutlet weak var pkgimg: UIImageView!
+          
+             
+          @IBOutlet weak var lblstock: UILabel!
+          @IBOutlet weak var lblprice: UILabel!
+          @IBOutlet weak var lbltitl: UILabel!
+       
+       
     @IBOutlet weak var img: UIImageView!
            @IBOutlet weak var mainView: UIView!
                override func awakeFromNib() {
@@ -21,3 +30,4 @@ class ZDigitalClViewPartOneCell: UICollectionViewCell {
                }
 
            }
+              

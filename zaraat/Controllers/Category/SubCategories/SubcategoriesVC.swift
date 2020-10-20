@@ -118,7 +118,7 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
             
          cell?.lbltile.text = self.childCate[indexPath.row].child_subcategory_title_en
         
-        cell?.img.sd_setImage(with: URL(string: self.childCate[indexPath.row].image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
+       // cell?.img.sd_setImage(with: URL(string: self.childCate[indexPath.row].image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
         return cell!
         } else {
             let cell  = tableView.dequeueReusableCell(withIdentifier: "WeeklySellerCell") as? WeeklySellerCell
@@ -126,7 +126,7 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
             cell?.lbltitle.text = self.SubProductdata?.products![indexPath.row].product_title_en
             cell?.lblprice.text =  self.SubProductdata?.products![indexPath.row].selling_price
             cell?.lbldiscountPrice.text =  self.SubProductdata?.products![indexPath.row].vendor_price
-            cell?.btnsubViewAll.isHidden = true
+            //cell?.btnsubViewAll.isHidden = true
             
             return cell!
         }
@@ -137,7 +137,7 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
               let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
-              
+            vc!.id =  self.childCate[indexPath.row].child_categories_id ?? 0
               self.navigationController?.pushViewController(vc!, animated: true)
             
         } else {

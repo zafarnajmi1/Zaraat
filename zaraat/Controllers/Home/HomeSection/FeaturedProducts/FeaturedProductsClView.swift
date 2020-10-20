@@ -19,7 +19,7 @@ class FeaturedProductsClView: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         subView.setroundCornerView(corner: 8)
-        
+        img.layer.cornerRadius = 8
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR 4200")
                       attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
                       lbldiscountPKr.attributedText =  attributeString

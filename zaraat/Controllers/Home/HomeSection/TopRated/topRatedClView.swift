@@ -20,6 +20,7 @@ class topRatedClView: UICollectionViewCell {
     @IBOutlet weak var subViewImage: ShadowView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        img.layer.cornerRadius = 8
         subViewImage.setroundCornerView(corner: 8)
         
     }

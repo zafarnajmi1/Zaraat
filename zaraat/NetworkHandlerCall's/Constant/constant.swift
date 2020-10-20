@@ -51,6 +51,14 @@ class Constant {
         static let subcateProducts = "subcategory/"
         static let Trending = "products/trending"
         static let CateGories = "category/"
+        static let FlashSale = "sales/all"
+        static let WeeklyViewAll = "products/weekly/all"
+        static let FeatuerProductAll = "products/featured/all"
+        static let topproducts = "products/latest"
+        static let ZMart = "products/gofresh"
+        static let  productList = "childcategory/"
+        static let  Zpharmacy = "products/zpharmacy"
+        static let Digital = "products/zdigital"
     }
     
     struct NetworkErrorType {

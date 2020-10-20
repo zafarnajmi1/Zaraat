@@ -30,16 +30,27 @@ class ProductListCell: UITableViewCell {
         fvrtView.layer.borderWidth = 1
         fvrtView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
         fvrtView.layer.cornerRadius = 5
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR 4200")
-                      attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
-                      
-        lbldiscountPrice.attributedText = attributeString
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func loadData(obj:Products) {
+        
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: obj.vendor_price ?? "")
+                      attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+                      
+        lbldiscountPrice.attributedText = attributeString
+        
+        
+        self.lblprice.text =  obj.selling_price
+        self.lbltitle.text =  obj.product_title_en
+        
+        self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
     }
     
 }

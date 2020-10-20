@@ -11,12 +11,11 @@ import UIKit
 class SubcateGoriesCell: UICollectionViewCell {
     @IBOutlet weak var lbltitle: UILabel!
     
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var mainView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        img.layer.borderWidth =  0.5
-                       img.layer.borderColor =  #colorLiteral(red: 0.5802220702, green: 0.5843672752, blue: 0.5842876434, alpha: 1)
-                       img.layer.cornerRadius = 5
+        mainView.roundView()
     }
 
 }

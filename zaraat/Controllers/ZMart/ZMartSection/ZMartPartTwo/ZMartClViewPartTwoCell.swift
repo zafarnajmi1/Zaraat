@@ -9,6 +9,17 @@
 import UIKit
 
 class ZMartClViewPartTwoCell: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var sellerimg: UIImageView!
+            @IBOutlet weak var pkgimg: UIImageView!
+    
+        
+     @IBOutlet weak var lblstock: UILabel!
+     @IBOutlet weak var lblprice: UILabel!
+     @IBOutlet weak var lbltitl: UILabel!
+    
+    
     @IBOutlet weak var mainView: ShadowView!
           @IBOutlet weak var img: UIImageView!
           
