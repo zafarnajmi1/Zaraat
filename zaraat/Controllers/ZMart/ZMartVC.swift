@@ -167,9 +167,34 @@ extension ZMartVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
     }
     
 
-      
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+                if collectionView == ClViewStore {
+
+                    let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    vc!.id =  self.Martdata?.subcategories![indexPath.row].subcategory_id ?? 0
+                      vc?.typeno = 2
+                    self.navigationController?.pushViewController(vc!, animated: true)
+
+                } else if collectionView == secOneClView {
+                    
+                          let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                          vc?.id =   self.Martdata?.section_1![indexPath.row].products_id ?? 0
+                           self.navigationController?.pushViewController(vc!, animated: true)
+            
+                } else {
+                    
+                             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                             vc?.id =   self.Martdata?.section_2![indexPath.row].products_id ?? 0
+                              self.navigationController?.pushViewController(vc!, animated: true)
+                    }
     }
+
+
+}
 
 
    

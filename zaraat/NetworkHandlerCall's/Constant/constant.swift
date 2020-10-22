@@ -59,6 +59,16 @@ class Constant {
         static let  productList = "childcategory/"
         static let  Zpharmacy = "products/zpharmacy"
         static let Digital = "products/zdigital"
+       
+        static let Education = "products/education"
+        static let Fashion = "products/fashion"
+        static let electronics = "products/electronics"
+        static let homelifestyle = "products/homelifestyle"
+        static let watchsbag = "products/watchesbags"
+        static let homeappliance = "products/homeappliances"
+        static let productdetail = "products/show/"
+        static let mainCate = "category/"
+        static let b2bHomeLand = "products/landing/b2b"
     }
     
     struct NetworkErrorType {

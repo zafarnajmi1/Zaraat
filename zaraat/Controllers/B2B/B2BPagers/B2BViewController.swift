@@ -19,9 +19,9 @@ class B2BViewController: UIViewController {
     
     @IBOutlet weak var txtsearch: UITextField!
     
-    
+    var tabs = [String]()
     var currentIndex: Int = 0
-    var tabs = ["ALL","Live Stocks","Seeds","Pesticides","Irrigation System","Poltery Form"]
+    //var tabs = ["ALL","Live Stocks","Seeds","Pesticides","Irrigation System","Poltery Form"]
     var pageController: UIPageViewController!
 
     override func viewDidLoad() {
@@ -40,8 +40,13 @@ class B2BViewController: UIViewController {
         
         
         
+               for item in (ShareData.shareInfo.b2bCate?.categories)!{
+                   self.tabs.append(item.category_title_en ?? "")
+               }
+               self.tabs.insert("ALL", at: 0)
+               menuBarView.dataArray =  tabs
         
-        menuBarView.dataArray = tabs
+       
         menuBarView.isSizeToFitCellsNeeded = true
         menuBarView.collView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)//UIColor.init(white: 0.97, alpha: 0.97)
         
@@ -270,7 +275,7 @@ class B2BViewController: UIViewController {
             return nil
         }
        
-        let contentVC = storyboard?.instantiateViewController(withIdentifier: "B2BHomeVC") as! B2BHomeVC
+        let contentVC = storyboard?.instantiateViewController(withIdentifier: "B2BHomeContainer") as! B2BHomeContainer
 //        contentVC.strTitle = tabs[index]
            // contentVC.tblView.isHidden = false
         contentVC.pageIndex = index
@@ -314,7 +319,7 @@ extension B2BViewController: UIPageViewControllerDataSource, UIPageViewControlle
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        var index = (viewController as! B2BHomeVC).pageIndex
+        var index = (viewController as! B2BHomeContainer).pageIndex
         
         if (index == 0) || (index == NSNotFound) {
             return nil
@@ -326,7 +331,7 @@ extension B2BViewController: UIPageViewControllerDataSource, UIPageViewControlle
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        var index = (viewController as! B2BHomeVC).pageIndex
+        var index = (viewController as! B2BHomeContainer).pageIndex
         
         if (index == tabs.count) || (index == NSNotFound) {
             return nil
@@ -341,7 +346,7 @@ extension B2BViewController: UIPageViewControllerDataSource, UIPageViewControlle
         
         if finished {
             if completed {
-                let cvc = pageViewController.viewControllers!.first as! B2BHomeVC
+                let cvc = pageViewController.viewControllers!.first as! B2BHomeContainer
                 let newIndex = cvc.pageIndex
                 menuBarView.collView.selectItem(at: IndexPath.init(item: newIndex, section: 0), animated: true, scrollPosition: .centeredVertically)
                 menuBarView.collView.scrollToItem(at: IndexPath.init(item: newIndex, section: 0), at: .centeredHorizontally, animated: true)

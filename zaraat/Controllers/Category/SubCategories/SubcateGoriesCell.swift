@@ -15,7 +15,10 @@ class SubcateGoriesCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        mainView.roundView()
+        //mainView.roundView()
+        mainView.layer.cornerRadius = 8
+        mainView.layer.borderColor =  #colorLiteral(red: 0.8705882353, green: 0.862745098, blue: 0.8705882353, alpha: 1)
+        mainView.layer.borderWidth = 1
     }
 
 }

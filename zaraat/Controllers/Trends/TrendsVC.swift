@@ -134,51 +134,32 @@ extension TrendsVC :  UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == trendClView {
+
+                let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                vc!.id =  self.trendData?.stores![indexPath.row].categories_id ?? 0
+                  vc?.typeno = 1
+                self.navigationController?.pushViewController(vc!, animated: true)
+
+            } else if collectionView == secOneClView {
+                
+                      let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                       let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                      vc?.id =  self.trendData?.section_1![indexPath.row].products_id ?? 0
+                       self.navigationController?.pushViewController(vc!, animated: true)
+        
+            } else {
+                
+                         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                         vc?.id =   self.trendData?.section_2![indexPath.row].products_id ?? 0
+                          self.navigationController?.pushViewController(vc!, animated: true)
+                }
+    }
+    
 }
 
 
-
-
-
-//    extension TrendsVC :  UITableViewDelegate, UITableViewDataSource {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//       return 3
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//       if indexPath.section == 0 {
-//           let cell =  tableView.dequeueReusableCell(withIdentifier: "TrendsPartOneCell") as? TrendsPartOneCell
-//           return (cell?.ClView.contentSize.height)!
-//       } else if indexPath.section == 2 {
-//           let cell =  tableView.dequeueReusableCell(withIdentifier: "TrendsPartThreeCell") as? TrendsPartThreeCell
-//           return (cell?.ClView.contentSize.height)! + 1500
-//       }else  {
-//            return UITableView.automaticDimension
-//       }
-//    }
-//
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//       if indexPath.section == 0 {
-//       let cell =  tableView.dequeueReusableCell(withIdentifier: "TrendsPartOneCell") as? TrendsPartOneCell
-//        cell?.sectionOne =  self.trendData?.section_1 ?? []
-//       return cell!
-//       } else if indexPath.section == 1 {
-//           let cell =  tableView.dequeueReusableCell(withIdentifier: "TrendsAdsCell") as? TrendsAdsCell
-//                  return cell!
-//
-//       } else  {
-//
-//           let cell =  tableView.dequeueReusableCell(withIdentifier: "TrendsPartThreeCell") as? TrendsPartThreeCell
-//           return cell!
-//       }
-//    }
-//
-//
-//    }

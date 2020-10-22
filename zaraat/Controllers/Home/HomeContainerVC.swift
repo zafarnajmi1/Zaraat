@@ -29,7 +29,7 @@ class HomeContainerVC: UIViewController {
         } else{
                   HomeView.alpha =  0
                   HomeCateView.alpha = 1
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Cate"), object: nil, userInfo: ["Cateid":pageIndex])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Cate"), object: nil, userInfo: ["Cateid":ShareData.shareInfo.EcommerceCate?.categories?[pageIndex].categories_id ?? 0] )
                   
               }
     }

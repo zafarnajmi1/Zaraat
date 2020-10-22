@@ -80,6 +80,25 @@ class userhandler {
         }
     
     
+    class  func getB2BHomeLanding( Success: @escaping (B2bHomeLandingModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+            let url = Constant.MainUrl + Constant.URLs.b2bHomeLand
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(B2bHomeLandingModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
     
     
     class  func getB2BCate( Success: @escaping (B2BCateModel) -> Void, Failure: @escaping(NetworkError) -> Void){
@@ -478,5 +497,169 @@ class userhandler {
             })
         }
     
+    ////////////////////
     
+    class  func getFashion( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Fashion
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    class  func getElectronics( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.electronics
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+       
+    
+    
+    
+    class  func getHomeLifeStyle( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.homelifestyle
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+       
+    
+    
+    class  func geteducation( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.Education
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+       
+    
+    class  func getWatchs( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.watchsbag
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+    
+    
+    
+    class  func getHomeAppliances( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.homeappliance
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+       
+       
+    
+    class  func getProductDetail(id:Int, Success: @escaping (ProductDetailModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.productdetail + "\(id)"
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ProductDetailModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+
+    class  func getMainCateProducts( Cate: Int, Success: @escaping (MainCategoriesProducts) -> Void, Failure: @escaping(NetworkError) -> Void){
+              let url = Constant.MainUrl + Constant.URLs.mainCate + "\(Cate)" + "/productsonly"
+              print("pages Url", url)
+              Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+      
+                  do {
+                      let responseModel = try JSONDecoder().decode(MainCategoriesProducts.self, from: successResponse.data!)
+                      Success(responseModel)
+                  }
+                  catch {
+                      print("Response Error")
+                  }
+      
+      
+              } , Falioure: {(Error) in
+                  Failure(Error)
+              })
+          }
 }

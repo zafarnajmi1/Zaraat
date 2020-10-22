@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Regular.otf">
+        <array key="Poppins-Regular.ttf">
             <string>Poppins-Regular</string>
         </array>
     </customFonts>
@@ -15,31 +15,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubcateGoriesCell" id="gTV-IL-0wX" customClass="SubcateGoriesCell" customModule="zaraat" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="84" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="264" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="84" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="264" height="40"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utO-8n-02s">
-                        <rect key="frame" x="0.0" y="0.0" width="84" height="40"/>
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Phones" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTx-ls-GuN">
-                                <rect key="frame" x="4" y="13" width="76" height="14"/>
+                                <rect key="frame" x="8" y="13" width="248" height="14"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="Hkc-bv-i5d"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="lYy-lQ-aoZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="TTx-ls-GuN" firstAttribute="leading" secondItem="utO-8n-02s" secondAttribute="leading" constant="4" id="1SY-ax-hLx"/>
+                            <constraint firstItem="TTx-ls-GuN" firstAttribute="leading" secondItem="utO-8n-02s" secondAttribute="leading" constant="8" id="1SY-ax-hLx"/>
                             <constraint firstAttribute="bottom" secondItem="TTx-ls-GuN" secondAttribute="bottom" constant="13" id="BNR-3X-pJY"/>
+                            <constraint firstAttribute="height" constant="40" id="C0m-Um-II3"/>
+                            <constraint firstAttribute="trailing" secondItem="TTx-ls-GuN" secondAttribute="trailing" constant="8" id="NFh-Rj-MtD"/>
                             <constraint firstItem="TTx-ls-GuN" firstAttribute="top" secondItem="utO-8n-02s" secondAttribute="top" constant="13" id="O1T-t2-DEq"/>
-                            <constraint firstAttribute="trailing" secondItem="TTx-ls-GuN" secondAttribute="trailing" constant="4" id="S3B-sr-TQy"/>
                             <constraint firstItem="TTx-ls-GuN" firstAttribute="centerX" secondItem="utO-8n-02s" secondAttribute="centerX" id="mY3-7C-iIl"/>
                             <constraint firstItem="TTx-ls-GuN" firstAttribute="centerY" secondItem="utO-8n-02s" secondAttribute="centerY" id="zRv-eW-d3A"/>
                         </constraints>
@@ -53,12 +54,12 @@
                 <constraint firstItem="utO-8n-02s" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="w9q-CF-WwV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="84" height="40"/>
+            <size key="customSize" width="264" height="40"/>
             <connections>
                 <outlet property="lbltitle" destination="TTx-ls-GuN" id="dRC-hl-Mf4"/>
                 <outlet property="mainView" destination="utO-8n-02s" id="Cv1-Eg-QNz"/>
             </connections>
-            <point key="canvasLocation" x="155.07246376811597" y="127.90178571428571"/>
+            <point key="canvasLocation" x="285.50724637681162" y="127.90178571428571"/>
         </collectionViewCell>
     </objects>
 </document>

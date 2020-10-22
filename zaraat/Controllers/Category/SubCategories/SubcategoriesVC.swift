@@ -137,16 +137,18 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
               let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
-            vc!.id =  self.childCate[indexPath.row].child_categories_id ?? 0
+                vc!.id =  self.childCate[indexPath.row].child_categories_id ?? 0
+                vc?.typeno = 3
               self.navigationController?.pushViewController(vc!, animated: true)
             
         } else {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
-            
+            vc?.id = self.SubProductdata?.products![indexPath.row].products_id ?? 0
             self.navigationController?.pushViewController(vc!, animated: true)
         }
-          }
+          
+    }
     
 }
 

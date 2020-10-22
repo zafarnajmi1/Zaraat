@@ -7,9 +7,9 @@
 //
 
 import UIKit
-
+import  BadgeHub
 class ViewController: UIViewController {
-    
+    var notificationBadge : BadgeHub?
     @IBOutlet weak var menuBarView: MenuTabsView!
     
     @IBOutlet weak var b2bView: UIView!
@@ -24,6 +24,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         b2bView.roundView()
         searchView.roundView()
+        addNavigationButton()
+        
+        
+        let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+
+                           let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+                           imageView.contentMode = .scaleAspectFit
+                           let image = UIImage(named: "Text")
+                           imageView.image = image
+                           logoContainer.addSubview(imageView)
+                           navigationItem.titleView = logoContainer
+        
+        
+        
         
         for item in (ShareData.shareInfo.EcommerceCate?.categories)!{
             self.tabs.append(item.category_title_en ?? "")
@@ -68,6 +82,8 @@ class ViewController: UIViewController {
         
     }
      */
+    
+    
     @IBAction func b2bAction(_ sender: UIButton) {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc =  storyBoard.instantiateViewController(identifier: "B2BViewController") as? B2BViewController

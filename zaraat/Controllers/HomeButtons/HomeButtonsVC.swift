@@ -10,6 +10,7 @@ import UIKit
 
 class HomeButtonsVC: UIViewController {
 
+    var id = 0
     @IBOutlet weak var Bannerimg: UIImageView!
     @IBOutlet weak var secTwoClViewHeight: NSLayoutConstraint!
     @IBOutlet weak var secTwoClView: UICollectionView!
@@ -60,13 +61,27 @@ class HomeButtonsVC: UIViewController {
                 searchView.roundView()
                 addBackButton()
                 setNavigationBarWhiteColor()
-                GetDigitalProducts()
+                
+                if id == 1 {
+                    self.GetFashionProducts()
+                    
+                } else if id  == 2 {
+                    GetElectronicsProducts()
+                } else if id == 3 {
+                     GethomeLifeStyleProducts()
+                } else if id == 4 {
+                    GetEducationProducts()
+                } else if id == 5 {
+                    GetWatchesProducts()
+                } else {
+                    GethomeAppliances()
+                }
                
             }
             
-           func GetDigitalProducts() {
+           func GetFashionProducts() {
                       ShareData.showProgress()
-                      userhandler.getZDigital(Success: {response in
+                      userhandler.getFashion(Success: {response in
                           ShareData.hideProgress()
                           if response.success == 1 {
                               self.ZDigitalydata = response.data
@@ -91,11 +106,167 @@ class HomeButtonsVC: UIViewController {
                           ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
                       })
                   }
+    
+    
+    
+    
+
+    func GetElectronicsProducts() {
+               ShareData.showProgress()
+               userhandler.getElectronics(Success: {response in
+                   ShareData.hideProgress()
+                   if response.success == 1 {
+                       self.ZDigitalydata = response.data
+                       
+                       self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
+                       self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                       if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
+                           self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+                           self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+                           self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                       }
+       
+                       self.StoreClView.reloadData()
+                       self.secOneClView.reloadData()
+                       self.secTwoClView.reloadData()
+                   } else {
+                        ShareData.hideProgress()
+                       ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+                   }
+               }, Failure: {error in
+                   ShareData.hideProgress()
+                   ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+               })
+           }
                     
             
+    
+    
+               func GethomeLifeStyleProducts() {
+                       ShareData.showProgress()
+                       userhandler.getHomeLifeStyle(Success: {response in
+                           ShareData.hideProgress()
+                           if response.success == 1 {
+                               self.ZDigitalydata = response.data
+                               
+                               self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
+                               self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                               if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
+                                   self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+                                   self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+                                   self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                               }
                
+                               self.StoreClView.reloadData()
+                               self.secOneClView.reloadData()
+                               self.secTwoClView.reloadData()
+                           } else {
+                                ShareData.hideProgress()
+                               ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+                           }
+                       }, Failure: {error in
+                           ShareData.hideProgress()
+                           ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+                       })
+                   }
            
+    
+    
+    
+    
+    func GetEducationProducts() {
+                          ShareData.showProgress()
+                          userhandler.geteducation(Success: {response in
+                              ShareData.hideProgress()
+                              if response.success == 1 {
+                                  self.ZDigitalydata = response.data
+                                  
+                                  self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
+                                  self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                  if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
+                                      self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+                                      self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+                                      self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                                  }
+                  
+                                  self.StoreClView.reloadData()
+                                  self.secOneClView.reloadData()
+                                  self.secTwoClView.reloadData()
+                              } else {
+                                   ShareData.hideProgress()
+                                  ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+                              }
+                          }, Failure: {error in
+                              ShareData.hideProgress()
+                              ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+                          })
+                      }
 
+    
+    
+    
+    
+    func GetWatchesProducts() {
+            ShareData.showProgress()
+            userhandler.getWatchs(Success: {response in
+                ShareData.hideProgress()
+                if response.success == 1 {
+                    self.ZDigitalydata = response.data
+                    
+                    self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
+                    self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                    if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
+                        self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+                        self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+                        self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                    }
+    
+                    self.StoreClView.reloadData()
+                    self.secOneClView.reloadData()
+                    self.secTwoClView.reloadData()
+                } else {
+                     ShareData.hideProgress()
+                    ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+                }
+            }, Failure: {error in
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+            })
+        }
+
+    
+    
+    func GethomeAppliances() {
+            ShareData.showProgress()
+            userhandler.getHomeAppliances(Success: {response in
+                ShareData.hideProgress()
+                if response.success == 1 {
+                    self.ZDigitalydata = response.data
+                    
+                    self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
+                    self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                    if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
+                        self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+                        self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+                        self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                    }
+    
+                    self.StoreClView.reloadData()
+                    self.secOneClView.reloadData()
+                    self.secTwoClView.reloadData()
+                } else {
+                     ShareData.hideProgress()
+                    ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+                }
+            }, Failure: {error in
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+            })
+        }
+    
+    
+    
+    
 }
 
 
@@ -137,6 +308,30 @@ extension HomeButtonsVC :   UICollectionViewDelegate,UICollectionViewDataSource 
     }
     
 
-   
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+               if collectionView == StoreClView {
+
+                   let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                   let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                   vc!.id =  self.ZDigitalydata?.subcategories![indexPath.row].subcategory_id ?? 0
+                     vc?.typeno = 2
+                   self.navigationController?.pushViewController(vc!, animated: true)
+
+               } else if collectionView == secOneClView {
+                   
+                         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                         vc?.id =  self.ZDigitalydata?.section_1![indexPath.row].products_id ?? 0
+                          self.navigationController?.pushViewController(vc!, animated: true)
+           
+               } else {
+                   
+                            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                             let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                            vc?.id =   self.ZDigitalydata?.section_2![indexPath.row].products_id ?? 0
+                             self.navigationController?.pushViewController(vc!, animated: true)
+                   }
+   }
  
 }

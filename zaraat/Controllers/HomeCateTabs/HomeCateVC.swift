@@ -38,6 +38,8 @@ class HomeCateVC: UIViewController {
             
           addBackButton()
           setNavigationBarWhiteColor()
+            
+            self.storeForyouClView.register(UINib.init(nibName: "SubcateGoriesCell", bundle: nil), forCellWithReuseIdentifier: "SubcateGoriesCell")
           
         }
               
@@ -120,7 +122,7 @@ class HomeCateVC: UIViewController {
       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
              
           if collectionView ==  storeForyouClView {
-                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartOneCell", for: indexPath) as? HomeCateClViewPartOneCell
+                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubcateGoriesCell", for: indexPath) as? SubcateGoriesCell
                cell?.lbltitle.text =  self.HomeCatedata?.sub_categories?[indexPath.row].subcategory_title_en
             //cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.sub_categories?[indexPath.row]. ?? "Text"))
                         return cell!
@@ -148,6 +150,32 @@ class HomeCateVC: UIViewController {
       }
      
 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == storeForyouClView {
+
+                let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                vc!.id =  self.HomeCatedata?.sub_categories![indexPath.row].subcategory_id ?? 0
+                  vc?.typeno = 2
+                self.navigationController?.pushViewController(vc!, animated: true)
+
+            } else if collectionView == seconeClview {
+                
+                      let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                       let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                      vc?.id =  self.HomeCatedata?.section_1![indexPath.row].products_id ?? 0
+                       self.navigationController?.pushViewController(vc!, animated: true)
+        
+            } else {
+                
+                         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                         vc?.id =   self.HomeCatedata?.section_2![indexPath.row].products_id ?? 0
+                          self.navigationController?.pushViewController(vc!, animated: true)
+                }
+    }
+    
   }
 
 

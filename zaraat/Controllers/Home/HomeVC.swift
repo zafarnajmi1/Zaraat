@@ -299,6 +299,7 @@ class HomeVC: UIViewController {
     @IBAction func FashinBeautyAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                    let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                     vc?.id = 1
                    self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -306,12 +307,14 @@ class HomeVC: UIViewController {
     @IBAction func ElectroincAction(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                       let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        vc?.id = 2
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
     @IBAction func HomeLifeStyleAction(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                       let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        vc?.id = 3
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
@@ -320,6 +323,7 @@ class HomeVC: UIViewController {
     @IBAction func EducationAction(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                       let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        vc?.id = 4
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
@@ -327,12 +331,14 @@ class HomeVC: UIViewController {
     @IBAction func WatchJewllery(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                       let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        vc?.id = 5
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
     @IBAction func homeAppliances(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                       let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+        vc?.id = 6
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
@@ -381,18 +387,20 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//
-//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-//                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//
-//        } else {
-//
-//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-//                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//        }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+
+                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
+            vc?.id = self.homeLanding?.data?.weekly_products?[indexPath.row].products_id ?? 0
+                self.navigationController?.pushViewController(vc!, animated: true)
+
+        } else {
+
+                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
+            vc?.id = self.homeLanding?.data?.weekly_products?[indexPath.row].products_id ?? 0
+                self.navigationController?.pushViewController(vc!, animated: true)
+        }
     }
     }
 
@@ -474,6 +482,28 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
            self.pager.currentPage = indexPath.row
        }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView ==  FlashClView {
+            
+            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+            vc?.id = self.homeLanding?.data?.sales![indexPath.row].product_id ?? 0
+                          self.navigationController?.pushViewController(vc!, animated: true)
+            
+        } else if collectionView == topProductClView {
+            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+            vc?.id =  self.homeLanding?.data?.top_products?[indexPath.row].products_id ?? 0
+                          self.navigationController?.pushViewController(vc!, animated: true)
+           
+        } else if collectionView == FeaturedProductsClView{
+            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+            vc?.id =  self.homeLanding?.data?.featured_products![indexPath.row].products_id ?? 0
+                          self.navigationController?.pushViewController(vc!, animated: true)
+             
+        }
+    }
 }
 

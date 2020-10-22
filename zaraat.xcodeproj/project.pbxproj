@@ -103,6 +103,10 @@
 		CE563AD9252CAC5400287511 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563AD8252CAC5400287511 /* SignUpModel.swift */; };
 		CE563ADA252CAC5400287511 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563AD8252CAC5400287511 /* SignUpModel.swift */; };
 		CE563ADB252CAC5400287511 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563AD8252CAC5400287511 /* SignUpModel.swift */; };
+		CE56FC7E254162E3005FB9ED /* MainCategoriesProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC7D254162E3005FB9ED /* MainCategoriesProducts.swift */; };
+		CE56FC802541AD8B005FB9ED /* B2BHomeCateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC7F2541AD8B005FB9ED /* B2BHomeCateVC.swift */; };
+		CE56FC832541AEDA005FB9ED /* B2BHomeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC822541AEDA005FB9ED /* B2BHomeContainer.swift */; };
+		CE56FC852541C425005FB9ED /* B2BHomeLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC842541C425005FB9ED /* B2BHomeLanding.swift */; };
 		CE57A61024FF682F00DE9932 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60E24FF682F00DE9932 /* AppLanguage.swift */; };
 		CE57A61124FF682F00DE9932 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60E24FF682F00DE9932 /* AppLanguage.swift */; };
 		CE57A61224FF682F00DE9932 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57A60E24FF682F00DE9932 /* AppLanguage.swift */; };
@@ -112,6 +116,8 @@
 		CE59074A253ECA4C00C32BE9 /* ZMartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE590749253ECA4C00C32BE9 /* ZMartModel.swift */; };
 		CE59074C253EFA2F00C32BE9 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */; };
 		CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */; };
+		CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849A2540378600EFCF3E /* ProductDetailModel.swift */; };
+		CE61849D2540535400EFCF3E /* SellerProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849C2540535400EFCF3E /* SellerProfileVC.swift */; };
 		CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */; };
 		CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */; };
 		CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */; };
@@ -339,11 +345,17 @@
 		CE563AC6252CA3CD00287511 /* Networkhandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkhandler.swift; sourceTree = "<group>"; };
 		CE563AD4252CAC1300287511 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CE563AD8252CAC5400287511 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		CE56FC7D254162E3005FB9ED /* MainCategoriesProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesProducts.swift; sourceTree = "<group>"; };
+		CE56FC7F2541AD8B005FB9ED /* B2BHomeCateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeCateVC.swift; sourceTree = "<group>"; };
+		CE56FC822541AEDA005FB9ED /* B2BHomeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeContainer.swift; sourceTree = "<group>"; };
+		CE56FC842541C425005FB9ED /* B2BHomeLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeLanding.swift; sourceTree = "<group>"; };
 		CE57A60E24FF682F00DE9932 /* AppLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		CE57A60F24FF682F00DE9932 /* ZSideMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSideMenuManager.swift; sourceTree = "<group>"; };
 		CE590749253ECA4C00C32BE9 /* ZMartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMartModel.swift; sourceTree = "<group>"; };
 		CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_Ipad.storyboard; sourceTree = "<group>"; };
+		CE61849A2540378600EFCF3E /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
+		CE61849C2540535400EFCF3E /* SellerProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileVC.swift; sourceTree = "<group>"; };
 		CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCell.swift; sourceTree = "<group>"; };
 		CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashSaleCell.xib; sourceTree = "<group>"; };
@@ -507,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				437BD1A0242C8D6B003C55C2 /* ProductDetailVC.swift */,
+				CE61849C2540535400EFCF3E /* SellerProfileVC.swift */,
 			);
 			path = "Product Detail";
 			sourceTree = "<group>";
@@ -533,6 +546,7 @@
 		CE0E2E05251A36B400D1D0B5 /* B2B */ = {
 			isa = PBXGroup;
 			children = (
+				CE56FC812541AEB4005FB9ED /* B2BContainer */,
 				CE563AB4252C4EAA00287511 /* B2BCateTabs */,
 				CEAC33B7251CC3CF002D2E9C /* B2BInquieries */,
 				CEAC33B4251C7D20002D2E9C /* B2BProductDetail */,
@@ -799,6 +813,7 @@
 		CE563AB4252C4EAA00287511 /* B2BCateTabs */ = {
 			isa = PBXGroup;
 			children = (
+				CE56FC7F2541AD8B005FB9ED /* B2BHomeCateVC.swift */,
 			);
 			path = B2BCateTabs;
 			sourceTree = "<group>";
@@ -866,8 +881,19 @@
 				CE4A98F0253836EA0034AE69 /* WeeklyViewAllModel.swift */,
 				CE590749253ECA4C00C32BE9 /* ZMartModel.swift */,
 				CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */,
+				CE61849A2540378600EFCF3E /* ProductDetailModel.swift */,
+				CE56FC7D254162E3005FB9ED /* MainCategoriesProducts.swift */,
+				CE56FC842541C425005FB9ED /* B2BHomeLanding.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CE56FC812541AEB4005FB9ED /* B2BContainer */ = {
+			isa = PBXGroup;
+			children = (
+				CE56FC822541AEDA005FB9ED /* B2BHomeContainer.swift */,
+			);
+			path = B2BContainer;
 			sourceTree = "<group>";
 		};
 		CE5A78E72417B69000796126 /* StoryBoard_Iphone */ = {
@@ -1710,10 +1736,12 @@
 				CE2BF467252EFD8C00A1BBD9 /* HomeLandingModel.swift in Sources */,
 				CE92D8A12522106A001C63C8 /* ShopeByCategoriesClViewCell.swift in Sources */,
 				CEAC33B6251C7D49002D2E9C /* B2BProductDetailVC.swift in Sources */,
+				CE61849D2540535400EFCF3E /* SellerProfileVC.swift in Sources */,
 				CE4FA3AF2511FEF800BA0FBE /* MyOrdersTabVC.swift in Sources */,
 				4312A10A243DADF20041FA82 /* CheckOutVC.swift in Sources */,
 				CE138EB425235663008DC888 /* ZDigitalVC.swift in Sources */,
 				437BD1A1242C8D6B003C55C2 /* ProductDetailVC.swift in Sources */,
+				CE56FC852541C425005FB9ED /* B2BHomeLanding.swift in Sources */,
 				CECB92EA25358BF4009F0C04 /* AllCategoriesModel.swift in Sources */,
 				CE8C9DAB250F660B00973CD1 /* ChatVC.swift in Sources */,
 				CE73BBE42524AF470069B861 /* HomeCatePartThreeCell.swift in Sources */,
@@ -1753,12 +1781,14 @@
 				CE73BBD62524A0B70069B861 /* HomeCateVC.swift in Sources */,
 				CE73BBC6252470670069B861 /* HomeButtonsVC.swift in Sources */,
 				CE76D99024FD106D005078D6 /* WeeklyViewAll.swift in Sources */,
+				CE56FC832541AEDA005FB9ED /* B2BHomeContainer.swift in Sources */,
 				CECB92E825357F34009F0C04 /* VerificationCode.swift in Sources */,
 				CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */,
 				431AB765242DBD5F002346E7 /* MenuVC.swift in Sources */,
 				CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */,
 				CE2BF473252F459400A1BBD9 /* Extensions.swift in Sources */,
 				CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */,
+				CE56FC7E254162E3005FB9ED /* MainCategoriesProducts.swift in Sources */,
 				CE138EC7252360FD008DC888 /* ZDigitalClViewPartTwoCell.swift in Sources */,
 				CEB5CA4B25025D5500137E48 /* SubCateCellTb.swift in Sources */,
 				CE792E7725230D8800FF63A1 /* ZPharmacyVC.swift in Sources */,
@@ -1767,6 +1797,7 @@
 				CE78E1F62510ED90005D6FD9 /* SupportVC.swift in Sources */,
 				CE3A92992418A90D0097B215 /* ShareData.swift in Sources */,
 				CE5145B6251DDF45001BE6AD /* ZMallClViewPartTwoCell.swift in Sources */,
+				CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */,
 				CEAED9CE24092A4B0079C3C5 /* zaraat.xcdatamodeld in Sources */,
 				CE90751525270F7E002BEFB4 /* TrendsPartOneCell.swift in Sources */,
 				CE2BF477252F459400A1BBD9 /* ViewController.swift in Sources */,
@@ -1790,6 +1821,7 @@
 				CE797662251B5FEE009A9FC0 /* ClviewOtherChenlsCell.swift in Sources */,
 				CEAED9FD240939BC0079C3C5 /* ZaraatBaseVC.swift in Sources */,
 				CE76D98C24FD0162005078D6 /* WeeklySellerCell.swift in Sources */,
+				CE56FC802541AD8B005FB9ED /* B2BHomeCateVC.swift in Sources */,
 				CE92D8AD25221168001C63C8 /* ZMartClViewPartTwoCell.swift in Sources */,
 				CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */,
 				CE138EBD2523603F008DC888 /* ZDigitalClViewPartOneCell.swift in Sources */,

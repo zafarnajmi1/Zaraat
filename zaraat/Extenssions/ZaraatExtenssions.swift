@@ -25,14 +25,24 @@ extension UIViewController {
          var notificationBadge : BadgeHub?
              notificationBadge = BadgeHub(view: btn1)
 
-            notificationBadge?.scaleCircleSize(by: 0.65)
+            notificationBadge?.scaleCircleSize(by: 0.60)
             notificationBadge?.setCircleColor(#colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1), label: nil)
 
-           notificationBadge?.moveCircleBy(x: -1, y: -5)
+           notificationBadge?.moveCircleBy(x: -1, y: -4)
             notificationBadge?.setCount(1)
         notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
+        
+        
+        
+        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        btn2.setBackgroundImage(UIImage(named: "filter"), for: .normal)
+        
+        btn2.addTarget(self, action: #selector(btnFilterClick(_:)), for: .touchUpInside)
+        let btnfilter = UIBarButtonItem(customView: btn2)
+        
+        
 
-        self.navigationItem.setRightBarButtonItems([btnmsg], animated: true)
+        self.navigationItem.setRightBarButtonItems([btnmsg,btnfilter], animated: true)
         
            
        }
@@ -43,6 +53,16 @@ extension UIViewController {
            
            self.navigationController?.pushViewController(vc!, animated: true)
        }
+    
+    
+    @objc func btnFilterClick (_ sender: Any){
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
     
 //        func addMenuButton()
 //           {
