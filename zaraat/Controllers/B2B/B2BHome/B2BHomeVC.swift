@@ -150,7 +150,7 @@ class B2BHomeVC: UIViewController {
                  self.view.setNeedsLayout()
             
             let newHeight : CGFloat = sectwoClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-            sectwoClViewHeight.constant = newHeight + 40
+            sectwoClViewHeight.constant = newHeight
             sectwoClView.reloadData()
             self.view.setNeedsLayout()
             
@@ -167,66 +167,86 @@ class B2BHomeVC: UIViewController {
     @IBAction func LiveStockAction(_ sender: UIButton) {
         
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+               let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+             vc?.id =  1
+        
                self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
     @IBAction func SeedsAction(_ sender: UIButton) {
-        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  2
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func PesticidesAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  3
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
     @IBAction func IrrigationAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  4
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func ColdStorageAction(_ sender: UIButton) {
-        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+       let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                     let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                   vc?.id =  5
+              
+                     self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
     
     @IBAction func TunnelFarmingAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  6
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func FertilizersAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  7
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func Machinery(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id = 8
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func CropsAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  9
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func PrintingPackageAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                    vc?.id =  10
+               
+                      self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
@@ -364,13 +384,13 @@ class B2BHomeVC: UIViewController {
             self.pager.numberOfPages =  4
                 return 4
         } else if collectionView ==  ChanelClView {
-            return 4
+            return self.b2bHomedata?.other_channels?.count ?? 0
         } else if collectionView == secOneClView {
-            return 4
+            return self.b2bHomedata?.section_1?.count ?? 0
         } else if collectionView == sectwoClView {
-            return 4
+            return self.b2bHomedata?.section_2?.count ?? 0
         } else {
-            return 4
+            return self.b2bHomedata?.section_3?.count ?? 0
         }
             
         }
@@ -383,17 +403,37 @@ class B2BHomeVC: UIViewController {
                  return cell!
             } else if collectionView ==  ChanelClView {
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ClviewOtherChenlsCell", for: indexPath) as? ClviewOtherChenlsCell
+                cell?.lbltitle.text =  self.b2bHomedata?.other_channels?[indexPath.row].product_title_en
+                cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.other_channels![indexPath.row].featured_image ?? "Text"))
+                
+                
                 return cell!
                 
             } else if collectionView == secOneClView {
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ClViewProductsShowcase", for: indexPath) as? ClViewProductsShowcase
+                
+                
+                    cell?.lbltitl.text =  self.b2bHomedata?.section_1?[indexPath.row].product_title_en
+                    cell?.lblprice.text =  self.b2bHomedata?.section_1?[indexPath.row].selling_price
+                    cell?.lblstock.text =  self.b2bHomedata?.section_1?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                    cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.section_1![indexPath.row].featured_image ?? "Text"))
                 return cell!
                 
             } else if collectionView == sectwoClView {
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "clViewOneCell", for: indexPath) as? clViewOneCell
+                
+                cell?.lbltitl.text =  self.b2bHomedata?.section_2?[indexPath.row].product_title_en
+                cell?.lblprice.text =  self.b2bHomedata?.section_2?[indexPath.row].selling_price
+                cell?.lblstock.text =  self.b2bHomedata?.section_2?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.section_2![indexPath.row].featured_image ?? "Text"))
                    return cell!
             } else {
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ClViewTwoCell", for: indexPath) as? ClViewTwoCell
+                
+                cell?.lbltitl.text =  self.b2bHomedata?.section_3?[indexPath.row].product_title_en
+                cell?.lblprice.text =  self.b2bHomedata?.section_3?[indexPath.row].selling_price
+                cell?.lblstock.text =  self.b2bHomedata?.section_3?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.section_3![indexPath.row].featured_image ?? "Text"))
                 return cell!
             }
             

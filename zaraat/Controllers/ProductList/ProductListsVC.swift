@@ -243,6 +243,7 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                 let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
                 vc?.id =  self.MainCatedata?.products?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
                 self.navigationController?.pushViewController(vc!, animated: true)
             
             } else if typeno == 2 {
@@ -250,12 +251,14 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
                         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                         let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
                         vc?.id =  self.SubProductdata?.products?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
                         self.navigationController?.pushViewController(vc!, animated: true)
             
             } else {
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                     let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
                     vc?.id =  self.Productdata?.products?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
                     self.navigationController?.pushViewController(vc!, animated: true)
             }
     }

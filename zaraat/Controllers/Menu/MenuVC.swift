@@ -8,11 +8,14 @@
 
 import UIKit
 import  AnimatableReload
+import SDWebImage
 class MenuVC: UIViewController {
 
+    @IBOutlet weak var lblemail: UILabel!
+    @IBOutlet weak var lblusername: UILabel!
     @IBOutlet weak var userimg: UIImageView!
     @IBOutlet weak var tblView: UITableView!
-    
+    var userdata :  UserProfile?
     struct menuDate {
         var title :  String?
         var imgae: UIImage?
@@ -28,6 +31,7 @@ class MenuVC: UIViewController {
         self.tblView.register(UINib.init(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
          AnimatableReload.reload(tableView: self.tblView, animationDirection: "up")
         configMenu()
+        getuserprofileapi()
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +48,35 @@ class MenuVC: UIViewController {
         menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "changelanguage")))
         menuarray.append(menuDate(title: "Terms & Condition", imgae: UIImage.init(named: "Terms&Condition")))
         menuarray.append(menuDate(title: "Logout", imgae: UIImage.init(named: "logout")))
+    }
+    
+    
+    
+    
+    func getuserprofileapi(){
+        ShareData.showProgress()
+        userhandler.getUserProfile(Success: {response in
+            ShareData.hideProgress()
+            if response.status == 1 {
+                self.userdata = response
+                self.lblusername.text =  self.userdata?.user?.first_name ?? "" + (self.userdata?.user?.last_name!)!
+                self.lblemail.text =  self.userdata?.user?.email
+                
+                self.userimg.sd_imageLoadOperation(forKey: "Downloading")
+
+                
+               
+                
+                self.userimg.sd_imageIndicator = SDWebImageActivityIndicator.gray
+                self.userimg.sd_setImage(with: URL(string: self.userdata?.user?.picture ?? ""), placeholderImage: UIImage(contentsOfFile: "1"))
+            } else {
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message , messagetype: 0)
+        })
     }
     
 
@@ -71,6 +104,7 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
         
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "ViewProfileVC") as? ViewProfileVC
+            vc?.userdata = userdata
             self.navigationController?.pushViewController(vc!, animated: true)
             
         } else if   indexPath.row == 1{

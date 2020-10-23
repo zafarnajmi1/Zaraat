@@ -40,7 +40,7 @@ class SubcategoriesVC: UIViewController {
             if response.success == 1 {
                 self.subcategories =  response.subcategories ?? []
                 
-                self.childCateApi(child:self.subcategories[0].subcategory_id!)
+                self.childCateApi(child:self.subcategories[0].subcategory_id ?? 0)
                 self.clView.reloadData()
                 
             } else {

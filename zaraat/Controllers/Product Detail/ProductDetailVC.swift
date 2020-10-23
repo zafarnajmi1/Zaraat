@@ -11,6 +11,13 @@ import  Cosmos
 import SDWebImage
 class ProductDetailVC: UIViewController {
     
+    
+   var isb2b =  0
+    
+    @IBOutlet weak var btninquires: UIButton!
+    @IBOutlet weak var btnchat: UIButton!
+    
+    @IBOutlet weak var b2bstack: UIStackView!
     @IBOutlet weak var clViewheight: NSLayoutConstraint!
     @IBOutlet weak var pager: UIPageControl!
      @IBOutlet weak var sliderClView: UICollectionView!
@@ -34,7 +41,8 @@ class ProductDetailVC: UIViewController {
         addBackButton()
         self.title = "Product Detail"
         btnaddtocart.roundButton()
-        
+        btnchat.roundButton()
+        btninquires.roundButton()
         hertView.layer.borderWidth = 1
               hertView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
               hertView.layer.cornerRadius = 5
@@ -46,6 +54,13 @@ class ProductDetailVC: UIViewController {
         detailView.layer.borderColor =  #colorLiteral(red: 0.8468492627, green: 0.8509765267, blue: 0.8550060391, alpha: 1)
        getproductdetailApi()
         setSlider()
+        if isb2b == 2 {
+            b2bstack.isHidden = false
+             btnaddtocart.isHidden = true
+        } else {
+            b2bstack.isHidden = true
+            btnaddtocart.isHidden = false
+        }
     }
     
     
@@ -126,6 +141,25 @@ class ProductDetailVC: UIViewController {
             ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
         })
     }
+    
+    
+    
+    
+    @IBAction func btnChatAction(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func btnInquieriesAction(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func addtoCartAction(_ sender: UIButton) {
+    }
+    
+    
+    
+    
+    
     
 
     @IBAction func MoreAction(_ sender: UIButton) {

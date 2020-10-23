@@ -9,6 +9,7 @@
 import UIKit
 
 class ClviewOtherChenlsCell: UICollectionViewCell {
+    @IBOutlet weak var lbltitle: UILabel!
     @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

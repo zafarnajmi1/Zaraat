@@ -86,6 +86,7 @@ class userhandler {
             Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
     
                 do {
+                    print(successResponse)
                     let responseModel = try JSONDecoder().decode(B2bHomeLandingModel.self, from: successResponse.data!)
                     Success(responseModel)
                 }
@@ -662,4 +663,245 @@ class userhandler {
                   Failure(Error)
               })
           }
+    
+    
+    
+    //////B2B Buttons Section
+    
+    
+    class  func getLiveStock( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.LiveStock
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+    
+    
+    
+    
+    class  func getSeeds( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Seeds
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    
+    class  func getPesticides( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Pesticides
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    class  func getIrregation( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Irregation
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    class  func getColdStorage( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.ColdStorage
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    
+    class  func getTunnelFarming( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.TunnelFarming
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    
+    class  func getFertilizers( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Fertilizer
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    
+    class  func getMachinery( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Machinry
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    
+    class  func getCrops( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.Crops
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+    
+    
+    
+    
+    class  func getPrinting( Success: @escaping (ZMartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.Printing
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(ZMartModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+    
+    
+    
+    
+    class  func getUserProfile( Success: @escaping (UserProfile) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.profiel
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(UserProfile.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
 }

@@ -69,6 +69,27 @@ class Constant {
         static let productdetail = "products/show/"
         static let mainCate = "category/"
         static let b2bHomeLand = "products/landing/b2b"
+        
+        
+        
+        static let LiveStock = "products/livestock"
+        static let Seeds = "products/seeds"
+        static let Pesticides = "products/pesticides"
+        static let Irregation = "products/irrigation"
+        static let ColdStorage = "products/coldstorage"
+        static let TunnelFarming = "products/tunnelfarming"
+        static let Fertilizer = "products/fertilizers"
+        static let Machinry = "products/machinery"
+        static let Crops = "products/crops"
+        static let Printing = "products/printing"
+        
+        
+        
+        //Profile
+        static let profiel  =  "profile/show"
+        static let updateProfile = "profile/update"
+        static let profilepicture = "profile/picture/upload"
+        
     }
     
     struct NetworkErrorType {

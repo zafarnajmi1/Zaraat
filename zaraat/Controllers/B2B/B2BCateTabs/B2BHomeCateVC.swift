@@ -165,6 +165,7 @@ class B2BHomeCateVC: UIViewController {
                           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                            let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
                           vc?.id =  self.HomeCatedata?.section_1![indexPath.row].products_id ?? 0
+                          vc?.isb2b = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
             
                 } else {
@@ -172,6 +173,7 @@ class B2BHomeCateVC: UIViewController {
                              let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                               let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
                              vc?.id =   self.HomeCatedata?.section_2![indexPath.row].products_id ?? 0
+                              vc?.isb2b = 2
                               self.navigationController?.pushViewController(vc!, animated: true)
                     }
         }
