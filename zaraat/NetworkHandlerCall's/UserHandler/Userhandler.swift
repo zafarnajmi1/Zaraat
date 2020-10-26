@@ -904,4 +904,53 @@ class userhandler {
                 Failure(Error)
             })
         }
+    
+    
+    
+    
+    
+    
+    class  func getUploadrProfileimg(file:String,image:UIImage, Success: @escaping (ImageUpload) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.profilepicture
+            print("pages Url", url)
+        Networkhandler.UploadProfile(url: url, filename: file, parameters: nil, userimg: image, Progress: {progress in
+            
+        }, Success: {response in
+                do {
+                   let responseModel = try JSONDecoder().decode(ImageUpload.self, from: response.data!)
+                   Success(responseModel)
+                }
+                catch {
+                   print("Response Error")
+                }
+        }, Falioure: {(Error) in
+            Failure(Error)
+        })
+       
+        }
+    
+    
+    
+    class  func UpdatePrfileUser(parms: [String: Any], Success: @escaping (UserProfile) -> Void, Failure: @escaping(NetworkError) -> Void){
+          let url = Constant.MainUrl + Constant.URLs.updateProfile
+          
+          Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+              
+              do {
+              print("MyResponse : ", successResponse)
+                  let responseModel = try JSONDecoder().decode(UserProfile.self, from: successResponse.data!)
+                  Success(responseModel)
+              }
+              catch {
+                  print("Response Error")
+              }
+              
+              
+          } , Falioure: {(Error) in
+              Failure(Error)
+          })
+      }
+    
+    
+    
 }

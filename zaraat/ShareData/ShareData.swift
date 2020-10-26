@@ -28,6 +28,12 @@ class ShareData {
         EcommerceCate =  cate
     }
     
+    
+    var userprofile: UserProfile?
+    func userProfileData(cate:UserProfile){
+        userprofile =  cate
+    }
+    
 //
 //    //Ipad StoryBoard
 //

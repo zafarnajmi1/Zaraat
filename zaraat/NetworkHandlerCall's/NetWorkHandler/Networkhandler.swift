@@ -164,11 +164,8 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
     
     
     
-    
-//    func uploadUserProfile(url: String,filename:String, parameters: Parameters?,userimg: UIImage,Progress: @escaping (Int) ->Void, Success: @escaping (AFDataResponse<Any>)->Void, Falioure: @escaping (NetworkError) -> Void) {
 //
-//
-//
+//    func uploadData(url: String,filename:String, parameters: Parameters?,userimg: UIImage,Progress: @escaping (Int) ->Void, Success: @escaping (AFDataResponse<Any>)->Void, Falioure: @escaping (NetworkError) -> Void) {
 //
 //        var Headers : HTTPHeaders
 //        let Manger = Alamofire.Session.default
@@ -187,12 +184,12 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
 //        let fileName = filename
 //
 //
-//      AF.upload(multipartFormData: { multipartFormData in
+//      Manger.upload(multipartFormData: { multipartFormData in
 //
 //            if let data = userimg.jpegData(compressionQuality: 0.1)
 //              {
 //                  print(data)
-//                  multipartFormData.append(data, withName: "image", fileName: fileName, mimeType: type)
+//                  multipartFormData.append(data, withName: filename, fileName: fileName, mimeType: type)
 //              }
 //
 //                  for(key, values ) in parameters!
@@ -202,15 +199,64 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
 //                        print(values)
 //                    }
 //
-////              for (key, value) in parameters {
-////                      multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-////                  } //Optional for extra parameters
-//
-//      },to: url, usingThreshold: UInt64.init(), method: .post , headers: Headers)
-//            .response { response in
 //
 //
-//        }
+//      },to: url, usingThreshold: UInt64.init(), method: .post , headers: Headers).responseJSON(completionHandler: {response in
+//
+//
+//        switch  response.result {
+//
+//            case .success:
+//
+//                let RespomseModel = response.result
+//                print(RespomseModel)
+//                Success(response)
+//
+//            case .failure (let error):
+//
+//                var networkError = NetworkError()
+//
+//                if error._code == NSURLErrorTimedOut {
+//                    networkError.status = Constant.NetworkErrorType.timout
+//                    networkError.message = Constant.NetworkErrorType.timoutError
+//
+//                    Falioure(networkError)
+//                } else if error._code == NSURLErrorNetworkConnectionLost {
+//                    networkError.status = Constant.NetworkErrorType.internet
+//                    networkError.message = Constant.NetworkErrorType.internetError
+//
+//                    Falioure(networkError)
+//                }else if error._code == NSURLErrorNotConnectedToInternet{
+//                    networkError.status = Constant.NetworkErrorType.internet
+//                    networkError.message = Constant.NetworkErrorType.internetError
+//
+//                    Falioure(networkError)
+//                }else if error._code == NSURLErrorCannotConnectToHost {
+//                    networkError.status = Constant.NetworkErrorType.serverErrorCode
+//                    networkError.message = Constant.NetworkErrorType.serverError
+//
+//                    Falioure(networkError)
+//                }else if error._code == NSURLErrorSecureConnectionFailed{
+//                    networkError.status = Constant.NetworkErrorType.serverErrorCode
+//                    networkError.message = Constant.NetworkErrorType.serverError
+//
+//                    Falioure(networkError)
+//
+//                }else{
+//
+//                    networkError.status = Constant.NetworkErrorType.generic
+//                    networkError.message = Constant.NetworkErrorType.genericError
+//
+//                    Falioure(networkError)
+//                }
+//        default :
+//                break
+//            }
+//
+//
+//      })
+//
+//
 //
 //
 //    }
@@ -235,113 +281,90 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
             {
                 Headers = ["Accept": "application/json"]
             }
-    
+
             let type = "any"
             let fileName = filename//"image"
-    
-            AF.upload(multipartFormData: {(multipart) in
-    
+
+            Manger.upload(multipartFormData: {(multipart) in
+
                 if let data = userimg.jpegData(compressionQuality: 0.1)
                 {
                     print(data)
-                    multipart.append(data, withName: "image", fileName: fileName, mimeType: type)
+                    multipart.append(data, withName: fileName, fileName: fileName, mimeType: type)
                 }
-                for(key, values ) in parameters!
+//                for(key, values ) in parameters!
+//                {
+//                    multipart.append((values as! String).data(using: String.Encoding.utf8)!, withName: key)
+//                    print(values)
+//                    print(values)
+//                }
+
+            }, to: url, method: .post, headers: Headers) .responseJSON(completionHandler: { result in
+
+                switch(result.result)
                 {
-                    multipart.append((values as! String).data(using: String.Encoding.utf8)!, withName: key)
-                    print(values)
-                    print(values)
-                }
-    
-            }, to: url, method: .post, headers: Headers, encodingCompletion:{(result) in
-                switch(result)
-                {
-                case .success(let request,_,_):
-                    request.uploadProgress(closure: { (prgrs) in
-    
-                        let progress = Int(prgrs.fractionCompleted * 100)
-                        print(progress)
-                        Progress(progress)
-                    })
-                    request.responseJSON(completionHandler: {(successresponse)in
-    
-                        switch(successresponse.result)
-                        {
+
                         case .success:
-                            let resultValue = successresponse.result.value
+                            let resultValue = result.result
                             //print(resultValue)
-                            Success(successresponse)
+                            Success(result)
                             break
-    
+
                         case .failure (let error):
-    
-    
+
+
                             var networkError = NetworkError()
-    
+
                             if error._code == NSURLErrorTimedOut {
                                 networkError.status = Constant.NetworkErrorType.timout
                                 networkError.message = Constant.NetworkErrorType.timoutError
-    
+
                                 Falioure(networkError)
                             } else if error._code == NSURLErrorNetworkConnectionLost {
                                 networkError.status = Constant.NetworkErrorType.internet
                                 networkError.message = Constant.NetworkErrorType.internetError
-    
+
                                 Falioure(networkError)
                             }else if error._code == NSURLErrorNotConnectedToInternet{
                                 networkError.status = Constant.NetworkErrorType.internet
                                 networkError.message = Constant.NetworkErrorType.internetError
-    
+
                                 Falioure(networkError)
                             }else if error._code == NSURLErrorCannotConnectToHost {
                                 networkError.status = Constant.NetworkErrorType.serverErrorCode
                                 networkError.message = Constant.NetworkErrorType.serverError
-    
+
                                 Falioure(networkError)
                             }else if error._code == NSURLErrorSecureConnectionFailed{
                                 networkError.status = Constant.NetworkErrorType.serverErrorCode
                                 networkError.message = Constant.NetworkErrorType.serverError
-    
+
                                 Falioure(networkError)
-    
+
                             }else{
-    
+
                                 networkError.status = Constant.NetworkErrorType.generic
                                 networkError.message = Constant.NetworkErrorType.genericError
-    
+
                                 Falioure(networkError)
                             }
                             break
-    
+
                         }
-    
+
                     })
-                case .failure(let error):
-                    Falioure(error as! NetworkError)
-                }
-    
-            })
-    
-    
-        }
+
+               
+
+            }
+//
+
+        
         
     
     
     
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    //class func UploadData(url: String,filename:String, parameters: Parameters?,userimg: UIImage,Progress: @escaping (Int) ->Void, Success: @escaping (AFDataResponse<Any>)->Void, Falioure: @escaping (NetworkError) -> Void)
+//    class func UploadData(url: String,filename:String, parameters: Parameters?,userimg: UIImage,Progress: @escaping (Int) ->Void, Success: @escaping (AFDataResponse<Any>)->Void, Falioure: @escaping (NetworkError) -> Void)
 //    {
 //        var Headers : HTTPHeaders
 //        let Manger = Alamofire.Session.default
@@ -358,7 +381,10 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
 //
 //        let type = "any"
 //        let fileName = filename//"image"
-//
+         
+        
+        
+        
 //        AF.upload(multipartFormData: {(multipart) in
 //
 //            if let data = userimg.jpegData(compressionQuality: 0.1)
@@ -441,9 +467,9 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
 //            }
 //
 //        })
-//
-//
-//    }
+
+
+    //}
 //    
 //   
 //    

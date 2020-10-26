@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct UserProfile : Codable {
+class UserProfile : Codable {
     let message : String?
     let user : User?
     let status : Int?
@@ -21,7 +21,7 @@ struct UserProfile : Codable {
         case success = "success"
     }
 
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try values.decodeIfPresent(String.self, forKey: .message)
         user = try values.decodeIfPresent(User.self, forKey: .user)
@@ -31,7 +31,7 @@ struct UserProfile : Codable {
 
 }
 
-struct User : Codable {
+class User : Codable {
     let customer_id : Int?
     let first_name : String?
     let last_name : String?
@@ -63,7 +63,7 @@ struct User : Codable {
         case updated_at = "updated_at"
     }
 
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         customer_id = try values.decodeIfPresent(Int.self, forKey: .customer_id)
         first_name = try values.decodeIfPresent(String.self, forKey: .first_name)

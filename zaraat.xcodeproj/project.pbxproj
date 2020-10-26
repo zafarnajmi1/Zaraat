@@ -170,6 +170,7 @@
 		CE7B6D1B2500FAE100DDDACE /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7B6D192500FAE100DDDACE /* CategoriesCell.swift */; };
 		CE7B6D1C2500FAE100DDDACE /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7B6D1A2500FAE100DDDACE /* CategoriesCell.xib */; };
 		CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */; };
+		CE82BEE82546E4DB00EBC117 /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82BEE72546E4DB00EBC117 /* ImageUpload.swift */; };
 		CE884BF1251B68FC003626C5 /* ClViewProductsShowcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE884BF0251B68FC003626C5 /* ClViewProductsShowcase.swift */; };
 		CE884BF4251B79BF003626C5 /* clViewOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE884BF3251B79BF003626C5 /* clViewOneCell.swift */; };
 		CE884BFB251B7A5B003626C5 /* ClViewTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE884BFA251B7A5B003626C5 /* ClViewTwoCell.swift */; };
@@ -392,6 +393,7 @@
 		CE7B6D192500FAE100DDDACE /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
 		CE7B6D1A2500FAE100DDDACE /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
 		CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestPasswordZaraatVC.swift; sourceTree = "<group>"; };
+		CE82BEE72546E4DB00EBC117 /* ImageUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 		CE884BF0251B68FC003626C5 /* ClViewProductsShowcase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewProductsShowcase.swift; sourceTree = "<group>"; };
 		CE884BF3251B79BF003626C5 /* clViewOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clViewOneCell.swift; sourceTree = "<group>"; };
 		CE884BFA251B7A5B003626C5 /* ClViewTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewTwoCell.swift; sourceTree = "<group>"; };
@@ -888,6 +890,7 @@
 				CE56FC7D254162E3005FB9ED /* MainCategoriesProducts.swift */,
 				CE56FC842541C425005FB9ED /* B2BHomeLanding.swift */,
 				CE538BA82542FF77006912CC /* UserProfileModel.swift */,
+				CE82BEE72546E4DB00EBC117 /* ImageUpload.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1801,6 +1804,7 @@
 				CE2BF477252F459400A1BBD9 /* ViewController.swift in Sources */,
 				CE76D98724FCDCE7005078D6 /* LifeStyleCell.swift in Sources */,
 				CE5145B2251DDF0C001BE6AD /* ZMallPartOneCell.swift in Sources */,
+				CE82BEE82546E4DB00EBC117 /* ImageUpload.swift in Sources */,
 				CE73BBC22524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift in Sources */,
 				CE73BBEB2524AFF50069B861 /* HomeCateAdsCell.swift in Sources */,
 				CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */,

@@ -31,13 +31,13 @@ class MenuVC: UIViewController {
         self.tblView.register(UINib.init(nibName: "MenuCell", bundle: nil), forCellReuseIdentifier: "MenuCell")
          AnimatableReload.reload(tableView: self.tblView, animationDirection: "up")
         configMenu()
-        getuserprofileapi()
+        
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//           super.viewWillAppear(animated)
-//           setNavigationBarWhiteColor()
-//       }
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           getuserprofileapi()
+       }
      
     func configMenu() {
         self.menuarray.removeAll()
@@ -59,6 +59,7 @@ class MenuVC: UIViewController {
             ShareData.hideProgress()
             if response.status == 1 {
                 self.userdata = response
+                ShareData.shareInfo.userProfileData(cate: response)
                 self.lblusername.text =  self.userdata?.user?.first_name ?? "" + (self.userdata?.user?.last_name!)!
                 self.lblemail.text =  self.userdata?.user?.email
                 
