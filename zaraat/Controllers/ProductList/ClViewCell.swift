@@ -39,7 +39,7 @@ class ClViewCell: UICollectionViewCell {
            lbldiscountPrice.attributedText = attributeString
            
            
-           self.lblprice.text =  obj.selling_price
+        self.lblprice.text =  "PKR :" + obj.selling_price!
            self.lbltitle.text =  obj.product_title_en
            
            self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))

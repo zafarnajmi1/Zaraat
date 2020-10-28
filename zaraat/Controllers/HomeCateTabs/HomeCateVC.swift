@@ -81,8 +81,13 @@ class HomeCateVC: UIViewController {
             if response.success == 1 {
                 self.HomeCatedata =  response.data
                 
-                
-                self.adimg.sd_setImage(with: URL(string: self.self.HomeCatedata?.ad_1?.category_image ?? "Text"))
+                if self.HomeCatedata?.ad_1?.category_image == "" {
+                    self.adimg.isHidden = true
+                } else {
+                    
+                    self.adimg.isHidden = false
+                    self.adimg.sd_setImage(with: URL(string: self.self.HomeCatedata?.ad_1?.category_image ?? "Text"))
+               }
                 
                 self.bannerimg.sd_setImage(with: URL(string:self.HomeCatedata?.ad_2?.category_image ?? "Text"))
                 
@@ -131,8 +136,8 @@ class HomeCateVC: UIViewController {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartTwoCell", for: indexPath) as? HomeCateClViewPartTwoCell
             
                     cell?.lbltitle.text =  self.HomeCatedata?.section_1?[indexPath.row].product_title_en
-                    cell?.lblPrice.text =  self.HomeCatedata?.section_1?[indexPath.row].selling_price
-                    cell?.lblstock.text =  self.HomeCatedata?.section_1?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+            cell?.lblPrice.text =  "PKR :" + (self.HomeCatedata?.section_1?[indexPath.row].selling_price)!
+                    cell?.lblstock.text =  "(InStock) :" + (self.HomeCatedata?.section_1?[indexPath.row].product_stock)!
                     cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.section_1![indexPath.row].featured_image ?? "Text"))
         
                     return cell!
@@ -140,8 +145,8 @@ class HomeCateVC: UIViewController {
                      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartThreeCell", for: indexPath) as? HomeCateClViewPartThreeCell
             
                     cell?.lbltitle.text =  self.HomeCatedata?.section_2?[indexPath.row].product_title_en
-                    cell?.lblPrice.text =  self.HomeCatedata?.section_2?[indexPath.row].selling_price
-                    cell?.lblstock.text =  self.HomeCatedata?.section_2?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                    cell?.lblPrice.text =  "PKR :" + (self.HomeCatedata?.section_2?[indexPath.row].selling_price)!
+                    cell?.lblstock.text =  "(InStock) :" + (self.HomeCatedata?.section_2?[indexPath.row].product_stock)!
                     cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.section_2![indexPath.row].featured_image ?? "Text"))
                         
             return cell!

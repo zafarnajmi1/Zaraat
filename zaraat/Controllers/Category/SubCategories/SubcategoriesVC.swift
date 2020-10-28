@@ -13,6 +13,7 @@ class SubcategoriesVC: UIViewController {
     @IBOutlet weak var lblCateheading: UILabel!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var clView: UICollectionView!
+    var market = ""
     var subCate = 0
     var subcategories =  [SubCategoriesSubcategories]()
     var childCate = [Subcategories]()
@@ -138,6 +139,7 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
               let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
                 vc!.id =  self.childCate[indexPath.row].child_categories_id ?? 0
+                vc!.market = market
                 vc?.typeno = 3
               self.navigationController?.pushViewController(vc!, animated: true)
             
@@ -145,6 +147,11 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
             vc?.id = self.SubProductdata?.products![indexPath.row].products_id ?? 0
+            if market == "b2b" {
+            vc?.isb2b = 2
+            } else {
+                vc?.isb2b = 0
+            }
             self.navigationController?.pushViewController(vc!, animated: true)
         }
           

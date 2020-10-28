@@ -15,7 +15,7 @@ class ProductListsVC: UIViewController {
     var typeno = 0
     var id = 0
     var isGride = true
-    
+    var market = ""
      var  Productdata : ProductListData?
     var SubProductdata : SubCateProductsData?
     var MainCatedata : MainCategoriesData?
@@ -177,6 +177,12 @@ extension ProductListsVC : UITableViewDataSource, UITableViewDelegate {
             
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                 let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                
+              if market == "b2b" {
+                vc?.isb2b = 2
+                } else {
+                    vc?.isb2b = 0
+                }
                 vc?.id =  self.MainCatedata?.products?[indexPath.row].products_id ?? 0
                 self.navigationController?.pushViewController(vc!, animated: true)
             
@@ -184,12 +190,22 @@ extension ProductListsVC : UITableViewDataSource, UITableViewDelegate {
             
                         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                         let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+            if market == "b2b" {
+            vc?.isb2b = 2
+            } else {
+                vc?.isb2b = 0
+            }
                         vc?.id =  self.SubProductdata?.products?[indexPath.row].products_id ?? 0
                         self.navigationController?.pushViewController(vc!, animated: true)
             
             } else {
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                     let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+            if market == "b2b" {
+            vc?.isb2b = 2
+            } else {
+                vc?.isb2b = 0
+            }
                     vc?.id =  self.Productdata?.products?[indexPath.row].products_id ?? 0
                     self.navigationController?.pushViewController(vc!, animated: true)
             }
@@ -243,7 +259,11 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                 let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
                 vc?.id =  self.MainCatedata?.products?[indexPath.row].products_id ?? 0
+                if market == "b2b" {
                 vc?.isb2b = 2
+                } else {
+                    vc?.isb2b = 0
+                }
                 self.navigationController?.pushViewController(vc!, animated: true)
             
             } else if typeno == 2 {
@@ -251,14 +271,22 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
                         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                         let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
                         vc?.id =  self.SubProductdata?.products?[indexPath.row].products_id ?? 0
+                if market == "b2b" {
                 vc?.isb2b = 2
+                } else {
+                    vc?.isb2b = 0
+                }
                         self.navigationController?.pushViewController(vc!, animated: true)
             
             } else {
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
                     let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
                     vc?.id =  self.Productdata?.products?[indexPath.row].products_id ?? 0
+                if market == "b2b" {
                 vc?.isb2b = 2
+                } else {
+                    vc?.isb2b = 0
+                }
                     self.navigationController?.pushViewController(vc!, animated: true)
             }
     }

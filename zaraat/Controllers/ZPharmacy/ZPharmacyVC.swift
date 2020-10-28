@@ -36,7 +36,7 @@ class ZPharmacyVC: UIViewController {
 
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
                 imageView.contentMode = .scaleAspectFit
-                let image = UIImage(named: "Zaraat Mall")
+                let image = UIImage(named: "Zaraat Pharma Plus")
                 imageView.image = image
                 logoContainer.addSubview(imageView)
                 navigationItem.titleView = logoContainer
@@ -105,6 +105,39 @@ class ZPharmacyVC: UIViewController {
             })
         }
           
+    
+    
+    @IBAction func adImageAction(_ sender: UIButton) {
+        if (self.Pharmacydata?.daily?.indices.contains(0))! {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            vc!.id =  self.Pharmacydata?.daily![0].subcategory_id ?? 0
+             vc?.typeno = 2
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    
+    @IBAction func adtwoAction(_ sender: UIButton) {
+         if (self.Pharmacydata?.daily?.indices.contains(1))! {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            vc!.id =  self.Pharmacydata?.daily![1].subcategory_id ?? 0
+             vc?.typeno = 2
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    @IBAction func AdthreeAction(_ sender: UIButton) {
+         if (self.Pharmacydata?.daily?.indices.contains(2))! {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            vc!.id =  self.Pharmacydata?.daily![2].subcategory_id ?? 0
+            vc?.typeno = 2
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
 
    }
 extension ZPharmacyVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {

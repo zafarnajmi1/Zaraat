@@ -55,48 +55,80 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C566485B-4D23-4D54-ABD5-5739A7CEE3D9"
+            uuid = "1CCE0343-8F6F-4936-B881-BC994BEC3521"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/HomeCateTabs/HomeCateVC.swift"
+            filePath = "zaraat/Controllers/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "CateData(_:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getCartDataApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D7F6813B-AA06-4DB7-B677-D7C54EDEBD6B"
+            uuid = "AB0CCCE4-C904-4FCD-AA41-9CB6BFEF0D89"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/HomeCateTabs/HomeCateVC.swift"
+            filePath = "zaraat/Controllers/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "CateData(_:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "getCartDataApi()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB0CCCE4-C904-4FCD-AA41-9CB6BFEF0D89 - b5489f6e398889fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (zaraat.GetCartModel) -&gt; () in zaraat.CartVC.getCartDataApi() -&gt; ()"
+                  moduleName = "zaraat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/Controllers/Cart/CartVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1151">
+               </Location>
+               <Location
+                  uuid = "AB0CCCE4-C904-4FCD-AA41-9CB6BFEF0D89 - b5489f6e398889fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (zaraat.GetCartModel) -&gt; () in zaraat.CartVC.getCartDataApi() -&gt; ()"
+                  moduleName = "zaraat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/Controllers/Cart/CartVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1210">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E9AA7CCD-3A6A-4DF8-8D49-E1D9E3553AF3"
+            uuid = "FA05F1C5-C7B3-4BE1-AB29-D46D1A5FCD36"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/HomeCateTabs/HomeCateVC.swift"
+            filePath = "zaraat/Controllers/Cart/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "CateData(_:)"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "getCartDataApi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -29,8 +29,9 @@ extension UIViewController {
             notificationBadge?.setCircleColor(#colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1), label: nil)
 
            notificationBadge?.moveCircleBy(x: -1, y: -4)
-            notificationBadge?.setCount(1)
-        notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
+        print(ShareData.shareInfo.unseenCart)
+        notificationBadge?.setCount(ShareData.shareInfo.count ?? 0)
+            notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
         
         
         

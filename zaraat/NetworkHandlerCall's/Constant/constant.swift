@@ -90,6 +90,12 @@ class Constant {
         static let updateProfile = "profile/update"
         static let profilepicture = "profile/picture/upload"
         
+        // Add to Cart
+        static let addtoCart = "cart/add"
+        static let Getcart = "cart/get"
+        static let RemoveCart = "cart/remove"
+        static let CoupanCode = "coupons/getbycode/"
+        
     }
     
     struct NetworkErrorType {

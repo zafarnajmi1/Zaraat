@@ -40,7 +40,7 @@ class ZDigitalVC: UIViewController {
 
                     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
                     imageView.contentMode = .scaleAspectFit
-                    let image = UIImage(named: "Zaraat Mall")
+                    let image = UIImage(named: "Z-Digital-1")
                     imageView.image = image
                     logoContainer.addSubview(imageView)
                     navigationItem.titleView = logoContainer
@@ -113,6 +113,43 @@ class ZDigitalVC: UIViewController {
             })
         }
           
+    
+    
+    
+    @IBAction func adoneAction(_ sender: UIButton) {
+        if  (self.ZDigitalydata?.daily?.indices.contains(0))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+           vc!.id =  self.ZDigitalydata?.daily![0].subcategory_id ?? 0
+             vc?.typeno = 2
+           self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    
+    @IBAction func adtwoAction(_ sender: UIButton) {
+        if  (self.ZDigitalydata?.daily?.indices.contains(1))! {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+               vc!.id =  self.ZDigitalydata?.daily![1].subcategory_id ?? 0
+                 vc?.typeno = 2
+               self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    @IBAction func adthreeAction(_ sender: UIButton) {
+        if  (self.ZDigitalydata?.daily?.indices.contains(2))! {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            vc!.id =  self.ZDigitalydata?.daily![2].subcategory_id ?? 0
+             vc?.typeno = 2
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    
+    
+    
     
               
 

@@ -24,7 +24,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         b2bView.roundView()
         searchView.roundView()
-        addNavigationButton()
+        ShareData.shareInfo.unseenCart =  ShareData.shareInfo.count ?? 0
+       
+        //addNavigationButton()
+         addNavigation()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.CartConfig(_:)), name: NSNotification.Name(rawValue: "CartCount"), object: nil)
+        
+        
         
         
         let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
@@ -61,6 +67,76 @@ class ViewController: UIViewController {
         //menuBarView.menuDidSelected = myLocalFunc(_:_:)
 
     }
+    
+    
+    @objc func CartConfig(_ notification: NSNotification) {
+           
+        
+        notificationBadge?.setCount(ShareData.shareInfo.unseenCart)
+    }
+    
+    
+    
+    
+    func addNavigation()
+       {
+        
+        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        btn2.setBackgroundImage(UIImage(named: "filter"), for: .normal)
+        
+        btn2.addTarget(self, action: #selector(btnFilterClick(_:)), for: .touchUpInside)
+        let btnfilter = UIBarButtonItem(customView: btn2)
+        
+        self.navigationItem.setRightBarButtonItems([cartCountnButton(),btnfilter], animated: true)
+        
+           
+       }
+    
+    
+    func cartCountnButton() -> UIBarButtonItem{
+        let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+                btn1.setBackgroundImage(UIImage(named: "cart"), for: .normal)
+                
+                btn1.addTarget(self, action: #selector(btnCartClick(_:)), for: .touchUpInside)
+                
+                
+              
+                  notificationBadge = BadgeHub(view: btn1)
+
+                 notificationBadge?.scaleCircleSize(by: 0.60)
+                 notificationBadge?.setCircleColor(#colorLiteral(red: 0.9905504584, green: 0.7299582362, blue: 0.007647278253, alpha: 1), label: nil)
+
+                notificationBadge?.moveCircleBy(x: -1, y: -4)
+             
+             notificationBadge?.setCount(ShareData.shareInfo.unseenCart)
+                 notificationBadge?.setCountLabel(UIFont.init(name: "Poppins-Regular", size: 12))
+              return  UIBarButtonItem(customView: btn1)
+    }
+    
+    
+    
+    @objc func btnCartAction (_ sender: Any){
+           let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+           let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+           
+           self.navigationController?.pushViewController(vc!, animated: true)
+       }
+    
+    
+    @objc func btnFilterAction (_ sender: Any){
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     /*

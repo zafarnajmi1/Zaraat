@@ -227,13 +227,15 @@ class userhandler {
             })
         }
     
-    
+    //ecommerce
+    //b2b
     class  func getSubCate( subCate: Int, Success: @escaping (SubCategoriesModel) -> Void, Failure: @escaping(NetworkError) -> Void){
             let url = Constant.MainUrl + Constant.URLs.SubCate + "\(subCate)"
             print("pages Url", url)
             Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
     
                 do {
+                    print("Response ", successResponse)
                     let responseModel = try JSONDecoder().decode(SubCategoriesModel.self, from: successResponse.data!)
                     Success(responseModel)
                 }
@@ -951,6 +953,94 @@ class userhandler {
           })
       }
     
+    
+    class  func addtoCart(parms: [String: Any], Success: @escaping (GetCartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.addtoCart
+        
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(GetCartModel.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
+    
+    
+    
+    class  func getCartData( Success: @escaping (GetCartModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Getcart
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(GetCartModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    class  func DeleteFromCart(parms: [String: Any], Success: @escaping (AddtoCart) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.RemoveCart
+        
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(AddtoCart.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
+    
+    
+    class  func getCoupancode( Success: @escaping (CoupanModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.CoupanCode
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(CoupanModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+       
     
     
 }

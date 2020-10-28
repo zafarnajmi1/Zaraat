@@ -154,8 +154,35 @@ class ProductDetailVC: UIViewController {
     
     
     @IBAction func addtoCartAction(_ sender: UIButton) {
+        addtocartApi()
     }
     
+    
+    
+    func addtocartApi() {
+        let dic : [String:Any] = ["product_id":self.productData?.products_id ?? 0]
+        userhandler.addtoCart(parms: dic, Success: {response in
+            if response.success == 1 {
+                
+                //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CartCount"), object: nil, userInfo: ["CartValue":response.cart?.count ?? 0] )
+                ShareData.shareInfo.count = response.cart?.count ?? 0
+                ShareData.shareInfo.unseenCart = response.cart?.count ?? 0
+                ShareData.shareInfo.CartSaveData(cart: response)
+                
+                self.alertMessage(message: response.message ?? "", completionHandler: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+            } else {
+                self.alertMessage(message: response.message ?? "", completionHandler: {
+                    print("error in Add product")
+                })
+            }
+        }, Failure: {error in
+            self.alertMessage(message: error.message , completionHandler: {
+                print("error")
+            })
+        })
+    }
     
     
     

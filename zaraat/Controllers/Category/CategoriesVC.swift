@@ -76,6 +76,7 @@ extension CategoriesVC : UITableViewDataSource, UITableViewDelegate {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
         let vc =  storyBoard.instantiateViewController(identifier: "SubcategoriesVC") as? SubcategoriesVC
         vc?.subCate = self.Allcategories[indexPath.row].categories_id ?? 0
+        vc?.market = self.Allcategories[indexPath.row].market ?? ""
         vc?.hidesBottomBarWhenPushed =  true 
         self.navigationController?.pushViewController(vc!, animated: true)
     }

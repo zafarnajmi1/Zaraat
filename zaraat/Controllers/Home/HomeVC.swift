@@ -111,6 +111,8 @@ class HomeVC: UIViewController {
          setSlider()
         //homeapi()
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "MoreTab"), object: nil)
+        
+        
     }
     
     
@@ -217,9 +219,30 @@ class HomeVC: UIViewController {
             if response.success == 1 {
                 self.homeLanding =  response
                 
-                self.adimgOne.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_1?.category_image ?? "Text"))
-                 self.adimgtwo.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_2?.category_image ?? "Text"))
-                 self.adimgthree.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_3?.category_image ?? "Text"))
+                
+                
+                if self.homeLanding?.data?.ad_1?.category_image == "" {
+                    self.adimgOne.isHidden = true
+                } else {
+                     self.adimgOne.isHidden = false
+                     self.adimgOne.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_1?.category_image ?? "Text"))
+                }
+                
+                if self.homeLanding?.data?.ad_2?.category_image == "" {
+                    self.adimgtwo.isHidden = true
+                } else {
+                     self.adimgtwo.isHidden = false
+                     self.adimgtwo.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_2?.category_image ?? "Text"))
+                }
+                
+                if self.homeLanding?.data?.ad_3?.category_image == "" {
+                    self.adimgthree.isHidden = true
+                } else {
+                     self.adimgthree.isHidden = false
+                     self.adimgthree.sd_setImage(with: URL(string: self.homeLanding?.data?.ad_3?.category_image ?? "Text"))
+                }
+               
+                 
                 
                 self.FeaturedProductsClView.reloadData()
                 self.topProductClView.reloadData()

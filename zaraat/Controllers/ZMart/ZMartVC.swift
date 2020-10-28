@@ -37,7 +37,7 @@ class ZMartVC: UIViewController {
 
                  let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
                  imageView.contentMode = .scaleAspectFit
-                 let image = UIImage(named: "Zaraat Mall")
+                 let image = UIImage(named: "Zaraat Go Fresh Logo")
                  imageView.image = image
                  logoContainer.addSubview(imageView)
                  navigationItem.titleView = logoContainer
@@ -118,7 +118,41 @@ class ZMartVC: UIViewController {
             ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
         })
     }
-               
+              
+    
+    
+    @IBAction func dailyOneAction(_ sender: UIButton) {
+        if (self.Martdata?.daily?.indices.contains(0))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           vc!.id =  self.Martdata?.daily![0].subcategory_id ?? 0
+                             vc?.typeno = 2
+                           self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    
+    @IBAction func DailytwoAction(_ sender: UIButton) {
+        if (self.Martdata?.daily?.indices.contains(1))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           vc!.id =  self.Martdata?.daily![1].subcategory_id ?? 0
+                             vc?.typeno = 2
+                           self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    @IBAction func dailythreeAction(_ sender: UIButton) {
+        if (self.Martdata?.daily?.indices.contains(2))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           vc!.id =  self.Martdata?.daily![2].subcategory_id ?? 0
+                             vc?.typeno = 2
+                           self.navigationController?.pushViewController(vc!, animated: true)
+            
+        }
+    }
+    
        
 
     }

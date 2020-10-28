@@ -131,7 +131,14 @@ class ViewAllProductsVC: UIViewController {
             ShareData.hideProgress()
             if response.success == 1 {
                 self.weeklyViewAll =  response
-                self.adimg.sd_setImage(with: URL(string: self.weeklyViewAll?.data?.ad?.category_image ?? "Text"))
+                
+                if self.weeklyViewAll?.data?.ad?.category_image == "" {
+                    self.adimg.isHidden =  true
+                } else {
+                    self.adimg.isHidden =  false
+                    self.adimg.sd_setImage(with: URL(string: self.weeklyViewAll?.data?.ad?.category_image ?? "Text"))
+                }
+                
                 self.ClView.reloadData()
             } else {
                 ShareData.hideProgress()
@@ -174,8 +181,9 @@ extension ViewAllProductsVC :  UICollectionViewDelegate, UICollectionViewDataSou
                let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ViewAllClViewCell", for: indexPath) as? ViewAllClViewCell
                
                cell?.lbltitle.text =  self.flashSaleData?.data?.sales?[indexPath.row].product?.product_title_en
-           cell?.lblPrice.text =  (self.flashSaleData?.data?.sales?[indexPath.row].product?.selling_price)! + " PKR"
-               cell?.lblstock.text =  self.flashSaleData?.data?.sales?[indexPath.row].product?.product_stock ?? "" + " Pieces(InStock)"
+            cell?.lblPrice.text = "PKR :" + (self.flashSaleData?.data?.sales?[indexPath.row].product?.selling_price)!
+            
+            cell?.lblstock.text =  " (InStock) :" + (self.flashSaleData?.data?.sales?[indexPath.row].product?.product_stock)!
                cell?.img.sd_setImage(with: URL(string: self.flashSaleData?.data?.sales?[indexPath.row].product?.featured_image ?? "Text"))
                
                return cell!
@@ -184,9 +192,10 @@ extension ViewAllProductsVC :  UICollectionViewDelegate, UICollectionViewDataSou
                    let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ViewAllClViewCell", for: indexPath) as? ViewAllClViewCell
 
                           cell?.lbltitle.text =  self.weeklyViewAll?.data?.products?[indexPath.row].product_title_en
-            cell?.lblPrice.text =  (self.weeklyViewAll?.data?.products?[indexPath.row].selling_price)! + " PKR"
-                          cell?.lblstock.text =  self.weeklyViewAll?.data?.products?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
-                          cell?.img.sd_setImage(with: URL(string: self.weeklyViewAll?.data?.products?[indexPath.row].featured_image ?? "Text"))
+            cell?.lblPrice.text =  "PKR :" + (self.weeklyViewAll?.data?.products?[indexPath.row].selling_price)!
+            cell?.lblstock.text =  " (InStock) :" + (self.weeklyViewAll?.data?.products?[indexPath.row].product_stock)!
+            
+            cell?.img.sd_setImage(with: URL(string: self.weeklyViewAll?.data?.products?[indexPath.row].featured_image ?? "Text"))
                    return cell!
                }
     }

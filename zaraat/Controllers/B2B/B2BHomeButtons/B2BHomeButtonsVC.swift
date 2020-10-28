@@ -413,6 +413,39 @@ class B2BHomeButtonsVC: UIViewController {
           }
     
         
+    
+    @IBAction func adoneAction(_ sender: Any) {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        vc!.id =  self.ZDigitalydata?.daily![0].subcategory_id ?? 0
+          vc?.typeno = 2
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+    @IBAction func adtwoAction(_ sender: Any) {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        vc!.id =  self.ZDigitalydata?.daily![1].subcategory_id ?? 0
+          vc?.typeno = 2
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+    @IBAction func adthreeAction(_ sender: Any) {
+        
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        vc!.id =  self.ZDigitalydata?.daily![2].subcategory_id ?? 0
+          vc?.typeno = 2
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+    
         
     }
 
@@ -438,19 +471,20 @@ class B2BHomeButtonsVC: UIViewController {
                  cell?.lbltitle.text = self.ZDigitalydata?.subcategories![indexPath.row].subcategory_title_en
                 return cell!
             } else if collectionView ==  secOneClView {
-                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "HomeButtonClViewPartOneCell", for: indexPath) as? HomeButtonClViewPartOneCell
-                                                  cell?.lbltitl.text = self.ZDigitalydata?.section_1![indexPath.row].product_title_en
-                                                  cell?.lblprice.text =  self.ZDigitalydata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
-                                                  cell?.lblstock.text = self.ZDigitalydata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
-                                                  cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_1![indexPath.row].featured_image ?? "Text"))
-                                                        return cell!
+                
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "HomeButtonClViewPartOneCell", for: indexPath) as? HomeButtonClViewPartOneCell
+          cell?.lbltitl.text = self.ZDigitalydata?.section_1![indexPath.row].product_title_en
+                cell?.lblprice.text = " PKR : " + (self.ZDigitalydata?.section_1![indexPath.row].selling_price)!
+        cell?.lblstock.text = "(InStock) : " +   (self.ZDigitalydata?.section_1![indexPath.row].product_stock)!
+          cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_1![indexPath.row].featured_image ?? "Text"))
+                return cell!
             } else {
-                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "HomeButtonClViewPartTwoCell", for: indexPath) as? HomeButtonClViewPartTwoCell
-                                                  cell?.lbltitl.text = self.ZDigitalydata?.section_2![indexPath.row].product_title_en
-                                                  cell?.lblprice.text =  self.ZDigitalydata?.section_2![indexPath.row].selling_price ?? "" + " PKR"
-                                                  cell?.lblstock.text = self.ZDigitalydata?.section_2![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
-                                                  cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_2![indexPath.row].featured_image ?? "Text"))
-                                                        return cell!
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "HomeButtonClViewPartTwoCell", for: indexPath) as? HomeButtonClViewPartTwoCell
+          cell?.lbltitl.text = self.ZDigitalydata?.section_2![indexPath.row].product_title_en
+                cell?.lblprice.text = " PKR : " +  (self.ZDigitalydata?.section_2![indexPath.row].selling_price)! 
+                cell?.lblstock.text =  "(InStock) : " +  (self.ZDigitalydata?.section_2![indexPath.row].product_stock)!
+          cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_2![indexPath.row].featured_image ?? "Text"))
+                return cell!
             }
         }
         

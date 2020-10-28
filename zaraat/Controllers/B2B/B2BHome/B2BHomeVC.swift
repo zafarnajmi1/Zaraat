@@ -414,8 +414,8 @@ class B2BHomeVC: UIViewController {
                 
                 
                     cell?.lbltitl.text =  self.b2bHomedata?.section_1?[indexPath.row].product_title_en
-                    cell?.lblprice.text =  self.b2bHomedata?.section_1?[indexPath.row].selling_price
-                    cell?.lblstock.text =  self.b2bHomedata?.section_1?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.lblprice.text =  "PKR :" + (self.b2bHomedata?.section_1?[indexPath.row].selling_price)!
+                cell?.lblstock.text = "(InStock) :" + (self.b2bHomedata?.section_1?[indexPath.row].product_stock)!
                     cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.section_1![indexPath.row].featured_image ?? "Text"))
                 return cell!
                 
@@ -423,16 +423,16 @@ class B2BHomeVC: UIViewController {
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "clViewOneCell", for: indexPath) as? clViewOneCell
                 
                 cell?.lbltitl.text =  self.b2bHomedata?.section_2?[indexPath.row].product_title_en
-                cell?.lblprice.text =  self.b2bHomedata?.section_2?[indexPath.row].selling_price
-                cell?.lblstock.text =  self.b2bHomedata?.section_2?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.lblprice.text =  "PKR :" + (self.b2bHomedata?.section_2?[indexPath.row].selling_price)!
+                cell?.lblstock.text =  "(InStock) :" + (self.b2bHomedata?.section_2?[indexPath.row].product_stock)!
                 cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.section_2![indexPath.row].featured_image ?? "Text"))
                    return cell!
             } else {
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ClViewTwoCell", for: indexPath) as? ClViewTwoCell
                 
                 cell?.lbltitl.text =  self.b2bHomedata?.section_3?[indexPath.row].product_title_en
-                cell?.lblprice.text =  self.b2bHomedata?.section_3?[indexPath.row].selling_price
-                cell?.lblstock.text =  self.b2bHomedata?.section_3?[indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.lblprice.text =  "PKR :" + (self.b2bHomedata?.section_3?[indexPath.row].selling_price)!
+                cell?.lblstock.text =  "(InStock) :" + (self.b2bHomedata?.section_3?[indexPath.row].product_stock)!
                 cell?.img.sd_setImage(with: URL(string: self.b2bHomedata?.section_3![indexPath.row].featured_image ?? "Text"))
                 return cell!
             }
@@ -451,5 +451,37 @@ class B2BHomeVC: UIViewController {
            }
 
     
+        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            
+            if collectionView ==  ChanelClView {
+                let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                vc?.id =  self.b2bHomedata?.other_channels?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
+                self.navigationController?.pushViewController(vc!, animated: true)
+               
+            } else if collectionView == secOneClView {
+                let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                vc?.id =  self.b2bHomedata?.section_1?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
+                self.navigationController?.pushViewController(vc!, animated: true)
+              
+            } else if collectionView == sectwoClView {
+                let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                vc?.id =  self.b2bHomedata?.section_2?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
+                self.navigationController?.pushViewController(vc!, animated: true)
+            } else {
+                let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                vc?.id =  self.b2bHomedata?.section_3?[indexPath.row].products_id ?? 0
+                vc?.isb2b = 2
+                self.navigationController?.pushViewController(vc!, animated: true)
+        }
 
+}
+        
 }

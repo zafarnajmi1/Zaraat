@@ -55,6 +55,7 @@
 		CE449D4C2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE449D4A2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift */; };
 		CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */; };
 		CE49D827240E7682009ECFD5 /* ChangePasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */; };
+		CE4A34D62549B1B9001F70EA /* CoupanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A34D52549B1B9001F70EA /* CoupanModel.swift */; };
 		CE4A56072510CAFB0060156E /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A56062510CAFB0060156E /* EditProfileVC.swift */; };
 		CE4A7E1E2537298C001F7A7D /* HomeCateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7E1D2537298C001F7A7D /* HomeCateModel.swift */; };
 		CE4A98EF253826C70034AE69 /* ViewAllFlashSaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A98EE253826C70034AE69 /* ViewAllFlashSaleModel.swift */; };
@@ -105,6 +106,8 @@
 		CE563AD9252CAC5400287511 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563AD8252CAC5400287511 /* SignUpModel.swift */; };
 		CE563ADA252CAC5400287511 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563AD8252CAC5400287511 /* SignUpModel.swift */; };
 		CE563ADB252CAC5400287511 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563AD8252CAC5400287511 /* SignUpModel.swift */; };
+		CE56D75325483EEC00DDB792 /* AddToCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D75225483EEC00DDB792 /* AddToCart.swift */; };
+		CE56D7552548476400DDB792 /* GetCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56D7542548476400DDB792 /* GetCartModel.swift */; };
 		CE56FC7E254162E3005FB9ED /* MainCategoriesProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC7D254162E3005FB9ED /* MainCategoriesProducts.swift */; };
 		CE56FC802541AD8B005FB9ED /* B2BHomeCateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC7F2541AD8B005FB9ED /* B2BHomeCateVC.swift */; };
 		CE56FC832541AEDA005FB9ED /* B2BHomeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56FC822541AEDA005FB9ED /* B2BHomeContainer.swift */; };
@@ -306,6 +309,7 @@
 		CE449D4A2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPharmacyClViewShopeCategoriesCell.swift; sourceTree = "<group>"; };
 		CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationZaraatVC.swift; sourceTree = "<group>"; };
 		CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordZaraatVC.swift; sourceTree = "<group>"; };
+		CE4A34D52549B1B9001F70EA /* CoupanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupanModel.swift; sourceTree = "<group>"; };
 		CE4A56062510CAFB0060156E /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		CE4A7E1D2537298C001F7A7D /* HomeCateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCateModel.swift; sourceTree = "<group>"; };
 		CE4A98EE253826C70034AE69 /* ViewAllFlashSaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllFlashSaleModel.swift; sourceTree = "<group>"; };
@@ -344,6 +348,8 @@
 		CE563AC6252CA3CD00287511 /* Networkhandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networkhandler.swift; sourceTree = "<group>"; };
 		CE563AD4252CAC1300287511 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		CE563AD8252CAC5400287511 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		CE56D75225483EEC00DDB792 /* AddToCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCart.swift; sourceTree = "<group>"; };
+		CE56D7542548476400DDB792 /* GetCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCartModel.swift; sourceTree = "<group>"; };
 		CE56FC7D254162E3005FB9ED /* MainCategoriesProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesProducts.swift; sourceTree = "<group>"; };
 		CE56FC7F2541AD8B005FB9ED /* B2BHomeCateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeCateVC.swift; sourceTree = "<group>"; };
 		CE56FC822541AEDA005FB9ED /* B2BHomeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeContainer.swift; sourceTree = "<group>"; };
@@ -891,6 +897,9 @@
 				CE56FC842541C425005FB9ED /* B2BHomeLanding.swift */,
 				CE538BA82542FF77006912CC /* UserProfileModel.swift */,
 				CE82BEE72546E4DB00EBC117 /* ImageUpload.swift */,
+				CE56D75225483EEC00DDB792 /* AddToCart.swift */,
+				CE56D7542548476400DDB792 /* GetCartModel.swift */,
+				CE4A34D52549B1B9001F70EA /* CoupanModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1697,6 +1706,7 @@
 				CE73BBD32524725E0069B861 /* HomeButtonClViewPartTwoCell.swift in Sources */,
 				CE76D99E24FD2139005078D6 /* FeaturedProductsClView.swift in Sources */,
 				CE73BBDC2524ADFE0069B861 /* HomeCateClViewPartOneCell.swift in Sources */,
+				CE56D75325483EEC00DDB792 /* AddToCart.swift in Sources */,
 				CE5145AB251DDDE2001BE6AD /* ZMallStoreForYouCell.swift in Sources */,
 				CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */,
 				CE8C9DB6250F895800973CD1 /* ClViewCell.swift in Sources */,
@@ -1731,6 +1741,7 @@
 				CE563AD0252CA3CF00287511 /* Networkhandler.swift in Sources */,
 				CE92D89825220D67001C63C8 /* ZMartVC.swift in Sources */,
 				CE563ACA252CA3CF00287511 /* Userhandler.swift in Sources */,
+				CE56D7552548476400DDB792 /* GetCartModel.swift in Sources */,
 				CE52BE8B25381DD500464D51 /* ViewAllProductsVC.swift in Sources */,
 				CE8C9DB1250F661500973CD1 /* ReceiverImageCell.swift in Sources */,
 				CE2BF476252F459400A1BBD9 /* PageControllerVC.swift in Sources */,
@@ -1815,6 +1826,7 @@
 				CE7B6D1B2500FAE100DDDACE /* CategoriesCell.swift in Sources */,
 				CE79764E251B29D7009A9FC0 /* B2BMenuTabsView.swift in Sources */,
 				CE5145B4251DDF2A001BE6AD /* ZMallClViewPartOneCell.swift in Sources */,
+				CE4A34D62549B1B9001F70EA /* CoupanModel.swift in Sources */,
 				43C1BBD8243B0F210089ED55 /* CartVC.swift in Sources */,
 				CE78E1F32510E4EC005D6FD9 /* SettingsVC.swift in Sources */,
 				CE8C9DB2250F661500973CD1 /* SenderImageCell.swift in Sources */,

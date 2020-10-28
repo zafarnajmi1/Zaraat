@@ -61,7 +61,14 @@ class TrendsVC: UIViewController {
                  self.topfoureimg.sd_setImage(with: URL(string: self.trendData?.top_trending?[3].featured_image ?? "Text"))
                  self.topfiveimg.sd_setImage(with: URL(string: self.trendData?.top_trending?[4].featured_image ?? "Text"))
                 
-                self.adimg.sd_setImage(with: URL(string: self.trendData?.ad?.category_image ?? "Text"))
+                
+                if self.trendData?.ad?.category_image == "" {
+                    self.adimg.isHidden = true
+                } else {
+                    self.adimg.isHidden =  false
+                    self.adimg.sd_setImage(with: URL(string: self.trendData?.ad?.category_image ?? "Text"))
+                }
+                
                 
                 self.trendClView.reloadData()
                 self.secTwoClView.reloadData()

@@ -34,6 +34,12 @@ class ShareData {
         userprofile =  cate
     }
     
+    
+    var cartSave: GetCartModel?
+    func CartSaveData(cart:GetCartModel){
+        cartSave =  cart
+    }
+    
 //
 //    //Ipad StoryBoard
 //
@@ -77,7 +83,32 @@ class ShareData {
             return UserDefaults.standard.bool(forKey:  "autologin")
         }
     }
-
+    
+    
+private var unseenCartCount : Int = 0
+   var unseenCart : Int {
+       set {
+           
+           unseenCartCount = newValue
+           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CartCount"), object: nil, userInfo: nil)
+       }
+       get{
+           return unseenCartCount
+       }
+   }
+    
+    
+    
+    
+    var count:Int?{
+           set{
+               UserDefaults.standard.set(newValue , forKey: "count")
+               UserDefaults.standard.synchronize()
+           }
+           get{
+               return UserDefaults.standard.integer(forKey:  "count")
+           }
+       }
     
     
     

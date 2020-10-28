@@ -39,15 +39,15 @@ class HomeButtonsVC: UIViewController {
                 super.viewDidLoad()
              
                 
-                let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-
-                     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-                     imageView.contentMode = .scaleAspectFit
-                     let image = UIImage(named: "Zaraat Mall")
-                     imageView.image = image
-                     logoContainer.addSubview(imageView)
-                     navigationItem.titleView = logoContainer
-                
+//                let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+//
+//                     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+//                     imageView.contentMode = .scaleAspectFit
+//                     let image = UIImage(named: "Zaraat Mall")
+//                     imageView.image = image
+//                     logoContainer.addSubview(imageView)
+//                     navigationItem.titleView = logoContainer
+                self.title = "Zaraat"
                 
                 self.topBrandOneImg.layer.cornerRadius = 8
                 self.topBrandTwoImage.layer.cornerRadius = 8
@@ -244,12 +244,45 @@ class HomeButtonsVC: UIViewController {
                     self.ZDigitalydata = response.data
                     
                     self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                    self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
-                    if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
-                        self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
-                        self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
-                        self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                    
+                    
+                    if self.ZDigitalydata?.ad_2?.category_image == "" {
+                        self.adimg.isHidden = true
+                    } else {
+                        self.adimg.isHidden = false
+                         self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
                     }
+                   
+                   self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+                   self.topBrandThreeImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                    self.topBrandTwoImage.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+                    
+//                    if (self.ZDigitalydata?.daily?.indices.contains(0))! {
+//                        self.topBrandOneImg.isHidden = false
+//                        self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
+//                    } else {
+//                        self.topBrandOneImg.isHidden = true
+//                    }
+//
+//
+//
+//                    if (self.ZDigitalydata?.daily?.indices.contains(1))! {
+//                        self.topBrandTwoImage.isHidden = false
+//                        self.topBrandTwoImage.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
+//                    } else {
+//                       self.topBrandTwoImage.isHidden = true
+//                    }
+//
+//
+//
+//                    if (self.ZDigitalydata?.daily?.indices.contains(2))! {
+//                       self.topBrandThreeImg.isHidden = false
+//                        self.topBrandThreeImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+//                    } else {
+//                        self.topBrandThreeImg.isHidden = true
+//                    }
+//
+                    
     
                     self.StoreClView.reloadData()
                     self.secOneClView.reloadData()
@@ -266,6 +299,39 @@ class HomeButtonsVC: UIViewController {
     
     
     
+    
+    @IBAction func adoneAction(_ sender: UIButton) {
+        if (self.ZDigitalydata?.daily?.indices.contains(0))! {
+                let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                vc!.id =  self.ZDigitalydata?.daily![0].subcategory_id ?? 0
+                vc?.typeno = 2
+                self.navigationController?.pushViewController(vc!, animated: true)
+        }
+        
+    }
+    
+    
+    @IBAction func adtwoAction(_ sender: UIButton) {
+         if (self.ZDigitalydata?.daily?.indices.contains(1))! {
+                    let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    vc!.id =  self.ZDigitalydata?.daily![1].subcategory_id ?? 0
+                    vc?.typeno = 2
+                    self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    
+    @IBAction func adThreeAction(_ sender: UIButton) {
+         if (self.ZDigitalydata?.daily?.indices.contains(2))! {
+            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+              let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+              vc!.id =  self.ZDigitalydata?.daily![2].subcategory_id ?? 0
+                vc?.typeno = 2
+              self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
     
 }
 
