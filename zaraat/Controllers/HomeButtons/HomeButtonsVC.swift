@@ -359,15 +359,15 @@ extension HomeButtonsVC :   UICollectionViewDelegate,UICollectionViewDataSource 
         } else if collectionView ==  secOneClView {
              let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "HomeButtonClViewPartOneCell", for: indexPath) as? HomeButtonClViewPartOneCell
                                               cell?.lbltitl.text = self.ZDigitalydata?.section_1![indexPath.row].product_title_en
-                                              cell?.lblprice.text =  self.ZDigitalydata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
-                                              cell?.lblstock.text = self.ZDigitalydata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+            cell?.lblprice.text =  "PKR :" + (self.ZDigitalydata?.section_1![indexPath.row].selling_price)! 
+            cell?.lblstock.text = "(InStock) :" + (self.ZDigitalydata?.section_1![indexPath.row].product_stock)! 
                                               cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_1![indexPath.row].featured_image ?? "Text"))
                                                     return cell!
         } else {
              let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "HomeButtonClViewPartTwoCell", for: indexPath) as? HomeButtonClViewPartTwoCell
                                               cell?.lbltitl.text = self.ZDigitalydata?.section_2![indexPath.row].product_title_en
-                                              cell?.lblprice.text =  self.ZDigitalydata?.section_2![indexPath.row].selling_price ?? "" + " PKR"
-                                              cell?.lblstock.text = self.ZDigitalydata?.section_2![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+            cell?.lblprice.text =  "PKR :" + (self.ZDigitalydata?.section_2![indexPath.row].selling_price)!
+            cell?.lblstock.text = "(InStock) :" + (self.ZDigitalydata?.section_2![indexPath.row].product_stock)!
                                               cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_2![indexPath.row].featured_image ?? "Text"))
                                                     return cell!
         }

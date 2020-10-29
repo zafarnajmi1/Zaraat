@@ -1022,8 +1022,8 @@ class userhandler {
     
     
     
-    class  func getCoupancode( Success: @escaping (CoupanModel) -> Void, Failure: @escaping(NetworkError) -> Void){
-        let url = Constant.MainUrl + Constant.URLs.CoupanCode
+    class  func getCoupancode(coupan:String, Success: @escaping (CoupanModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.CoupanCode + coupan
                print("pages Url", url)
                Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
        

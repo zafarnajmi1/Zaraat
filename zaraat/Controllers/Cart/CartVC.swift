@@ -10,6 +10,8 @@ import UIKit
 
 class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
     
+    @IBOutlet weak var lblcoupan: UILabel!
+    @IBOutlet weak var lblcoupanValue: UILabel!
     @IBOutlet weak var lblsubtotla: UILabel!
     @IBOutlet weak var lbldeliveryCharg: UILabel!
     
@@ -27,7 +29,7 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.txtcoupan.delegate = self
-        self.txtcoupan.addTarget(self, action: #selector(textFieldDidChange(_:)),for: UIControl.Event.editingChanged)
+        self.txtcoupan.addTarget(self, action: #selector(textFieldDidChange(_:)),for: UIControl.Event.editingDidEnd)
         self.btnproceed.roundButton()
         addBackButton()
         //setNavigationBar()
@@ -37,6 +39,8 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
         
         sbTotalView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
         getCartDataApi()
+        self.lblcoupan.isHidden = true
+        self.lblcoupanValue.isHidden =  true
     }
     
 
@@ -141,7 +145,9 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
                 
                 var value = 0
                 var mytotal = 0
-                
+                self.lblcoupan.isHidden = true
+                self.lblcoupanValue.isHidden =  true
+                self.txtcoupan.text = ""
                 for item in self.cartData?.cart ?? [] {
                     let p = ((item.product?.selling_price!)! as NSString).integerValue
                     mytotal += (item.quantity ?? 0) * (p)
@@ -184,11 +190,22 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
     
     func addcouncodeApi() {
         
-        userhandler.getCoupancode(Success: {response in
+        userhandler.getCoupancode(coupan: self.txtcoupan.text!, Success: {response in
             if response.success == 1 {
+                self.lblcoupan.isHidden = false
+                self.lblcoupanValue.isHidden =  false
                 
+                self.lblcoupanValue.text = response.coupon?.coupon_value
+                
+                let totalvalue = ((self.lbltotla.text!) as NSString).integerValue
+                let coupanvalue = ((response.coupon?.coupon_value!)! as NSString).integerValue
+                print(response.coupon?.coupon_value)
+                let total =  totalvalue -  coupanvalue
+                self.lbltotla.text =  "\(total)"
             } else {
-                
+                self.txtcoupan.text = ""
+                self.lblcoupan.isHidden = true
+                self.lblcoupanValue.isHidden =  true
             }
         }, Failure: {error in
             
