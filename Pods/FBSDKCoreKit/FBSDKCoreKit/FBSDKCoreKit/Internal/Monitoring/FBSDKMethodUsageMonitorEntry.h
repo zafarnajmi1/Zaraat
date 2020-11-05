@@ -16,22 +16,21 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
-
-#if !TARGET_OS_TV
-
-#import <Foundation/Foundation.h>
+#import "FBSDKMonitorEntry.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FBSDKAddressInferencer : NSObject
+/**
+ Defines a monitor entry type to track method usage.
+ This should not be called directly. Instead use the
+ `FBSDKMethodUsageMonitor` to record methods. That will
+ create and persist an entry.
+ */
+@interface FBSDKMethodUsageMonitorEntry : NSObject<FBSDKMonitorEntry>
 
-+ (void)initializeDenseFeature;
-+ (void)loadWeights;
-+ (BOOL)shouldFilterParam:(nullable NSString *)param;
++ (instancetype)new NS_UNAVAILABLE;
++ (instancetype)entryFromClass:(Class)clazz withMethod:(SEL)method;
 
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

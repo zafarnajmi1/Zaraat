@@ -1,4 +1,4 @@
-// Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+// Copyright (c) 2016-present, Facebook, Inc. All rights reserved.
 //
 // You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
 // copy, modify, and distribute this software in source code or binary form for use
@@ -16,23 +16,30 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import "TargetConditionals.h"
+import Foundation
 
-#if !TARGET_OS_TV
+//--------------------------------------
+// MARK: - SDKSettings
+//--------------------------------------
 
-#import <Foundation/Foundation.h>
+/**
+ Provides access to settings and configuration used by the entire SDK.
+ */
+public extension Settings {
+  //--------------------------------------
+  // MARK: - SDKSettings + Logging Behavior
+  //--------------------------------------
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface FBSDKEventInferencer : NSObject
-
-+ (void)loadWeights;
-+ (NSDictionary<NSString *, NSString *> *)predict:(NSString *)buttonText
-                                         viewTree:(NSMutableDictionary<NSString *, id> *)viewTree
-                                          withLog:(BOOL)isPrint;
-
-@end
-
-NS_ASSUME_NONNULL_END
-
-#endif
+  /**
+   Current logging behaviors of Facebook SDK.
+   The default enabled behavior is `.DeveloperErrors` only.
+   */
+  static var loggingBehaviors: Set<LoggingBehavior> {
+    get {
+      return Set(Settings.__loggingBehaviors.map { LoggingBehavior(rawValue: $0) })
+    }
+    set {
+      Settings.__loggingBehaviors = Set(newValue.map { $0.rawValue })
+    }
+  }
+}
