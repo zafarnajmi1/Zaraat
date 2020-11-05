@@ -7,7 +7,10 @@
 //
 
 import UIKit
-
+import GoogleSignIn
+import FBSDKLoginKit
+import  AuthenticationServices
+import LocalAuthentication
 class LoginVC: ZaraatBaseVC {
    
     @IBOutlet weak var txtemail: UITextField!
@@ -81,7 +84,7 @@ class LoginVC: ZaraatBaseVC {
 
     func LoginClinet() {
 
-           let dic : [String:Any] = ["email" : txtemail.text!,"password":txtpassword.text!]
+        let dic : [String:Any] = ["email" : txtemail.text!,"password":txtpassword.text!, "fcm_token": ShareData.shareInfo.fcmToken!]
         ShareData.showProgress()
            userhandler.login(parms: dic, Success: {response in
              ShareData.hideProgress()
@@ -121,22 +124,8 @@ class LoginVC: ZaraatBaseVC {
                 self.navigationController?.pushViewController(vc!, animated: true)
         }
     }
-//
-//    func moveOnBusinessProfile(){
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//
-//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-//                let vc =  storyBoard.instantiateViewController(withIdentifier: "VendorPackageVC") as? VendorPackageVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//
-//        } else {
-//
-//                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-//                let vc =  storyBoard.instantiateViewController(withIdentifier: "VendorPackageVC") as? VendorPackageVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//        }
-//    }
-//
+
+
     
     
     @IBAction func registerAction(_ sender: UIButton) {
@@ -178,4 +167,231 @@ class LoginVC: ZaraatBaseVC {
     }
     
     
+    
+    @IBAction func loginwithFB(_ sender: UIButton) {
+        FaceBookBasicInfo()
+    }
+    
+    
+    func FaceBookBasicInfo(){
+           UserDefaults.standard.set(nil, forKey: "Guest")
+           let loginmanger = LoginManager()
+           loginmanger.logIn(permissions:["email","public_profile"] , from: self){[weak self](success, error) in
+               if error != nil
+               {
+                   print(error?.localizedDescription ?? "You are not logedIn")
+               }else if((success?.isCancelled)!){
+                   print("You have cancelled")
+                   
+               }else if((success?.grantedPermissions.contains("email"))!){
+                   self?.FBLogin()
+               }}
+           
+       }
+    
+    
+    
+    
+    func FBLogin()
+    {
+        if(AccessToken.current != nil)
+        {
+    
+            GraphRequest(graphPath: "/me", parameters: ["fields": "id, name, first_name, last_name, email, gender, picture.type(large)"]).start{(connection, result, error)in
+                
+                if(error != nil)
+                {
+                    print(error?.localizedDescription as Any,"Some thing is Wrong")
+                }else
+                {
+                    let socialdict = result as! [String : AnyObject]
+                    print(socialdict)
+                    
+                       
+                    
+                    let token = AccessToken.current?.tokenString ??  ""
+                    let id = socialdict["id"] as! String
+                    let email = socialdict["email"] as? String
+                    let name = socialdict["name"] as! String
+                    let firstname = socialdict["first_name"] as! String
+                    let lastname = socialdict["last_name"] as! String
+                    
+                    self.SocialLogin(id: id, authmethod: "facebook", fbemail: email ?? "", fbFirstName: firstname, FbLastName: lastname)
+                
+                   
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    func SocialLogin(id: String, authmethod: String,fbemail: String, fbFirstName: String, FbLastName: String) {
+
+        let dic : [String:Any] = ["firstname":fbFirstName, "lastname":FbLastName, "provider_id": id, "provider":authmethod, "avatar": "", "fcm_token": ShareData.shareInfo.fcmToken!, "email": fbemail]
+        ShareData.showProgress()
+        ShareData.showProgress()
+        userhandler.sociaLogin(parms: dic, Success: {response in
+          ShareData.hideProgress()
+            ShareData.hideProgress()
+            if response.success == 1{
+             ShareData.shareInfo.userInfo = response
+             ShareData.shareInfo.email = ""
+             ShareData.shareInfo.password = ""
+             ShareData.shareInfo.autologin =  false
+             self.movetoHome()
+
+                //Zalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 1)
+            }else {
+              ShareData.hideProgress()
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message!, messagetype: 0)
+            }
+
+        }, Failure: {error in
+            ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func LoginWithGmail(_ sender: UIButton) {
+        
+        self.gmailbasicInfo()
+    
+    }
+          
+      func gmailbasicInfo(){
+          
+          let Googlelogin = GIDSignIn.sharedInstance()
+          Googlelogin?.signOut()
+          Googlelogin?.shouldFetchBasicProfile = true
+          Googlelogin?.scopes = ["profile", "email"]
+          Googlelogin?.delegate = self
+          Googlelogin?.presentingViewController = self
+          Googlelogin?.signIn()
+      }
+    
+    @IBAction func GestContinoue(_ sender: UIButton) {
+    }
+    
+    @IBAction func ContinoueWithApple(_ sender: UIButton) {
+        //authenticateUser()
+        appleconfig()
+    }
+    
+    
+    
+    func appleconfig(){
+        
+        let appleIDProvider =  ASAuthorizationAppleIDProvider()
+        let request =  appleIDProvider.createRequest()
+        request.requestedScopes =  [.fullName, .email]
+        let authorizationcontroller = ASAuthorizationController(authorizationRequests: [request])
+        authorizationcontroller.delegate = self
+        authorizationcontroller.performRequests()
+        
+    }
+    
+    
+    func authenticateUser() {
+        let context = LAContext()
+        var error: NSError?
+
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Identify yourself!"
+
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                [unowned self] success, authenticationError in
+
+                DispatchQueue.main.async {
+                    if success {
+                        //self.runSecretCode()
+                    } else {
+                        let ac = UIAlertController(title: "Authentication failed", message: "Sorry!", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self.present(ac, animated: true)
+                    }
+                }
+            }
+        } else {
+            let ac = UIAlertController(title: "Touch ID not available", message: "Your device is not configured for Touch ID.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
+    
+    
+    
+    
 }
+
+extension LoginVC : ASAuthorizationControllerDelegate {
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let  appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential  {
+            let useridentifire =  appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email =  appleIDCredential.email
+            print(fullName, email)
+            self.SocialLogin( id: "\(useridentifire)", authmethod: "apple", fbemail: email ?? "", fbFirstName: appleIDCredential.fullName?.givenName ?? "", FbLastName: appleIDCredential.fullName?.familyName ?? "")
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
+    }
+}
+//GIDSignInUIDelegate
+extension LoginVC : GIDSignInDelegate{
+    
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            print(error.localizedDescription)
+        }else if(error == nil)
+        {
+            let accessToken = GIDSignIn.sharedInstance()?.currentUser.authentication.idToken
+       
+            
+            self.SocialLogin( id: user.userID, authmethod: "google", fbemail: user.profile.email ?? "", fbFirstName: user.profile.givenName, FbLastName: user.profile.name)
+            //self.gmailLogin(token: accessToken!, id: user.userID, authmethod: "google", user: user)
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+

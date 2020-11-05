@@ -58,8 +58,8 @@ extension UIViewController {
     
     @objc func btnFilterClick (_ sender: Any){
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
-        
+        let vc =  storyBoard.instantiateViewController(identifier: "FilterVC") as? FilterVC
+        vc?.hidesBottomBarWhenPushed =  true 
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

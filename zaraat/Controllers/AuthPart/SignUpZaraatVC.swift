@@ -121,7 +121,7 @@ class SignUpVC: ZaraatBaseVC {
     
     
     func registerClient() {
-        let dic: [String:Any] = ["email": self.txtemail.text!, "first_name": txtFirstName.text!, "last_name":self.txtLastName.text!, "phone": txtphonenumber.text!, "password": txtpassword.text!]
+        let dic: [String:Any] = ["email": self.txtemail.text!, "first_name": txtFirstName.text!, "last_name":self.txtLastName.text!, "phone": txtphonenumber.text!, "password": txtpassword.text!,"fcm_token": ShareData.shareInfo.fcmToken!]
         ShareData.showProgress()
         userhandler.Register(parms: dic, Success: {response in
           ShareData.hideProgress()

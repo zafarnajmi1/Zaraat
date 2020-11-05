@@ -204,9 +204,9 @@ class EditProfileVC: UIViewController {
         
         if filepath != "" {
             
-            dic = ["first_name":txtName.text!, "last_name":txtlastname.text!,"phone":txtphonenumber.text! , "gender": gender, "avatar": filepath]
+            dic = ["first_name":txtName.text!, "last_name":txtlastname.text!,"phone":txtphonenumber.text! , "gender": gender, "avatar": filepath,"email": txtEmail.text!]
         } else {
-            dic = ["first_name":txtName.text!, "last_name":txtlastname.text!,"phone":txtphonenumber.text! , "gender": gender,"avatar": ShareData.shareInfo.userprofile?.user?.picture ?? ""]
+            dic = ["first_name":txtName.text!, "last_name":txtlastname.text!,"phone":txtphonenumber.text! , "gender": gender,"avatar": ShareData.shareInfo.userprofile?.user?.picture ?? "", "email": txtEmail.text!]
         }
          
         userhandler.UpdatePrfileUser(parms: dic, Success: {response in

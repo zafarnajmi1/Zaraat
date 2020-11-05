@@ -7,150 +7,209 @@
 //
 
 import UIKit
-
+import  SkyFloatingLabelTextField
+import  GooglePlaces
+import  GooglePlacePicker
 class CheckOutVC: UIViewController {
     @IBOutlet weak var btnPlaceOrder: UIButton!
+    @IBOutlet weak var priceView: UIView!
+   
+    @IBOutlet weak var btnshipping: UIButton!
+    @IBOutlet weak var txtBilingemail: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtBillingname: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var GrandTotalView: UIView!
-    @IBOutlet weak var btnEdit: UIButton!
-    //@IBOutlet weak var txtaddress: UITextView!
-    //@IBOutlet weak var citView: UIView!
-    @IBOutlet weak var tblHeight: NSLayoutConstraint!
-    @IBOutlet weak var tblView: UITableView!
-    //@IBOutlet weak var orderView: UIView!
-    @IBOutlet weak var ListpaymentView: UIView!
-//    @IBOutlet weak var paymentMethdView: UIView!
-//    @IBOutlet weak var CounteryView: UIView!
-//    @IBOutlet weak var stateView: UIView!
-//    @IBOutlet weak var companyView: UIView!
-//    @IBOutlet weak var txtView: UIView!
-//    @IBOutlet weak var phoneView: UIView!
-//    @IBOutlet weak var emailView: UIView!
-//    @IBOutlet weak var lastNameView: UIView!
-//    @IBOutlet weak var firstNameView: UIView!
-//    @IBOutlet weak var bilingView: UIView!
-//    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var txtbillingPhonenumber: SkyFloatingLabelTextField!
     
     
-    let yourAttributes: [NSAttributedString.Key: Any] = [
-        .font: UIFont.init(name: "Poppins-SemiBold", size: 16)!,
-        .foregroundColor:#colorLiteral(red: 0.9913411736, green: 0.1897980273, blue: 0, alpha: 1) ,
-    .underlineStyle: NSUnderlineStyle.single.rawValue]
+    @IBOutlet weak var txtBilllingAddress: SkyFloatingLabelTextField!
     
     
     
+    /////
+    @IBOutlet weak var txtShippingemail: SkyFloatingLabelTextField!
+    @IBOutlet weak var txtShippingname: SkyFloatingLabelTextField!
+    
+    @IBOutlet weak var txtShippingPhonenumber: SkyFloatingLabelTextField!
+    
+    
+    @IBOutlet weak var txtShippingAddress: SkyFloatingLabelTextField!
+    
+    
+    @IBOutlet weak var btnVisaRadio: UIButton!
+    
+    @IBOutlet weak var btncashRadio: UIButton!
+    
+    @IBOutlet weak var btneasyPaisaRadio: UIButton!
+    
+    @IBOutlet weak var btnjazzCashRadio: UIButton!
+    
+    @IBOutlet weak var btnHBLRadio: UIButton!
+    var addresstype = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let attributeString = NSMutableAttributedString(string: "Edit",
-                                                            attributes: yourAttributes)
-            btnEdit.setAttributedTitle(attributeString, for: .normal)
-        
-        
-        
-        btnPlaceOrder.roundButton()
-        tblView.register(UINib.init(nibName: "CheckOutCell", bundle: nil), forCellReuseIdentifier: "CheckOutCell")
         addBackButton()
-        self.title = "CheckOut"
-        setUpCehckout()
-        GrandTotalView.viewSetUp(radius: 5, color: #colorLiteral(red: 0.8587297797, green: 0.8588775992, blue: 0.8587204218, alpha: 1), borderwidth: 1)
-        sertReviewConfig()
-    }
-    
-    
-    func setUpCehckout() {
-//        txtaddress.delegate = self
-//         txtaddress.textColor = UIColor.lightGray
-//         txtaddress.text = "Address"
-//        txtaddress.textColor = #colorLiteral(red: 0.5566827655, green: 0.5607631207, blue: 0.5648422837, alpha: 1)
-//        headerView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//        bilingView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//        emailView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-        //ListpaymentView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//        paymentMethdView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//        CounteryView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-//        stateView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-//
-//        companyView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.7999122739, green: 0.8000505567, blue: 0.799903512, alpha: 1))
-//        txtView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//
-//        phoneView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
-//
-//        lastNameView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
-//        firstNameView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
-//        bilingView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//        orderView.roundcornerAndBorder(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1), round: 8)
-//        citView.roundcornerAndBorder1(border: 1, color: #colorLiteral(red: 0.8116757274, green: 0.8118159175, blue: 0.8116669059, alpha: 1))
+        setNavigationBarWhiteColor()
+        self.title = "Check Out"
+        btnPlaceOrder.roundButton()
+        priceView.layer.borderColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.937254902, alpha: 1)
+       priceView.layer.borderWidth = 1
+        priceView.layer.cornerRadius = 8
+        
+        self.txtBilllingAddress.delegate =  self
+        self.txtShippingAddress.delegate =  self
+        
+        
+        
         
         
     }
+    
+    
+   
+        
+    
 
     
     @IBAction func PlaceOrderAction(_ sender: UIButton) {
     }
     
     
-    func sertReviewConfig() {
-                   var tableViewHeight:CGFloat = 0;
-                         for i in 0..<self.tblView.numberOfRows(inSection: 0){
-                             tableViewHeight = tableViewHeight  + tableView(self.tblView, heightForRowAt: IndexPath(row: i, section: 0))
-                         }
-                         tblHeight.constant = tableViewHeight +  160
-                         self.tblView.setNeedsDisplay()
-               }
+    
 
 }
-extension CheckOutVC :  UITableViewDataSource, UITableViewDelegate {
 
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "CheckOutCell") as? CheckOutCell
-        return cell!
-    }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    
+    
+//MARK:- AutoCompleteAddress
+extension CheckOutVC: UITextFieldDelegate {
+
+
+func textFieldDidBeginEditing(_ textField: UITextField) {
+    self.addresstype = 1
+        if textField == self.txtBilllingAddress {
+        let autoComplete = GMSAutocompleteViewController()
+        autoComplete.delegate = self
+        //            UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1026112512, green: 0.6214135885, blue: 0.06590007991, alpha: 1)
+        //            UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.1026112512, green: 0.6214135885, blue: 0.06590007991, alpha: 1)
+        present(autoComplete, animated: true, completion: nil)
+            
+} else if textField == self.txtShippingAddress {
+           self.addresstype = 2
+            let autoComplete = GMSAutocompleteViewController()
+            autoComplete.delegate = self
+            //            UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1026112512, green: 0.6214135885, blue: 0.06590007991, alpha: 1)
+            //            UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.1026112512, green: 0.6214135885, blue: 0.06590007991, alpha: 1)
+            present(autoComplete, animated: true, completion: nil)
+}
+        let placePickerController = GMSAutocompleteViewController()
+        placePickerController.delegate = self
+        self.present(placePickerController, animated: true) {
+        }
+//        let config = GMSPlacePickerConfig(viewport: nil)
+//        let placePicker = GMSPlacePickerViewController(config: config)
+//        placePicker.delegate = self
+//        present(placePicker, animated: true, completion: nil)
+}
+}
+///GMSAutocompleteViewControllerDelegate
+extension CheckOutVC: GMSAutocompleteViewControllerDelegate {
+
+
+
+
+//    func placePicker(_ viewController: GMSPlacePickerViewController, didPick place: GMSPlace) {
+//        print(place.coordinate.latitude)
+//        print(place.coordinate.longitude)
+////        self.my_lat = place.coordinate.latitude
+////        self.my_long = place.coordinate.longitude
+////        print(place.formattedAddress!)
+//
+//        if(place.formattedAddress == "" || place.formattedAddress == nil){
+//            self.txtaddress.text = "Unknown place Cordinates Selected  " +  "\(place.coordinate.latitude)" + "  " + "\(place.coordinate.longitude)"
+//        }else{
+//            self.txtaddress?.text = place.formattedAddress!
+//        }
+//
+//        dismiss(animated: true, completion: nil)
+//    }
+
+
+func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+
+                print(place.coordinate.latitude)
+                print(place.coordinate.longitude)
+
+
+                //        self.my_lat = place.coordinate.latitude
+                //        self.my_long = place.coordinate.longitude
+                //        print(place.formattedAddress!)
+    if   self.addresstype == 1 {
         
+                if(place.formattedAddress == "" || place.formattedAddress == nil){
+                   
+                     self.txtBilllingAddress.text = "Unknown place Cordinates Selected" + "  " +  "\(place.coordinate.latitude)" + "  " + "\(place.coordinate.longitude)"
+
+                }else{
+                    
+                     self.txtBilllingAddress?.text = place.formattedAddress!
+                }
+    
+    } else {
+        
+            if(place.formattedAddress == "" || place.formattedAddress == nil){
+              
+                self.txtShippingAddress.text = "Unknown place Cordinates Selected" + "  " +  "\(place.coordinate.latitude)" + "  " + "\(place.coordinate.longitude)"
+
+            }else{
+                
+                  self.txtBilllingAddress?.text = place.formattedAddress!
+            }
     }
     
+    
+    
+    
+                dismiss(animated: true, completion: nil)
+
 }
-extension CheckOutVC: UITextViewDelegate{
-    
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Address" {
-            textView.text = ""
-            textView.textColor = #colorLiteral(red: 0.3529411765, green: 0.3568627451, blue: 0.3647058824, alpha: 1)
-            
-        }
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-        }
-        return true
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
-            textView.text = "Address"
-            textView.textColor = #colorLiteral(red: 0.3529411765, green: 0.3568627451, blue: 0.3647058824, alpha: 1)//UIColor.lightGray
-            
-        }
-    }
-    
-    
-    
-    
-    
-    
+
+func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
+
+viewController.dismiss(animated: true, completion: nil)
+
+print("No place selected")
 }
+
+func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+
+     print("Error: ", error.localizedDescription)
+}
+
+func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+dismiss(animated: true, completion:nil )
+}
+
+
+func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+}
+
+
+func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+       UIApplication.shared.isNetworkActivityIndicatorVisible = false
+}
+
+func viewController(_ viewController: GMSAutocompleteViewController, didSelect prediction: GMSAutocompletePrediction) -> Bool {
+    
+    dismiss(animated: true, completion: nil)
+    return true
+}
+
+
+}
+
+

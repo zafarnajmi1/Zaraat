@@ -96,6 +96,10 @@ class Constant {
         static let RemoveCart = "cart/remove"
         static let CoupanCode = "coupons/getbycode/"
         
+        // Filters
+        static let childCateBrand = "childcategories/main/"
+        static let attributes = "filter/attributes"
+        static let filterUrl = "filter"
     }
     
     struct NetworkErrorType {

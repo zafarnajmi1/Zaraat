@@ -44,7 +44,7 @@ class SplashVC: ZaraatBaseVC {
     
     func LoginClient() {
 
-              let dic : [String:Any] = ["email" : ShareData.shareInfo.email!,"password":ShareData.shareInfo.password!]
+              let dic : [String:Any] = ["email" : ShareData.shareInfo.email!,"password":ShareData.shareInfo.password!,"fcm_token": ShareData.shareInfo.fcmToken!]
            ShareData.showProgress()
               userhandler.login(parms: dic, Success: {response in
                 ShareData.hideProgress()

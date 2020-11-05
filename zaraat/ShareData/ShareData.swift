@@ -85,6 +85,16 @@ class ShareData {
     }
     
     
+    var fcmToken : String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey:"fcmToken" )
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.string(forKey: "fcmToken")
+        }
+    }
+    
 private var unseenCartCount : Int = 0
    var unseenCart : Int {
        set {

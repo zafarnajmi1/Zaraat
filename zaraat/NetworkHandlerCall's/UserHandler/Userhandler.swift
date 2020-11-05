@@ -1043,4 +1043,89 @@ class userhandler {
        
     
     
+    
+    
+    class  func getchildCatgories( id: Int, Success: @escaping (FilterBrand) -> Void, Failure: @escaping(NetworkError) -> Void){
+                  let url = Constant.MainUrl + Constant.URLs.childCateBrand + "\(id)"
+                  print("pages Url", url)
+                  Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+          
+                      do {
+                          let responseModel = try JSONDecoder().decode(FilterBrand.self, from: successResponse.data!)
+                          Success(responseModel)
+                      }
+                      catch {
+                          print("Response Error")
+                      }
+          
+          
+                  } , Falioure: {(Error) in
+                      Failure(Error)
+                  })
+              }
+    
+    
+    class  func getattributes(  Success: @escaping (FilterColorsSizes) -> Void, Failure: @escaping(NetworkError) -> Void){
+            let url = Constant.MainUrl + Constant.URLs.attributes
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+    
+                do {
+                    let responseModel = try JSONDecoder().decode(FilterColorsSizes.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
+    
+    
+    
+    
+    
+    class  func FilterUrl(parms: [String: Any], Success: @escaping (ProductListModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+         let url = Constant.MainUrl + Constant.URLs.filterUrl
+         print(url)
+         Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+             
+             do {
+             print("MyResponse : ", successResponse)
+                 let responseModel = try JSONDecoder().decode(ProductListModel.self, from: successResponse.data!)
+                 Success(responseModel)
+             }
+             catch {
+                 print("Response Error")
+             }
+             
+             
+         } , Falioure: {(Error) in
+             Failure(Error)
+         })
+     }
+    
+    
+    class  func sociaLogin(parms: [String: Any], Success: @escaping (LoginModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+           let url = "https://apiengine.zaraat.com/auth/social/login"
+           print(url)
+           Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+               
+               do {
+               print("MyResponse : ", successResponse)
+                   let responseModel = try JSONDecoder().decode(LoginModel.self, from: successResponse.data!)
+                   Success(responseModel)
+               }
+               catch {
+                   print("Response Error")
+               }
+               
+               
+           } , Falioure: {(Error) in
+               Failure(Error)
+           })
+       }
 }

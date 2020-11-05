@@ -122,6 +122,12 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
             self.navigationController?.pushViewController(vc!, animated: true)
+            
+        } else if indexPath.row == 4 {
+            
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
+            self.navigationController?.pushViewController(vc!, animated: true)
         } else {
             alertForLogout()
             

@@ -30,9 +30,6 @@ class ViewController: UIViewController {
          addNavigation()
         NotificationCenter.default.addObserver(self, selector: #selector(self.CartConfig(_:)), name: NSNotification.Name(rawValue: "CartCount"), object: nil)
         
-        
-        
-        
         let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
 
                            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
@@ -44,7 +41,7 @@ class ViewController: UIViewController {
         
         
         
-        
+         presentPageVCOnView()
         for item in (ShareData.shareInfo.EcommerceCate?.categories)!{
             self.tabs.append(item.category_title_en ?? "")
         }
@@ -53,7 +50,7 @@ class ViewController: UIViewController {
         menuBarView.isSizeToFitCellsNeeded = true
         menuBarView.collView.backgroundColor = UIColor.init(white: 0.97, alpha: 0.97)
         
-        presentPageVCOnView()
+        
         
         menuBarView.menuDelegate = self
         pageController.delegate = self
@@ -63,11 +60,19 @@ class ViewController: UIViewController {
         menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
         pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
         
+       
+        
+        
         // With CallBack Function...
         //menuBarView.menuDidSelected = myLocalFunc(_:_:)
 
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        //presentPageVCOnView()
+////        self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
+//    }
     
     @objc func CartConfig(_ notification: NSNotification) {
            
@@ -125,7 +130,7 @@ class ViewController: UIViewController {
     
     @objc func btnFilterAction (_ sender: Any){
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+        let vc =  storyBoard.instantiateViewController(identifier: "FilterVC") as? FilterVC
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -139,25 +144,25 @@ class ViewController: UIViewController {
     
     
     
-    /*
+/*
      // Call back function
     func myLocalFunc(_ collectionView: UICollectionView, _ indexPath: IndexPath) {
-        
-        
+
+
         if indexPath.item != currentIndex {
-            
+
             if indexPath.item > currentIndex {
                 self.pageController.setViewControllers([viewController(At: indexPath.item)!], direction: .forward, animated: true, completion: nil)
             }else {
                 self.pageController.setViewControllers([viewController(At: indexPath.item)!], direction: .reverse, animated: true, completion: nil)
             }
-            
+
             menuBarView.collView.scrollToItem(at: IndexPath.init(item: indexPath.item, section: 0), at: .centeredHorizontally, animated: true)
-            
+
         }
-        
-    }
-     */
+
+    } */
+     
     
     
     @IBAction func b2bAction(_ sender: UIButton) {
@@ -167,7 +172,7 @@ class ViewController: UIViewController {
     }
     
     func presentPageVCOnView() {
-        
+       
         self.pageController = storyboard?.instantiateViewController(withIdentifier: "PageControllerVC") as! PageControllerVC
         self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
         self.addChild(self.pageController)

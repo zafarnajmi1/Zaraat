@@ -41,52 +41,55 @@ struct LoginModel : Codable {
 }
 
 struct Customer : Codable {
-    let customer_id : Int?
-    let first_name : String?
-    let last_name : String?
-    let email : String?
-    let phone : String?
-    let password : String?
-    let gender : String?
-    let picture : String?
-    let status : Int?
-    let provider : String?
-    let provider_id : String?
-    let created_at : String?
-    let updated_at : String?
+        let customer_id : Int?
+        let first_name : String?
+        let last_name : String?
+        let email : String?
+        let provider_id : String?
+        let provider : String?
+        let phone : String?
+        let password : String?
+        let gender : String?
+        let picture : String?
+        let status : Int?
+        let fcm_token : String?
+        let created_at : String?
+        let updated_at : String?
 
-    enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {
 
         case customer_id = "customer_id"
         case first_name = "first_name"
         case last_name = "last_name"
         case email = "email"
+        case provider_id = "provider_id"
+        case provider = "provider"
         case phone = "phone"
         case password = "password"
         case gender = "gender"
         case picture = "picture"
         case status = "status"
-        case provider = "provider"
-        case provider_id = "provider_id"
+        case fcm_token = "fcm_token"
         case created_at = "created_at"
         case updated_at = "updated_at"
-    }
+        }
 
-    init(from decoder: Decoder) throws {
+        init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         customer_id = try values.decodeIfPresent(Int.self, forKey: .customer_id)
         first_name = try values.decodeIfPresent(String.self, forKey: .first_name)
         last_name = try values.decodeIfPresent(String.self, forKey: .last_name)
         email = try values.decodeIfPresent(String.self, forKey: .email)
+        provider_id = try values.decodeIfPresent(String.self, forKey: .provider_id)
+        provider = try values.decodeIfPresent(String.self, forKey: .provider)
         phone = try values.decodeIfPresent(String.self, forKey: .phone)
         password = try values.decodeIfPresent(String.self, forKey: .password)
         gender = try values.decodeIfPresent(String.self, forKey: .gender)
         picture = try values.decodeIfPresent(String.self, forKey: .picture)
         status = try values.decodeIfPresent(Int.self, forKey: .status)
-        provider = try values.decodeIfPresent(String.self, forKey: .provider)
-        provider_id = try values.decodeIfPresent(String.self, forKey: .provider_id)
+        fcm_token = try values.decodeIfPresent(String.self, forKey: .fcm_token)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
-    }
+        }
 
-}
+        }

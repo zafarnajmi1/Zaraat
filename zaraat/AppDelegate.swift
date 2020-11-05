@@ -9,6 +9,13 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import GooglePlacePicker
+import GoogleMaps
+import GoogleSignIn
+import FBSDKLoginKit
+import UserNotifications
+import Firebase
+import FirebaseMessaging
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 var menuViewController:MenuVC!
@@ -17,14 +24,35 @@ var menuViewController:MenuVC!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
          
-        
+        GMSServices.provideAPIKey("AIzaSyBUwsMy_xBj8tOy3seHnEcSt7NlJP2aOvs")//("AIzaSyADR5IFPSYE88eMxWTbrj7dZ-pyTHRc4NI") //("AIzaSyBjEjCpCv1VfMc-BTh191xCd_omhTjJZDE")
+        GMSPlacesClient.provideAPIKey("AIzaSyBUwsMy_xBj8tOy3seHnEcSt7NlJP2aOvs")
      
+        //340281281040-tgmtmg552eb4rb2u6os1aef007neqrro.apps.googleusercontent.com
+        GIDSignIn.sharedInstance().clientID = "340281281040-tgmtmg552eb4rb2u6os1aef007neqrro.apps.googleusercontent.com" //"91823052794-ojg6dccme8uv0ktn93ekegf8v84ema18.apps.googleusercontent.com"
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
+        
+              FirebaseApp.configure()
+               let manager = PushNotificationManager()
+               manager.registerForPushNotifications()
         
         return true
     }
 
+    
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handled: Bool = ApplicationDelegate.shared.application(application, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        
+        //Mark:- GoogleSignin
+        GIDSignIn.sharedInstance().handle(url)
+        //GIDSignIn.sharedInstance().handle(url,sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        
+        return handled
+    }
+    
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

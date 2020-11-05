@@ -12,6 +12,17 @@ class ProductListsVC: UIViewController {
 
     @IBOutlet weak var ClView: UICollectionView!
     @IBOutlet weak var tblView: UITableView!
+    
+    //filter Params
+    var cateid = 0
+    var childid = 0
+    var maxprice = 0
+    var minprice = 0
+    var colorid = 0
+    var sizeid =  0
+    var attributes = [Int]()
+    //////////
+    
     var typeno = 0
     var id = 0
     var isGride = true
@@ -32,8 +43,12 @@ class ProductListsVC: UIViewController {
            getMainCateProducts()
         } else if typeno == 2 {
             getsubCateProducts()
-        } else {
+        } else if typeno == 3 {
              getProductListapi()
+        } else {
+            self.attributes.append(sizeid)
+            self.attributes.append(colorid)
+            getFilterProductListapi()
         }
         
     }
@@ -90,6 +105,34 @@ class ProductListsVC: UIViewController {
         })
     }
 
+    
+    
+    
+    func getFilterProductListapi() {
+        ShareData.showProgress()
+        let dic : [String:Any] = ["category_id": cateid, "child_category": childid, "min_price":minprice,"max_price":maxprice, "attribute_value[]":attributes]
+        print(dic)
+        userhandler.FilterUrl(parms: dic, Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1 {
+                self.Productdata =  response.data
+                self.tblView.reloadData()
+                self.ClView.reloadData()
+            } else {
+                ShareData.hideProgress()
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error.message, messagetype: 0)
+        })
+    }
+    
+    
+    
+    
+    
+    
     
     func getsubCateProducts() {
         ShareData.showProgress()
