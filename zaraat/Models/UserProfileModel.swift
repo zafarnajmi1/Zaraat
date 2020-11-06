@@ -45,7 +45,7 @@ class User : Codable {
     let provider_id : String?
     let created_at : String?
     let updated_at : String?
-
+    let fcm_token : String?
     enum CodingKeys: String, CodingKey {
 
         case customer_id = "customer_id"
@@ -61,6 +61,7 @@ class User : Codable {
         case provider_id = "provider_id"
         case created_at = "created_at"
         case updated_at = "updated_at"
+        case fcm_token = "fcm_token"
     }
 
     required init(from decoder: Decoder) throws {
@@ -78,6 +79,7 @@ class User : Codable {
         provider_id = try values.decodeIfPresent(String.self, forKey: .provider_id)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        fcm_token =  try values.decodeIfPresent(String.self, forKey: .fcm_token)
     }
 
 }

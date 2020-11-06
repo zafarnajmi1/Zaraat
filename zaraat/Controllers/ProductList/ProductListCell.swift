@@ -53,4 +53,20 @@ class ProductListCell: UITableViewCell {
         self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
     }
     
+    func loadWishListData(obj:Wishlist) {
+        
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: obj.product?.vendor_price ?? "")
+                      attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
+                      
+        lbldiscountPrice.attributedText = attributeString
+        
+        
+        self.lblprice.text =  obj.product?.selling_price
+        self.lbltitle.text =  obj.product?.product_title_en
+        
+        self.img.sd_setImage(with: URL(string: obj.product?.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
+    }
+    
+    
+    
 }

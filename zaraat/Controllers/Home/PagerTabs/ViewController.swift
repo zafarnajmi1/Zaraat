@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var b2bView: UIView!
     
+    @IBOutlet weak var txtsearch: UITextField!
     @IBOutlet weak var searchView: UIView!
     
     var currentIndex: Int = 0
@@ -136,6 +137,9 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func searchAction(_ sender: UIButton) {
+        
+    }
     
     
     

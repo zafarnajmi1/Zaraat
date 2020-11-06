@@ -42,10 +42,11 @@ class MenuVC: UIViewController {
     func configMenu() {
         self.menuarray.removeAll()
         menuarray.append(menuDate(title: "Edit Profile", imgae: UIImage.init(named: "myaccount")))
-         menuarray.append(menuDate(title: "My Orders", imgae: UIImage.init(named: "changelanguage")))
+         menuarray.append(menuDate(title: "My Orders", imgae: UIImage.init(named: "Order")))
+        menuarray.append(menuDate(title: "My WishList", imgae: UIImage.init(named: "Wishlist")))
        
         menuarray.append(menuDate(title: "Settings", imgae: UIImage.init(named: "settings")))
-        menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "changelanguage")))
+        menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "Support")))
         menuarray.append(menuDate(title: "Terms & Condition", imgae: UIImage.init(named: "Terms&Condition")))
         menuarray.append(menuDate(title: "Logout", imgae: UIImage.init(named: "logout")))
     }
@@ -116,14 +117,19 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
             
         }else if indexPath.row == 2{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
+            let vc =  storyBoard.instantiateViewController(identifier: "WishListVC") as? WishListVC
             self.navigationController?.pushViewController(vc!, animated: true)
-        } else if indexPath.row == 3 {
+        }else if indexPath.row == 3{
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
+            vc?.userdata = userdata
+            self.navigationController?.pushViewController(vc!, animated: true)
+        } else if indexPath.row == 4 {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
             self.navigationController?.pushViewController(vc!, animated: true)
             
-        } else if indexPath.row == 4 {
+        } else if indexPath.row == 5 {
             
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC

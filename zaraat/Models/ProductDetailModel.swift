@@ -62,7 +62,8 @@ struct ProductDetail : Codable {
         let vendor_products : Int?
         let feature : FeatureDetail?
         let images : [ImagesDetail]?
-
+         let market : String?
+         let liked : Int?
         enum CodingKeys: String, CodingKey {
 
             case products_id = "products_id"
@@ -95,6 +96,8 @@ struct ProductDetail : Codable {
             case vendor_products = "vendor_products"
             case feature = "feature"
             case images = "images"
+            case market = "market"
+            case liked = "liked"
         }
 
         init(from decoder: Decoder) throws {
@@ -129,6 +132,8 @@ struct ProductDetail : Codable {
             vendor_products = try values.decodeIfPresent(Int.self, forKey: .vendor_products)
             feature = try values.decodeIfPresent(FeatureDetail.self, forKey: .feature)
             images = try values.decodeIfPresent([ImagesDetail].self, forKey: .images)
+            market = try values.decodeIfPresent(String.self, forKey: .market)
+            liked = try values.decodeIfPresent(Int.self, forKey: .liked)
         }
 
     }

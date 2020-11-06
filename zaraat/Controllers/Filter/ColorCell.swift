@@ -20,7 +20,7 @@ class ColorCell: UICollectionViewCell {
     {
      if (isSelected){
          tick.isHidden = false
-        tick.image =  UIImage.init(named: "checked")
+        tick.image =  UIImage.init(named: "checked copy")
         }else {
          tick.isHidden = true
          tick.image =  UIImage.init(named: "")

@@ -13,7 +13,8 @@ class ProductDetailVC: UIViewController {
     
     
    var isb2b =  0
-    
+    var iswishlist = true
+    @IBOutlet weak var heartimg: UIImageView!
     @IBOutlet weak var btninquires: UIButton!
     @IBOutlet weak var btnchat: UIButton!
     
@@ -120,6 +121,14 @@ class ProductDetailVC: UIViewController {
             if response.success == 1 {
                 self.productData =  response.product
                 
+                if response.product?.liked == 1 {
+                    self.iswishlist = false
+                    self.heartimg.image = UIImage.init(named: "heart")
+                } else {
+                    self.iswishlist = true
+                    self.heartimg.image = UIImage.init(named: "Heart-1")
+                }
+                
                 self.lbltitle.text =  response.product?.product_title_en
                 self.lblprice.text =  "Price : " + (response.product?.selling_price)!  + " PKR"
                 self.lbldetail.text = response.product?.product_description_en
@@ -127,8 +136,6 @@ class ProductDetailVC: UIViewController {
                 self.lbldetailsseller.text =  response.product?.vendor?.description
                 self.lblshopename.text = response.product?.vendor?.company_name
                 self.lblsupliretitle.text =  response.product?.vendor?.owners_name
-                
-                
                 
                 
                 
@@ -185,6 +192,55 @@ class ProductDetailVC: UIViewController {
     }
     
     
+    @IBAction func addWishLisst(_ sender: UIButton) {
+        if iswishlist == true {
+            //iswishlist = false
+            self.heartimg.image = UIImage.init(named: "heart")
+            addwishlist()
+            
+        } else {
+            //iswishlist = true
+            self.heartimg.image = UIImage.init(named: "Heart-1")
+            Removewishlist()
+        }
+        
+        iswishlist = !iswishlist
+    }
+    
+    
+    func addwishlist() {
+        ShareData.showProgress()
+        let dic : [String:Any] = ["product_id":self.productData?.products_id ?? 0]
+        userhandler.WishList(parms: dic, Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1{
+                
+            } else {
+                ShareData.hideProgress()
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+        })
+        
+    }
+    
+    
+    
+    func Removewishlist() {
+        ShareData.showProgress()
+        let dic : [String:Any] = ["item_id":self.productData?.products_id ?? 0]
+        userhandler.removeWishList(parms: dic, Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1{
+                
+            } else {
+                ShareData.hideProgress()
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+        })
+        
+    }
     
     
     

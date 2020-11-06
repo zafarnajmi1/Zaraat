@@ -1128,4 +1128,136 @@ class userhandler {
                Failure(Error)
            })
        }
+    
+    
+    
+    class  func WishList(parms: [String: Any], Success: @escaping (AddtoCart) -> Void, Failure: @escaping(NetworkError) -> Void){
+              let url = Constant.MainUrl + Constant.URLs.wishlist
+              print(url)
+              Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+                  
+                  do {
+                  print("MyResponse : ", successResponse)
+                      let responseModel = try JSONDecoder().decode(AddtoCart.self, from: successResponse.data!)
+                      Success(responseModel)
+                  }
+                  catch {
+                      print("Response Error")
+                  }
+                  
+                  
+              } , Falioure: {(Error) in
+                  Failure(Error)
+              })
+          }
+    
+    
+    
+    class  func removeWishList(parms: [String: Any], Success: @escaping (AddtoCart) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.removewishlist
+        print(url)
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(AddtoCart.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
+    
+    class  func getwishlist(  Success: @escaping (WishlistModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+               let url = Constant.MainUrl + Constant.URLs.getwishlist
+               print("pages Url", url)
+               Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+       
+                   do {
+                       let responseModel = try JSONDecoder().decode(WishlistModel.self, from: successResponse.data!)
+                       Success(responseModel)
+                   }
+                   catch {
+                       print("Response Error")
+                   }
+       
+       
+               } , Falioure: {(Error) in
+                   Failure(Error)
+               })
+           }
+    
+    
+    
+    
+    class  func addremoveNotication(parms: [String: Any], Success: @escaping (NotificationModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.notification
+        print(url)
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(NotificationModel.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
+    class  func changePassword(parms: [String: Any], Success: @escaping (AddtoCart) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.changePassword
+        
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(AddtoCart.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
+    
+    
+    class  func Searchproduct(parms: [String: Any], Success: @escaping (SearchProductModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.searchProduct
+        
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(SearchProductModel.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
 }

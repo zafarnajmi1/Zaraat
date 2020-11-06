@@ -45,6 +45,7 @@ class Constant {
         static let forgotPass = "password/forget"
         static let veriCode = "password/verify"
         static let resetPass = "password/reset"
+        static let changePassword = "password/change"
         static let Allcate = "categories/all"
         static let SubCate = "subcategories/"
         static let ChildCate = "childcategories/"
@@ -100,6 +101,16 @@ class Constant {
         static let childCateBrand = "childcategories/main/"
         static let attributes = "filter/attributes"
         static let filterUrl = "filter"
+        
+        // wish List
+        static let wishlist = "wishlist/store"
+        static let removewishlist  =  "wishlist/remove"
+        static let getwishlist = "wishlist/my"
+        
+        //notification on off
+        static let notification  = "profile/notifications"
+        // search
+        static let searchProduct = "products/search"
     }
     
     struct NetworkErrorType {

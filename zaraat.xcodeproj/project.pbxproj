@@ -205,6 +205,10 @@
 		CE92D8A3252210B7001C63C8 /* ZMartClViewPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92D8A2252210B7001C63C8 /* ZMartClViewPartOneCell.swift */; };
 		CE92D8AD25221168001C63C8 /* ZMartClViewPartTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE92D8AC25221168001C63C8 /* ZMartClViewPartTwoCell.swift */; };
 		CE94EC712510DB5F00010DA0 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94EC702510DB5F00010DA0 /* ViewProfileVC.swift */; };
+		CEA7EC6F25555E1400FF328A /* WishListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7EC6E25555E1400FF328A /* WishListVC.swift */; };
+		CEA7EC712555602900FF328A /* MywishlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7EC702555602900FF328A /* MywishlistModel.swift */; };
+		CEA7EC732555686D00FF328A /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7EC722555686D00FF328A /* NotificationModel.swift */; };
+		CEA7EC7525557CB800FF328A /* SearchProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7EC7425557CB800FF328A /* SearchProductModel.swift */; };
 		CEAC33B6251C7D49002D2E9C /* B2BProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC33B5251C7D49002D2E9C /* B2BProductDetailVC.swift */; };
 		CEAC33B9251CC3F5002D2E9C /* B2BInquireisVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC33B8251CC3F5002D2E9C /* B2BInquireisVC.swift */; };
 		CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C324092A4B0079C3C5 /* AppDelegate.swift */; };
@@ -440,6 +444,10 @@
 		CE92D8A2252210B7001C63C8 /* ZMartClViewPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMartClViewPartOneCell.swift; sourceTree = "<group>"; };
 		CE92D8AC25221168001C63C8 /* ZMartClViewPartTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMartClViewPartTwoCell.swift; sourceTree = "<group>"; };
 		CE94EC702510DB5F00010DA0 /* ViewProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
+		CEA7EC6E25555E1400FF328A /* WishListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListVC.swift; sourceTree = "<group>"; };
+		CEA7EC702555602900FF328A /* MywishlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MywishlistModel.swift; sourceTree = "<group>"; };
+		CEA7EC722555686D00FF328A /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		CEA7EC7425557CB800FF328A /* SearchProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductModel.swift; sourceTree = "<group>"; };
 		CEAC33B5251C7D49002D2E9C /* B2BProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BProductDetailVC.swift; sourceTree = "<group>"; };
 		CEAC33B8251CC3F5002D2E9C /* B2BInquireisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BInquireisVC.swift; sourceTree = "<group>"; };
 		CEAED9C024092A4B0079C3C5 /* zaraat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zaraat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -708,6 +716,7 @@
 		CE4BBF392410C79E000DAAB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEA7EC6D25555DB000FF328A /* WishList */,
 				CE5452AF254FF2A100393A9D /* Filter */,
 				CE52BE892538185000464D51 /* ViewAllProducts */,
 				CE73BBD42524A08B0069B861 /* HomeCateTabs */,
@@ -936,6 +945,9 @@
 				CE4A34D52549B1B9001F70EA /* CoupanModel.swift */,
 				CE5452BA2550279600393A9D /* FilterBrand.swift */,
 				CE5452BC25502E6400393A9D /* FilterColorsSizes.swift */,
+				CEA7EC702555602900FF328A /* MywishlistModel.swift */,
+				CEA7EC722555686D00FF328A /* NotificationModel.swift */,
+				CEA7EC7425557CB800FF328A /* SearchProductModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1311,6 +1323,14 @@
 				CE92D8AC25221168001C63C8 /* ZMartClViewPartTwoCell.swift */,
 			);
 			path = ZMartPartTwo;
+			sourceTree = "<group>";
+		};
+		CEA7EC6D25555DB000FF328A /* WishList */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7EC6E25555E1400FF328A /* WishListVC.swift */,
+			);
+			path = WishList;
 			sourceTree = "<group>";
 		};
 		CEAC33B4251C7D20002D2E9C /* B2BProductDetail */ = {
@@ -1823,6 +1843,7 @@
 				CE4A98F1253836EA0034AE69 /* WeeklyViewAllModel.swift in Sources */,
 				CE92D8A3252210B7001C63C8 /* ZMartClViewPartOneCell.swift in Sources */,
 				CE538BA92542FF77006912CC /* UserProfileModel.swift in Sources */,
+				CEA7EC732555686D00FF328A /* NotificationModel.swift in Sources */,
 				CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */,
 				CE94EC712510DB5F00010DA0 /* ViewProfileVC.swift in Sources */,
 				CE73BBCB252471CC0069B861 /* HomeButtonClViewPartOneCell.swift in Sources */,
@@ -1834,6 +1855,7 @@
 				CE5145BA251DDFB8001BE6AD /* ZMallAddCell.swift in Sources */,
 				CEBE3293251CD6590082E67F /* ZMallVC.swift in Sources */,
 				CE5452B5254FF60800393A9D /* SizeCell.swift in Sources */,
+				CEA7EC6F25555E1400FF328A /* WishListVC.swift in Sources */,
 				CE884BF1251B68FC003626C5 /* ClViewProductsShowcase.swift in Sources */,
 				CE76D99524FD17BE005078D6 /* AddsCell.swift in Sources */,
 				CEFBF1F624F90D65003C1727 /* topRatedCell.swift in Sources */,
@@ -1863,6 +1885,7 @@
 				CE76D98724FCDCE7005078D6 /* LifeStyleCell.swift in Sources */,
 				CE5145B2251DDF0C001BE6AD /* ZMallPartOneCell.swift in Sources */,
 				CE82BEE82546E4DB00EBC117 /* ImageUpload.swift in Sources */,
+				CEA7EC7525557CB800FF328A /* SearchProductModel.swift in Sources */,
 				CE73BBC22524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift in Sources */,
 				CE73BBEB2524AFF50069B861 /* HomeCateAdsCell.swift in Sources */,
 				CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */,
@@ -1898,6 +1921,7 @@
 				CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */,
 				CECB92EE2535BEAF009F0C04 /* ChildCateModel.swift in Sources */,
 				CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */,
+				CEA7EC712555602900FF328A /* MywishlistModel.swift in Sources */,
 				CE73BBE82524AFD40069B861 /* HomeCateClViewPartThreeCell.swift in Sources */,
 				CE907521252716AA002BEFB4 /* TrendsAdsCell.swift in Sources */,
 				CEAED9F8240938DD0079C3C5 /* LoginZaraatVC.swift in Sources */,
