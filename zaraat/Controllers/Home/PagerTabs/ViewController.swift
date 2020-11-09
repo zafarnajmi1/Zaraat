@@ -42,24 +42,8 @@ class ViewController: UIViewController {
         
         
         
-         presentPageVCOnView()
-        for item in (ShareData.shareInfo.EcommerceCate?.categories)!{
-            self.tabs.append(item.category_title_en ?? "")
-        }
-        self.tabs.insert("ALL", at: 0)
-        menuBarView.dataArray =  tabs
-        menuBarView.isSizeToFitCellsNeeded = true
-        menuBarView.collView.backgroundColor = UIColor.init(white: 0.97, alpha: 0.97)
+         
         
-        
-        
-        menuBarView.menuDelegate = self
-        pageController.delegate = self
-        pageController.dataSource = self
-        
-        //For Intial Display
-        menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
-        pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
         
        
         
@@ -75,6 +59,32 @@ class ViewController: UIViewController {
 ////        self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
 //    }
     
+    
+    override func viewDidLayoutSubviews() {
+        self.tabs.removeAll()
+        presentPageVCOnView()
+        
+        
+        for item in (ShareData.shareInfo.EcommerceCate?.categories)!{
+             self.tabs.append(item.category_title_en ?? "")
+         }
+         self.tabs.insert("ALL", at: 0)
+         menuBarView.dataArray =  tabs
+         menuBarView.isSizeToFitCellsNeeded = true
+         menuBarView.collView.backgroundColor = UIColor.init(white: 0.97, alpha: 0.97)
+         
+         
+         
+        
+         pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
+        
+        menuBarView.menuDelegate = self
+               pageController.delegate = self
+               pageController.dataSource = self
+               
+               //For Intial Display
+               menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
+    }
     @objc func CartConfig(_ notification: NSNotification) {
            
         
@@ -135,10 +145,14 @@ class ViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }
-    
+     
     
     @IBAction func searchAction(_ sender: UIButton) {
-        
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc =  storyBoard.instantiateViewController(identifier: "SearchVC") as? SearchVC
+         vc?.hidesBottomBarWhenPushed = true
+        vc?.keyword =  self.txtsearch.text!
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
@@ -176,9 +190,9 @@ class ViewController: UIViewController {
     }
     
     func presentPageVCOnView() {
-       
+       // - menuBarView.frame.maxY
         self.pageController = storyboard?.instantiateViewController(withIdentifier: "PageControllerVC") as! PageControllerVC
-        self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
+        self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height)
         self.addChild(self.pageController)
         self.view.addSubview(self.pageController.view)
         self.pageController.didMove(toParent: self)

@@ -1260,4 +1260,50 @@ class userhandler {
             Failure(Error)
         })
     }
+    
+    
+    
+    class  func getInprogressOrders(  Success: @escaping (InprogressModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+                 let url = Constant.MainUrl + Constant.URLs.inprogress
+                 print("pages Url", url)
+                 Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+         
+                     do {
+                         let responseModel = try JSONDecoder().decode(InprogressModel.self, from: successResponse.data!)
+                         Success(responseModel)
+                     }
+                     catch {
+                         print("Response Error")
+                     }
+         
+         
+                 } , Falioure: {(Error) in
+                     Failure(Error)
+                 })
+             }
+    
+ 
+    
+    
+    class  func getMyOrders( orderNumber: String, Success: @escaping (MyordersModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+                    let url = Constant.MainUrl + Constant.URLs.inprogress + "/"+orderNumber
+                    print("pages Url", url)
+                    Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+            
+                        do {
+                            let responseModel = try JSONDecoder().decode(MyordersModel.self, from: successResponse.data!)
+                            Success(responseModel)
+                        }
+                        catch {
+                            print("Response Error")
+                        }
+            
+            
+                    } , Falioure: {(Error) in
+                        Failure(Error)
+                    })
+                }
+    
+    
+    
 }

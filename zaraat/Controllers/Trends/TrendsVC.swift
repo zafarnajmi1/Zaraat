@@ -33,7 +33,7 @@ class TrendsVC: UIViewController {
   
     override func viewDidLoad() {
       super.viewDidLoad()
-     searchView.roundView()
+//     searchView.roundView()
       
       self.navigationItem.title = "Trends"
       

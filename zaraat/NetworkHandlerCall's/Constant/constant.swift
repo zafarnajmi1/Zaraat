@@ -111,6 +111,9 @@ class Constant {
         static let notification  = "profile/notifications"
         // search
         static let searchProduct = "products/search"
+        
+        //Myorders
+        static let inprogress = "orders"
     }
     
     struct NetworkErrorType {

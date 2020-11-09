@@ -40,25 +40,7 @@ class B2BViewController: UIViewController {
         
         
         
-               for item in (ShareData.shareInfo.b2bCate?.categories)!{
-                   self.tabs.append(item.category_title_en ?? "")
-               }
-               self.tabs.insert("ALL", at: 0)
-               menuBarView.dataArray =  tabs
         
-       
-        menuBarView.isSizeToFitCellsNeeded = true
-        menuBarView.collView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)//UIColor.init(white: 0.97, alpha: 0.97)
-        
-        presentPageVCOnView()
-        
-        menuBarView.menuDelegate = self
-        pageController.delegate = self
-        pageController.dataSource = self
-        
-        //For Intial Display
-        menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
-        pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
         
         // With CallBack Function...
         //menuBarView.menuDidSelected = myLocalFunc(_:_:)
@@ -69,6 +51,32 @@ class B2BViewController: UIViewController {
        // addMenuButton()
     }
     
+    
+   
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tabs.removeAll()
+        presentPageVCOnView()
+        for item in (ShareData.shareInfo.b2bCate?.categories)!{
+                    self.tabs.append(item.category_title_en ?? "")
+                }
+                self.tabs.insert("ALL", at: 0)
+                menuBarView.dataArray =  tabs
+         
+        
+         menuBarView.isSizeToFitCellsNeeded = true
+         menuBarView.collView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)//UIColor.init(white: 0.97, alpha: 0.97)
+         
+         
+         
+         menuBarView.menuDelegate = self
+         pageController.delegate = self
+         pageController.dataSource = self
+         
+         //For Intial Display
+         menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
+         pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
+    }
 //    override func viewWillAppear(_ animated: Bool) {
 //              super.viewWillAppear(animated)
 //              setNavigationBarWhiteColor()
@@ -157,6 +165,14 @@ class B2BViewController: UIViewController {
     
     
     
+    @IBAction func searchAction(_ sender: UIButton) {
+        
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+               let vc =  storyBoard.instantiateViewController(identifier: "SearchVC") as? SearchVC
+               vc?.keyword =  self.txtsearch.text!
+        vc?.hidesBottomBarWhenPushed = true 
+               self.navigationController?.pushViewController(vc!, animated: true)
+    }
     
     
     
@@ -255,15 +271,12 @@ class B2BViewController: UIViewController {
     func presentPageVCOnView() {
         
         self.pageController = storyboard?.instantiateViewController(withIdentifier: "B2BPageControllerVC") as! B2BPageControllerVC
-        if UIDevice.current.userInterfaceIdiom == .pad {
-          self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 50 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
-        } else {
-            
-             self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 50 , width: self.view.frame.width, height: self.view.frame.height - menuBarView.frame.maxY)
-        }
-        self.addChild(self.pageController)
-        self.view.addSubview(self.pageController.view)
-        self.pageController.didMove(toParent: self)
+       
+            //- menuBarView.frame.maxY
+             self.pageController.view.frame = CGRect.init(x: 0, y: menuBarView.frame.maxY + 10 , width: self.view.frame.width, height: self.view.frame.height)
+             self.addChild(self.pageController)
+             self.view.addSubview(self.pageController.view)
+             self.pageController.didMove(toParent: self)
         
     }
     

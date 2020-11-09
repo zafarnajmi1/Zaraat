@@ -47,7 +47,7 @@ class ZMallVC: UIViewController {
         self.topBrandTwoImage.layer.cornerRadius = 8
         self.topBrandThreeImg.layer.cornerRadius = 8
          sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
-        searchView.roundView()
+       // searchView.roundView()
         addBackButton()
         setNavigationBarWhiteColor()
         setSlider()

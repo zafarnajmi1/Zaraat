@@ -106,6 +106,7 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
         
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "ViewProfileVC") as? ViewProfileVC
+            vc?.hidesBottomBarWhenPushed = true
             vc?.userdata = userdata
             self.navigationController?.pushViewController(vc!, animated: true)
             
@@ -113,26 +114,31 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
         
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "MyOrdersTabVC") as? MyOrdersTabVC
+            vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
             
         }else if indexPath.row == 2{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "WishListVC") as? WishListVC
+            vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
         }else if indexPath.row == 3{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
+            vc?.hidesBottomBarWhenPushed = true
             vc?.userdata = userdata
             self.navigationController?.pushViewController(vc!, animated: true)
         } else if indexPath.row == 4 {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
+            vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
             
         } else if indexPath.row == 5 {
             
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
+            let vc =  storyBoard.instantiateViewController(identifier: "TermsConditionVC") as? TermsConditionVC
+            vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
         } else {
             alertForLogout()
