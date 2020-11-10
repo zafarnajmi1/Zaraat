@@ -153,10 +153,15 @@ class ProductDetailVC: UIViewController {
     
     
     @IBAction func btnChatAction(_ sender: UIButton) {
+        
     }
     
     
     @IBAction func btnInquieriesAction(_ sender: UIButton) {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "B2BInquireisVC") as? B2BInquireisVC
+        vc?.productData =  self.productData
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     

@@ -269,6 +269,11 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
     
     class func UploadProfile(url: String,filename:String, parameters: Parameters?,userimg: UIImage,Progress: @escaping (Int) ->Void, Success: @escaping (AFDataResponse<Any>)->Void, Falioure: @escaping (NetworkError) -> Void)
         {
+            
+            print(url)
+            print(filename)
+            print(userimg)
+            
             var Headers : HTTPHeaders
             let Manger = Alamofire.Session.default
             if let userToken = ShareData.shareInfo.userInfo?.token {
@@ -282,7 +287,7 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
                 Headers = ["Accept": "application/json"]
             }
 
-            let type = "any"
+           
             let fileName = filename//"image"
 
             Manger.upload(multipartFormData: {(multipart) in
@@ -290,7 +295,7 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
                 if let data = userimg.jpegData(compressionQuality: 0.1)
                 {
                     print(data)
-                    multipart.append(data, withName: fileName, fileName: fileName, mimeType: type)
+                    multipart.append(data, withName: fileName, fileName: filename, mimeType: "any")
                 }
 //                for(key, values ) in parameters!
 //                {
@@ -306,7 +311,7 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
 
                         case .success:
                             let resultValue = result.result
-                            //print(resultValue)
+                            print(resultValue)
                             Success(result)
                             break
 

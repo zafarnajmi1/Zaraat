@@ -1306,4 +1306,49 @@ class userhandler {
     
     
     
+    
+    
+    class  func getUploadinquiryDoc(file:String,image:UIImage, Success: @escaping (InquiryDocModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+      let url = "https://apiengine.zaraat.com/api/customers/equiries/document"
+             print("pages Url", url)
+         Networkhandler.UploadProfile(url: url, filename: file, parameters: nil, userimg: image, Progress: {progress in
+             
+         }, Success: {response in
+                 do {
+                    
+                    let responseModel = try JSONDecoder().decode(InquiryDocModel.self, from: response.data!)
+                    Success(responseModel)
+                 }
+                 catch {
+                    print("Response Error")
+                 }
+         }, Falioure: {(Error) in
+             Failure(Error)
+         })
+        
+         }
+    
+    
+    
+    class  func sendInquiry(parms: [String: Any], Success: @escaping (SendInquiryModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.seninquiry
+        
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(SendInquiryModel.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
 }

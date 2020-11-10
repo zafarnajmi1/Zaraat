@@ -156,7 +156,7 @@ class B2BHomeVC: UIViewController {
             
             
             let newHeightThree : CGFloat = secthreeClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-            secthreeClViewHeight.constant = newHeightThree + 40
+            secthreeClViewHeight.constant = newHeightThree + 200
             secthreeClView.reloadData()
             self.view.setNeedsLayout()
                 // self.view.layoutIfNeeded()

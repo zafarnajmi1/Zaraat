@@ -135,7 +135,7 @@ class HomeVC: UIViewController {
              self.view.setNeedsLayout()
         
         let newHeight : CGFloat = FeaturedProductsClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-        FeaturdProductClViewHeight.constant = newHeight + 40
+        FeaturdProductClViewHeight.constant = newHeight + 100
         FeaturedProductsClView.reloadData()
         self.view.setNeedsLayout()
             // self.view.layoutIfNeeded()
