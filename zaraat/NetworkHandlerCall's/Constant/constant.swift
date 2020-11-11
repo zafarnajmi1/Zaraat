@@ -115,8 +115,9 @@ class Constant {
         //Myorders
         static let inprogress = "orders"
         //inquiries
-        static let inquiryDoc = "equiries/document"
-        static let seninquiry = "equiries/post"
+        static let inquiryDoc = "enquiries/document"
+        static let seninquiry = "enquiries/post"
+        static let getInquires = "enquiries"
     }
     
     struct NetworkErrorType {

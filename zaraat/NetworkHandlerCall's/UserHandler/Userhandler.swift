@@ -1351,4 +1351,29 @@ class userhandler {
     }
     
     
+    
+    
+    
+        class  func getMyinquires(Success: @escaping (GetInguiresModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+           let url = Constant.MainUrl + Constant.URLs.getInquires
+            
+                   print("pages Url", url)
+                   Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+
+                       do {
+                           let responseModel = try JSONDecoder().decode(GetInguiresModel.self, from: successResponse.data!)
+                           Success(responseModel)
+                       }
+                       catch {
+                           print("Response Error")
+                       }
+
+
+                   } , Falioure: {(Error) in
+                       Failure(Error)
+                   })
+        }
+    
+    
+    
 }

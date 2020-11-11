@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyinquiresCell" rowHeight="92" id="gMd-k2-X4D" customClass="MyinquiresCell" customModule="zaraat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMd-k2-X4D" id="wA4-br-nPQ">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng9-ir-Sne">
+                        <rect key="frame" x="16" y="11" width="288" height="73"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhv-mR-mLa">
+                                <rect key="frame" x="8" y="11.5" width="272" height="10.5"/>
+                                <string key="text">Order # 1234567 Order # Order # 1234567 Order # Order # 1234567 Order # Order # 1234567 Order # Order # 1234567 Order # Order # 1234567 Order # </string>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To : Fahad Khalid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPw-y0-Y5F">
+                                <rect key="frame" x="8" y="37" width="103" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4uv-YZ-oct"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" red="0.99021679159999998" green="0.40648031229999998" blue="0.0064233615989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inquiry Date:  20-11-2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKz-G1-tUS">
+                                <rect key="frame" x="132" y="37" width="148" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99586588139999999" green="1" blue="0.99992710350000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SKz-G1-tUS" secondAttribute="trailing" constant="8" id="BI0-yC-WHG"/>
+                            <constraint firstItem="SKz-G1-tUS" firstAttribute="centerY" secondItem="bPw-y0-Y5F" secondAttribute="centerY" id="F5f-Vz-s0p"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="MdB-gS-DOf"/>
+                            <constraint firstAttribute="bottom" secondItem="bPw-y0-Y5F" secondAttribute="bottom" constant="16" id="NH6-PB-1cZ"/>
+                            <constraint firstItem="Dhv-mR-mLa" firstAttribute="top" secondItem="ng9-ir-Sne" secondAttribute="top" constant="11.5" id="PKc-8U-RAo"/>
+                            <constraint firstItem="bPw-y0-Y5F" firstAttribute="top" secondItem="Dhv-mR-mLa" secondAttribute="bottom" constant="15" id="TVN-nu-tYv"/>
+                            <constraint firstAttribute="trailing" secondItem="Dhv-mR-mLa" secondAttribute="trailing" constant="8" id="Ug0-Kp-xIn"/>
+                            <constraint firstItem="bPw-y0-Y5F" firstAttribute="leading" secondItem="ng9-ir-Sne" secondAttribute="leading" constant="8" id="dil-Ww-iLv"/>
+                            <constraint firstItem="Dhv-mR-mLa" firstAttribute="leading" secondItem="ng9-ir-Sne" secondAttribute="leading" constant="8" id="yd9-ja-ktR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ng9-ir-Sne" firstAttribute="top" secondItem="wA4-br-nPQ" secondAttribute="top" constant="11" id="Ipg-CF-bbz"/>
+                    <constraint firstItem="ng9-ir-Sne" firstAttribute="leading" secondItem="wA4-br-nPQ" secondAttribute="leading" constant="16" id="XzM-dC-R2I"/>
+                    <constraint firstAttribute="bottom" secondItem="ng9-ir-Sne" secondAttribute="bottom" constant="8" id="ca0-ef-lj3"/>
+                    <constraint firstAttribute="trailing" secondItem="ng9-ir-Sne" secondAttribute="trailing" constant="16" id="fJi-63-pub"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="5Oy-uC-8GD"/>
+            <connections>
+                <outlet property="lbldate" destination="SKz-G1-tUS" id="ulT-vY-xXr"/>
+                <outlet property="lbltitle" destination="Dhv-mR-mLa" id="BxK-hd-fz1"/>
+                <outlet property="lblto" destination="bPw-y0-Y5F" id="eH1-MY-XRs"/>
+                <outlet property="mainView" destination="ng9-ir-Sne" id="z3y-hj-51R"/>
+            </connections>
+            <point key="canvasLocation" x="142.02898550724638" y="76.339285714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

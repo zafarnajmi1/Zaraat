@@ -44,6 +44,7 @@ class MenuVC: UIViewController {
         menuarray.append(menuDate(title: "Edit Profile", imgae: UIImage.init(named: "myaccount")))
          menuarray.append(menuDate(title: "My Orders", imgae: UIImage.init(named: "Order")))
         menuarray.append(menuDate(title: "My WishList", imgae: UIImage.init(named: "Wishlist")))
+        menuarray.append(menuDate(title: "My Inquiries", imgae: UIImage.init(named: "Inquiry")))
        
         menuarray.append(menuDate(title: "Settings", imgae: UIImage.init(named: "settings")))
         menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "Support")))
@@ -122,19 +123,26 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
             let vc =  storyBoard.instantiateViewController(identifier: "WishListVC") as? WishListVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
-        }else if indexPath.row == 3{
+        }
+        else if indexPath.row == 3{
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let vc =  storyBoard.instantiateViewController(identifier: "MyinquiresVC") as? MyinquiresVC
+            vc?.hidesBottomBarWhenPushed = true
+            
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }else if indexPath.row == 4{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
             vc?.hidesBottomBarWhenPushed = true
             vc?.userdata = userdata
             self.navigationController?.pushViewController(vc!, animated: true)
-        } else if indexPath.row == 4 {
+        } else if indexPath.row == 5 {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
             
-        } else if indexPath.row == 5 {
+        } else if indexPath.row == 6 {
             
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
             let vc =  storyBoard.instantiateViewController(identifier: "TermsConditionVC") as? TermsConditionVC
