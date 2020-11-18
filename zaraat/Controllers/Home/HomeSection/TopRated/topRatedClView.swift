@@ -26,7 +26,7 @@ class topRatedClView: UICollectionViewCell {
     }
     
     func LoadData(obj:Top_products) {
-        print("ia m top")
+        
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR :  \(obj.vendor_price ?? "")")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
         lblPkr.attributedText =  attributeString

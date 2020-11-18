@@ -35,7 +35,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black Nike Air Shoes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfm-9A-C1k">
-                                <rect key="frame" x="116" y="9" width="122.5" height="25"/>
+                                <rect key="frame" x="116" y="9" width="162" height="25"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,6 +78,7 @@
                             <constraint firstItem="BmB-L1-eYB" firstAttribute="top" secondItem="QLz-m0-Qdy" secondAttribute="bottom" id="Fvs-33-7DG"/>
                             <constraint firstItem="gfm-9A-C1k" firstAttribute="leading" secondItem="MH3-Uc-ry1" secondAttribute="trailing" constant="8" id="HZj-W7-ZZt"/>
                             <constraint firstItem="gfm-9A-C1k" firstAttribute="top" secondItem="Bqt-Q6-UEj" secondAttribute="top" constant="9" id="Hwk-xp-SK0"/>
+                            <constraint firstItem="0Nm-5W-rmO" firstAttribute="leading" secondItem="gfm-9A-C1k" secondAttribute="trailing" constant="8" id="ImT-k8-kKg"/>
                             <constraint firstAttribute="trailing" secondItem="0Nm-5W-rmO" secondAttribute="trailing" constant="12" id="K2M-h3-zrA"/>
                             <constraint firstItem="MH3-Uc-ry1" firstAttribute="top" secondItem="Bqt-Q6-UEj" secondAttribute="top" id="O27-7P-qoE"/>
                             <constraint firstItem="BmB-L1-eYB" firstAttribute="leading" secondItem="QLz-m0-Qdy" secondAttribute="leading" id="QkY-yu-mB2"/>
@@ -105,7 +106,7 @@
                 <outlet property="lbltitle" destination="gfm-9A-C1k" id="gZ1-AX-XLc"/>
                 <outlet property="mainView" destination="Bqt-Q6-UEj" id="QjI-iw-46F"/>
             </connections>
-            <point key="canvasLocation" x="163" y="12"/>
+            <point key="canvasLocation" x="161.59420289855075" y="11.71875"/>
         </tableViewCell>
     </objects>
     <resources>

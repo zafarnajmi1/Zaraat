@@ -46,7 +46,7 @@ class ZPharmacyVC: UIViewController {
            self.topBrandTwoImage.layer.cornerRadius = 8
            self.topBrandThreeImg.layer.cornerRadius = 8
             
-           searchView.roundView()
+           //searchView.roundView()
            addBackButton()
            setNavigationBarWhiteColor()
           GetpharmacyProducts()

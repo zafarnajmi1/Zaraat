@@ -38,7 +38,7 @@ class TrendsVC: UIViewController {
       self.navigationItem.title = "Trends"
       
       setNavigationBarWhiteColor()
-     trendDataApi()
+    
         
         self.toponeimg.layer.cornerRadius =  8
         self.toptwoimg.layer.cornerRadius =  8
@@ -47,7 +47,11 @@ class TrendsVC: UIViewController {
         self.topfiveimg.layer.cornerRadius =  8
         self.adimg.layer.cornerRadius =  8
   }
-                  
+          
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         trendDataApi()
+    }
     func trendDataApi() {
         ShareData.showProgress()
         userhandler.getTrendingProducts(Success: {response in
@@ -87,7 +91,7 @@ class TrendsVC: UIViewController {
           super.viewDidLayoutSubviews()
     
         let newHeightsecone : CGFloat = secOneClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-             seconeHeight.constant = newHeightsecone
+             seconeHeight.constant = newHeightsecone 
        self.secOneClView.reloadData()
              self.view.setNeedsLayout()
         

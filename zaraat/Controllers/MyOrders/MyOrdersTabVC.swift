@@ -37,7 +37,7 @@ class MyOrdersTabVC: ButtonBarPagerTabStripViewController {
          }
          super.viewDidLoad()
          addBackButton()
-         
+        self.title = "My Orders"
      }
     
   

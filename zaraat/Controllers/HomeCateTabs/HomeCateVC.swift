@@ -50,12 +50,12 @@ class HomeCateVC: UIViewController {
         storeForyouClView.reloadData()
     
      let newHeightsecone : CGFloat = seconeClview.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-          seconeClViewHeight.constant = newHeightsecone
+          seconeClViewHeight.constant = newHeightsecone + 200
     self.seconeClview.reloadData()
           self.view.setNeedsLayout()
      
      let newHeightsectwo : CGFloat = sectwoclView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-                 sectwoClViewHeight.constant = newHeightsectwo
+                 sectwoClViewHeight.constant = newHeightsectwo + 200
            self.sectwoclView.reloadData()
                  self.view.setNeedsLayout()
      

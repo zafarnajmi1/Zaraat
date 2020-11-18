@@ -31,7 +31,7 @@ class ZaraatZalert {
             view.configureTheme(.info, iconStyle: .default)
         }
         view.configureDropShadow()
-        let iconText = ["🤔", "😳", "🙄", "😶"].randomElement()!
+        let iconText = [""].randomElement()!
         view.configureContent(title: title, body: message, iconText: iconText)
 //UIScreen.main.bounds.height / 2
         view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)

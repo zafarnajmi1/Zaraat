@@ -129,6 +129,10 @@ class ProductDetailVC: UIViewController {
                     self.heartimg.image = UIImage.init(named: "Heart-1")
                 }
                 
+                
+                
+                
+                
                 self.lbltitle.text =  response.product?.product_title_en
                 self.lblprice.text =  "Price : " + (response.product?.selling_price)!  + " PKR"
                 self.lbldetail.text = response.product?.product_description_en
@@ -137,7 +141,13 @@ class ProductDetailVC: UIViewController {
                 self.lblshopename.text = response.product?.vendor?.company_name
                 self.lblsupliretitle.text =  response.product?.vendor?.owners_name
                 
-                
+                if response.product?.market?.lowercased() == "b2b" || response.product?.market?.lowercased() == "both"{
+                    self.b2bstack.isHidden = false
+                    self.btnaddtocart.isHidden = true
+                } else {
+                    self.b2bstack.isHidden = true
+                    self.btnaddtocart.isHidden = false
+                }
                 
             } else {
                 ShareData.hideProgress()

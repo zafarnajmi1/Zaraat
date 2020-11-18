@@ -1309,7 +1309,7 @@ class userhandler {
     
     
     class  func getUploadinquiryDoc(file:String,image:UIImage, Success: @escaping (InquiryDocModel) -> Void, Failure: @escaping(NetworkError) -> Void){
-      let url = "https://apiengine.zaraat.com/api/customers/equiries/document"
+      let url = "https://apiengine.zaraat.com/api/customers/enquiries/document"
              print("pages Url", url)
          Networkhandler.UploadProfile(url: url, filename: file, parameters: nil, userimg: image, Progress: {progress in
              
