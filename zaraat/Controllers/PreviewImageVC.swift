@@ -29,6 +29,7 @@ class PreviewImageVC: UIViewController,UIScrollViewDelegate {
         return myimg
     }
     
+    
     @IBAction func cancelAction(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

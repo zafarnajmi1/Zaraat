@@ -515,16 +515,18 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
                           self.navigationController?.pushViewController(vc!, animated: true)
             
         } else if collectionView == topProductClView {
+            
             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
             vc?.id =  self.homeLanding?.data?.top_products?[indexPath.row].products_id ?? 0
-                          self.navigationController?.pushViewController(vc!, animated: true)
+              self.navigationController?.pushViewController(vc!, animated: true)
            
         } else if collectionView == FeaturedProductsClView{
+            
             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
             vc?.id =  self.homeLanding?.data?.featured_products![indexPath.row].products_id ?? 0
-                          self.navigationController?.pushViewController(vc!, animated: true)
+              self.navigationController?.pushViewController(vc!, animated: true)
              
         }
     }

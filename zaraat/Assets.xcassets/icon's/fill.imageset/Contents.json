@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "circlRadio@1x.png",
+      "filename" : "fill@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "circlRadio@2x.png",
+      "filename" : "fill@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "circlRadio@3x.png",
+      "filename" : "fill@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

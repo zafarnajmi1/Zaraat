@@ -64,7 +64,6 @@ class ViewController: UIViewController {
         self.tabs.removeAll()
         presentPageVCOnView()
         
-        
         for item in (ShareData.shareInfo.EcommerceCate?.categories)!{
              self.tabs.append(item.category_title_en ?? "")
          }
@@ -74,8 +73,6 @@ class ViewController: UIViewController {
          menuBarView.collView.backgroundColor = UIColor.init(white: 0.97, alpha: 0.97)
          
          
-         
-        
          pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
         
         menuBarView.menuDelegate = self

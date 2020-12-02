@@ -14,7 +14,7 @@ class ZMartVC: UIViewController {
     @IBOutlet weak var adimg: UIImageView!
     @IBOutlet weak var secOneClView: UICollectionView!
     @IBOutlet weak var ClViewStore: UICollectionView!
-    @IBOutlet weak var searchView: UIView!
+    
         @IBOutlet weak var topBrandOneImg: UIImageView!
         @IBOutlet weak var topBrandTwoImage: UIImageView!
         

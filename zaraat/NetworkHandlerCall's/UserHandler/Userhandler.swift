@@ -1375,5 +1375,22 @@ class userhandler {
         }
     
     
+    class  func getZmall( Success: @escaping (ZmallModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+     let url = Constant.MainUrl + Constant.URLs.Zmall
+            print("pages Url", url)
+            Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
     
+                do {
+                    let responseModel = try JSONDecoder().decode(ZmallModel.self, from: successResponse.data!)
+                    Success(responseModel)
+                }
+                catch {
+                    print("Response Error")
+                }
+    
+    
+            } , Falioure: {(Error) in
+                Failure(Error)
+            })
+        }
 }

@@ -55,64 +55,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3AC24903-5C69-4959-B624-04663BB9568A"
+            uuid = "8B6C76BB-8E5A-47EE-A373-6142B9A19053"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/PreviewImageVC.swift"
+            filePath = "zaraat/Controllers/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "homeapi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F06DA171-4B74-41E0-8331-441E19C7A9EA"
+            uuid = "E7DB4A92-204B-45EC-800F-C096A931A41B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/PreviewImageVC.swift"
+            filePath = "zaraat/Controllers/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "homeapi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E7DB4A92-204B-45EC-800F-C096A931A41B - 380bff52da09b48b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "zaraat.HomeVC.homeapi() -&gt; ()"
+                  moduleName = "zaraat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/Controllers/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "218"
+                  endingLineNumber = "218"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  uuid = "E7DB4A92-204B-45EC-800F-C096A931A41B - 62a71e8d8f171e9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (zaraat.HomeLandingModel) -&gt; () in zaraat.HomeVC.homeapi() -&gt; ()"
+                  moduleName = "zaraat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/Controllers/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "2219">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59420AEF-5A3E-488C-BD39-AA57CEDB399B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "homeapi()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "604BFE6E-7743-4EF1-BF52-6C34EC803320"
+            uuid = "5EF78CC0-3EDB-49E8-84D9-F2D8C927C4D2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/PreviewImageVC.swift"
+            filePath = "zaraat/Controllers/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "showSpinningWheel(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50B2D864-4FD5-45AA-86A9-8FD6CBA1E7FB"
+            uuid = "4FA78F68-09BB-47DB-958F-1618A063C66E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "zaraat/Controllers/PreviewImageVC.swift"
+            filePath = "zaraat/Controllers/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "showSpinningWheel(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1D230FD-0E4E-40FF-88E7-4FEAC35C3A8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "showSpinningWheel(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

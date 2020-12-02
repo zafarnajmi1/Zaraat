@@ -118,6 +118,7 @@ class Constant {
         static let inquiryDoc = "enquiries/document"
         static let seninquiry = "enquiries/post"
         static let getInquires = "enquiries"
+        static let Zmall = "products/zmall"
     }
     
     struct NetworkErrorType {
