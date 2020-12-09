@@ -143,6 +143,7 @@
 		CE5D6E5C256D26D80004495A /* HBLBillingFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */; };
 		CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849A2540378600EFCF3E /* ProductDetailModel.swift */; };
 		CE61849D2540535400EFCF3E /* SellerProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849C2540535400EFCF3E /* SellerProfileVC.swift */; };
+		CE64DABB258104CB00E1C13F /* TCSBillingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */; };
 		CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */; };
 		CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */; };
 		CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */; };
@@ -402,6 +403,7 @@
 		CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBLBillingFormVC.swift; sourceTree = "<group>"; };
 		CE61849A2540378600EFCF3E /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
 		CE61849C2540535400EFCF3E /* SellerProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileVC.swift; sourceTree = "<group>"; };
+		CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSBillingVC.swift; sourceTree = "<group>"; };
 		CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCell.swift; sourceTree = "<group>"; };
 		CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashSaleCell.xib; sourceTree = "<group>"; };
@@ -732,6 +734,7 @@
 		CE4BBF392410C79E000DAAB4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE64DAB9258104A700E1C13F /* TCSBillingForm */,
 				CE5D6E5A256D26640004495A /* HBLBillingForm */,
 				CE167554255C04AB00B034C2 /* PreviewImageVC.swift */,
 				CE52C861255BCC5A00E96CE4 /* Myinquiries */,
@@ -1015,6 +1018,14 @@
 				CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */,
 			);
 			path = HBLBillingForm;
+			sourceTree = "<group>";
+		};
+		CE64DAB9258104A700E1C13F /* TCSBillingForm */ = {
+			isa = PBXGroup;
+			children = (
+				CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */,
+			);
+			path = TCSBillingForm;
 			sourceTree = "<group>";
 		};
 		CE70E9C124F8D4E500FEEF5D /* HomeSection */ = {
@@ -1925,6 +1936,7 @@
 				CE5145B6251DDF45001BE6AD /* ZMallClViewPartTwoCell.swift in Sources */,
 				CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */,
 				CEAED9CE24092A4B0079C3C5 /* zaraat.xcdatamodeld in Sources */,
+				CE64DABB258104CB00E1C13F /* TCSBillingVC.swift in Sources */,
 				CE52C86B255BFB7E00E96CE4 /* InquiresViewVC.swift in Sources */,
 				CE90751525270F7E002BEFB4 /* TrendsPartOneCell.swift in Sources */,
 				CE56D13A255967ED00281A75 /* OrdersModel.swift in Sources */,
