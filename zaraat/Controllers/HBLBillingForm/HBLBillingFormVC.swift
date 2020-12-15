@@ -13,7 +13,7 @@ class HBLBillingFormVC: UIViewController {
     
     //Billing Address
     
-    
+     var cartData : GetCartModel?
     @IBOutlet weak var txtbillingFirstName: SkyFloatingLabelTextField!
     
     @IBOutlet weak var txtBillingLastName: SkyFloatingLabelTextField!

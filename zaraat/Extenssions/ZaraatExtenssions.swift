@@ -51,7 +51,7 @@ extension UIViewController {
     @objc func btnCartClick (_ sender: Any){
            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
            let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
-           
+        vc?.hidesBottomBarWhenPushed = true
            self.navigationController?.pushViewController(vc!, animated: true)
        }
     

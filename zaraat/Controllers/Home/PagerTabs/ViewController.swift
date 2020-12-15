@@ -131,7 +131,7 @@ class ViewController: UIViewController {
     @objc func btnCartAction (_ sender: Any){
            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
            let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
-           
+           vc?.hidesBottomBarWhenPushed = true
            self.navigationController?.pushViewController(vc!, animated: true)
        }
     
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
     @objc func btnFilterAction (_ sender: Any){
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
         let vc =  storyBoard.instantiateViewController(identifier: "FilterVC") as? FilterVC
-        
+        vc?.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc!, animated: true)
     }
      

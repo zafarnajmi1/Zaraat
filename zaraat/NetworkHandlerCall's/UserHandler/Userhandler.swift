@@ -1393,4 +1393,73 @@ class userhandler {
                 Failure(Error)
             })
         }
+    
+    
+    
+    class  func getAddress( Success: @escaping (BillingShipping) -> Void, Failure: @escaping(NetworkError) -> Void){
+      let url = Constant.MainUrl + Constant.URLs.address
+             print("pages Url", url)
+             Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
+     
+                 do {
+                     let responseModel = try JSONDecoder().decode(BillingShipping.self, from: successResponse.data!)
+                     Success(responseModel)
+                 }
+                 catch {
+                     print("Response Error")
+                 }
+     
+     
+             } , Falioure: {(Error) in
+                 Failure(Error)
+             })
+         }
+    
+    
+   class  func StoreAddress(parms: [String: Any], Success: @escaping (BillingShipping) -> Void, Failure: @escaping(NetworkError) -> Void){
+        let url = Constant.MainUrl + Constant.URLs.storeAddress
+        
+        Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+            
+            do {
+            print("MyResponse : ", successResponse)
+                let responseModel = try JSONDecoder().decode(BillingShipping.self, from: successResponse.data!)
+                Success(responseModel)
+            }
+            catch {
+                print("Response Error")
+            }
+            
+            
+        } , Falioure: {(Error) in
+            Failure(Error)
+        })
+    }
+    
+    
+    
+    
+    
+    class  func PlaceOrder(parms: [String: Any], Success: @escaping (PlaceOrderModel) -> Void, Failure: @escaping(NetworkError) -> Void){
+           let url = Constant.MainUrl + Constant.URLs.placeOrder
+           
+           Networkhandler.PostRequest(url: url, parameters: parms, success: {(successResponse) in
+               
+               do {
+               print("MyResponse : ", successResponse)
+                   let responseModel = try JSONDecoder().decode(PlaceOrderModel.self, from: successResponse.data!)
+                   Success(responseModel)
+               }
+               catch {
+                   print("Response Error")
+               }
+               
+               
+           } , Falioure: {(Error) in
+               Failure(Error)
+           })
+       }
+    
+    
+    
 }

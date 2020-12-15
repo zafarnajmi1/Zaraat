@@ -68,6 +68,7 @@
 		CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF432410CF25000DAAB4 /* InboxVC.swift */; };
 		CE4BBF462410CF37000DAAB4 /* QuoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */; };
 		CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */; };
+		CE4D34AC258218BB0054F861 /* TCSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D34AB258218BB0054F861 /* TCSModel.swift */; };
 		CE4FA3AF2511FEF800BA0FBE /* MyOrdersTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FA3AE2511FEF800BA0FBE /* MyOrdersTabVC.swift */; };
 		CE4FA3B32512016E00BA0FBE /* InprogressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FA3B22512016E00BA0FBE /* InprogressVC.swift */; };
 		CE4FA3B52512018A00BA0FBE /* ShipmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FA3B42512018A00BA0FBE /* ShipmentVC.swift */; };
@@ -141,9 +142,11 @@
 		CE59074C253EFA2F00C32BE9 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */; };
 		CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */; };
 		CE5D6E5C256D26D80004495A /* HBLBillingFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */; };
+		CE60479025889E0F00E0CAA3 /* PlaceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60478F25889E0F00E0CAA3 /* PlaceOrderModel.swift */; };
 		CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849A2540378600EFCF3E /* ProductDetailModel.swift */; };
 		CE61849D2540535400EFCF3E /* SellerProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849C2540535400EFCF3E /* SellerProfileVC.swift */; };
 		CE64DABB258104CB00E1C13F /* TCSBillingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */; };
+		CE69072825835BD500993C2E /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69072725835BD500993C2E /* AddressModel.swift */; };
 		CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */; };
 		CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */; };
 		CE70E9C524F8D51500FEEF5D /* FlashSaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */; };
@@ -346,6 +349,7 @@
 		CE4BBF432410CF25000DAAB4 /* InboxVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxVC.swift; sourceTree = "<group>"; };
 		CE4BBF452410CF37000DAAB4 /* QuoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteVC.swift; sourceTree = "<group>"; };
 		CE4BBF472410CF4F000DAAB4 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		CE4D34AB258218BB0054F861 /* TCSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSModel.swift; sourceTree = "<group>"; };
 		CE4FA3AE2511FEF800BA0FBE /* MyOrdersTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersTabVC.swift; sourceTree = "<group>"; };
 		CE4FA3B22512016E00BA0FBE /* InprogressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InprogressVC.swift; sourceTree = "<group>"; };
 		CE4FA3B42512018A00BA0FBE /* ShipmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipmentVC.swift; sourceTree = "<group>"; };
@@ -401,9 +405,11 @@
 		CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_Ipad.storyboard; sourceTree = "<group>"; };
 		CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBLBillingFormVC.swift; sourceTree = "<group>"; };
+		CE60478F25889E0F00E0CAA3 /* PlaceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderModel.swift; sourceTree = "<group>"; };
 		CE61849A2540378600EFCF3E /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
 		CE61849C2540535400EFCF3E /* SellerProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileVC.swift; sourceTree = "<group>"; };
 		CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSBillingVC.swift; sourceTree = "<group>"; };
+		CE69072725835BD500993C2E /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCell.swift; sourceTree = "<group>"; };
 		CE70E9C324F8D51500FEEF5D /* FlashSaleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashSaleCell.xib; sourceTree = "<group>"; };
@@ -976,6 +982,9 @@
 				CE543177255A8A2500FC4116 /* SendInquiryModel.swift */,
 				CE52C868255BEF7E00E96CE4 /* GetInquiresModel.swift */,
 				CE57F31D2565036A009A1AB8 /* ZmallModel.swift */,
+				CE4D34AB258218BB0054F861 /* TCSModel.swift */,
+				CE69072725835BD500993C2E /* AddressModel.swift */,
+				CE60478F25889E0F00E0CAA3 /* PlaceOrderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1845,12 +1854,14 @@
 				CE884BFB251B7A5B003626C5 /* ClViewTwoCell.swift in Sources */,
 				CE4FA3B32512016E00BA0FBE /* InprogressVC.swift in Sources */,
 				CE57A61024FF682F00DE9932 /* AppLanguage.swift in Sources */,
+				CE60479025889E0F00E0CAA3 /* PlaceOrderModel.swift in Sources */,
 				CECB92F02535D247009F0C04 /* SubCateProductsModel.swift in Sources */,
 				CE4A56072510CAFB0060156E /* EditProfileVC.swift in Sources */,
 				CEB5CA422502572A00137E48 /* SubcategoriesVC.swift in Sources */,
 				CEAED9C824092A4B0079C3C5 /* SplashZaraatVC.swift in Sources */,
 				CEAED9FB240939380079C3C5 /* ZaraatExtenssions.swift in Sources */,
 				CE79765C251B2FDA009A9FC0 /* B2BHomeVC.swift in Sources */,
+				CE4D34AC258218BB0054F861 /* TCSModel.swift in Sources */,
 				CE563AD0252CA3CF00287511 /* Networkhandler.swift in Sources */,
 				CE92D89825220D67001C63C8 /* ZMartVC.swift in Sources */,
 				CE563ACA252CA3CF00287511 /* Userhandler.swift in Sources */,
@@ -1876,6 +1887,7 @@
 				CE73BBE42524AF470069B861 /* HomeCatePartThreeCell.swift in Sources */,
 				CE59074A253ECA4C00C32BE9 /* ZMartModel.swift in Sources */,
 				CE8C9DB3250F661500973CD1 /* SenderTextCell.swift in Sources */,
+				CE69072825835BD500993C2E /* AddressModel.swift in Sources */,
 				CE5145AD251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift in Sources */,
 				CEAC33B9251CC3F5002D2E9C /* B2BInquireisVC.swift in Sources */,
 				CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */,

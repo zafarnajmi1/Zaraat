@@ -13,7 +13,10 @@ import  GooglePlacePicker
 class CheckOutVC: UIViewController {
     @IBOutlet weak var btnPlaceOrder: UIButton!
     @IBOutlet weak var priceView: UIView!
-   
+    @IBOutlet weak var lblpayment: UILabel!
+     var cartData : GetCartModel?
+    var istype = 0
+    var payment = 0
 //    @IBOutlet weak var btnshipping: UIButton!
 //    @IBOutlet weak var txtBilingemail: SkyFloatingLabelTextField!
 //    @IBOutlet weak var txtBillingname: SkyFloatingLabelTextField!
@@ -45,6 +48,8 @@ class CheckOutVC: UIViewController {
     
     @IBOutlet weak var btnHBLRadio: UIButton!
     var addresstype = 0
+    var qty = 0
+    var productName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
@@ -55,7 +60,18 @@ class CheckOutVC: UIViewController {
        priceView.layer.borderWidth = 1
         priceView.layer.cornerRadius = 8
         
+        self.lblpayment.text = "\(payment)" + " PKR"
         
+
+         
+         
+         
+         for item in self.cartData?.cart ?? [] {
+             
+            qty += item.quantity ?? 0
+            productName += "," + productName  + (item.product?.product_title_en)!
+            print(productName)
+         }
         
         
         
@@ -144,21 +160,170 @@ class CheckOutVC: UIViewController {
     
     @IBAction func PlaceOrderAction(_ sender: UIButton) {
         
-        
+        if btnHBLRadio.isSelected == true {
         if UIDevice.current.userInterfaceIdiom == .pad {
                    
                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
                let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
+            vc?.hidesBottomBarWhenPushed = true
                self.navigationController?.pushViewController(vc!, animated: true)
                
                } else {
                
                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
                let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
+            vc?.hidesBottomBarWhenPushed = true
                self.navigationController?.pushViewController(vc!, animated: true)
                }
+        } else if btncashRadio.isSelected == true {
+            
+            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                            
+                        let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+                        let vc =  storyBoard.instantiateViewController(withIdentifier: "TCSBillingVC") as? TCSBillingVC
+                        vc?.hidesBottomBarWhenPushed = true
+                vc?.price = payment
+                vc?.pieces = qty
+                vc?.ProductsName = productName
+                vc!.cartData =  self.cartData
+                vc!.paymentMethod = "COD"
+                        self.navigationController?.pushViewController(vc!, animated: true)
+                        
+                        } else {
+                        
+                        let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                        let vc =  storyBoard.instantiateViewController(withIdentifier: "TCSBillingVC") as? TCSBillingVC
+                vc?.hidesBottomBarWhenPushed = true
+                 vc?.price = payment
+                vc?.pieces = qty
+                vc?.ProductsName = productName
+                vc!.cartData =  self.cartData
+                vc!.paymentMethod = "COD"
+                        self.navigationController?.pushViewController(vc!, animated: true)
+                        }
+            
+            
+            
+            
+            
+        } else {
+            alertMessage(message: "Please Select The Payment Method!", completionHandler: {})
+        }
         
     }
+    
+    
+    @IBAction func visaAction(_ sender: UIButton) {
+        alertMessage(message: "This Payment Method Is Comming Soon. Please Select Cash On delivery Or HBL", completionHandler: {
+            
+            
+            self.btnVisaRadio.isSelected = false
+             
+            self.btncashRadio.isSelected = false
+             
+            self.btneasyPaisaRadio.isSelected = false
+            
+            self.btnjazzCashRadio.isSelected = false
+              
+            self.btnHBLRadio.isSelected = false
+            
+            
+            
+            
+        })
+        
+    }
+    @IBAction func TCSAction(_ sender: UIButton) {
+        
+        
+        
+                   
+                   self.btnVisaRadio.isSelected = false
+                    
+                   self.btncashRadio.isSelected = true
+                    
+                   self.btneasyPaisaRadio.isSelected = false
+                   
+                   self.btnjazzCashRadio.isSelected = false
+                     
+                   self.btnHBLRadio.isSelected = false
+                   
+                   
+                   
+                   
+              
+        
+        
+        
+    }
+    @IBAction func easyPaisaAction(_ sender: UIButton) {
+        alertMessage(message: "This Payment Method Is Comming Soon. Please Select Cash On delivery Or HBL", completionHandler: {
+                   
+                   
+                   self.btnVisaRadio.isSelected = false
+                    
+                   self.btncashRadio.isSelected = false
+                    
+                   self.btneasyPaisaRadio.isSelected = false
+                   
+                   self.btnjazzCashRadio.isSelected = false
+                     
+                   self.btnHBLRadio.isSelected = false
+                   
+                   
+                   
+                   
+               })
+        
+    }
+    
+    @IBAction func jazzCasAction(_ sender: Any) {
+        
+        alertMessage(message: "This Payment Method Is Comming Soon. Please Select Cash On delivery Or HBL", completionHandler: {
+                   
+                   
+                   self.btnVisaRadio.isSelected = false
+                    
+                   self.btncashRadio.isSelected = false
+                    
+                   self.btneasyPaisaRadio.isSelected = false
+                   
+                   self.btnjazzCashRadio.isSelected = false
+                     
+                   self.btnHBLRadio.isSelected = false
+                   
+                   
+                   
+                   
+               })
+        
+    }
+    
+    @IBAction func hblAction(_ sender: UIButton) {
+        
+         
+                   
+                   
+                   self.btnVisaRadio.isSelected = false
+                    
+                   self.btncashRadio.isSelected = false
+                    
+                   self.btneasyPaisaRadio.isSelected = false
+                   
+                   self.btnjazzCashRadio.isSelected = false
+                     
+                   self.btnHBLRadio.isSelected = true
+                   
+                   
+                   
+                   
+               
+        
+        
+    }
+    
+    
     
     
     

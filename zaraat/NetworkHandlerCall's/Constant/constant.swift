@@ -119,6 +119,10 @@ class Constant {
         static let seninquiry = "enquiries/post"
         static let getInquires = "enquiries"
         static let Zmall = "products/zmall"
+        
+        static let address = "profile/addresses"
+        static let storeAddress = "profile/addresses/store?"
+        static let placeOrder = "orders/place"
     }
     
     struct NetworkErrorType {

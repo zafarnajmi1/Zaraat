@@ -46,19 +46,28 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
 
     
     @IBAction func proceedAction(_ sender: UIButton) {
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if cartData?.cart?.count != 0 {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                
+            let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "CheckOutVC") as? CheckOutVC
+                vc?.payment = ((self.lbltotla.text!) as NSString).integerValue
+                vc?.cartData = cartData
+            self.navigationController?.pushViewController(vc!, animated: true)
             
-        let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-        let vc =  storyBoard.instantiateViewController(withIdentifier: "CheckOutVC") as? CheckOutVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+            } else {
+            
+            let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "CheckOutVC") as? CheckOutVC
+                vc?.payment = ((self.lbltotla.text!) as NSString).integerValue
+                vc?.cartData = cartData
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
         
         } else {
-        
-        let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-        let vc =  storyBoard.instantiateViewController(withIdentifier: "CheckOutVC") as? CheckOutVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+            alertMessage(message: "Please Add The Items In Cart", completionHandler: {})
         }
+        
     }
     
 
@@ -85,7 +94,8 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
                 let totalValue = value + deliveryCharg!
                 self.lbltotla.text = "\(totalValue)"
                 self.lblsubtotla.text = "\(value)"
-                
+                ShareData.shareInfo.count = response.cart?.count ?? 0
+                ShareData.shareInfo.unseenCart = response.cart?.count ?? 0
                 
                 self.tblView.reloadData()
             } else {
@@ -104,12 +114,13 @@ class CartVC: UIViewController,ItemDelete,UITextFieldDelegate,Additems {
     func deleteProduct(cell: CartCell) {
         let indx =  tblView.indexPath(for: cell)
        
-        ShareData.showProgress()
+        //ShareData.showProgress()
         let dic : [String:Any] =  ["cart_id": self.cartData?.cart![indx!.row].cart_id ?? 0]
         userhandler.DeleteFromCart(parms: dic, Success: { response in
             ShareData.hideProgress()
             if response.success == 1 {
-                self.cartData?.cart?.remove(at: indx?.row ?? 0)
+                self.getCartDataApi()
+                //self.cartData?.cart?.remove(at: indx?.row ?? 0)
                 self.tblView.reloadData()
             } else {
                 ShareData.hideProgress()

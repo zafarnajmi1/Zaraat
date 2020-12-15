@@ -144,12 +144,14 @@ class B2BViewController: UIViewController {
 
                 let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
                 let vc =  storyBoard.instantiateViewController(withIdentifier: "CartVC") as? CartVC
+            vc?.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc!, animated: true)
 
         } else {
 
                 let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
                 let vc =  storyBoard.instantiateViewController(withIdentifier: "CartVC") as? CartVC
+            vc?.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc!, animated: true)
         }
     }
