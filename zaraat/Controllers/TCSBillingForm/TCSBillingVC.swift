@@ -343,14 +343,14 @@ var BillingdropDown = DropDown()
         "weight": 1,
         "pieces": pieces,
         "codAmount": "\(price)",
-        "customerReferenceNo": "123",
+            "customerReferenceNo": "\(Int.random(in: 1..<1000))",
         "services": "O",
         "productDetails": "\(ProductsName)",
         "fragile": "Yes",
         "remarks": "metileku",
         "insuranceValue": 1
         ] as [String : Any]
-        
+    
         print(parameters)
         
         do {
@@ -367,9 +367,12 @@ var BillingdropDown = DropDown()
           if (error != nil) {
             print(error?.localizedDescription ?? "")
              ShareData.hideProgress()
-            ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error!.localizedDescription, messagetype: 0)
+            DispatchQueue.main.async {
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: error!.localizedDescription, messagetype: 0)
+                }
+            
           } else {
-             ShareData.hideProgress()
+             
             do {
             let jsonDecoder = JSONDecoder()
             let responseModel = try jsonDecoder.decode(TCSModel.self, from: data!)
@@ -423,7 +426,7 @@ var BillingdropDown = DropDown()
         for product in cartData?.cart ?? []
         {
             let prod: NSMutableDictionary = NSMutableDictionary()
-            prod.setValue(product.product?.products_id, forKey: "produt_id")
+            prod.setValue("\(product.product?.products_id! ?? 0)", forKey: "product_id")
             prod.setValue(product.quantity, forKey: "order_quantity")
             prod.setValue(product.product?.selling_price, forKey: "price")
             prodArray.add(prod)
@@ -454,12 +457,12 @@ var BillingdropDown = DropDown()
                 self.alertMessage(message: error!.localizedDescription, completionHandler: {})
                 }
               } else {
-                 ShareData.hideProgress()
+                 
               
                 do {
                 let jsonDecoder = JSONDecoder()
                 let responseModel = try jsonDecoder.decode(AddtoCart.self, from: data!)
-                    
+                    ShareData.hideProgress()
                     DispatchQueue.main.async {
                         if responseModel.success == 1 {
                             
@@ -468,7 +471,7 @@ var BillingdropDown = DropDown()
                             ShareData.shareInfo.unseenCart =  0
                             //self.alertMessage(message: "Order Place Successfully", completionHandler: {})
                         ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: responseModel.message ?? "", messagetype: 1)
-                       // self.movetoHome()
+                           self.movetoHome()
                         } else {
                             ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: responseModel.message ?? "", messagetype: 0)
                         }
@@ -495,6 +498,11 @@ var BillingdropDown = DropDown()
     
     
    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     func movetoHome(){
         if UIDevice.current.userInterfaceIdiom == .pad {

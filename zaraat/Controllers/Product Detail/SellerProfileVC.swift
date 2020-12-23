@@ -26,6 +26,7 @@ class SellerProfileVC: UIViewController {
         self.lbldiscriptionpaid.text = supplierData?.vendor?.description
         self.lblGoldSupplier.text = (supplierData?.vendor_package?.package_name)! + "  Supplier"
         self.lbloneyear.text = "\(supplierData?.vendor_products ?? 0) " + " Supplier Products"
+        self.lblGoldDescription.text = supplierData?.vendor?.description
         self.lbloneyeardescription.text = supplierData?.vendor?.description
     }
     

@@ -100,6 +100,9 @@
 		CE5452B9254FF62600393A9D /* CateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5452B8254FF62600393A9D /* CateCell.swift */; };
 		CE5452BB2550279600393A9D /* FilterBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5452BA2550279600393A9D /* FilterBrand.swift */; };
 		CE5452BD25502E6400393A9D /* FilterColorsSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5452BC25502E6400393A9D /* FilterColorsSizes.swift */; };
+		CE54C97B258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE54C97A258CDA3E00ACA9AC /* InAppSDK.framework */; };
+		CE54C97C258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE54C97A258CDA3E00ACA9AC /* InAppSDK.framework */; };
+		CE54C97D258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE54C97A258CDA3E00ACA9AC /* InAppSDK.framework */; };
 		CE55BADE2534756F00780C9D /* EcommrceCateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55BADD2534756F00780C9D /* EcommrceCateModel.swift */; };
 		CE55BAE02534764400780C9D /* B2BCateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE55BADF2534764400780C9D /* B2BCateModel.swift */; };
 		CE563ABB252C7D1000287511 /* HomeContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE563ABA252C7D1000287511 /* HomeContainerVC.swift */; };
@@ -146,6 +149,7 @@
 		CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849A2540378600EFCF3E /* ProductDetailModel.swift */; };
 		CE61849D2540535400EFCF3E /* SellerProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849C2540535400EFCF3E /* SellerProfileVC.swift */; };
 		CE64DABB258104CB00E1C13F /* TCSBillingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */; };
+		CE65C42925932FB20025557D /* IPAdresss.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE65C42825932FB20025557D /* IPAdresss.swift */; };
 		CE69072825835BD500993C2E /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69072725835BD500993C2E /* AddressModel.swift */; };
 		CE6E694B240E1C82008730C0 /* ForgotPasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */; };
 		CE70E9C424F8D51500FEEF5D /* FlashSaleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */; };
@@ -207,6 +211,21 @@
 		CE8C9DB3250F661500973CD1 /* SenderTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DAF250F661500973CD1 /* SenderTextCell.swift */; };
 		CE8C9DB4250F661500973CD1 /* RecieverTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DB0250F661500973CD1 /* RecieverTextCell.swift */; };
 		CE8C9DB6250F895800973CD1 /* ClViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C9DB5250F895800973CD1 /* ClViewCell.swift */; };
+		CE8DF4E8259085E000514D18 /* InAppSDKDemoSignatureGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E2259085D500514D18 /* InAppSDKDemoSignatureGenerator.m */; };
+		CE8DF4E9259085E000514D18 /* InAppSDKDemoSignatureGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E2259085D500514D18 /* InAppSDKDemoSignatureGenerator.m */; };
+		CE8DF4EA259085E000514D18 /* InAppSDKDemoSignatureGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E2259085D500514D18 /* InAppSDKDemoSignatureGenerator.m */; };
+		CE8DF4EB259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E4259085D800514D18 /* InAppSDKDemoStringValidator.m */; };
+		CE8DF4EC259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E4259085D800514D18 /* InAppSDKDemoStringValidator.m */; };
+		CE8DF4ED259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E4259085D800514D18 /* InAppSDKDemoStringValidator.m */; };
+		CE8DF4EE259085E000514D18 /* InAppSDKDemoCardFieldsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E6259085DD00514D18 /* InAppSDKDemoCardFieldsValidator.m */; };
+		CE8DF4EF259085E000514D18 /* InAppSDKDemoCardFieldsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E6259085DD00514D18 /* InAppSDKDemoCardFieldsValidator.m */; };
+		CE8DF4F0259085E000514D18 /* InAppSDKDemoCardFieldsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E6259085DD00514D18 /* InAppSDKDemoCardFieldsValidator.m */; };
+		CE8DF4F1259085E000514D18 /* InAppSDKDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E7259085DE00514D18 /* InAppSDKDemoViewController.m */; };
+		CE8DF4F2259085E000514D18 /* InAppSDKDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E7259085DE00514D18 /* InAppSDKDemoViewController.m */; };
+		CE8DF4F3259085E000514D18 /* InAppSDKDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4E7259085DE00514D18 /* InAppSDKDemoViewController.m */; };
+		CE8DF4F525909B9100514D18 /* CyberSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4F425909B9100514D18 /* CyberSourceVC.swift */; };
+		CE8DF4F625909B9100514D18 /* CyberSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4F425909B9100514D18 /* CyberSourceVC.swift */; };
+		CE8DF4F725909B9100514D18 /* CyberSourceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DF4F425909B9100514D18 /* CyberSourceVC.swift */; };
 		CE90751525270F7E002BEFB4 /* TrendsPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90751425270F7E002BEFB4 /* TrendsPartOneCell.swift */; };
 		CE90751725270FAE002BEFB4 /* TrendsClViewPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90751625270FAE002BEFB4 /* TrendsClViewPartOneCell.swift */; };
 		CE90751D2527108A002BEFB4 /* TrendsPartThreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90751C2527108A002BEFB4 /* TrendsPartThreeCell.swift */; };
@@ -379,6 +398,10 @@
 		CE5452B8254FF62600393A9D /* CateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CateCell.swift; sourceTree = "<group>"; };
 		CE5452BA2550279600393A9D /* FilterBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBrand.swift; sourceTree = "<group>"; };
 		CE5452BC25502E6400393A9D /* FilterColorsSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorsSizes.swift; sourceTree = "<group>"; };
+		CE54C97A258CDA3E00ACA9AC /* InAppSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InAppSDK.framework; sourceTree = "<group>"; };
+		CE54C97E258CE56F00ACA9AC /* zaraat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zaraat-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE54C97F258CE56F00ACA9AC /* zaraatTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zaraatTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE54C980258CE56F00ACA9AC /* zaraatUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zaraatUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE55BADD2534756F00780C9D /* EcommrceCateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcommrceCateModel.swift; sourceTree = "<group>"; };
 		CE55BADF2534764400780C9D /* B2BCateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BCateModel.swift; sourceTree = "<group>"; };
 		CE563ABA252C7D1000287511 /* HomeContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerVC.swift; sourceTree = "<group>"; };
@@ -409,6 +432,7 @@
 		CE61849A2540378600EFCF3E /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
 		CE61849C2540535400EFCF3E /* SellerProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileVC.swift; sourceTree = "<group>"; };
 		CE64DABA258104CB00E1C13F /* TCSBillingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCSBillingVC.swift; sourceTree = "<group>"; };
+		CE65C42825932FB20025557D /* IPAdresss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAdresss.swift; sourceTree = "<group>"; };
 		CE69072725835BD500993C2E /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		CE6E694A240E1C82008730C0 /* ForgotPasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE70E9C224F8D51500FEEF5D /* FlashSaleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleCell.swift; sourceTree = "<group>"; };
@@ -458,6 +482,17 @@
 		CE8C9DAF250F661500973CD1 /* SenderTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderTextCell.swift; sourceTree = "<group>"; };
 		CE8C9DB0250F661500973CD1 /* RecieverTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecieverTextCell.swift; sourceTree = "<group>"; };
 		CE8C9DB5250F895800973CD1 /* ClViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClViewCell.swift; sourceTree = "<group>"; };
+		CE8DF4CF25907E6700514D18 /* zaraat-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zaraat-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE8DF4DF259085CF00514D18 /* zaraat-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zaraat-Prefix.pch"; sourceTree = "<group>"; };
+		CE8DF4E0259085D100514D18 /* InAppSDKDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoViewController.h; sourceTree = "<group>"; };
+		CE8DF4E1259085D300514D18 /* InAppSDKDemoStringValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoStringValidator.h; sourceTree = "<group>"; };
+		CE8DF4E2259085D500514D18 /* InAppSDKDemoSignatureGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoSignatureGenerator.m; sourceTree = "<group>"; };
+		CE8DF4E3259085D700514D18 /* InAppSDKDemoCardFieldsValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoCardFieldsValidator.h; sourceTree = "<group>"; };
+		CE8DF4E4259085D800514D18 /* InAppSDKDemoStringValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoStringValidator.m; sourceTree = "<group>"; };
+		CE8DF4E5259085DA00514D18 /* InAppSDKDemoSignatureGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppSDKDemoSignatureGenerator.h; sourceTree = "<group>"; };
+		CE8DF4E6259085DD00514D18 /* InAppSDKDemoCardFieldsValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoCardFieldsValidator.m; sourceTree = "<group>"; };
+		CE8DF4E7259085DE00514D18 /* InAppSDKDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppSDKDemoViewController.m; sourceTree = "<group>"; };
+		CE8DF4F425909B9100514D18 /* CyberSourceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberSourceVC.swift; sourceTree = "<group>"; };
 		CE90751425270F7E002BEFB4 /* TrendsPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsPartOneCell.swift; sourceTree = "<group>"; };
 		CE90751625270FAE002BEFB4 /* TrendsClViewPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsClViewPartOneCell.swift; sourceTree = "<group>"; };
 		CE90751C2527108A002BEFB4 /* TrendsPartThreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsPartThreeCell.swift; sourceTree = "<group>"; };
@@ -529,6 +564,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54C97B258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */,
 				F7279CB6D640ABF6AC6713BE /* Pods_zaraat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +573,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54C97C258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +581,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54C97D258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,6 +1063,7 @@
 			isa = PBXGroup;
 			children = (
 				CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */,
+				CE8DF4F425909B9100514D18 /* CyberSourceVC.swift */,
 			);
 			path = HBLBillingForm;
 			sourceTree = "<group>";
@@ -1413,6 +1452,17 @@
 		CEAED9B724092A4B0079C3C5 = {
 			isa = PBXGroup;
 			children = (
+				CE8DF4DF259085CF00514D18 /* zaraat-Prefix.pch */,
+				CE8DF4E3259085D700514D18 /* InAppSDKDemoCardFieldsValidator.h */,
+				CE8DF4E6259085DD00514D18 /* InAppSDKDemoCardFieldsValidator.m */,
+				CE8DF4E5259085DA00514D18 /* InAppSDKDemoSignatureGenerator.h */,
+				CE8DF4E2259085D500514D18 /* InAppSDKDemoSignatureGenerator.m */,
+				CE8DF4E1259085D300514D18 /* InAppSDKDemoStringValidator.h */,
+				CE8DF4E4259085D800514D18 /* InAppSDKDemoStringValidator.m */,
+				CE8DF4E0259085D100514D18 /* InAppSDKDemoViewController.h */,
+				CE8DF4E7259085DE00514D18 /* InAppSDKDemoViewController.m */,
+				CE8DF4CF25907E6700514D18 /* zaraat-Bridging-Header.h */,
+				CE54C97A258CDA3E00ACA9AC /* InAppSDK.framework */,
 				CEAED9C224092A4B0079C3C5 /* zaraat */,
 				CEAED9DC24092A4E0079C3C5 /* zaraatTests */,
 				CEAED9E724092A4E0079C3C5 /* zaraatUITests */,
@@ -1451,6 +1501,9 @@
 				CE535D332552B85400B8AF35 /* GoogleService-Info.plist */,
 				CEAED9D424092A4E0079C3C5 /* Info.plist */,
 				CEAED9CC24092A4B0079C3C5 /* zaraat.xcdatamodeld */,
+				CE54C97E258CE56F00ACA9AC /* zaraat-Bridging-Header.h */,
+				CE54C97F258CE56F00ACA9AC /* zaraatTests-Bridging-Header.h */,
+				CE54C980258CE56F00ACA9AC /* zaraatUITests-Bridging-Header.h */,
 			);
 			path = zaraat;
 			sourceTree = "<group>";
@@ -1496,6 +1549,7 @@
 				CEAED9FA240939380079C3C5 /* ZaraatExtenssions.swift */,
 				CEAED9FC240939BC0079C3C5 /* ZaraatBaseVC.swift */,
 				CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */,
+				CE65C42825932FB20025557D /* IPAdresss.swift */,
 			);
 			path = Extenssions;
 			sourceTree = "<group>";
@@ -1656,13 +1710,16 @@
 				TargetAttributes = {
 					CEAED9BF24092A4B0079C3C5 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1170;
 					};
 					CEAED9D824092A4E0079C3C5 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1170;
 						TestTargetID = CEAED9BF24092A4B0079C3C5;
 					};
 					CEAED9E324092A4E0079C3C5 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1170;
 						TestTargetID = CEAED9BF24092A4B0079C3C5;
 					};
 				};
@@ -1837,6 +1894,7 @@
 				CECB92EC2535BA5E009F0C04 /* SubCategoriesModel.swift in Sources */,
 				CE4FA3B7251201A100BA0FBE /* RevievedVC.swift in Sources */,
 				CE563ACD252CA3CF00287511 /* constant.swift in Sources */,
+				CE8DF4F1259085E000514D18 /* InAppSDKDemoViewController.m in Sources */,
 				CE2BF475252F459400A1BBD9 /* BasicCell.swift in Sources */,
 				CE55BADE2534756F00780C9D /* EcommrceCateModel.swift in Sources */,
 				CE4FA3B52512018A00BA0FBE /* ShipmentVC.swift in Sources */,
@@ -1880,6 +1938,7 @@
 				4312A10A243DADF20041FA82 /* CheckOutVC.swift in Sources */,
 				CE138EB425235663008DC888 /* ZDigitalVC.swift in Sources */,
 				437BD1A1242C8D6B003C55C2 /* ProductDetailVC.swift in Sources */,
+				CE8DF4E8259085E000514D18 /* InAppSDKDemoSignatureGenerator.m in Sources */,
 				CE56FC852541C425005FB9ED /* B2BHomeLanding.swift in Sources */,
 				CECB92EA25358BF4009F0C04 /* AllCategoriesModel.swift in Sources */,
 				CE5452B3254FF5F800393A9D /* ColorCell.swift in Sources */,
@@ -1902,6 +1961,7 @@
 				CE79764B251B29D7009A9FC0 /* B2BBasicCell.swift in Sources */,
 				CE543176255A885E00FC4116 /* InquiryDocModel.swift in Sources */,
 				CEB5CA4525025B8200137E48 /* SubcateGoriesCell.swift in Sources */,
+				CE65C42925932FB20025557D /* IPAdresss.swift in Sources */,
 				CEB5CA5225027F9E00137E48 /* ProductListCell.swift in Sources */,
 				CE8C9DB4250F661500973CD1 /* RecieverTextCell.swift in Sources */,
 				CE4A98F1253836EA0034AE69 /* WeeklyViewAllModel.swift in Sources */,
@@ -1932,6 +1992,7 @@
 				CECB92E825357F34009F0C04 /* VerificationCode.swift in Sources */,
 				CEAED9C424092A4B0079C3C5 /* AppDelegate.swift in Sources */,
 				431AB765242DBD5F002346E7 /* MenuVC.swift in Sources */,
+				CE8DF4F525909B9100514D18 /* CyberSourceVC.swift in Sources */,
 				CE4BBF482410CF4F000DAAB4 /* CategoriesVC.swift in Sources */,
 				CE2BF473252F459400A1BBD9 /* Extensions.swift in Sources */,
 				CE820E4F24CB0EA50003B78E /* RestPasswordZaraatVC.swift in Sources */,
@@ -1958,6 +2019,7 @@
 				CEA7EC7525557CB800FF328A /* SearchProductModel.swift in Sources */,
 				CE73BBC22524701E0069B861 /* HomeButtonsClViewStoreForYouCell.swift in Sources */,
 				CE73BBEB2524AFF50069B861 /* HomeCateAdsCell.swift in Sources */,
+				CE8DF4EE259085E000514D18 /* InAppSDKDemoCardFieldsValidator.m in Sources */,
 				CEAED9C624092A4B0079C3C5 /* SceneDelegate.swift in Sources */,
 				CEEC5072250F5DAE001A774C /* ChatCell.swift in Sources */,
 				CE563ABB252C7D1000287511 /* HomeContainerVC.swift in Sources */,
@@ -1971,6 +2033,7 @@
 				CE78E1F32510E4EC005D6FD9 /* SettingsVC.swift in Sources */,
 				CE8C9DB2250F661500973CD1 /* SenderImageCell.swift in Sources */,
 				CE76D99A24FD1FB6005078D6 /* FeaturedProductsCell.swift in Sources */,
+				CE8DF4EB259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */,
 				CE5D6E5C256D26D80004495A /* HBLBillingFormVC.swift in Sources */,
 				CE449D4C2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift in Sources */,
 				CE797662251B5FEE009A9FC0 /* ClviewOtherChenlsCell.swift in Sources */,
@@ -2009,15 +2072,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8DF4EC259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */,
 				CEAED9DE24092A4E0079C3C5 /* zaraatTests.swift in Sources */,
 				CE797652251B29D7009A9FC0 /* B2BViewController.swift in Sources */,
 				CE79765D251B2FDA009A9FC0 /* B2BHomeVC.swift in Sources */,
 				CE563ADA252CAC5400287511 /* SignUpModel.swift in Sources */,
 				CE79764C251B29D7009A9FC0 /* B2BBasicCell.swift in Sources */,
+				CE8DF4EF259085E000514D18 /* InAppSDKDemoCardFieldsValidator.m in Sources */,
 				CE57A61124FF682F00DE9932 /* AppLanguage.swift in Sources */,
+				CE8DF4F2259085E000514D18 /* InAppSDKDemoViewController.m in Sources */,
+				CE8DF4E9259085E000514D18 /* InAppSDKDemoSignatureGenerator.m in Sources */,
 				CE797658251B29D7009A9FC0 /* B2BPageControllerVC.swift in Sources */,
 				CE563AD1252CA3CF00287511 /* Networkhandler.swift in Sources */,
 				CE563AC8252CA3CE00287511 /* network.swift in Sources */,
+				CE8DF4F625909B9100514D18 /* CyberSourceVC.swift in Sources */,
 				CE57A61424FF682F00DE9932 /* ZSideMenuManager.swift in Sources */,
 				CE563AD6252CAC1300287511 /* LoginModel.swift in Sources */,
 				CE563ACB252CA3CF00287511 /* Userhandler.swift in Sources */,
@@ -2031,15 +2099,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8DF4ED259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */,
 				CEAED9E924092A4E0079C3C5 /* zaraatUITests.swift in Sources */,
 				CE797653251B29D7009A9FC0 /* B2BViewController.swift in Sources */,
 				CE79765E251B2FDA009A9FC0 /* B2BHomeVC.swift in Sources */,
 				CE563ADB252CAC5400287511 /* SignUpModel.swift in Sources */,
 				CE79764D251B29D7009A9FC0 /* B2BBasicCell.swift in Sources */,
+				CE8DF4F0259085E000514D18 /* InAppSDKDemoCardFieldsValidator.m in Sources */,
 				CE57A61224FF682F00DE9932 /* AppLanguage.swift in Sources */,
+				CE8DF4F3259085E000514D18 /* InAppSDKDemoViewController.m in Sources */,
+				CE8DF4EA259085E000514D18 /* InAppSDKDemoSignatureGenerator.m in Sources */,
 				CE797659251B29D7009A9FC0 /* B2BPageControllerVC.swift in Sources */,
 				CE563AD2252CA3CF00287511 /* Networkhandler.swift in Sources */,
 				CE563AC9252CA3CF00287511 /* network.swift in Sources */,
+				CE8DF4F725909B9100514D18 /* CyberSourceVC.swift in Sources */,
 				CE57A61524FF682F00DE9932 /* ZSideMenuManager.swift in Sources */,
 				CE563AD7252CAC1300287511 /* LoginModel.swift in Sources */,
 				CE563ACC252CA3CF00287511 /* Userhandler.swift in Sources */,
@@ -2203,10 +2276,16 @@
 			baseConfigurationReference = 8530F165E031F68218795376 /* Pods-zaraat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Prefix.pch";
 				INFOPLIST_FILE = zaraat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2215,6 +2294,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Zaraat.ARW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDevelopementProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2225,10 +2306,16 @@
 			baseConfigurationReference = 83C9CFB6051A03AF819C6098 /* Pods-zaraat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PREFIX_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Prefix.pch";
 				INFOPLIST_FILE = zaraat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2237,6 +2324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Zaraat.ARW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDevelopementProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2247,8 +2335,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C9CU5ST25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = zaraatTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2258,6 +2351,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ARW.zaraatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "zaraat/zaraatTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zaraat.app/zaraat";
@@ -2269,8 +2364,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C9CU5ST25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = zaraatTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2280,6 +2380,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ARW.zaraatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "zaraat/zaraatTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zaraat.app/zaraat";
@@ -2290,8 +2391,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C9CU5ST25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = zaraatUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2300,6 +2406,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ARW.zaraatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "zaraat/zaraatUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = zaraat;
@@ -2310,8 +2418,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3C9CU5ST25;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = zaraatUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2320,6 +2433,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ARW.zaraatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "zaraat/zaraatUITests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = zaraat;

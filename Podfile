@@ -41,5 +41,5 @@ target 'zaraat' do
  pod 'SideMenu'
   pod 'AnimatableReload'
   pod 'KRProgressHUD'
- 
+ pod 'cybersource-ios-sdk' 
 end

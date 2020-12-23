@@ -30,4 +30,5 @@ ${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework
 ${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework
 ${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework
 ${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework
+${PODS_ROOT}/cybersource-ios-sdk/Frameworks/InAppSDK.framework
 ${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework

@@ -39,28 +39,9 @@ class HomeVC: UIViewController {
     @IBOutlet weak var FeaturedProductsClView: UICollectionView!
     
     @IBOutlet weak var FeaturdProductClViewHeight: NSLayoutConstraint!
-    
-    
-    
-    
-    
-//    @IBOutlet weak var womenView: UIView!
-//
-//    @IBOutlet weak var menView: UIView!
-//
-//    @IBOutlet weak var electronicView: UIView!
-//
-//    @IBOutlet weak var homeView: UIView!
-//
-//    @IBOutlet weak var zMartView: UIView!
-//
-//    @IBOutlet weak var educationView: UIView!
-    
+
     var homeLanding : HomeLandingModel?
    
-    
-    
-    
     
     
     @IBOutlet weak var tblView: UITableView! {
@@ -84,16 +65,7 @@ class HomeVC: UIViewController {
          adimgthree.layer.cornerRadius = 10
        //self.tblView.contentInset.bottom = 100
         self.tblView.rowHeight = UITableView.automaticDimension;
-//        womenView.viewconfig(radius: 5)
-//        menView.viewconfig(radius: 5)
-//        electronicView.viewconfig(radius: 5)
-//
-//         homeView.viewconfig(radius: 5)
-//
-//         zMartView.viewconfig(radius: 5)
-//
-//       educationView.viewconfig(radius: 5)
-        
+
         
     
         sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
@@ -103,11 +75,7 @@ class HomeVC: UIViewController {
         
 
       tblView.register(UINib.init(nibName: "WeeklySellerCell", bundle: nil), forCellReuseIdentifier: "WeeklySellerCell")
-//      tblView.register(UINib.init(nibName: "WeeklyViewAll", bundle: nil), forCellReuseIdentifier: "WeeklyViewAll")
-//      tblView.register(UINib.init(nibName: "AddsCell", bundle: nil), forCellReuseIdentifier: "AddsCell")
 
-
-//        setViewHeight()
          setSlider()
         //homeapi()
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "MoreTab"), object: nil)
@@ -144,7 +112,7 @@ class HomeVC: UIViewController {
     
     
     @objc func showSpinningWheel(_ notification: NSNotification) {
-           print(notification.userInfo ?? "")
+           
            if let dict = notification.userInfo as NSDictionary? {
             if let id = dict["Index"]{
                 if id as! Int == 0 {
