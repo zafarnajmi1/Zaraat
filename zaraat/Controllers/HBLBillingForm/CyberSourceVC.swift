@@ -14,7 +14,7 @@ class CyberSourceVC: UIViewController, InAppSDKGatewayDelegate {
     
     var kInAppSDKDemoTestTransactionSecretKey = "819e57aac99f4a4ca045a589696b3cb6946012d48536428daf81ffccff8810d68f231be8bf1944aca2bba6ea29f3a03a59b2279de6fb4232a3858f18fe97d08cb1f72f26b7bf4eadb6b13180f7ed670d73a0826258974ff9a29f8315ebd3f439aaffe7d00e01465c943a965b2e8009740c57a0c27ae348ba8450ca27f6ff39e8"
     var kInAppSDKDemoTestMerchantReferenceNumber = "InAppSDKDemo_12345";
-    var kInAppSDKDemoTestMerchantID = "7718C5C3-1647-4021-A39B-4F2C8744C8CD";
+    var kInAppSDKDemoTestMerchantID = "hbl_zaraattech";
     
     @IBOutlet weak var txtcarnumber: UITextField!
     @IBOutlet weak var txtyear: UITextField!
@@ -24,11 +24,11 @@ class CyberSourceVC: UIViewController, InAppSDKGatewayDelegate {
     @IBOutlet weak var txtmonth: UITextField!
     var signature = ""
     var inappMarchent = InAppSDKMerchant.init()
-      var inappTransactionObject = InAppSDKTransactionObject.init()
-      var  cardData =  InAppSDKCardData.init()
+     
+    
       var  InAppSDKDemoSig =  InAppSDKDemoSignatureGenerator.init()
     
-    var getBillToData =  InAppSDKAddress()
+    
     
    
     
@@ -51,6 +51,17 @@ class CyberSourceVC: UIViewController, InAppSDKGatewayDelegate {
             }
             
             
+    
+    func getBillToData() -> InAppSDKAddress {
+        let getBillToData =  InAppSDKAddress()
+        
+        getBillToData.firstName = "zafar"
+        getBillToData.lastName = "najmi"
+        getBillToData.postalCode = "54000"
+        return getBillToData
+    }
+    
+    
             
             
             
@@ -65,22 +76,16 @@ class CyberSourceVC: UIViewController, InAppSDKGatewayDelegate {
                 inappMarchent.userName = "zafar Najmi"
                 inappMarchent.passwordDigest = signature
                 
-                
+                let  cardData =  InAppSDKCardData.init()
                 cardData.accountNumber = self.txtcarnumber.text
                cardData.cvNumber =  self.txtcvv.text
                 cardData.expirationMonth = self.txtmonth.text
                 cardData.expirationYear = self.txtyear.text
-                
-                
-                getBillToData.firstName = "zafar"
-                getBillToData.lastName = "najmi"
-                getBillToData.postalCode = "54000"
-                
-                
-                
+    
+                let inappTransactionObject = InAppSDKTransactionObject.init()
                 inappTransactionObject.merchant = inappMarchent
                 inappTransactionObject.cardData = cardData
-                inappTransactionObject.billTo = getBillToData
+                inappTransactionObject.billTo = getBillToData()
                 
                 
                 
@@ -217,7 +222,7 @@ class CyberSourceVC: UIViewController, InAppSDKGatewayDelegate {
         
 //
         //create the url with URL
-        let url = URL(string: "https://testsecureacceptance.cybersource.com/pay")! //change the url
+        let url = URL(string: "https://testsecureacceptance.cybersource.com/pay")!
 
         //create the session object
         let session = URLSession.shared

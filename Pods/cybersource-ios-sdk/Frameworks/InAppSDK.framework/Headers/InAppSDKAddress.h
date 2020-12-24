@@ -16,5 +16,5 @@
 @property (nonatomic, copy) NSString *lastName;
 //! Postal code
 @property (nonatomic, copy) NSString *postalCode;
-
+@property (nonatomic, copy) NSString *city;
 @end

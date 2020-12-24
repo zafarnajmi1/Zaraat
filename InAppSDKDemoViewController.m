@@ -15,19 +15,19 @@
 #import "InAppSDKDemoCardFieldsValidator.h"
 #import "InAppSDKDemoStringValidator.h"
 #import "InAppSDKDemoSignatureGenerator.h"
-
+#import "zaraat-Swift.h"
 //-------WARNING!----------------
 // The test merchant credentials are stored here for Demo Purpose.
 // The Merchant Credentials sould not be stored here. Just to Demo we have it here.
 // Sample Test Merchant Credentials
  
 // This is CyberSource Merchant ID, the value used to log into the EBC
-static NSString* kInAppSDKDemoTestMerchantID = @"testrest";
+static NSString* kInAppSDKDemoTestMerchantID = @"hbl_zaraattech";
 
 // This is the SOAP Toolkit Transaction Key
 // You can manage these keys here: https://ebctest.cybersource.com/ebctest
 
-static NSString* kInAppSDKDemoTestTransactionSecretKey = @"v6ine2CxLgv/0tAZaUL72RH38frW/QrkBhbTAhQiOjq2uY1Mn9zdFftQYb9YlCqXrF2sE+zrh1HMoooEHUUJ3P3S2KNQriVzSWhsxc9+kAZRsqk5lIn1YxpryXjMlhTyb8nQqKcRaQeObrzJaQ3kWB8NGJDdrKCyO6emevzKz0/YnBJW8k7w14GDLOfaEb9IC/Kz70Cb7icUwS2WVqg5JCOb676j2jrXKqMugOl/2WRBwRTlVo20QkEjk1aQTg1VTWuzHIbl3vjlFQGL1xGahyJ1ELUibQGkScrzBdRciAe3zNfyjHobl8BxFUcL6bHMMWP2o5t57ensJbjDh2PfZQ==";
+static NSString* kInAppSDKDemoTestTransactionSecretKey = @"819e57aac99f4a4ca045a589696b3cb6946012d48536428daf81ffccff8810d68f231be8bf1944aca2bba6ea29f3a03a59b2279de6fb4232a3858f18fe97d08cb1f72f26b7bf4eadb6b13180f7ed670d73a0826258974ff9a29f8315ebd3f439aaffe7d00e01465c943a965b2e8009740c57a0c27ae348ba8450ca27f6ff39e8";
 
 static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345";
 
@@ -150,9 +150,9 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
 -(InAppSDKAddress *) getBillToData
 {
     InAppSDKAddress * billToInfo = [[InAppSDKAddress alloc] init];
-    billToInfo.firstName = @"TestFirstName";
-    billToInfo.lastName = @"TestLastName";
-    billToInfo.postalCode = @"98004";
+    billToInfo.firstName = @"zafar";
+    billToInfo.lastName = @"najmi";
+    billToInfo.postalCode = @"54000";
     
     
     return billToInfo;
@@ -252,16 +252,30 @@ static NSString* kInAppSDKDemoTestMerchantReferenceNumber = @"InAppSDKDemo_12345
     
         if (paramResponseData)
         {
-            [statusMsg appendFormat:@"\nAccepted  : %@", paramResponseData.isAccepted ? @"Yes" : @"No"];
-            if (paramResponseData.requestId)
-            {
-                [statusMsg appendFormat:@"\nRequestID : %@", paramResponseData.requestId];
-            }
             
-            if (paramResponseData.resultCode)
-            {
-                [statusMsg appendFormat:@"\nResultCode: %@", paramResponseData.resultCode];
-            }
+            NSString * storyboardName = @"Main";
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+            CyberSourceVC * vc = [storyboard instantiateViewControllerWithIdentifier:@"CyberSourceVC"];
+            
+            [self.navigationController pushViewController:vc animated:YES];
+            
+            
+             
+            //[self presentViewController:vc animated:YES completion:nil];
+            
+//            CyberSourceVC *viewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"CyberSourceVC"];
+//            UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:viewController];
+//            [self.navigationController pushViewController:navi animated:YES];
+//            [statusMsg appendFormat:@"\nAccepted  : %@", paramResponseData.isAccepted ? @"Yes" : @"No"];
+//            if (paramResponseData.requestId)
+//            {
+//                [statusMsg appendFormat:@"\nRequestID : %@", paramResponseData.requestId];
+//            }
+//
+//            if (paramResponseData.resultCode)
+//            {
+//                [statusMsg appendFormat:@"\nResultCode: %@", paramResponseData.resultCode];
+//            }
             
         }
         if (paramError)

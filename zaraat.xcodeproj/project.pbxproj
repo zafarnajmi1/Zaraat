@@ -2280,6 +2280,7 @@
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2310,6 +2311,7 @@
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
