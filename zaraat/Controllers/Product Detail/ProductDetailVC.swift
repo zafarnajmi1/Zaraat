@@ -11,6 +11,7 @@ import  Cosmos
 import SDWebImage
 class ProductDetailVC: UIViewController {
     
+    @IBOutlet weak var lblstock: UILabel!
     
    var isb2b =  0
     var iswishlist = true
@@ -132,7 +133,7 @@ class ProductDetailVC: UIViewController {
                 
                 
                 
-                
+                self.lblstock.text = "Instock :" + (response.product?.product_stock)!
                 self.lbltitle.text =  response.product?.product_title_en
                 self.lblprice.text =  "Price : " + (response.product?.selling_price)!  + " PKR"
                 self.lbldetail.text = response.product?.product_description_en

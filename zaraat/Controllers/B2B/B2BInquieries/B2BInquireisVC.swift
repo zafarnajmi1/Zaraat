@@ -113,6 +113,10 @@ class B2BInquireisVC: UIViewController {
                 
             }
         }
+    
+    
+    
+    
         func GalleryPic()
         {
             if(UIImagePickerController.isSourceTypeAvailable(.photoLibrary))
@@ -243,7 +247,7 @@ extension B2BInquireisVC : UIImagePickerControllerDelegate,UINavigationControlle
         inqimg.image = imge
         self.profileimg =  imge
         //self.mydataUploaded()
-        self.uploadImg()
+        self.mydataUploaded()
         dismiss(animated: true, completion: nil)
     }
     
@@ -271,7 +275,8 @@ extension B2BInquireisVC : UIImagePickerControllerDelegate,UINavigationControlle
                 to: "https://apiengine.zaraat.com/api/customers/equiries/document", method: .post , headers: Headers)
                 .response { resp in
                     if (resp.error == nil) {
-                        print(resp.result)
+                        
+                        print(resp.error)
                        
                        
                     }else {

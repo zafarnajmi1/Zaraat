@@ -101,7 +101,7 @@ class ZMartVC: UIViewController {
                 if self.Martdata?.daily?.count ?? 0 != 0 {
                     self.topBrandOneImg.sd_setImage(with: URL(string:self.Martdata?.daily![0].featured_image ?? "Text"))
                     self.topBrandTwoImage.sd_setImage(with: URL(string: self.Martdata?.daily![1].featured_image ?? "Text"))
-                    self.topBrandThreeImg.sd_setImage(with: URL(string: self.Martdata?.daily![2].featured_image ?? "Text"))
+                    //self.topBrandThreeImg.sd_setImage(with: URL(string: self.Martdata?.daily![2].featured_image ?? "Text"))
                 }
 //                self.topBrandOneImg.sd_setImage(with: URL(string: self.Martdata?.daily?[0].featured_image ?? "Text"))
 //                self.topBrandTwoImage.sd_setImage(with: URL(string: self.Martdata?.daily?[1].featured_image ?? "Text"))

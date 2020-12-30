@@ -34,12 +34,12 @@
     NSDate* dateNow = [NSDate date];
     NSString* fingerprintDateString = [self formatFingerprintDate:dateNow];
     NSString* merchantTransKey = transactionSecretKey;
-    
+    NSString * Amoaunt = [self totalAmountFormatterWith:@"400"];
     NSString* fgComponents = [NSString stringWithFormat:@"%@%@%@%@",
                               [self  stringSha1:merchantTransKey],
                               merchantId,
                               merchantReferenceCode,
-                              fingerprintDateString];
+                              fingerprintDateString,Amoaunt];
     
     //NSLog(@"FP Components Before Hash: %@",fgComponents);
     

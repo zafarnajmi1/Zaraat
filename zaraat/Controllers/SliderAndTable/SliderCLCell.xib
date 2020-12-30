@@ -21,12 +21,16 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="yqR-mA-8Ot">
                                 <rect key="frame" x="0.0" y="0.0" width="442" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="6Ji-iX-KkJ"/>
+                                    <constraint firstAttribute="width" constant="442" id="ZIH-vE-HTm"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yqR-mA-8Ot" secondAttribute="trailing" id="8fi-nq-DRk"/>
-                            <constraint firstAttribute="bottom" secondItem="yqR-mA-8Ot" secondAttribute="bottom" id="cLv-nh-hCk"/>
+                            <constraint firstAttribute="bottom" secondItem="yqR-mA-8Ot" secondAttribute="bottom" id="Q5D-3Q-Qg4"/>
                             <constraint firstItem="yqR-mA-8Ot" firstAttribute="top" secondItem="Osv-BH-gq2" secondAttribute="top" id="eME-tR-p2T"/>
                             <constraint firstItem="yqR-mA-8Ot" firstAttribute="leading" secondItem="Osv-BH-gq2" secondAttribute="leading" id="ggb-Ta-bNr"/>
                         </constraints>

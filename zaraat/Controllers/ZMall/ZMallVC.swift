@@ -76,6 +76,50 @@ class ZMallVC: UIViewController {
       }
     
     
+    
+    
+    @IBAction func dailyOneAction(_ sender: UIButton) {
+        if (self.Zmalldata?.daily?.indices.contains(0))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           vc!.id =  self.Zmalldata?.daily![0].subcategory_id ?? 0
+                             vc?.typeno = 2
+                           self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    
+    @IBAction func DailytwoAction(_ sender: UIButton) {
+        if (self.Zmalldata?.daily?.indices.contains(1))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           vc!.id =  self.Zmalldata?.daily![1].subcategory_id ?? 0
+                             vc?.typeno = 2
+                           self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
+    
+    @IBAction func dailythreeAction(_ sender: UIButton) {
+        if (self.Zmalldata?.daily?.indices.contains(2))! {
+        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           vc!.id =  self.Zmalldata?.daily![2].subcategory_id ?? 0
+                             vc?.typeno = 2
+                           self.navigationController?.pushViewController(vc!, animated: true)
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func getZmallaPi() {
         ShareData.showProgress()
         userhandler.getZmall(Success: {response in
