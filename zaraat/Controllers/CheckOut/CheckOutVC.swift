@@ -166,6 +166,7 @@ class CheckOutVC: UIViewController {
                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
                let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
             vc?.hidesBottomBarWhenPushed = true
+            vc?.amount = payment
                self.navigationController?.pushViewController(vc!, animated: true)
                
                } else {
@@ -173,6 +174,7 @@ class CheckOutVC: UIViewController {
                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
                let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
             vc?.hidesBottomBarWhenPushed = true
+            vc?.amount = payment
                self.navigationController?.pushViewController(vc!, animated: true)
                }
         } else if btncashRadio.isSelected == true {

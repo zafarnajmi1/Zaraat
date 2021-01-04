@@ -129,7 +129,16 @@ class ZMallVC: UIViewController {
                 
                 
                 self.bannerimg.sd_setImage(with: URL(string: self.Zmalldata?.ad_1?.category_image ?? "Text"))
-                self.adimg.sd_setImage(with: URL(string: self.Zmalldata?.ad_2?.category_image ?? "Text"))
+                
+                if self.Zmalldata?.ad_2?.category_image == "" {
+                    self.adimg.isHidden = true
+                    
+                } else {
+                    
+                    self.adimg.isHidden =  false
+                    self.adimg.sd_setImage(with: URL(string: self.Zmalldata?.ad_2?.category_image ?? "Text"))
+                }
+                
                 if self.Zmalldata?.daily?.count ?? 0 != 0 {
                     self.topBrandOneImg.sd_setImage(with: URL(string:self.Zmalldata?.daily![0].featured_image ?? "Text"))
                     self.topBrandTwoImage.sd_setImage(with: URL(string: self.Zmalldata?.daily![1].featured_image ?? "Text"))

@@ -79,6 +79,7 @@
 		CE5145AD251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5145AC251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift */; };
 		CE5145B4251DDF2A001BE6AD /* ZMallClViewPartOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5145B3251DDF2A001BE6AD /* ZMallClViewPartOneCell.swift */; };
 		CE5145B6251DDF45001BE6AD /* ZMallClViewPartTwoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5145B5251DDF45001BE6AD /* ZMallClViewPartTwoCell.swift */; };
+		CE52591C259DEEEF004183C0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE52591B259DEEEF004183C0 /* WebKit.framework */; };
 		CE52BE8B25381DD500464D51 /* ViewAllProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BE8A25381DD500464D51 /* ViewAllProductsVC.swift */; };
 		CE52BE8D25381E0F00464D51 /* ViewAllClViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52BE8C25381E0F00464D51 /* ViewAllClViewCell.swift */; };
 		CE52C863255BCC8100E96CE4 /* MyinquiresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C862255BCC8100E96CE4 /* MyinquiresVC.swift */; };
@@ -379,6 +380,7 @@
 		CE5145AC251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMallClViewStoreForyouCell.swift; sourceTree = "<group>"; };
 		CE5145B3251DDF2A001BE6AD /* ZMallClViewPartOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMallClViewPartOneCell.swift; sourceTree = "<group>"; };
 		CE5145B5251DDF45001BE6AD /* ZMallClViewPartTwoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMallClViewPartTwoCell.swift; sourceTree = "<group>"; };
+		CE52591B259DEEEF004183C0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		CE52BE8A25381DD500464D51 /* ViewAllProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllProductsVC.swift; sourceTree = "<group>"; };
 		CE52BE8C25381E0F00464D51 /* ViewAllClViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllClViewCell.swift; sourceTree = "<group>"; };
 		CE52C862255BCC8100E96CE4 /* MyinquiresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyinquiresVC.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 			files = (
 				CE54C97B258CDA3F00ACA9AC /* InAppSDK.framework in Frameworks */,
 				F7279CB6D640ABF6AC6713BE /* Pods_zaraat.framework in Frameworks */,
+				CE52591C259DEEEF004183C0 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,6 +1637,7 @@
 		F695A65D06ADAA836F682504 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE52591B259DEEEF004183C0 /* WebKit.framework */,
 				CC92B668E9DF10CCB85775E2 /* Pods_zaraat.framework */,
 			);
 			name = Frameworks;
