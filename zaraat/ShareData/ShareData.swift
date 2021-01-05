@@ -28,6 +28,11 @@ class ShareData {
         EcommerceCate =  cate
     }
     
+    var billingshippignAddress : BillingShipping?
+    func saveBillingShipping(add:BillingShipping){
+        billingshippignAddress =  add
+    }
+    
     
     var userprofile: UserProfile?
     func userProfileData(cate:UserProfile){

@@ -87,6 +87,7 @@
 		CE52C867255BCCA300E96CE4 /* MyinquiresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE52C865255BCCA300E96CE4 /* MyinquiresCell.xib */; };
 		CE52C869255BEF7E00E96CE4 /* GetInquiresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C868255BEF7E00E96CE4 /* GetInquiresModel.swift */; };
 		CE52C86B255BFB7E00E96CE4 /* InquiresViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C86A255BFB7E00E96CE4 /* InquiresViewVC.swift */; };
+		CE53357225A4679C0086D43B /* SaveAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53357125A4679B0086D43B /* SaveAddressesVC.swift */; };
 		CE535D342552B85400B8AF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE535D332552B85400B8AF35 /* GoogleService-Info.plist */; };
 		CE535D352552B85500B8AF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE535D332552B85400B8AF35 /* GoogleService-Info.plist */; };
 		CE535D362552B85500B8AF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE535D332552B85400B8AF35 /* GoogleService-Info.plist */; };
@@ -388,6 +389,7 @@
 		CE52C865255BCCA300E96CE4 /* MyinquiresCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyinquiresCell.xib; sourceTree = "<group>"; };
 		CE52C868255BEF7E00E96CE4 /* GetInquiresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInquiresModel.swift; sourceTree = "<group>"; };
 		CE52C86A255BFB7E00E96CE4 /* InquiresViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiresViewVC.swift; sourceTree = "<group>"; };
+		CE53357125A4679B0086D43B /* SaveAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAddressesVC.swift; sourceTree = "<group>"; };
 		CE535D332552B85400B8AF35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE538BA62542E067006912CC /* B2BHomeButtonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeButtonsVC.swift; sourceTree = "<group>"; };
 		CE538BA82542FF77006912CC /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
@@ -1067,6 +1069,7 @@
 			children = (
 				CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */,
 				CE8DF4F425909B9100514D18 /* CyberSourceVC.swift */,
+				CE53357125A4679B0086D43B /* SaveAddressesVC.swift */,
 			);
 			path = HBLBillingForm;
 			sourceTree = "<group>";
@@ -1952,6 +1955,7 @@
 				CE8C9DB3250F661500973CD1 /* SenderTextCell.swift in Sources */,
 				CE69072825835BD500993C2E /* AddressModel.swift in Sources */,
 				CE5145AD251DDE0F001BE6AD /* ZMallClViewStoreForyouCell.swift in Sources */,
+				CE53357225A4679C0086D43B /* SaveAddressesVC.swift in Sources */,
 				CEAC33B9251CC3F5002D2E9C /* B2BInquireisVC.swift in Sources */,
 				CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */,
 				CE4A7E1E2537298C001F7A7D /* HomeCateModel.swift in Sources */,

@@ -11,288 +11,253 @@ import SkyFloatingLabelTextField
 import  InAppSDK
 import  PassKit
 import  WebKit
-let merchantIdentifier = "merchant.cybersource.net.test.dev"
-class HBLBillingFormVC: UIViewController,WKNavigationDelegate,WKUIDelegate, WKScriptMessageHandler {
+
+class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        extractJsonObjFromScriptMsg(message: message)
-    }
-    
-    func extractJsonObjFromScriptMsg(message: WKScriptMessage) {
-    
-    //var housePrices = [HousePrice]()
-    //step 1: check if the obj is a string
-    if let objStr = message.body as? String {
-        //step 2: convert the string to Data
-        let data: Data = objStr.data(using: .utf8)!
-        do {
-            let jsObj = try JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0))
-            if let jsonObjDict = jsObj as? Dictionary<String, Any> {
-                print(jsonObjDict["reason_code"] as Any)
-//                let housePrice = HousePrice(dict: jsonObjDict)
-//                housePrices.append(housePrice)
-//                } else if let jsonArr = jsObj as? [Dictionary<String, Any>] {
-//                    for jsonObj in jsonArr {
-//                        let hPrice = HousePrice(dict: jsonObj)
-//                        housePrices.append(hPrice)
-//                    }
-                }
-                } catch _ {
-                    print("having trouble converting it to a dictionary")
-                }
-            }
-        }
     
     var getAddrsses : BillingShipping?
     var amount = 0
     @IBOutlet weak var webView: WKWebView!
-    
-    
-
-    
-    
-    
-   
-   
+    var cartData : GetCartModel?
+    var customer_id = 0
     override func viewDidLoad() {
         super.viewDidLoad()
     webView.navigationDelegate = self
+       
         addBackButton()
         setNavigationBarWhiteColor()
-        //btncontinoue.roundButton()
+       
         self.title  = "HBL Payment Detail"
         webView.allowsBackForwardNavigationGestures = true
         webView.allowsLinkPreview = true
-//        let url:URL = URL(string: "https://zaraat.com/hblapiform")!
-//            let urlRequest:URLRequest = URLRequest(url: url)
-//            webView.load(urlRequest)
-        getAddresses()
+        
+       print(random(digits: 8))
+        
     }
        
     
-    //wv.loadUrl("https://zaraat.com/hblapiform?bill_to_forename=" + bfname + "&bill_to_surname=" + blname + "&bill_to_address_line1=" + baddr + "&bill_to_address_city=" + bcity + "&bill_to_address_state=" + bprovince + "&bill_to_address_postal_code=" + bpostalcode + "&bill_to_phone=" + bphone + "&ship_to_forename=" + sfname + "&ship_to_surname=" + slname + "&ship_to_address_line1=" + saddr + "&ship_to_address_city=" + scity + "&ship_to_address_state=" + sprovince + "&ship_to_address_postal_code=" + spostalcode + "&ship_to_phone=" + sphone + "&ship_to_email=" + semail + "&amount=" + amount + "&bill_to_email=" + bemail + "");
-    
-    func getAddresses() {
-        ShareData.showProgress()
-        userhandler.getAddress(Success: {response in
-            ShareData.hideProgress()
-            if response.success == 1 {
-                self.getAddrsses =  response
-                
-                self.settheValue()
-
-                
-
-//
-//                self.webView.evaluateJavaScript("document.getElementById('bill_to_address_city').value=\(self.getAddrsses?.billing?.billing_city ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('bill_to_address_state').value =\(self.getAddrsses?.billing?.billing_state ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('bill_to_address_postal_code').value=\(self.getAddrsses?.billing?.billing_zipcode ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('bill_to_phone').value =\(self.getAddrsses?.billing?.billing_phone ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('bill_to_email').value = '') ;")
-//
-//
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_forename').value=\(self.getAddrsses?.shipping?.shipping_person_name ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_surname').value=\(self.getAddrsses?.shipping?.shipping_person_name ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_address_line1').value=\(self.getAddrsses?.shipping?.shipping_address ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_address_city').value=\(self.getAddrsses?.shipping?.shipping_city ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_address_state').value=\(self.getAddrsses?.shipping?.shipping_state ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_address_postal_code').value=\(self.getAddrsses?.shipping?.shipping_zipcode ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_phone').value=\(self.getAddrsses?.shipping?.shipping_phone ?? "") ;")
-//                self.webView.evaluateJavaScript("document.getElementById('ship_to_email').value = '') ;")
-//                self.webView.evaluateJavaScript("document.getElementById('amount').value= '\(self.amount)') ;")
-                
-            } else {
-                ShareData.hideProgress()
-            }
-        }, Failure: {error in
-            ShareData.hideProgress()
-        })
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.customer_id = cartData?.cart![0].customer_id ?? 0
+        self.getAddrsses =  ShareData.shareInfo.billingshippignAddress
+        settheValue()
+    }
+   
+    func random(digits:Int) -> String {
+        var number = String()
+        for _ in 1...digits {
+           number += "\(Int.random(in: 1...9))"
+        }
+        return number
     }
     
     
     func settheValue() {
         
         
-        webView.evaluateJavaScript("document.getElementByName('amount').value = '\(amount)') ;")
-        let myurl = "https://zaraat.com/hblapiform?amount=\(amount)"
-//        let myurl = "https://zaraat.com/hblapiform?amount=\(amount)&bill_to_forename=\(self.getAddrsses?.billing?.billing_person_name ?? "")&bill_to_address_line1=\(self.getAddrsses?.billing?.billing_address ?? "")&bill_to_address_city=\(self.getAddrsses?.billing?.billing_city ?? "")&bill_to_address_state=\(self.getAddrsses?.billing?.billing_state ?? "")&bill_to_address_postal_code=\(self.getAddrsses?.billing?.billing_zipcode ?? "")&bill_to_phone=\(self.getAddrsses?.billing?.billing_phone ?? "")&bill_to_email=&ship_to_forename=\(self.getAddrsses?.shipping?.shipping_person_name ?? "")&ship_to_surname=\(self.getAddrsses?.shipping?.shipping_person_name ?? "")&ship_to_address_line1=\(self.getAddrsses?.shipping?.shipping_address ?? "")&ship_to_address_city=\(self.getAddrsses?.shipping?.shipping_city ?? "")&ship_to_address_state=\(self.getAddrsses?.shipping?.shipping_state ?? "")&ship_to_address_postal_code=\(self.getAddrsses?.shipping?.shipping_zipcode ?? "")&ship_to_phone=\(self.getAddrsses?.shipping?.shipping_phone ?? "")&ship_to_email="
+        let queryItems = [URLQueryItem(name: "amount", value: "\(amount)"), URLQueryItem(name: "bill_to_forename", value: self.getAddrsses?.billing?.billing_person_name),URLQueryItem(name: "bill_to_surname", value: self.getAddrsses?.billing?.billing_person_name),URLQueryItem(name: "bill_to_address_line1", value: self.getAddrsses?.billing?.billing_address),URLQueryItem(name: "bill_to_address_city", value: self.getAddrsses?.billing?.billing_city),URLQueryItem(name: "bill_to_address_state", value: self.getAddrsses?.billing?.billing_state),URLQueryItem(name: "bill_to_address_postal_code", value: self.getAddrsses?.billing?.billing_zipcode),URLQueryItem(name: "bill_to_phone", value: self.getAddrsses?.billing?.billing_phone),URLQueryItem(name: "bill_to_email", value: ShareData.shareInfo.userInfo?.customer?.email),URLQueryItem(name: "ship_to_forename", value: self.getAddrsses?.shipping?.shipping_person_name),URLQueryItem(name: "ship_to_surname", value: self.getAddrsses?.shipping?.shipping_person_name),URLQueryItem(name: "ship_to_address_line1", value: self.getAddrsses?.shipping?.shipping_address),URLQueryItem(name: "ship_to_address_city", value: self.getAddrsses?.shipping?.shipping_city),URLQueryItem(name: "ship_to_address_state", value: self.getAddrsses?.shipping?.shipping_state),URLQueryItem(name: "ship_to_address_postal_code", value: self.getAddrsses?.shipping?.shipping_zipcode),URLQueryItem(name: "ship_to_phone", value: self.getAddrsses?.shipping?.shipping_phone),URLQueryItem(name: "ship_to_email", value: ShareData.shareInfo.userInfo?.customer?.email),URLQueryItem(name: "ship_to_phone", value: self.getAddrsses?.shipping?.shipping_phone),URLQueryItem(name: "consumer_id", value: "\(customer_id)"),URLQueryItem(name: "customer_ip_address", value: "\(getIP() ?? "")"),URLQueryItem(name: "reference_number", value: "\(random(digits: 8))"),URLQueryItem(name: "transaction_uuid", value: random(digits: 8))]
+        
+         var urlComps = URLComponents(string: "https://zaraat.com/hblapiform")!
+         urlComps.queryItems = queryItems
+         let result = urlComps.url!
         
         
-        print(myurl)
-       let url = URL(string: myurl)
+        print(result)
+       
+        let request = URLRequest(url: result)
+        webView.load(request)
         
-        let urlRequest:URLRequest = URLRequest(url: url!)
-        webView.load(urlRequest)
         
     }
-    
-//    func webViewDidFinishLoad(webView: WKWebView!) {
-//        webView.evaluateJavaScript("document.getElementById('bill_to_forename').value = \(getAddrsses?.billing?.billing_person_name ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('bill_to_address_line1').value = \(getAddrsses?.billing?.billing_address ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('bill_to_address_city').value = \(getAddrsses?.billing?.billing_city ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('bill_to_address_state').value = \(getAddrsses?.billing?.billing_state ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('bill_to_address_postal_code').value = \(getAddrsses?.billing?.billing_zipcode ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('bill_to_phone').value = \(getAddrsses?.billing?.billing_phone ?? "") ;")
-//         webView.evaluateJavaScript("document.getElementById('bill_to_email').value = '') ;")
-//
-//
-//        webView.evaluateJavaScript("document.getElementById('ship_to_forename').value = \(getAddrsses?.shipping?.shipping_person_name ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('ship_to_surname').value = \(getAddrsses?.shipping?.shipping_person_name ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('ship_to_address_line1').value = \(getAddrsses?.shipping?.shipping_address ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('ship_to_address_city').value = \(getAddrsses?.shipping?.shipping_city ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('ship_to_address_state').value = \(getAddrsses?.shipping?.shipping_state ?? "") ;")
-//         webView.evaluateJavaScript("document.getElementById('ship_to_address_postal_code').value = \(getAddrsses?.shipping?.shipping_zipcode ?? "") ;")
-//         webView.evaluateJavaScript("document.getElementById('ship_to_phone').value = \(getAddrsses?.shipping?.shipping_phone ?? "") ;")
-//        webView.evaluateJavaScript("document.getElementById('ship_to_email').value = '') ;")
-//        webView.evaluateJavaScript("document.getElementById('amount').value = '\(amount)') ;")
-//       }
-    
-    
-    
-    
+        
+     
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let urlStr = navigationAction.request.url?.absoluteString {
-            //urlStr is what you want
+            print(urlStr)
+            if urlStr == "https://secureacceptance.cybersource.com/declined" {
+                PlaceOrderApi()
+            } else {
+                
+            }
         }
 
         decisionHandler(.allow)
     }
     
     
+    
+    
+    
+    func PlaceOrderApi() {
+        ShareData.showProgress()
+           let userToken = ShareData.shareInfo.userInfo?.token
+               let headers = [
+
+                 "content-type": "application/json",
+                 "accept": "application/json",
+                   "Authorization"  : "Bearer  " + userToken!
+               ]
+
+     
+           var para:NSMutableDictionary = NSMutableDictionary()
+           let prodArray:NSMutableArray = NSMutableArray()
+
+          
+        para = [ "shipping_id": getAddrsses?.shipping?.shipping_id ?? "",
+                 "billing_id":getAddrsses?.billing?.billing_id! ?? "",
+           "payment_method": "HBL",
+           "cn_cod":  "",
+           "transection_uuid": random(digits: 8),
+           "total":amount]
+           for product in cartData?.cart ?? []
+           {
+               let prod: NSMutableDictionary = NSMutableDictionary()
+               prod.setValue("\(product.product?.products_id! ?? 0)", forKey: "product_id")
+               prod.setValue(product.quantity, forKey: "order_quantity")
+               prod.setValue(product.product?.selling_price, forKey: "price")
+               prodArray.add(prod)
+           }
+
+           para.setObject(prodArray, forKey: "items" as NSCopying)
+           
+           
+           print(para)
+           
+               do {
+               let postData =  try JSONSerialization.data(withJSONObject: para, options: [])
 
 
-    
+                   print(postData)
+                   let request = NSMutableURLRequest(url: NSURL(string: Constant.MainUrl + Constant.URLs.placeOrder)! as URL,
+                                                       cachePolicy: .useProtocolCachePolicy,
+                                                   timeoutInterval: 10000.0)
+               request.httpMethod = "POST"
+               request.allHTTPHeaderFields = headers
+               request.httpBody = postData as Data
+               let session = URLSession.shared
+               let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error)  in
+                 if (error != nil) {
+                   print(error?.localizedDescription ?? "")
+                    ShareData.hideProgress()
+                   DispatchQueue.main.async {
+                   self.alertMessage(message: error!.localizedDescription, completionHandler: {})
+                   }
+                 } else {
+                    
+                 
+                   do {
+                   let jsonDecoder = JSONDecoder()
+                   let responseModel = try jsonDecoder.decode(AddtoCart.self, from: data!)
+                       ShareData.hideProgress()
+                       DispatchQueue.main.async {
+                           if responseModel.success == 1 {
+                               
+                           print(responseModel)
+                               ShareData.shareInfo.count =  0
+                               ShareData.shareInfo.unseenCart =  0
+                               //self.alertMessage(message: "Order Place Successfully", completionHandler: {})
+                           ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: responseModel.message ?? "", messagetype: 1)
+                              self.movetoHome()
+                           } else {
+                               ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: responseModel.message ?? "", messagetype: 0)
+                           }
+                       
+                       }
+                       
+                      
+                   } catch {
+                        ShareData.hideProgress()
+                   }
 
-    
-}
-extension HBLBillingFormVC {
-
-//func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//
-//    print("insert element")
-//
-//    let scriptFunction = "document.getElementById('id_i').value = '\(2)';"
-//    webView.evaluateJavaScript(scriptFunction) { (result, error) in
-//
-//        if error != nil {
-//
-//            //ProgressHUD.showError(error as? String)
-//
-//        } else {
-//
-//            print("trying to submit")
-//            let submitFunction = "document.forms[0].submit();"
-//            webView.evaluateJavaScript(submitFunction) { (result, error) in
-//                if error != nil {
-//                    print(error?.localizedDescription)
-//
-//                } else {
-//                    print("submited")
-//                }
-//            }
-//        }
-//    }
-//
-//}
-//    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-//        webView.evaluateJavaScript("document.getElementsByTagName('html')[0].innerHTML") { innerHTML, error in
-//            print(innerHTML!)
-//        }
-//    }
-    
-    
-    
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//        print("redirect didFinish")
-//
-//        webView.evaluateJavaScript("document.documentElement.outerHTML.toString()",
-//                                   completionHandler: { (html: Any?, error: Error?) in
-//                                    print(html as Any)
-//
-//
-//        })
-//    }
-//
-    
-    
-   
+                   }
+               })
 
 
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
-//        webView.evaluateJavaScript("document.documentElement.outerHTML.toString()") { (anyObject, error) in
-//            guard let htmlStr = anyObject as? String else {
-//                return
-//            }
-//            let data: Data = htmlStr.data(using: .utf8)!
-//            print(data.base64EncodedData())
-//
-//            do {
-//                let jsObj = try JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0))
-//                if let jsonObjDict = jsObj as? Dictionary<String, Any> {
-//                    print(jsonObjDict["reason_code"]!)
-////                    let threeDSResponse = ThreeDSResponse(dict: jsonObjDict)
-////                    print(threeDSResponse)
-//                }
-//            } catch _ {
-//                print("having trouble converting it to a dictionary")
-//            }
-//        }
-//    }
-////
+
+               dataTask.resume()
+
+               } catch {
+                        ShareData.hideProgress()
+                   }
+               
+           }
     
     
     
-//    func webView(webView:WKWebView,
-//          shouldStartLoadWithRequest request:NSURLRequest,
-//          navigationType:WKWebView.n) -> Bool
-//    {
-//    if (navigationType == .FormSubmitted)
-//        {
-//        print("was the 'submit' form")
-//        }
-//
-//    let u = request.mainDocumentURL
-//    print("local or remote url was " ,u)
-//
-//    return true // allow the form to in fact send the form
-//    }
+     override func viewWillDisappear(_ animated: Bool) {
+               super.viewWillDisappear(animated)
+               self.navigationController?.isNavigationBarHidden = true
+           }
     
     
     
     
-}
-extension URL {
+    
+    func movetoHome(){
+           if UIDevice.current.userInterfaceIdiom == .pad {
 
-    func appending(_ queryItem: String, value: String?) -> URL {
+                   let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+                   let vc =  storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC
+                   self.navigationController?.pushViewController(vc!, animated: true)
 
-        guard var urlComponents = URLComponents(string: absoluteString) else { return absoluteURL }
+           } else {
 
-        // Create array of existing query items
-        var queryItems: [URLQueryItem] = urlComponents.queryItems ??  []
+                   let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                   let vc =  storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC
+                    
+                   self.navigationController?.pushViewController(vc!, animated: true)
+           }
+       }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @IBAction func editAddress(_ sender: UIButton) {
+        
+            let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "SaveAddressesVC") as? SaveAddressesVC
+            vc?.hidesBottomBarWhenPushed = true
 
-        // Create query item
-        let queryItem = URLQueryItem(name: queryItem, value: value)
-
-        // Append the new query item in the existing query items array
-        queryItems.append(queryItem)
-
-        // Append updated query items array in the url component object
-        urlComponents.queryItems = queryItems
-
-        // Returns the url from new url components
-        return urlComponents.url!
+            self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
-//    func appending(_ queryItems: [URLQueryItem]) -> URL? {
-//        guard var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: true) else {
-//            // URL is not conforming to RFC 3986 (maybe it is only conforming to RFC 1808, RFC 1738, and RFC 2732)
-//            return nil
-//        }
-//        // append the query items to the existing ones
-//        urlComponents.queryItems = (urlComponents.queryItems ?? []) + queryItems
-//
-//        // return the url from new url components
-//        return urlComponents.url
-//    }
+    
+      func getIP()-> String? {
+
+      var address: String?
+      var ifaddr: UnsafeMutablePointer<ifaddrs>? = nil
+      if getifaddrs(&ifaddr) == 0 {
+
+          var ptr = ifaddr
+          while ptr != nil {
+              defer { ptr = ptr?.pointee.ifa_next } // memory has been renamed to pointee in swift 3 so changed memory to pointee
+
+              let interface = ptr?.pointee
+              let addrFamily = interface?.ifa_addr.pointee.sa_family
+              if addrFamily == UInt8(AF_INET) || addrFamily == UInt8(AF_INET6) {
+
+                  if let name: String = String(cString: (interface?.ifa_name)!), name == "en0" {  // String.fromCString() is deprecated in Swift 3. So use the following code inorder to get the exact IP Address.
+                      var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+                      getnameinfo(interface?.ifa_addr, socklen_t((interface?.ifa_addr.pointee.sa_len)!), &hostname, socklen_t(hostname.count), nil, socklen_t(0), NI_NUMERICHOST)
+                      address = String(cString: hostname)
+                  }
+
+              }
+          }
+          freeifaddrs(ifaddr)
+        }
+
+        return address
+      }
+    
 }
+

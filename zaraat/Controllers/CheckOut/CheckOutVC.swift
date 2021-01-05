@@ -74,12 +74,28 @@ class CheckOutVC: UIViewController {
          }
         
         
-        
+        getAddresses()
         
         
     }
     
     
+    func getAddresses() {
+        ShareData.showProgress()
+        userhandler.getAddress(Success: {response in
+            ShareData.hideProgress()
+            if response.success == 1 {
+                
+                ShareData.shareInfo.saveBillingShipping(add: response)
+                
+
+            } else {
+                ShareData.hideProgress()
+            }
+        }, Failure: {error in
+            ShareData.hideProgress()
+        })
+    }
     
     @IBAction func HBLAction(_ sender: UIButton) {
         
@@ -161,48 +177,64 @@ class CheckOutVC: UIViewController {
     @IBAction func PlaceOrderAction(_ sender: UIButton) {
         
         if btnHBLRadio.isSelected == true {
-        if UIDevice.current.userInterfaceIdiom == .pad {
-                   
-               let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-               let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
-            vc?.hidesBottomBarWhenPushed = true
-            vc?.amount = payment
-               self.navigationController?.pushViewController(vc!, animated: true)
-               
-               } else {
-               
-               let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-               let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
-            vc?.hidesBottomBarWhenPushed = true
-            vc?.amount = payment
-               self.navigationController?.pushViewController(vc!, animated: true)
-               }
+            
+            if   ShareData.shareInfo.billingshippignAddress == nil {
+                
+                alertMessage(message: "Please Fill The Address", completionHandler: {
+                    let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "SaveAddressesVC") as? SaveAddressesVC
+                    vc?.hidesBottomBarWhenPushed = true
+                    
+                    self.navigationController?.pushViewController(vc!, animated: true)
+                })
+            } else {
+            
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                               
+                            let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+                            let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
+                            vc?.hidesBottomBarWhenPushed = true
+                            vc?.amount = payment
+                            vc!.cartData =  self.cartData
+                            self.navigationController?.pushViewController(vc!, animated: true)
+                           
+                  } else {
+                           
+                            let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                            let vc =  storyBoard.instantiateViewController(withIdentifier: "HBLBillingFormVC") as? HBLBillingFormVC
+                            vc?.hidesBottomBarWhenPushed = true
+                            vc?.amount = payment
+                            vc!.cartData =  self.cartData
+                            self.navigationController?.pushViewController(vc!, animated: true)
+                        }
+            }
+            
         } else if btncashRadio.isSelected == true {
             
             
             if UIDevice.current.userInterfaceIdiom == .pad {
                             
-                        let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-                        let vc =  storyBoard.instantiateViewController(withIdentifier: "TCSBillingVC") as? TCSBillingVC
-                        vc?.hidesBottomBarWhenPushed = true
-                vc?.price = payment
-                vc?.pieces = qty
-                vc?.ProductsName = productName
-                vc!.cartData =  self.cartData
-                vc!.paymentMethod = "COD"
-                        self.navigationController?.pushViewController(vc!, animated: true)
-                        
+                                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
+                                let vc =  storyBoard.instantiateViewController(withIdentifier: "TCSBillingVC") as? TCSBillingVC
+                                vc?.hidesBottomBarWhenPushed = true
+                                vc?.price = payment
+                                vc?.pieces = qty
+                                vc?.ProductsName = productName
+                                vc!.cartData =  self.cartData
+                                vc!.paymentMethod = "COD"
+                                self.navigationController?.pushViewController(vc!, animated: true)
+
                         } else {
                         
-                        let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
-                        let vc =  storyBoard.instantiateViewController(withIdentifier: "TCSBillingVC") as? TCSBillingVC
-                vc?.hidesBottomBarWhenPushed = true
-                 vc?.price = payment
-                vc?.pieces = qty
-                vc?.ProductsName = productName
-                vc!.cartData =  self.cartData
-                vc!.paymentMethod = "COD"
-                        self.navigationController?.pushViewController(vc!, animated: true)
+                                let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
+                                let vc =  storyBoard.instantiateViewController(withIdentifier: "TCSBillingVC") as? TCSBillingVC
+                                vc?.hidesBottomBarWhenPushed = true
+                                vc?.price = payment
+                                vc?.pieces = qty
+                                vc?.ProductsName = productName
+                                vc!.cartData =  self.cartData
+                                vc!.paymentMethod = "COD"
+                                self.navigationController?.pushViewController(vc!, animated: true)
                         }
             
             
