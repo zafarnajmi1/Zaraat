@@ -31,7 +31,7 @@ class FeaturedProductsClView: UICollectionViewCell {
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
         lbldiscountPKr.attributedText =  attributeString
         self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
-        self.lblPkr.text = obj.selling_price
+        self.lblPkr.text = "PKR :" + obj.selling_price!
     }
 
 }

@@ -62,7 +62,7 @@ class userhandler {
     
     class  func getHomeLanding( Success: @escaping (HomeLandingModel) -> Void, Failure: @escaping(NetworkError) -> Void){
             let url = Constant.MainUrl + Constant.URLs.LandingPage
-            print("pages Url", url)
+            print("pages Url Home", url)
             Networkhandler.GetRequiest(url: url, parameters: nil,success: {(successResponse) in
     
                 do {

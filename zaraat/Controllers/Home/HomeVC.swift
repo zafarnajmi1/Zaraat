@@ -77,10 +77,10 @@ class HomeVC: UIViewController {
       tblView.register(UINib.init(nibName: "WeeklySellerCell", bundle: nil), forCellReuseIdentifier: "WeeklySellerCell")
 
          setSlider()
-        //homeapi()
+       
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "MoreTab"), object: nil)
         
-        
+
     }
     
     
@@ -112,7 +112,7 @@ class HomeVC: UIViewController {
     
     
     @objc func showSpinningWheel(_ notification: NSNotification) {
-           
+
            if let dict = notification.userInfo as NSDictionary? {
             if let id = dict["Index"]{
                 if id as! Int == 0 {

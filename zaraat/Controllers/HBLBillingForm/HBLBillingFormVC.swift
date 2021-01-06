@@ -75,8 +75,9 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let urlStr = navigationAction.request.url?.absoluteString {
             print(urlStr)
+            
             if urlStr == "https://secureacceptance.cybersource.com/declined" {
-                PlaceOrderApi()
+                //PlaceOrderApi()
             } else {
                 
             }
@@ -85,8 +86,50 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
         decisionHandler(.allow)
     }
     
+    struct Root : Codable {
+        let reason_code:String?
+        
+    }
     
-    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!){
+        webView.evaluateJavaScript("document.body.innerHTML") { (anyObject, error) in
+            guard let htmlStr = anyObject as? String else {
+                return
+            }
+            print(htmlStr.html2String)
+            do {
+                let dec = JSONDecoder()
+                dec.keyDecodingStrategy = .useDefaultKeys
+                let res = try dec.decode(Root.self, from:Data(htmlStr.html2String.utf8))
+                print(res.reason_code!)
+                
+                if res.reason_code == "100" {
+                    self.PlaceOrderApi()
+                } else {
+                    self.alertMessage(message: "Sorry! We Are Unable To Proceed, Try Again!", completionHandler: {
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                }
+                
+                
+                
+                print(res)
+            } catch  {
+                print("having trouble converting it to a dictionary" , error)
+            }
+//            let data: Data = htmlStr.html2String.data(using: .utf8)!
+//            do {
+//                let jsObj = try JSONSerialization.jsonObject(with: data, options: .init(rawValue: 0))
+//                if let jsonObjDict = jsObj as? Dictionary<String, Any> {
+//                    //let threeDSResponse = ThreeDSResponse(dict: jsonObjDict)
+//                    print(jsonObjDict["reason_code"])
+//                }
+//            } catch _ {
+//                print("having trouble converting it to a dictionary")
+//            }
+            
+        }
+    }
     
     
     func PlaceOrderApi() {

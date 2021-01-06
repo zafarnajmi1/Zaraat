@@ -31,7 +31,7 @@ class topRatedClView: UICollectionViewCell {
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
         lblPkr.attributedText =  attributeString
         
-        self.lblPrice.text =  obj.selling_price
+        self.lblPrice.text =  "PKR :" + obj.selling_price!
         self.lbltitle.text =  obj.product_title_en
         self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
     }
