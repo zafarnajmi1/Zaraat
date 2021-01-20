@@ -52,14 +52,14 @@ class CyberSourceVC: UIViewController, InAppSDKGatewayDelegate {
             
             
     
-    func getBillToData() -> InAppSDKAddress {
-        let getBillToData =  InAppSDKAddress()
-        
-        getBillToData.firstName = "zafar"
-        getBillToData.lastName = "najmi"
-        getBillToData.postalCode = "54000"
-        return getBillToData
-    }
+//    func getBillToData() -> InAppSDKAddress {
+//        let getBillToData =  InAppSDKAddress()
+//        
+//        getBillToData.firstName = "zafar"
+//        getBillToData.lastName = "najmi"
+//        getBillToData.postalCode = "54000"
+//        return getBillToData
+//    }
     
     
             

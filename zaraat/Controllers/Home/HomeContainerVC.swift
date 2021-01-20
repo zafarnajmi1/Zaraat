@@ -15,23 +15,26 @@ class HomeContainerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         if pageIndex == 0 {
-                 
+           
             HomeView.alpha =  1
             HomeCateView.alpha = 0
+            
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MoreTab"), object: nil, userInfo: ["Index":pageIndex])
+            
               
         } else{
                   HomeView.alpha =  0
                   HomeCateView.alpha = 1
+            
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Cate"), object: nil, userInfo: ["Cateid":ShareData.shareInfo.EcommerceCate?.categories?[pageIndex].categories_id ?? 0] )
                   
               }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
 

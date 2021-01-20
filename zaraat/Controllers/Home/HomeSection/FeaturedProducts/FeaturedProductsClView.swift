@@ -18,20 +18,22 @@ class FeaturedProductsClView: UICollectionViewCell {
     @IBOutlet weak var subView: ShadowView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.rating.isUserInteractionEnabled = false 
         subView.setroundCornerView(corner: 8)
         img.layer.cornerRadius = 8
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR 4200")
                       attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
-                      lbldiscountPKr.attributedText =  attributeString
+                      //lbldiscountPKr.attributedText =  attributeString
     }
     
     func loadData(obj:Featured_products){
         self.lbltitle.text =  obj.product_title_en
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR  : \(obj.vendor_price ?? "")")
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
-        lbldiscountPKr.attributedText =  attributeString
+        //lbldiscountPKr.attributedText =  attributeString
         self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
         self.lblPkr.text = "PKR :" + obj.selling_price!
+        self.rating.rating = obj.avg_rating ?? 0
     }
 
 }

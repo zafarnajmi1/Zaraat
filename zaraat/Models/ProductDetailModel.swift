@@ -46,6 +46,7 @@ struct ProductDetail : Codable {
         let stock_threshold : String?
         let vendor_price : String?
         let selling_price : String?
+        let share_url: String?
         let product_length : String?
         let product_width : String?
         let product_weight : String?
@@ -63,6 +64,11 @@ struct ProductDetail : Codable {
         let feature : FeatureDetail?
         let images : [ImagesDetail]?
          let market : String?
+    
+    let variations : Variations?
+    let reviews : [Reviews]?
+    let avg_rating : Double?
+    
          let liked : Int?
         enum CodingKeys: String, CodingKey {
 
@@ -80,6 +86,7 @@ struct ProductDetail : Codable {
             case stock_threshold = "stock_threshold"
             case vendor_price = "vendor_price"
             case selling_price = "selling_price"
+            case share_url = "share_url"
             case product_length = "product_length"
             case product_width = "product_width"
             case product_weight = "product_weight"
@@ -97,6 +104,9 @@ struct ProductDetail : Codable {
             case feature = "feature"
             case images = "images"
             case market = "market"
+            case variations = "variations"
+            case reviews = "reviews"
+            case avg_rating = "avg_rating"
             case liked = "liked"
         }
 
@@ -116,6 +126,7 @@ struct ProductDetail : Codable {
             stock_threshold = try values.decodeIfPresent(String.self, forKey: .stock_threshold)
             vendor_price = try values.decodeIfPresent(String.self, forKey: .vendor_price)
             selling_price = try values.decodeIfPresent(String.self, forKey: .selling_price)
+            share_url = try values.decodeIfPresent(String.self, forKey: .share_url)
             product_length = try values.decodeIfPresent(String.self, forKey: .product_length)
             product_width = try values.decodeIfPresent(String.self, forKey: .product_width)
             product_weight = try values.decodeIfPresent(String.self, forKey: .product_weight)
@@ -133,10 +144,232 @@ struct ProductDetail : Codable {
             feature = try values.decodeIfPresent(FeatureDetail.self, forKey: .feature)
             images = try values.decodeIfPresent([ImagesDetail].self, forKey: .images)
             market = try values.decodeIfPresent(String.self, forKey: .market)
+            variations = try values.decodeIfPresent(Variations.self, forKey: .variations)
+            reviews = try values.decodeIfPresent([Reviews].self, forKey: .reviews)
+            avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
             liked = try values.decodeIfPresent(Int.self, forKey: .liked)
         }
 
     }
+
+
+
+struct Variations : Codable {
+    let variation_id : Int?
+    let product_id : Int?
+    let variation_title_en : String?
+    let variation_title_urdu : String?
+    let variation_description_en : String?
+    let variation_description_urdu : String?
+    let variation_price : String?
+    let vendor_price : String?
+    let variation_stock : String?
+    let created_at : String?
+    let updated_at : String?
+    let attributes : [Attributes]?
+
+    enum CodingKeys: String, CodingKey {
+
+        case variation_id = "variation_id"
+        case product_id = "product_id"
+        case variation_title_en = "variation_title_en"
+        case variation_title_urdu = "variation_title_urdu"
+        case variation_description_en = "variation_description_en"
+        case variation_description_urdu = "variation_description_urdu"
+        case variation_price = "variation_price"
+        case vendor_price = "vendor_price"
+        case variation_stock = "variation_stock"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+        case attributes = "attributes"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        variation_id = try values.decodeIfPresent(Int.self, forKey: .variation_id)
+        product_id = try values.decodeIfPresent(Int.self, forKey: .product_id)
+        variation_title_en = try values.decodeIfPresent(String.self, forKey: .variation_title_en)
+        variation_title_urdu = try values.decodeIfPresent(String.self, forKey: .variation_title_urdu)
+        variation_description_en = try values.decodeIfPresent(String.self, forKey: .variation_description_en)
+        variation_description_urdu = try values.decodeIfPresent(String.self, forKey: .variation_description_urdu)
+        variation_price = try values.decodeIfPresent(String.self, forKey: .variation_price)
+        vendor_price = try values.decodeIfPresent(String.self, forKey: .vendor_price)
+        variation_stock = try values.decodeIfPresent(String.self, forKey: .variation_stock)
+        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        attributes = try values.decodeIfPresent([Attributes].self, forKey: .attributes)
+    }
+
+}
+
+
+struct Reviews : Codable {
+    let rating_id : Int?
+    let product_id : Int?
+    let user_id : String?
+    let customer_id : Int?
+    let ratings : Int?
+    let reviews : String?
+    let created_at : String?
+    let updated_at : String?
+    let customer : Customer?
+
+    enum CodingKeys: String, CodingKey {
+
+        case rating_id = "rating_id"
+        case product_id = "product_id"
+        case user_id = "user_id"
+        case customer_id = "customer_id"
+        case ratings = "ratings"
+        case reviews = "reviews"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+        case customer = "customer"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        rating_id = try values.decodeIfPresent(Int.self, forKey: .rating_id)
+        product_id = try values.decodeIfPresent(Int.self, forKey: .product_id)
+        user_id = try values.decodeIfPresent(String.self, forKey: .user_id)
+        customer_id = try values.decodeIfPresent(Int.self, forKey: .customer_id)
+        ratings = try values.decodeIfPresent(Int.self, forKey: .ratings)
+        reviews = try values.decodeIfPresent(String.self, forKey: .reviews)
+        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        customer = try values.decodeIfPresent(Customer.self, forKey: .customer)
+    }
+}
+
+
+
+
+
+
+struct Attributes : Codable {
+    let variation_attribute_id : Int?
+    let variation_id : Int?
+    let attribute_id : Int?
+    let created_at : String?
+    let updated_at : String?
+    let attribute_name : Attribute_name?
+    let attribute_values : [Attribute_values]?
+
+    enum CodingKeys: String, CodingKey {
+
+        case variation_attribute_id = "variation_attribute_id"
+        case variation_id = "variation_id"
+        case attribute_id = "attribute_id"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+        case attribute_name = "attribute_name"
+        case attribute_values = "attribute_values"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        variation_attribute_id = try values.decodeIfPresent(Int.self, forKey: .variation_attribute_id)
+        variation_id = try values.decodeIfPresent(Int.self, forKey: .variation_id)
+        attribute_id = try values.decodeIfPresent(Int.self, forKey: .attribute_id)
+        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        attribute_name = try values.decodeIfPresent(Attribute_name.self, forKey: .attribute_name)
+        attribute_values = try values.decodeIfPresent([Attribute_values].self, forKey: .attribute_values)
+    }
+
+}
+
+
+struct Attribute_values : Codable {
+    let variation_attribute_id : Int?
+    let attribute_values_id : Int?
+    let created_at : String?
+    let updated_at : String?
+    let actual_value : Actual_value?
+
+    enum CodingKeys: String, CodingKey {
+
+        case variation_attribute_id = "variation_attribute_id"
+        case attribute_values_id = "attribute_values_id"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+        case actual_value = "actual_value"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        variation_attribute_id = try values.decodeIfPresent(Int.self, forKey: .variation_attribute_id)
+        attribute_values_id = try values.decodeIfPresent(Int.self, forKey: .attribute_values_id)
+        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        actual_value = try values.decodeIfPresent(Actual_value.self, forKey: .actual_value)
+    }
+
+}
+
+
+
+struct Attribute_name : Codable {
+    let attribute_id : Int?
+    let attribute_title : String?
+    let status : Int?
+    let created_at : String?
+    let updated_at : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case attribute_id = "attribute_id"
+        case attribute_title = "attribute_title"
+        case status = "status"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        attribute_id = try values.decodeIfPresent(Int.self, forKey: .attribute_id)
+        attribute_title = try values.decodeIfPresent(String.self, forKey: .attribute_title)
+        status = try values.decodeIfPresent(Int.self, forKey: .status)
+        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+    }
+
+}
+
+
+struct Actual_value : Codable {
+    let attribute_values_id : Int?
+    let attribute_id : Int?
+    let attribute_values : String?
+    let value_names : String?
+    let created_at : String?
+    let updated_at : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case attribute_values_id = "attribute_values_id"
+        case attribute_id = "attribute_id"
+        case attribute_values = "attribute_values"
+        case value_names = "value_names"
+        case created_at = "created_at"
+        case updated_at = "updated_at"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        attribute_values_id = try values.decodeIfPresent(Int.self, forKey: .attribute_values_id)
+        attribute_id = try values.decodeIfPresent(Int.self, forKey: .attribute_id)
+        attribute_values = try values.decodeIfPresent(String.self, forKey: .attribute_values)
+        value_names = try values.decodeIfPresent(String.self, forKey: .value_names)
+        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
+        updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+    }
+
+}
+
+
+
+
 
 struct ImagesDetail : Codable {
     let gallery_id : Int?

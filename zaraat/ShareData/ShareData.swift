@@ -14,9 +14,9 @@ class ShareData {
     private init (){}
     var  userInfo : LoginModel?
     
-    func userData(User: LoginModel){
-        userInfo = User
-    }
+//    func userData(User: LoginModel){
+//        userInfo = User
+//    }
     
     var b2bCate: B2BCateModel?
     func b2bCateData(cate:B2BCateModel){
@@ -100,6 +100,38 @@ class ShareData {
         }
     }
     
+    
+    var guest : String? {
+        set {
+            UserDefaults.standard.set(newValue, forKey:"guest" )
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.string(forKey: "guest")
+        }
+    }
+    
+    
+    
+    var LoginType : String? {
+          set {
+              UserDefaults.standard.set(newValue, forKey:"LoginType" )
+              UserDefaults.standard.synchronize()
+          }
+          get {
+              return UserDefaults.standard.string(forKey: "LoginType")
+          }
+      }
+    
+    var token : String? {
+             set {
+                 UserDefaults.standard.set(newValue, forKey:"token" )
+                 UserDefaults.standard.synchronize()
+             }
+             get {
+                 return UserDefaults.standard.string(forKey: "token")
+             }
+         }
 private var unseenCartCount : Int = 0
    var unseenCart : Int {
        set {

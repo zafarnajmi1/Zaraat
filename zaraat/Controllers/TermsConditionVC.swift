@@ -17,6 +17,9 @@ class TermsConditionVC: UIViewController {
         setNavigationBarWhiteColor()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         
+    }
    
 }

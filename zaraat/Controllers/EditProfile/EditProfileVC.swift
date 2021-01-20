@@ -126,11 +126,15 @@ class EditProfileVC: UIViewController {
             present(alert, animated: true, completion: nil)
             
         }
+    
+    
         func cancel()
         {
             self.galleryimage.dismiss(animated: true, completion: nil)
         }
         
+    
+    
         func cemeraPic()
         {
             if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -148,6 +152,11 @@ class EditProfileVC: UIViewController {
                 
             }
         }
+    
+    
+    
+    
+    
         func GalleryPic()
         {
             if(UIImagePickerController.isSourceTypeAvailable(.photoLibrary))

@@ -123,6 +123,8 @@ class Constant {
         static let address = "profile/addresses"
         static let storeAddress = "profile/addresses/store?"
         static let placeOrder = "orders/place"
+        
+        static let SessionToken = "auth/me"
     }
     
     struct NetworkErrorType {

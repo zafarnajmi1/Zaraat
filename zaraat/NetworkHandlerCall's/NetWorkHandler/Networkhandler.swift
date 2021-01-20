@@ -21,7 +21,7 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
        //ShareData.shareInfo.userInfo?.collection?.authorization
         //print(UserDefaults.standard.value(forKey: "userAuthToken"))
         //let brear = (ShareData.shareInfo.userInfo?.token_type ?? "") + " " + (ShareData.shareInfo.userInfo?.token ?? "")
-        if let userToken = ShareData.shareInfo.userInfo?.token{
+        if let userToken = usertoken(){
             Headers = [
                 //"Accept": "application/json",
                 "Authorization"  : "Bearer  " + userToken ,  //"Authorization"
@@ -92,15 +92,19 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
     
     
     
+    fileprivate static func usertoken() -> String? {
+        return ShareData.shareInfo.token
+    }
+    
     class func GetRequiest(url: String, parameters: Parameters?, success: @escaping (AFDataResponse<Any>)->Void, Falioure: @escaping (NetworkError) -> Void)   {
         
         let Manger = Alamofire.Session.default
         //UserDefaults.standard.value(forKey: "userAuthToken") as? String
         let  Headers : HTTPHeaders
-        if let userToken = ShareData.shareInfo.userInfo?.token{
+        if let userToken = usertoken(){
                   Headers = [
                       "Accept": "application/json",
-                      "Authorization"  : "Bearer  " + userToken   //"Authorization"
+                      "Authorization"  : "Bearer " + userToken   //"Authorization"
                   ]
               } else {
                   Headers = [
@@ -276,7 +280,7 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
             
             var Headers : HTTPHeaders
             let Manger = Alamofire.Session.default
-            if let userToken = ShareData.shareInfo.userInfo?.token {
+            if let userToken = usertoken() {
                 Headers = [
                     "Accept": "application/json",
                     "Authorization" : userToken,

@@ -42,7 +42,7 @@ extension InboxVC :  UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "ChatVC") as? ChatVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "ChatVC") as? ChatVC
         vc?.hidesBottomBarWhenPushed =  true
         self.navigationController?.pushViewController(vc!, animated: true)
     }

@@ -8,13 +8,16 @@
 
 import UIKit
 import  BadgeHub
+var searchText = ""
+@available(iOS 13.0, *)
 class ViewController: UIViewController {
     var notificationBadge : BadgeHub?
     @IBOutlet weak var menuBarView: MenuTabsView!
     
     @IBOutlet weak var b2bView: UIView!
     
-    @IBOutlet weak var txtsearch: UITextField!
+    @IBOutlet weak var txtSearchData: UITextField!
+    //@IBOutlet weak var txtsearch: UITextField!
     @IBOutlet weak var searchView: UIView!
     
     var currentIndex: Int = 0
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
                            logoContainer.addSubview(imageView)
                            navigationItem.titleView = logoContainer
         
-        
+        txtSearchData.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
          
         
@@ -50,6 +53,13 @@ class ViewController: UIViewController {
         
         // With CallBack Function...
         //menuBarView.menuDidSelected = myLocalFunc(_:_:)
+
+    }
+    
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        searchText =  self.txtSearchData.text ?? ""
+        print("Text changed")
 
     }
     
@@ -64,9 +74,10 @@ class ViewController: UIViewController {
         self.tabs.removeAll()
         presentPageVCOnView()
         
-        for item in (ShareData.shareInfo.EcommerceCate?.categories)!{
+        for item in ShareData.shareInfo.EcommerceCate?.categories ?? []{
              self.tabs.append(item.category_title_en ?? "")
          }
+        
          self.tabs.insert("ALL", at: 0)
          menuBarView.dataArray =  tabs
          menuBarView.isSizeToFitCellsNeeded = true
@@ -75,20 +86,19 @@ class ViewController: UIViewController {
          
          pageController.setViewControllers([viewController(At: 0)!], direction: .forward, animated: true, completion: nil)
         
-        menuBarView.menuDelegate = self
+               menuBarView.menuDelegate = self
                pageController.delegate = self
                pageController.dataSource = self
                
                //For Intial Display
                menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
     }
+    
     @objc func CartConfig(_ notification: NSNotification) {
            
         
         notificationBadge?.setCount(ShareData.shareInfo.unseenCart)
     }
-    
-    
     
     
     func addNavigation()
@@ -129,27 +139,38 @@ class ViewController: UIViewController {
     
     
     @objc func btnCartAction (_ sender: Any){
+        
            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-           let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+           let vc =  storyBoard.instantiateViewController(withIdentifier: "CartVC") as? CartVC
            vc?.hidesBottomBarWhenPushed = true
            self.navigationController?.pushViewController(vc!, animated: true)
        }
     
     
     @objc func btnFilterAction (_ sender: Any){
+        
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "FilterVC") as? FilterVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "FilterVC") as? FilterVC
         vc?.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc!, animated: true)
     }
      
     
     @IBAction func searchAction(_ sender: UIButton) {
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "SearchVC") as? SearchVC
-         vc?.hidesBottomBarWhenPushed = true
-        vc?.keyword =  self.txtsearch.text!
+        
+        //if txtSearchData.text != "" {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC") as? SearchVC
+        //vc!.modalPresentationStyle = .popover
         self.navigationController?.pushViewController(vc!, animated: true)
+//        present(vc!, animated: true, completion: nil)
+//        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+//        let vc =  storyBoard.instantiateViewController(identifier: "SearchVC") as? SearchVC
+//         vc?.hidesBottomBarWhenPushed = true
+//        vc?.keyword =  self.txtSearchData.text!
+//
+//        self.navigationController?.pushViewController(vc!, animated: true)
+        //}
     }
     
     
@@ -218,6 +239,7 @@ class ViewController: UIViewController {
 
 
 
+@available(iOS 13.0, *)
 extension ViewController: MenuBarDelegate {
 
     func menuBarDidSelectItemAt(menu: MenuTabsView, index: Int) {
@@ -241,6 +263,7 @@ extension ViewController: MenuBarDelegate {
 }
 
 
+@available(iOS 13.0, *)
 extension ViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

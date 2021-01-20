@@ -9,21 +9,28 @@
 import UIKit
 
 class SearchVC: UIViewController {
-  var keyword = ""
+    @IBOutlet weak var mainView: UIView!
+    var keyword = ""
+    @IBOutlet weak var txtsearch: UITextField!
     @IBOutlet weak var clView: UICollectionView!
     var searchData : SearchProductModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        mainView.roundView()
         addBackButton()
         setNavigationBarWhiteColor()
         self.title = "Searched Product"
-         searchProductApi()
+         //searchProductApi()
     }
     
+    @IBAction func btnSearcAction(_ sender: UIButton) {
+        if txtsearch.text != ""{
+            searchProductApi()
+        }
+    }
     
     func searchProductApi() {
-        let dic : [String:Any] = ["search_text":keyword ]
+        let dic : [String:Any] = ["search_text":txtsearch.text! ]
         ShareData.showProgress()
         userhandler.Searchproduct(parms: dic, Success: {response in
             ShareData.hideProgress()
@@ -59,5 +66,11 @@ extension SearchVC :  UICollectionViewDelegate, UICollectionViewDataSource {
                 return cell!
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.dismiss(animated: true, completion: nil)
+        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
+         let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
+        vc?.id =   self.searchData?.products![indexPath.row].products_id ?? 0
+         self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }

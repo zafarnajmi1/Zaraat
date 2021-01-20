@@ -25,7 +25,7 @@
                         <rect key="frame" x="20" y="0.0" width="308" height="174"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9t-S9-7S5">
-                                <rect key="frame" x="12" y="8" width="66" height="62"/>
+                                <rect key="frame" x="12" y="8" width="60.5" height="62"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,13 +47,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH2-Dw-Imm">
-                                <rect key="frame" x="252" y="62" width="41" height="28"/>
+                                <rect key="frame" x="254" y="62" width="39" height="20"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APPNI CHAKHI ATTA  SKU  FRE #1234" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGT-CB-APd">
-                                <rect key="frame" x="70" y="75" width="150" height="46"/>
+                                <rect key="frame" x="70" y="75" width="150" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="5cl-8q-9P8"/>
                                     <constraint firstAttribute="width" constant="150" id="X3Z-X5-Wjy"/>
@@ -63,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500/-" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu9-NU-wvO">
-                                <rect key="frame" x="249" y="98" width="51" height="23"/>
+                                <rect key="frame" x="258.5" y="90" width="41.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -122,12 +122,24 @@
                                     <action selector="DeletAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5p6-BL-Fp7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iME-7G-GrM">
+                                <rect key="frame" x="70" y="123" width="119" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="XZu-b6-IIg"/>
+                                    <constraint firstAttribute="height" constant="19" id="iWh-cc-MyJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.96448427439999995" green="0.96863061189999999" blue="0.97263997790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="iME-7G-GrM" firstAttribute="centerY" secondItem="Mu7-0x-uPJ" secondAttribute="centerY" constant="-18.5" id="0JF-DO-8Cw"/>
                             <constraint firstItem="sDk-zd-nlC" firstAttribute="centerY" secondItem="Mu7-0x-uPJ" secondAttribute="centerY" id="6ls-4G-ZFA"/>
                             <constraint firstAttribute="trailing" secondItem="sDk-zd-nlC" secondAttribute="trailing" constant="15" id="Fbp-oa-bnS"/>
                             <constraint firstItem="sH2-Dw-Imm" firstAttribute="top" secondItem="GmY-eT-HdO" secondAttribute="bottom" constant="8" id="JpT-sk-iD3"/>
+                            <constraint firstItem="sDk-zd-nlC" firstAttribute="leading" secondItem="iME-7G-GrM" secondAttribute="trailing" constant="8" id="Jy8-KC-T2y"/>
                             <constraint firstItem="j3X-Of-W5X" firstAttribute="leading" secondItem="z04-R2-eh6" secondAttribute="leading" constant="12" id="Kb0-LZ-i5Q"/>
                             <constraint firstItem="TGT-CB-APd" firstAttribute="top" secondItem="j3X-Of-W5X" secondAttribute="top" id="QVZ-Tt-cwc"/>
                             <constraint firstItem="TGT-CB-APd" firstAttribute="leading" secondItem="j3X-Of-W5X" secondAttribute="trailing" constant="8" id="XRd-7I-rIt"/>
@@ -136,6 +148,7 @@
                             <constraint firstItem="j3X-Of-W5X" firstAttribute="top" secondItem="d9t-S9-7S5" secondAttribute="bottom" constant="5" id="d64-uD-qYW"/>
                             <constraint firstAttribute="trailing" secondItem="sH2-Dw-Imm" secondAttribute="trailing" constant="15" id="dGD-Xk-eBt"/>
                             <constraint firstItem="GmY-eT-HdO" firstAttribute="centerY" secondItem="d9t-S9-7S5" secondAttribute="centerY" id="eIe-Cb-xfV"/>
+                            <constraint firstItem="iME-7G-GrM" firstAttribute="leading" secondItem="Mu7-0x-uPJ" secondAttribute="trailing" constant="29" id="fcR-aB-Imh"/>
                             <constraint firstAttribute="bottom" secondItem="Mu7-0x-uPJ" secondAttribute="bottom" constant="9" id="gZi-cb-Ffk"/>
                             <constraint firstAttribute="trailing" secondItem="fu9-NU-wvO" secondAttribute="trailing" constant="8" id="iGI-qx-xZo"/>
                             <constraint firstItem="fu9-NU-wvO" firstAttribute="top" secondItem="sH2-Dw-Imm" secondAttribute="bottom" constant="8" id="mKh-eh-Mwh"/>
@@ -156,6 +169,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="img" destination="j3X-Of-W5X" id="Cdv-vt-c1J"/>
+                <outlet property="lblVariations" destination="iME-7G-GrM" id="fCZ-Q0-gbl"/>
                 <outlet property="lblprice" destination="fu9-NU-wvO" id="54b-kQ-wzv"/>
                 <outlet property="lbltitle" destination="TGT-CB-APd" id="VXd-Fj-bys"/>
                 <outlet property="stper" destination="sDk-zd-nlC" id="rBR-jZ-9Uk"/>

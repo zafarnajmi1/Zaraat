@@ -50,7 +50,7 @@ extension UIViewController {
     
     @objc func btnCartClick (_ sender: Any){
            let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-           let vc =  storyBoard.instantiateViewController(identifier: "CartVC") as? CartVC
+           let vc =  storyBoard.instantiateViewController(withIdentifier: "CartVC") as? CartVC
         vc?.hidesBottomBarWhenPushed = true
            self.navigationController?.pushViewController(vc!, animated: true)
        }
@@ -58,7 +58,7 @@ extension UIViewController {
     
     @objc func btnFilterClick (_ sender: Any){
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "FilterVC") as? FilterVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "FilterVC") as? FilterVC
         vc?.hidesBottomBarWhenPushed =  true 
         self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -146,16 +146,16 @@ extension UIViewController {
     
      
     
-     @objc func btnLoginClick (_ sender: Any){
-              
-            
-                   let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                  let vc =  storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-                  vc.hidesBottomBarWhenPushed = true
-                 self.navigationController?.pushViewController(vc, animated: true)
-               
-               
-           }
+//     @objc func btnLoginClick (_ sender: Any){
+//
+//
+//                   let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                  let vc =  storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//                  vc.hidesBottomBarWhenPushed = true
+//                 self.navigationController?.pushViewController(vc, animated: true)
+//
+//
+//           }
     
     
     
@@ -505,6 +505,7 @@ extension UIImageView {
     
     
 }
+@available(iOS 13.0, *)
 extension UIViewController {
     func darkDisabled() {
           overrideUserInterfaceStyle = .light

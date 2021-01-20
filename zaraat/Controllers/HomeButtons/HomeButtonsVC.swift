@@ -85,9 +85,16 @@ class HomeButtonsVC: UIViewController {
                           ShareData.hideProgress()
                           if response.success == 1 {
                               self.ZDigitalydata = response.data
-                              
+                            if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                self.adimg.isHidden = true
+                            } else {
+                                self.adimg.isHidden = false
+                             self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                            }
+                            
+                            
                               self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                              self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                             
                               if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                                   self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                                   self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -303,7 +310,7 @@ class HomeButtonsVC: UIViewController {
     @IBAction func adoneAction(_ sender: UIButton) {
         if (self.ZDigitalydata?.daily?.indices.contains(0))! {
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                 vc!.id =  self.ZDigitalydata?.daily![0].subcategory_id ?? 0
                 vc?.typeno = 2
                 self.navigationController?.pushViewController(vc!, animated: true)
@@ -315,7 +322,7 @@ class HomeButtonsVC: UIViewController {
     @IBAction func adtwoAction(_ sender: UIButton) {
          if (self.ZDigitalydata?.daily?.indices.contains(1))! {
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                     vc!.id =  self.ZDigitalydata?.daily![1].subcategory_id ?? 0
                     vc?.typeno = 2
                     self.navigationController?.pushViewController(vc!, animated: true)
@@ -326,7 +333,7 @@ class HomeButtonsVC: UIViewController {
     @IBAction func adThreeAction(_ sender: UIButton) {
          if (self.ZDigitalydata?.daily?.indices.contains(2))! {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-              let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+              let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
               vc!.id =  self.ZDigitalydata?.daily![2].subcategory_id ?? 0
                 vc?.typeno = 2
               self.navigationController?.pushViewController(vc!, animated: true)
@@ -379,7 +386,7 @@ extension HomeButtonsVC :   UICollectionViewDelegate,UICollectionViewDataSource 
                if collectionView == StoreClView {
 
                    let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                   let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                   let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                    vc!.id =  self.ZDigitalydata?.subcategories![indexPath.row].subcategory_id ?? 0
                      vc?.typeno = 2
                    self.navigationController?.pushViewController(vc!, animated: true)
@@ -387,14 +394,14 @@ extension HomeButtonsVC :   UICollectionViewDelegate,UICollectionViewDataSource 
                } else if collectionView == secOneClView {
                    
                          let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                          let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                          vc?.id =  self.ZDigitalydata?.section_1![indexPath.row].products_id ?? 0
                           self.navigationController?.pushViewController(vc!, animated: true)
            
                } else {
                    
                             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                             let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                             let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                             vc?.id =   self.ZDigitalydata?.section_2![indexPath.row].products_id ?? 0
                              self.navigationController?.pushViewController(vc!, animated: true)
                    }

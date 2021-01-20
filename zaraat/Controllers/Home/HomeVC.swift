@@ -39,7 +39,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var FeaturedProductsClView: UICollectionView!
     
     @IBOutlet weak var FeaturdProductClViewHeight: NSLayoutConstraint!
-
+    var bannerArray = [UIImage.init(named: "Dress Banner"),UIImage.init(named: "Space Ear Bud"),UIImage.init(named: "Watch Banner")]
     var homeLanding : HomeLandingModel?
    
     
@@ -98,7 +98,7 @@ class HomeVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let newHeighttop : CGFloat = topProductClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
-             topProductClviewHeight.constant = newHeighttop
+             topProductClviewHeight.constant = newHeighttop 
         topProductClView.reloadData()
              self.view.setNeedsLayout()
         
@@ -116,7 +116,9 @@ class HomeVC: UIViewController {
            if let dict = notification.userInfo as NSDictionary? {
             if let id = dict["Index"]{
                 if id as! Int == 0 {
+                   
                     self.homeapi()
+                    
                 }
                }
            }
@@ -162,7 +164,7 @@ class HomeVC: UIViewController {
             if let coll  = self.sliderClView {
                 for cell in coll.visibleCells {
                     let indexPath: IndexPath? = coll.indexPath(for: cell)
-                    if ((indexPath?.row)!  < 3 - 1){
+                    if ((indexPath?.row)!  < bannerArray.count){
                         let indexPath1: IndexPath?
                         indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
                         
@@ -229,7 +231,7 @@ class HomeVC: UIViewController {
     
     @IBAction func btnflashViewAll(_ sender: UIButton) {
         let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        let vc = sotoryBoard.instantiateViewController(withIdentifier: "ViewAllProductsVC") as? ViewAllProductsVC
         vc?.viewAll = 1
         self.navigationController?.pushViewController(vc!, animated: true)
         
@@ -238,20 +240,20 @@ class HomeVC: UIViewController {
     
     @IBAction func topRatedProducts(_ sender: UIButton) {
         let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        let vc = sotoryBoard.instantiateViewController(withIdentifier: "ViewAllProductsVC") as? ViewAllProductsVC
         vc?.viewAll = 2
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     @IBAction func WeeklyViewAll(_ sender: UIButton) {
         let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        let vc = sotoryBoard.instantiateViewController(withIdentifier: "ViewAllProductsVC") as? ViewAllProductsVC
         vc?.viewAll = 3
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func FeatureProducts(_ sender: UIButton) {
         let sotoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = sotoryBoard.instantiateViewController(identifier: "ViewAllProductsVC") as? ViewAllProductsVC
+        let vc = sotoryBoard.instantiateViewController(withIdentifier: "ViewAllProductsVC") as? ViewAllProductsVC
         vc?.viewAll = 4
         self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -259,7 +261,7 @@ class HomeVC: UIViewController {
     @IBAction func ZMallAction(_ sender: UIButton) {
         
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  StoryBoard.instantiateViewController(identifier: "ZMallVC") as?  ZMallVC
+        let vc =  StoryBoard.instantiateViewController(withIdentifier: "ZMallVC") as?  ZMallVC
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -267,7 +269,7 @@ class HomeVC: UIViewController {
     @IBAction func ZMartAction(_ sender: UIButton) {
         
        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-       let vc =  StoryBoard.instantiateViewController(identifier: "ZMartVC") as?  ZMartVC
+       let vc =  StoryBoard.instantiateViewController(withIdentifier: "ZMartVC") as?  ZMartVC
        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
@@ -275,21 +277,21 @@ class HomeVC: UIViewController {
     @IBAction func ZPharmacyAction(_ sender: UIButton) {
         
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  StoryBoard.instantiateViewController(identifier: "ZPharmacyVC") as?  ZPharmacyVC
+            let vc =  StoryBoard.instantiateViewController(withIdentifier: "ZPharmacyVC") as?  ZPharmacyVC
             self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
     @IBAction func ZDigitalAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                   let vc =  StoryBoard.instantiateViewController(identifier: "ZDigitalVC") as?  ZDigitalVC
+                   let vc =  StoryBoard.instantiateViewController(withIdentifier: "ZDigitalVC") as?  ZDigitalVC
                    self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     
     @IBAction func FashinBeautyAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                   let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                   let vc =  StoryBoard.instantiateViewController(withIdentifier: "HomeButtonsVC") as?  HomeButtonsVC
                      vc?.id = 1
                    self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -297,14 +299,14 @@ class HomeVC: UIViewController {
     
     @IBAction func ElectroincAction(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "HomeButtonsVC") as?  HomeButtonsVC
         vc?.id = 2
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
     @IBAction func HomeLifeStyleAction(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "HomeButtonsVC") as?  HomeButtonsVC
         vc?.id = 3
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
@@ -313,7 +315,7 @@ class HomeVC: UIViewController {
     
     @IBAction func EducationAction(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "HomeButtonsVC") as?  HomeButtonsVC
         vc?.id = 4
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
@@ -321,14 +323,14 @@ class HomeVC: UIViewController {
     
     @IBAction func WatchJewllery(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "HomeButtonsVC") as?  HomeButtonsVC
         vc?.id = 5
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
     
     @IBAction func homeAppliances(_ sender: UIButton) {
            let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "HomeButtonsVC") as?  HomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "HomeButtonsVC") as?  HomeButtonsVC
         vc?.id = 6
                       self.navigationController?.pushViewController(vc!, animated: true)
        }
@@ -424,8 +426,8 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
             if collectionView == sliderClView {
-             self.pager.numberOfPages =  4
-             return 4
+                self.pager.numberOfPages =  bannerArray.count
+                return bannerArray.count
             } else if collectionView ==  FlashClView {
                 return self.homeLanding?.data?.sales?.count ?? 0
             } else if collectionView == topProductClView {
@@ -443,7 +445,7 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
         
        if collectionView == sliderClView {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
-        
+        cell?.img.image = bannerArray[indexPath.row]
          return cell!
        } else if collectionView ==  FlashClView {
           let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "FlashCellClView", for: indexPath) as? FlashCellClView
@@ -478,21 +480,21 @@ extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICol
         if collectionView ==  FlashClView {
             
             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                          let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
             vc?.id = self.homeLanding?.data?.sales![indexPath.row].product_id ?? 0
                           self.navigationController?.pushViewController(vc!, animated: true)
             
         } else if collectionView == topProductClView {
             
             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
             vc?.id =  self.homeLanding?.data?.top_products?[indexPath.row].products_id ?? 0
               self.navigationController?.pushViewController(vc!, animated: true)
            
         } else if collectionView == FeaturedProductsClView{
             
             let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
             vc?.id =  self.homeLanding?.data?.featured_products![indexPath.row].products_id ?? 0
               self.navigationController?.pushViewController(vc!, animated: true)
              

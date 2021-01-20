@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import Cosmos
 class ClViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var lblprice: UILabel!
     @IBOutlet weak var lbldiscountPrice: UILabel!
     @IBOutlet weak var lbltitle: UILabel!
@@ -25,15 +26,15 @@ class ClViewCell: UICollectionViewCell {
                
                img.layer.cornerRadius = 8
                
-               likeview.layer.borderWidth = 1
-               likeview.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
-               likeview.layer.cornerRadius = 5
+//               likeview.layer.borderWidth = 1
+//               likeview.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
+//               likeview.layer.cornerRadius = 5
                
     }
     
     func loadData(obj:Products) {
            
-           let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: obj.vendor_price ?? "")
+           let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR :" + obj.vendor_price!)
                          attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
                          
            lbldiscountPrice.attributedText = attributeString

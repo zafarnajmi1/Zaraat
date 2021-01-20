@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Cosmos
 class HomeCateClViewPartThreeCell: UICollectionViewCell {
         @IBOutlet weak var sellerimg: UIImageView!
            @IBOutlet weak var pkgimg: UIImageView!
@@ -15,7 +15,9 @@ class HomeCateClViewPartThreeCell: UICollectionViewCell {
            @IBOutlet weak var lblPrice: UILabel!
            @IBOutlet weak var lbltitle: UILabel!
                 @IBOutlet weak var img: UIImageView!
-                     @IBOutlet weak var mainView: UIView!
+    
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var mainView: UIView!
                 override func awakeFromNib() {
                     super.awakeFromNib()
                     mainView.layer.cornerRadius = 8

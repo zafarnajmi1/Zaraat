@@ -37,16 +37,23 @@ class B2BHomeButtonsVC: UIViewController {
                 
                 override func viewDidLoad() {
                     super.viewDidLoad()
-                 
-                    
-                    let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+                 let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
 
-                         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
-                         imageView.contentMode = .scaleAspectFit
-                         let image = UIImage(named: "Zaraat Mall")
-                         imageView.image = image
-                         logoContainer.addSubview(imageView)
-                         navigationItem.titleView = logoContainer
+                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+                 imageView.contentMode = .scaleAspectFit
+                 let image = UIImage(named: "Text")
+                 imageView.image = image
+                 logoContainer.addSubview(imageView)
+                 navigationItem.titleView = logoContainer
+                    
+//                    let logoContainer = UIView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+//
+//                         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 270, height: 30))
+//                         imageView.contentMode = .scaleAspectFit
+//                         let image = UIImage(named: "Zaraat Mall")
+//                         imageView.image = image
+//                         logoContainer.addSubview(imageView)
+//                         navigationItem.titleView = logoContainer
                     
                     
                     self.topBrandOneImg.layer.cornerRadius = 8
@@ -94,8 +101,16 @@ class B2BHomeButtonsVC: UIViewController {
                               if response.success == 1 {
                                   self.ZDigitalydata = response.data
                                   
+                                if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                    self.adimg.isHidden = true
+                                } else {
+                                    self.adimg.isHidden = false
+                                    self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                }
+                                    
+                                
                                   self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                                  self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                  
                                   if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                                       self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                                       self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -126,8 +141,16 @@ class B2BHomeButtonsVC: UIViewController {
                        if response.success == 1 {
                            self.ZDigitalydata = response.data
                            
+                            if self.ZDigitalydata?.ad_2?.category_image == "" {
+                               self.adimg.isHidden = true
+                            } else {
+                               self.adimg.isHidden = false
+                               self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                            }
+                        
+                        
                            self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                           self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                           
                            if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                             
                             if let imgone = self.ZDigitalydata?.daily?[0].featured_image {
@@ -169,8 +192,18 @@ class B2BHomeButtonsVC: UIViewController {
                                if response.success == 1 {
                                    self.ZDigitalydata = response.data
                                    
+                                
+                                
+                                if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                                   self.adimg.isHidden = true
+                                                               } else {
+                                                                   self.adimg.isHidden = false
+                                                                   self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                               }
+                                
+                                
                                    self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                                   self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                   
                                    if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                                        self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                                        self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -201,8 +234,16 @@ class B2BHomeButtonsVC: UIViewController {
                                   if response.success == 1 {
                                       self.ZDigitalydata = response.data
                                       
+                                    
+                                    if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                                       self.adimg.isHidden = true
+                                                                   } else {
+                                                                       self.adimg.isHidden = false
+                                                                       self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                                   }
+                                    
                                       self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                                      self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                      
                                       if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                                           self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                                           self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -233,8 +274,16 @@ class B2BHomeButtonsVC: UIViewController {
                     if response.success == 1 {
                         self.ZDigitalydata = response.data
                         
+                        
+                        if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                           self.adimg.isHidden = true
+                                                       } else {
+                                                           self.adimg.isHidden = false
+                                                           self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                       }
+                        
                         self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                        self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                       
                         if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                             self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                             
@@ -268,8 +317,15 @@ class B2BHomeButtonsVC: UIViewController {
                     if response.success == 1 {
                         self.ZDigitalydata = response.data
                         
+                        if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                           self.adimg.isHidden = true
+                                                       } else {
+                                                           self.adimg.isHidden = false
+                                                           self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                       }
+                        
                         self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                        self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                        
                         if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                             self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                             self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -298,8 +354,15 @@ class B2BHomeButtonsVC: UIViewController {
                        if response.success == 1 {
                            self.ZDigitalydata = response.data
                            
+                        if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                           self.adimg.isHidden = true
+                                                       } else {
+                                                           self.adimg.isHidden = false
+                                                           self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                       }
+                        
                            self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                           self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                           
                            if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                                self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                                self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -329,8 +392,15 @@ class B2BHomeButtonsVC: UIViewController {
                 if response.success == 1 {
                     self.ZDigitalydata = response.data
                     
+                    if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                       self.adimg.isHidden = true
+                                                   } else {
+                                                       self.adimg.isHidden = false
+                                                       self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                   }
+                    
                     self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                    self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                    
                     if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                         self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                         self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -360,12 +430,19 @@ class B2BHomeButtonsVC: UIViewController {
                   if response.success == 1 {
                       self.ZDigitalydata = response.data
                       
+                    if self.ZDigitalydata?.ad_2?.category_image == "" {
+                        self.adimg.isHidden = true
+                    } else {
+                        self.adimg.isHidden = false 
+                        self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                    }
                       self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                      self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
-                      if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
-                          self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
-                          self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
-                          self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![2].featured_image ?? "Text"))
+                      
+                      
+                    if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
+                          self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily?[0].featured_image ?? "Text"))
+                          self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily?[1].featured_image ?? "Text"))
+                          self.topBrandThreeImg.sd_setImage(with: URL(string: self.ZDigitalydata?.daily?[2].featured_image ?? "Text"))
                       }
       
                       self.StoreClView.reloadData()
@@ -391,8 +468,15 @@ class B2BHomeButtonsVC: UIViewController {
                   if response.success == 1 {
                       self.ZDigitalydata = response.data
                       
+                    if self.ZDigitalydata?.ad_2?.category_image == "" {
+                                                       self.adimg.isHidden = true
+                                                   } else {
+                                                       self.adimg.isHidden = false
+                                                       self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                                                   }
+                    
                       self.Bannerimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_1?.category_image ?? "Text"))
-                      self.adimg.sd_setImage(with: URL(string: self.ZDigitalydata?.ad_2?.category_image ?? "Text"))
+                      
                       if self.ZDigitalydata?.daily?.count ?? 0 != 0 {
                           self.topBrandOneImg.sd_setImage(with: URL(string:self.ZDigitalydata?.daily![0].featured_image ?? "Text"))
                           self.topBrandTwoImage.sd_setImage(with: URL(string: self.ZDigitalydata?.daily![1].featured_image ?? "Text"))
@@ -416,7 +500,7 @@ class B2BHomeButtonsVC: UIViewController {
     
     @IBAction func adoneAction(_ sender: Any) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
         vc!.id =  self.ZDigitalydata?.daily![0].subcategory_id ?? 0
           vc?.typeno = 2
         self.navigationController?.pushViewController(vc!, animated: true)
@@ -426,7 +510,7 @@ class B2BHomeButtonsVC: UIViewController {
     
     @IBAction func adtwoAction(_ sender: Any) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
         vc!.id =  self.ZDigitalydata?.daily![1].subcategory_id ?? 0
           vc?.typeno = 2
         self.navigationController?.pushViewController(vc!, animated: true)
@@ -437,7 +521,7 @@ class B2BHomeButtonsVC: UIViewController {
     @IBAction func adthreeAction(_ sender: Any) {
         
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
         vc!.id =  self.ZDigitalydata?.daily![2].subcategory_id ?? 0
           vc?.typeno = 2
         self.navigationController?.pushViewController(vc!, animated: true)
@@ -494,7 +578,7 @@ class B2BHomeButtonsVC: UIViewController {
                    if collectionView == StoreClView {
 
                        let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                       let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                       let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                        vc!.id =  self.ZDigitalydata?.subcategories![indexPath.row].subcategory_id ?? 0
                          vc?.typeno = 2
                        self.navigationController?.pushViewController(vc!, animated: true)
@@ -502,7 +586,7 @@ class B2BHomeButtonsVC: UIViewController {
                    } else if collectionView == secOneClView {
                        
                              let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                              vc?.isb2b = 2
                              vc?.id =  self.ZDigitalydata?.section_1![indexPath.row].products_id ?? 0
                               self.navigationController?.pushViewController(vc!, animated: true)
@@ -510,7 +594,7 @@ class B2BHomeButtonsVC: UIViewController {
                    } else {
                        
                                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                                 let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                                 let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                                 vc?.id =   self.ZDigitalydata?.section_2![indexPath.row].products_id ?? 0
                     vc?.isb2b = 2
                                  self.navigationController?.pushViewController(vc!, animated: true)

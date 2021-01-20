@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SettingsVC: UIViewController {
 
     @IBOutlet weak var myswitchbutton: UISwitch!
@@ -70,7 +71,7 @@ class SettingsVC: UIViewController {
     
     @IBAction func changePAsswordaction(_ sender: UIButton) {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "RestPasswordVC") as? RestPasswordVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "RestPasswordVC") as? RestPasswordVC
         vc?.hidesBottomBarWhenPushed = true 
         self.navigationController?.pushViewController(vc!, animated: true)
     }

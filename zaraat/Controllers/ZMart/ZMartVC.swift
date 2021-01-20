@@ -96,8 +96,14 @@ class ZMartVC: UIViewController {
             if response.success == 1 {
                 self.Martdata = response.data
                 
+                if self.Martdata?.ad_2?.category_image == "" {
+                    self.adimg.isHidden = true
+                } else {
+                    self.adimg.isHidden = false
+                 self.adimg.sd_setImage(with: URL(string: self.Martdata?.ad_2?.category_image ?? "Text"))
+                }
                 self.bannerimg.sd_setImage(with: URL(string: self.Martdata?.ad_1?.category_image ?? "Text"))
-                self.adimg.sd_setImage(with: URL(string: self.Martdata?.ad_2?.category_image ?? "Text"))
+               
                 if self.Martdata?.daily?.count ?? 0 != 0 {
                     self.topBrandOneImg.sd_setImage(with: URL(string:self.Martdata?.daily![0].featured_image ?? "Text"))
                     self.topBrandTwoImage.sd_setImage(with: URL(string: self.Martdata?.daily![1].featured_image ?? "Text"))
@@ -124,7 +130,7 @@ class ZMartVC: UIViewController {
     @IBAction func dailyOneAction(_ sender: UIButton) {
         if (self.Martdata?.daily?.indices.contains(0))! {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                            vc!.id =  self.Martdata?.daily![0].subcategory_id ?? 0
                              vc?.typeno = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -135,7 +141,7 @@ class ZMartVC: UIViewController {
     @IBAction func DailytwoAction(_ sender: UIButton) {
         if (self.Martdata?.daily?.indices.contains(1))! {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                            vc!.id =  self.Martdata?.daily![1].subcategory_id ?? 0
                              vc?.typeno = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -145,7 +151,7 @@ class ZMartVC: UIViewController {
     @IBAction func dailythreeAction(_ sender: UIButton) {
         if (self.Martdata?.daily?.indices.contains(2))! {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                            vc!.id =  self.Martdata?.daily![2].subcategory_id ?? 0
                              vc?.typeno = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -206,7 +212,7 @@ extension ZMartVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 if collectionView == ClViewStore {
 
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                     vc!.id =  self.Martdata?.subcategories![indexPath.row].subcategory_id ?? 0
                       vc?.typeno = 2
                     self.navigationController?.pushViewController(vc!, animated: true)
@@ -214,14 +220,14 @@ extension ZMartVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 } else if collectionView == secOneClView {
                     
                           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                           let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                           vc?.id =   self.Martdata?.section_1![indexPath.row].products_id ?? 0
                            self.navigationController?.pushViewController(vc!, animated: true)
             
                 } else {
                     
                              let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                              vc?.id =   self.Martdata?.section_2![indexPath.row].products_id ?? 0
                               self.navigationController?.pushViewController(vc!, animated: true)
                     }

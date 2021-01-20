@@ -139,7 +139,7 @@ class HomeCateVC: UIViewController {
             cell?.lblPrice.text =  "PKR :" + (self.HomeCatedata?.section_1?[indexPath.row].selling_price)!
                     cell?.lblstock.text =  "(InStock) :" + (self.HomeCatedata?.section_1?[indexPath.row].product_stock)!
                     cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.section_1![indexPath.row].featured_image ?? "Text"))
-        
+            cell?.rating.rating = self.HomeCatedata?.section_1?[indexPath.row].avg_rating ?? 0
                     return cell!
                  } else {
                      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCateClViewPartThreeCell", for: indexPath) as? HomeCateClViewPartThreeCell
@@ -148,7 +148,7 @@ class HomeCateVC: UIViewController {
                     cell?.lblPrice.text =  "PKR :" + (self.HomeCatedata?.section_2?[indexPath.row].selling_price)!
                     cell?.lblstock.text =  "(InStock) :" + (self.HomeCatedata?.section_2?[indexPath.row].product_stock)!
                     cell?.img.sd_setImage(with: URL(string: self.HomeCatedata?.section_2![indexPath.row].featured_image ?? "Text"))
-                        
+            cell?.rating.rating = self.HomeCatedata?.section_2![indexPath.row].avg_rating ?? 0
             return cell!
                  }
 
@@ -160,7 +160,7 @@ class HomeCateVC: UIViewController {
         if collectionView == storeForyouClView {
 
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                 vc!.id =  self.HomeCatedata?.sub_categories![indexPath.row].subcategory_id ?? 0
                   vc?.typeno = 2
                 self.navigationController?.pushViewController(vc!, animated: true)
@@ -168,14 +168,14 @@ class HomeCateVC: UIViewController {
             } else if collectionView == seconeClview {
                 
                       let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                       let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                       let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                       vc?.id =  self.HomeCatedata?.section_1![indexPath.row].products_id ?? 0
                        self.navigationController?.pushViewController(vc!, animated: true)
         
             } else {
                 
                          let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                          let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                          vc?.id =   self.HomeCatedata?.section_2![indexPath.row].products_id ?? 0
                           self.navigationController?.pushViewController(vc!, animated: true)
                 }

@@ -27,9 +27,9 @@ class ProductListCell: UITableViewCell {
         
         img.layer.cornerRadius = 8
         
-        fvrtView.layer.borderWidth = 1
-        fvrtView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
-        fvrtView.layer.cornerRadius = 5
+//        fvrtView.layer.borderWidth = 1
+//        fvrtView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
+//        fvrtView.layer.cornerRadius = 5
         
     }
 
@@ -41,7 +41,7 @@ class ProductListCell: UITableViewCell {
     
     func loadData(obj:Products) {
         
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: obj.vendor_price ?? "")
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR :" + obj.vendor_price! )
                       attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
                       
         lbldiscountPrice.attributedText = attributeString
@@ -61,7 +61,7 @@ class ProductListCell: UITableViewCell {
         lbldiscountPrice.attributedText = attributeString
         
         
-        self.lblprice.text =  obj.product?.selling_price
+        self.lblprice.text =  "PKR :" + (obj.product?.selling_price)!
         self.lbltitle.text =  obj.product?.product_title_en
         
         self.img.sd_setImage(with: URL(string: obj.product?.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))

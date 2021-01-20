@@ -36,7 +36,7 @@ class B2BProductDetailVC: UIViewController {
     @IBAction func inqueryAction(_ sender: UIButton) {
         
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "B2BInquireisVC") as? B2BInquireisVC
+        let vc = storyBoard.instantiateViewController(withIdentifier: "B2BInquireisVC") as? B2BInquireisVC
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }

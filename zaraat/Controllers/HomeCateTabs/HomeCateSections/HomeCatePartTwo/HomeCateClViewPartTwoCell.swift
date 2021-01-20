@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
+import Cosmos
 class HomeCateClViewPartTwoCell: UICollectionViewCell {
    @IBOutlet weak var sellerimg: UIImageView!
       @IBOutlet weak var pkgimg: UIImageView!
       @IBOutlet weak var lblstock: UILabel!
       @IBOutlet weak var lblPrice: UILabel!
       @IBOutlet weak var lbltitle: UILabel!
-           @IBOutlet weak var img: UIImageView!
+    
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var img: UIImageView!
                 @IBOutlet weak var mainView: UIView!
             override func awakeFromNib() {
                 super.awakeFromNib()

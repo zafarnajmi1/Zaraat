@@ -158,8 +158,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1316"
-            endingLineNumber = "1316"
+            startingLineNumber = "1339"
+            endingLineNumber = "1339"
             landmarkName = "getUploadinquiryDoc(file:image:Success:Failure:)"
             landmarkType = "7">
             <Locations>
@@ -174,8 +174,8 @@
                   urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1316"
-                  endingLineNumber = "1316"
+                  startingLineNumber = "1337"
+                  endingLineNumber = "1337"
                   offsetFromSymbolStart = "16">
                </Location>
                <Location
@@ -189,8 +189,8 @@
                   urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1319"
-                  endingLineNumber = "1319"
+                  startingLineNumber = "1340"
+                  endingLineNumber = "1340"
                   offsetFromSymbolStart = "151">
                </Location>
             </Locations>
@@ -206,8 +206,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1314"
-            endingLineNumber = "1314"
+            startingLineNumber = "1337"
+            endingLineNumber = "1337"
             landmarkName = "getUploadinquiryDoc(file:image:Success:Failure:)"
             landmarkType = "7">
             <Locations>
@@ -222,8 +222,8 @@
                   urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1314"
-                  endingLineNumber = "1314"
+                  startingLineNumber = "1335"
+                  endingLineNumber = "1335"
                   offsetFromSymbolStart = "451">
                </Location>
                <Location
@@ -237,8 +237,8 @@
                   urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1316"
-                  endingLineNumber = "1316"
+                  startingLineNumber = "1337"
+                  endingLineNumber = "1337"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -254,8 +254,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1320"
-            endingLineNumber = "1320"
+            startingLineNumber = "1343"
+            endingLineNumber = "1343"
             landmarkName = "getUploadinquiryDoc(file:image:Success:Failure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "299"
+            endingLineNumber = "299"
             landmarkName = "UploadProfile(url:filename:parameters:userimg:Progress:Success:Falioure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "UploadProfile(url:filename:parameters:userimg:Progress:Success:Falioure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "UploadProfile(url:filename:parameters:userimg:Progress:Success:Falioure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +318,8 @@
             filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "297"
-            endingLineNumber = "297"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "UploadProfile(url:filename:parameters:userimg:Progress:Success:Falioure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -401,6 +401,310 @@
             startingLineNumber = "260"
             endingLineNumber = "260"
             landmarkName = "mydataUploaded()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5854BE64-B593-4337-851B-22DA8D033B4F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/Product Detail/ProductDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "addtocartApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9B98F44-52F7-4D13-8225-CA50DB63926C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/Product Detail/ProductDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
+            landmarkName = "addtocartApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9B98F44-52F7-4D13-8225-CA50DB63926C - 91d79053c685916e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "zaraat.ProductDetailVC.addtocartApi() -&gt; ()"
+                  moduleName = "zaraat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/Controllers/Product%20Detail/ProductDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "306"
+                  endingLineNumber = "306"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  uuid = "D9B98F44-52F7-4D13-8225-CA50DB63926C - d9acbd02169dd5c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (zaraat.GetCartModel) -&gt; () in zaraat.ProductDetailVC.addtocartApi() -&gt; ()"
+                  moduleName = "zaraat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/Project/Zaraat/zaraat/Controllers/Product%20Detail/ProductDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9A091EF-1F5F-4E00-861D-2B85FB3C7A34"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/Product Detail/ProductDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "addtocartApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DEEFADD-6BBE-4BF3-9A70-9537791003B4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/Product Detail/ProductDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
+            landmarkName = "addtocartApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A888F19E-4C9A-499D-94B4-658226565185"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/NetworkHandlerCall&apos;s/UserHandler/Userhandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "loginSession(Success:Failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD7F9CCA-8AEE-41FD-B6AC-B3D16560EFD5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "GetRequiest(url:parameters:success:Falioure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCF94323-5260-4601-B7D8-F6D860113B54"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "GetRequiest(url:parameters:success:Falioure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "10E8BEDC-E387-447D-9DAD-ED13467DE10A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "GetRequiest(url:parameters:success:Falioure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50D7CDB1-041E-4058-BA73-45FF2421ED91"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/NetworkHandlerCall&apos;s/NetWorkHandler/Networkhandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "GetRequiest(url:parameters:success:Falioure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "554272A0-DCB4-43C9-B34F-0343CF468046"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/SplashZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "CheckLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E401D214-EB8F-4FFD-811D-F0E8F1942E42"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/SplashZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "CheckLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75D7AD34-63B0-43AF-8478-1A631DE7BD6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/LoginZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
+            landmarkName = "SocialLogin(id:authmethod:fbemail:fbFirstName:FbLastName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "857801CE-A308-47E6-8BD2-BC18637CCC1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/LoginZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "SocialLogin(id:authmethod:fbemail:fbFirstName:FbLastName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "176BA6DD-CCBE-4889-8DBA-CFCDD74C54FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/LoginZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "SocialLogin(id:authmethod:fbemail:fbFirstName:FbLastName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBF43035-ABD7-4BDE-8493-944360BA6447"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/LoginZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "SocialLogin(id:authmethod:fbemail:fbFirstName:FbLastName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9854A7C7-EEFC-4044-8EE2-87CDCB4ED67B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/LoginZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "SocialLogin(id:authmethod:fbemail:fbFirstName:FbLastName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3CD33E7A-30D6-4E56-ADCB-BDE5A84F2B39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "zaraat/Controllers/AuthPart/LoginZaraatVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "SocialLogin(id:authmethod:fbemail:fbFirstName:FbLastName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

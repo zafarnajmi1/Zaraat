@@ -74,7 +74,7 @@ extension CategoriesVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "SubcategoriesVC") as? SubcategoriesVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "SubcategoriesVC") as? SubcategoriesVC
         vc?.subCate = self.Allcategories[indexPath.row].categories_id ?? 0
         vc?.market = self.Allcategories[indexPath.row].market ?? ""
         vc?.hidesBottomBarWhenPushed =  true 

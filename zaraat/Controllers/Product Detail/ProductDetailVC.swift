@@ -11,9 +11,22 @@ import  Cosmos
 import SDWebImage
 class ProductDetailVC: UIViewController {
     
+       
+    @IBOutlet weak var colorClView: UICollectionView!
+    
+    @IBOutlet weak var sizeClView: UICollectionView!
+    
+    @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var yearsView: UIView!
+    @IBOutlet weak var lblb2bPrices: UILabel!
+    @IBOutlet weak var StockB2B: UILabel!
+    @IBOutlet weak var lblAbility: UILabel!
+    @IBOutlet weak var lblBags: UILabel!
     @IBOutlet weak var lblstock: UILabel!
     
-   var isb2b =  0
+   // @IBOutlet weak var btncomments: UIButton!
+    @IBOutlet weak var shareView: UIView!
+    var isb2b =  0
     var iswishlist = true
     @IBOutlet weak var heartimg: UIImageView!
     @IBOutlet weak var btninquires: UIButton!
@@ -33,14 +46,29 @@ class ProductDetailVC: UIViewController {
     //@IBOutlet weak var img: UIImageView!
     @IBOutlet weak var lbldetail: UILabel!
     @IBOutlet weak var btnaddtocart: UIButton!
-    
+    @IBOutlet weak var tblHeight: NSLayoutConstraint!
+    @IBOutlet weak var stockInfoB2B: UIStackView!
     @IBOutlet weak var lblprice: UILabel!
     @IBOutlet weak var hertView: UIView!
     var productData : ProductDetail?
+    //@IBOutlet weak var colorSizeStack: UIStackView!
     var id = 0
+    var sizename = ""
+    var colorName = ""
+    var variations = ""
+    
+   
+    var  sizeArray = [String]()
+    
+    struct colorArray {
+        var colorname : String?
+        var colorCode : String?
+    }
+     var colorData = [colorArray]()
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
+        //self.btncomments.roundButton()
         self.title = "Product Detail"
         btnaddtocart.roundButton()
         btnchat.roundButton()
@@ -48,6 +76,17 @@ class ProductDetailVC: UIViewController {
         hertView.layer.borderWidth = 1
               hertView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
               hertView.layer.cornerRadius = 5
+        
+        self.rating.isUserInteractionEnabled = false
+        
+        yearsView.layer.borderWidth = 1
+        yearsView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
+        yearsView.layer.cornerRadius =  10
+        
+        shareView.layer.borderWidth = 1
+                     shareView.layer.borderColor = #colorLiteral(red: 0.1253529191, green: 0.1293642223, blue: 0.1335152388, alpha: 1)
+                     shareView.layer.cornerRadius = 5
+        
         setNavigationBarWhiteColor()
         
          sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
@@ -63,9 +102,16 @@ class ProductDetailVC: UIViewController {
             b2bstack.isHidden = true
             btnaddtocart.isHidden = false
         }
+        
+        
+        
+        self.tblView.register(UINib.init(nibName: "ReviewsCell", bundle: nil), forCellReuseIdentifier: "ReviewsCell")
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        tblView.estimatedRowHeight = 100
+        tblView.rowHeight = UITableView.automaticDimension
+    }
     
     func setSlider(){
             
@@ -120,8 +166,32 @@ class ProductDetailVC: UIViewController {
         userhandler.getProductDetail(id: id, Success: {response in
             ShareData.hideProgress()
             if response.success == 1 {
+               
                 self.productData =  response.product
                 
+                self.colorData.removeAll()
+                self.sizeArray.removeAll()
+                
+                for item in self.productData?.variations?.attributes ?? [] {
+                     //"Color"
+                    if item.attribute_name?.attribute_title == "Color"{
+                        for i in item.attribute_values ?? [] {
+                            self.colorData.append(colorArray(colorname: i.actual_value?.value_names, colorCode: i.actual_value?.attribute_values)) //append((i.actual_value?.attribute_values)!)
+                        }
+                    } else {
+                        for i in item.attribute_values ?? [] {
+                            self.sizeArray.append((i.actual_value?.value_names)!)
+                        }
+                    }
+                }
+                
+                
+                
+                
+                
+                
+                
+                self.rating.rating =  self.productData?.avg_rating ?? 0
                 if response.product?.liked == 1 {
                     self.iswishlist = false
                     self.heartimg.image = UIImage.init(named: "heart")
@@ -133,23 +203,53 @@ class ProductDetailVC: UIViewController {
                 
                 
                 
-                self.lblstock.text = "Instock :" + (response.product?.product_stock)!
+               self.lbldetail.text = response.product?.product_description_en
                 self.lbltitle.text =  response.product?.product_title_en
-                self.lblprice.text =  "Price : " + (response.product?.selling_price)!  + " PKR"
-                self.lbldetail.text = response.product?.product_description_en
-                
                 self.lbldetailsseller.text =  response.product?.vendor?.description
                 self.lblshopename.text = response.product?.vendor?.company_name
-                self.lblsupliretitle.text =  response.product?.vendor?.owners_name
+                
                 
                 if response.product?.market?.lowercased() == "b2b" || response.product?.market?.lowercased() == "both"{
                     self.b2bstack.isHidden = false
                     self.btnaddtocart.isHidden = true
+                    self.rating.isHidden = true
+                    self.b2bstack.isHidden = false
+                    self.stockInfoB2B.isHidden = false
+                    self.lblb2bPrices.isHidden = false
+                    self.lblprice.isHidden = true
+                    self.lblb2bPrices.text =  "Price : " + (response.product?.selling_price)!  + " PKR"
+                    
+                    self.lblBags.text = "Min Order Qty :" + (response.product?.product_stock)!
+                    self.lblAbility.text = "Supply Ability :" + (response.product?.product_supply_ability)!
+                    self.lblBags.text = "Stock:" + (response.product?.product_stock)!
+                    
+                    //self.colorSizeStack.isHidden = true
+                    
                 } else {
+                    self.rating.isHidden = false
+                    self.b2bstack.isHidden = true
                     self.b2bstack.isHidden = true
                     self.btnaddtocart.isHidden = false
+                    self.lblb2bPrices.isHidden = true
+                    self.lblprice.isHidden = false
+                    self.stockInfoB2B.isHidden = true
+                    //self.colorSizeStack.isHidden = false
+                    self.lblstock.text = "Instock :" + (response.product?.product_stock)!
+                                  
+                                  self.lblprice.text =  "Price : " + (response.product?.selling_price)!  + " PKR"
+                                 
+                    
+                    
+                    
                 }
                 
+                
+                
+                
+                 self.setViewHeight()
+                self.tblView.reloadData()
+                self.colorClView.reloadData()
+                self.sizeClView.reloadData()
             } else {
                 ShareData.hideProgress()
                 ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
@@ -161,6 +261,32 @@ class ProductDetailVC: UIViewController {
     }
     
     
+    private func setViewHeight(){
+        var tableViewHeight:CGFloat = 0;
+        for i in 0..<self.tblView.numberOfRows(inSection: 0){
+            tableViewHeight = tableViewHeight + tableView(self.tblView, heightForRowAt: IndexPath(row: i, section: 0))
+        }
+        tblHeight.constant = tableViewHeight + 10
+        self.tblView.setNeedsDisplay()
+    }
+    
+    
+//    @IBAction func commentsAction(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "WriteCommentsVC") as? WriteCommentsVC
+//        vc!.modalPresentationStyle = .overCurrentContext
+//        present(vc!, animated: true, completion: nil)
+//    }
+    
+    @IBAction func shareAction(_ sender: UIButton) {
+        if let name = URL(string: productData?.share_url ?? ""), !name.absoluteString.isEmpty {
+          let objectsToShare = [name]
+          let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+          self.present(activityVC, animated: true, completion: nil)
+        } else {
+          // show alert for not available
+        }
+    }
     
     
     @IBAction func btnChatAction(_ sender: UIButton) {
@@ -170,7 +296,7 @@ class ProductDetailVC: UIViewController {
     
     @IBAction func btnInquieriesAction(_ sender: UIButton) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "B2BInquireisVC") as? B2BInquireisVC
+        let vc = storyBoard.instantiateViewController(withIdentifier: "B2BInquireisVC") as? B2BInquireisVC
         vc?.productData =  self.productData
         self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -183,7 +309,7 @@ class ProductDetailVC: UIViewController {
     
     
     func addtocartApi() {
-        let dic : [String:Any] = ["product_id":self.productData?.products_id ?? 0]
+        let dic : [String:Any] = ["product_id":self.productData?.products_id ?? 0, "variations": colorName + "," + sizename]
         userhandler.addtoCart(parms: dic, Success: {response in
             if response.success == 1 {
                 
@@ -305,26 +431,94 @@ extension ProductDetailVC :   UICollectionViewDelegate,UICollectionViewDataSourc
     
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
         return 1
+        
 
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        
+        if collectionView == colorClView {
+            return self.colorData.count
+            
+        } else if collectionView == sizeClView {
+            return self.sizeArray.count
+        } else {
             
         self.pager.numberOfPages =  self.productData?.images?.count ?? 0
              return self.productData?.images?.count ?? 0
             
-        
+        }
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-      
+        if collectionView ==  sliderClView {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCLCell", for: indexPath) as? SliderCLCell
         cell?.img.sd_setImage(with: URL(string: self.productData?.images?[indexPath.row].file_path ?? "Text"))
          return cell!
-        }
+    
+     } else if collectionView == sizeClView {
+                  let cell  =  collectionView.dequeueReusableCell(withReuseIdentifier: "SizeCell", for: indexPath) as? SizeCell
+           
+            cell?.lblsize.text =  self.sizeArray[indexPath.row]
+                                 return cell!
+                 
+              
+        } else {
+                  
+            let cell  =  collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath) as? ColorCell
+                  
+            let color2 = UIColor(hex: self.colorData[indexPath.row].colorCode!)
+            cell?.ColorView.backgroundColor =  color2
+                                 return cell!
+                 
+              }
+      }
+      
+      
+      
+      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+          
+       if collectionView == sizeClView {
+              let cell = collectionView.cellForItem(at: indexPath) as! SizeCell
+              cell.toggleSelected()
+              
+        
+        
+        
+        self.sizename = self.sizeArray[indexPath.row]
+              
+          } else {
+              let cell = collectionView.cellForItem(at: indexPath) as? ColorCell
+        cell?.toggleSelected()
+               
+                     
+                   
+        self.colorName = self.colorData[indexPath.row].colorname!
+          }
+      }
+      
+
+      func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+          if collectionView == sizeClView {
+                     let cell = collectionView.cellForItem(at: indexPath) as! SizeCell
+                     cell.toggleSelected()
+                     // sizeid = ""
+                     
+                 } else {
+                     let cell = collectionView.cellForItem(at: indexPath) as! ColorCell
+                     cell.toggleSelected()
+                    //colorid = ""
+                 }
+      }
+    
+    
+    
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -333,3 +527,30 @@ extension ProductDetailVC :   UICollectionViewDelegate,UICollectionViewDataSourc
    
 }
 
+extension ProductDetailVC : UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+         return 200
+
+    }
+    
+    
+     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.productData?.reviews?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "ReviewsCell") as? ReviewsCell
+        cell!.lblReviews.text = self.productData?.reviews![indexPath.row].reviews
+        cell?.lblName.text =  self.productData?.reviews![indexPath.row].customer?.first_name
+        return cell!
+    }
+    
+    
+}

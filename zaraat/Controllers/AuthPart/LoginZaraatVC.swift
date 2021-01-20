@@ -11,6 +11,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 import  AuthenticationServices
 import LocalAuthentication
+@available(iOS 13.0, *)
 class LoginVC: ZaraatBaseVC {
    
     @IBOutlet weak var txtemail: UITextField!
@@ -49,6 +50,7 @@ class LoginVC: ZaraatBaseVC {
 
         passClick = !passClick
     }
+    
     
 
     @IBAction func loginAction(_ sender: UIButton) {
@@ -90,7 +92,9 @@ class LoginVC: ZaraatBaseVC {
              ShareData.hideProgress()
                ShareData.hideProgress()
                if response.success == 1{
+                 ShareData.shareInfo.token =  response.token!
                 ShareData.shareInfo.userInfo = response
+//                ShareData.shareInfo.userData(User: response)
                 ShareData.shareInfo.email = self.txtemail.text!
                 ShareData.shareInfo.password = self.txtpassword.text!
                 ShareData.shareInfo.autologin =  true
@@ -176,6 +180,7 @@ class LoginVC: ZaraatBaseVC {
     func FaceBookBasicInfo(){
            UserDefaults.standard.set(nil, forKey: "Guest")
            let loginmanger = LoginManager()
+       
            loginmanger.logIn(permissions:["email","public_profile"] , from: self){[weak self](success, error) in
                if error != nil
                {
@@ -237,12 +242,14 @@ class LoginVC: ZaraatBaseVC {
 
         let dic : [String:Any] = ["firstname":fbFirstName, "lastname":FbLastName, "provider_id": id, "provider":authmethod, "avatar": "", "fcm_token": ShareData.shareInfo.fcmToken!, "email": fbemail]
         ShareData.showProgress()
-        ShareData.showProgress()
+       
         userhandler.sociaLogin(parms: dic, Success: {response in
           ShareData.hideProgress()
             ShareData.hideProgress()
             if response.success == 1{
+                ShareData.shareInfo.token =  response.token
              ShareData.shareInfo.userInfo = response
+                //ShareData.shareInfo.userData(User: response) 
              ShareData.shareInfo.email = ""
              ShareData.shareInfo.password = ""
              ShareData.shareInfo.autologin =  false
@@ -288,8 +295,18 @@ class LoginVC: ZaraatBaseVC {
           Googlelogin?.signIn()
       }
     
+    
     @IBAction func GestContinoue(_ sender: UIButton) {
+        ShareData.shareInfo.LoginType = "guest"
+        ShareData.shareInfo.guest = "guest"
     }
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func ContinoueWithApple(_ sender: UIButton) {
         //authenticateUser()
@@ -343,6 +360,7 @@ class LoginVC: ZaraatBaseVC {
     
 }
 
+@available(iOS 13.0, *)
 extension LoginVC : ASAuthorizationControllerDelegate {
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -360,6 +378,7 @@ extension LoginVC : ASAuthorizationControllerDelegate {
     }
 }
 //GIDSignInUIDelegate
+@available(iOS 13.0, *)
 extension LoginVC : GIDSignInDelegate{
     
     

@@ -44,7 +44,7 @@ class MenuVC: UIViewController {
         menuarray.append(menuDate(title: "Edit Profile", imgae: UIImage.init(named: "myaccount")))
          menuarray.append(menuDate(title: "My Orders", imgae: UIImage.init(named: "Order")))
         menuarray.append(menuDate(title: "My WishList", imgae: UIImage.init(named: "Wishlist")))
-        menuarray.append(menuDate(title: "My Inquiries", imgae: UIImage.init(named: "Inquiry")))
+        menuarray.append(menuDate(title: "Inquiries", imgae: UIImage.init(named: "Inquiry")))
        
         menuarray.append(menuDate(title: "Settings", imgae: UIImage.init(named: "settings")))
         menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "Support")))
@@ -68,7 +68,6 @@ class MenuVC: UIViewController {
                 self.userimg.sd_imageLoadOperation(forKey: "Downloading")
 
                 
-               
                 
                 self.userimg.sd_imageIndicator = SDWebImageActivityIndicator.gray
                 self.userimg.sd_setImage(with: URL(string: self.userdata?.user?.picture ?? ""), placeholderImage: UIImage(contentsOfFile: "1"))
@@ -84,6 +83,7 @@ class MenuVC: UIViewController {
     
 
 }
+
 extension MenuVC : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -106,7 +106,7 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
         if  indexPath.row == 0{
         
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "ViewProfileVC") as? ViewProfileVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "ViewProfileVC") as? ViewProfileVC
             vc?.hidesBottomBarWhenPushed = true
             vc?.userdata = userdata
             self.navigationController?.pushViewController(vc!, animated: true)
@@ -114,38 +114,43 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
         } else if   indexPath.row == 1{
         
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "MyOrdersTabVC") as? MyOrdersTabVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "MyOrdersTabVC") as? MyOrdersTabVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
             
         }else if indexPath.row == 2{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "WishListVC") as? WishListVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "WishListVC") as? WishListVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
         }
         else if indexPath.row == 3{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "MyinquiresVC") as? MyinquiresVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "InquiresVC") as? InquiresVC
             vc?.hidesBottomBarWhenPushed = true
             
             self.navigationController?.pushViewController(vc!, animated: true)
         }else if indexPath.row == 4{
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC
-            vc?.hidesBottomBarWhenPushed = true
-            vc?.userdata = userdata
-            self.navigationController?.pushViewController(vc!, animated: true)
+            if #available(iOS 13.0, *) {
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "SettingsVC") as? SettingsVC
+                vc?.hidesBottomBarWhenPushed = true
+                vc?.userdata = userdata
+                self.navigationController?.pushViewController(vc!, animated: true)
+            } else {
+                // Fallback on earlier versions
+            }
+            
         } else if indexPath.row == 5 {
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "SupportVC") as? SupportVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "SupportVC") as? SupportVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
             
         } else if indexPath.row == 6 {
             
             let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "TermsConditionVC") as? TermsConditionVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "TermsConditionVC") as? TermsConditionVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
         } else {
@@ -156,11 +161,15 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
     
     
     func alertForLogout() {
-          let alert = UIAlertController(title: "Alert", message: "Are You Sure You Want To LogOut?", preferredStyle: UIAlertController.Style.alert)
+          let alert = UIAlertController(title: "Alert", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
 
           // add the actions (buttons)
           alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {action in
-            self.logout()
+            if #available(iOS 13.0, *) {
+                self.logout()
+            } else {
+                // Fallback on earlier versions
+            }
           }))
           alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
 
@@ -168,14 +177,16 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
           self.present(alert, animated: true, completion: nil)
       }
     
+    @available(iOS 13.0, *)
     func logout(){
         
         ShareData.shareInfo.email = nil
         ShareData.shareInfo.password = nil
          ShareData.shareInfo.autologin =  false
          ShareData.shareInfo.userInfo = nil
+        ShareData.shareInfo.token = nil
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "LoginVC") as? LoginVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
         vc?.hidesBottomBarWhenPushed =  true
         self.navigationController?.pushViewController(vc!, animated: true)
     }

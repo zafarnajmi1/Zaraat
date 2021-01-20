@@ -70,7 +70,7 @@ class ViewProfileVC: UIViewController {
     }
     @IBAction func EditAction(_ sender: UIButton) {
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  storyBoard.instantiateViewController(identifier: "EditProfileVC") as? EditProfileVC
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "EditProfileVC") as? EditProfileVC
         vc?.userdata =  self.userdata
                self.navigationController?.pushViewController(vc!, animated: true)
     }

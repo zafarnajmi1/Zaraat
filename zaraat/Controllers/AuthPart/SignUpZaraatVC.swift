@@ -127,7 +127,11 @@ class SignUpVC: ZaraatBaseVC {
           ShareData.hideProgress()
             ShareData.hideProgress()
             if response.success == 1{
+                 ShareData.shareInfo.token =  response.token!
+                
              ShareData.shareInfo.userInfo = response
+                
+                //ShareData.shareInfo.userData(User: response) 
              ShareData.shareInfo.email = self.txtemail.text!
              ShareData.shareInfo.password = self.txtpassword.text!
              ShareData.shareInfo.autologin =  true
@@ -165,12 +169,21 @@ class SignUpVC: ZaraatBaseVC {
     
     
     @IBAction func privacyPolicyAction(_ sender: UIButton) {
-        
+        if let url = URL(string: "https://zaraat.com/privacy-policy"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     
     
     @IBAction func TermsofUseAction(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "TermsConditionVC") as? TermsConditionVC
+                vc!.modalPresentationStyle = .popover
+                
+           present(vc!, animated: true, completion: nil)
+        
         
     }
     

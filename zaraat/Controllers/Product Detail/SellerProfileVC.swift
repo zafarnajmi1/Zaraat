@@ -10,6 +10,7 @@ import UIKit
 
 class SellerProfileVC: UIViewController {
 
+    @IBOutlet weak var yearview: UIView!
     @IBOutlet weak var lblGoldDescription: UILabel!
     @IBOutlet weak var lblGoldSupplier: UILabel!
     @IBOutlet weak var lbldiscriptionpaid: UILabel!
@@ -20,6 +21,10 @@ class SellerProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
          suplieirDataconfig()
+        self.yearview.layer.cornerRadius = 8
+         self.yearview.layer.borderWidth = 1
+         self.yearview.layer.borderColor =  #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        
     }
     func suplieirDataconfig(){
        self.lbltitle.text = supplierData?.vendor?.company_name

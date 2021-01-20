@@ -36,6 +36,7 @@ class Cart : Codable {
     var cart_id : Int?
     var product_id : Int?
     var customer_id : Int?
+    var variations: String?
     var created_at : String?
     var updated_at : String?
     var quantity : Int?
@@ -49,6 +50,7 @@ class Cart : Codable {
         case created_at = "created_at"
         case updated_at = "updated_at"
         case quantity = "quantity"
+        case variations = "variations"
         case product = "product"
     }
 
@@ -60,6 +62,7 @@ class Cart : Codable {
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
         quantity = try values.decodeIfPresent(Int.self, forKey: .quantity)
+        variations =  try values.decodeIfPresent(String.self, forKey: .variations)
         product = try values.decodeIfPresent(CartProduct.self, forKey: .product)
     }
 

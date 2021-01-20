@@ -20,10 +20,12 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
     @IBOutlet weak var webView: WKWebView!
     var cartData : GetCartModel?
     var customer_id = 0
+    var catids = ""
+    var productnames = ""
     override func viewDidLoad() {
         super.viewDidLoad()
     webView.navigationDelegate = self
-       
+       self.webView.isHidden = false
         addBackButton()
         setNavigationBarWhiteColor()
        
@@ -55,7 +57,7 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
     func settheValue() {
         
         
-        let queryItems = [URLQueryItem(name: "amount", value: "\(amount)"), URLQueryItem(name: "bill_to_forename", value: self.getAddrsses?.billing?.billing_person_name),URLQueryItem(name: "bill_to_surname", value: self.getAddrsses?.billing?.billing_person_name),URLQueryItem(name: "bill_to_address_line1", value: self.getAddrsses?.billing?.billing_address),URLQueryItem(name: "bill_to_address_city", value: self.getAddrsses?.billing?.billing_city),URLQueryItem(name: "bill_to_address_state", value: self.getAddrsses?.billing?.billing_state),URLQueryItem(name: "bill_to_address_postal_code", value: self.getAddrsses?.billing?.billing_zipcode),URLQueryItem(name: "bill_to_phone", value: self.getAddrsses?.billing?.billing_phone),URLQueryItem(name: "bill_to_email", value: ShareData.shareInfo.userInfo?.customer?.email),URLQueryItem(name: "ship_to_forename", value: self.getAddrsses?.shipping?.shipping_person_name),URLQueryItem(name: "ship_to_surname", value: self.getAddrsses?.shipping?.shipping_person_name),URLQueryItem(name: "ship_to_address_line1", value: self.getAddrsses?.shipping?.shipping_address),URLQueryItem(name: "ship_to_address_city", value: self.getAddrsses?.shipping?.shipping_city),URLQueryItem(name: "ship_to_address_state", value: self.getAddrsses?.shipping?.shipping_state),URLQueryItem(name: "ship_to_address_postal_code", value: self.getAddrsses?.shipping?.shipping_zipcode),URLQueryItem(name: "ship_to_phone", value: self.getAddrsses?.shipping?.shipping_phone),URLQueryItem(name: "ship_to_email", value: ShareData.shareInfo.userInfo?.customer?.email),URLQueryItem(name: "ship_to_phone", value: self.getAddrsses?.shipping?.shipping_phone),URLQueryItem(name: "consumer_id", value: "\(customer_id)"),URLQueryItem(name: "customer_ip_address", value: "\(getIP() ?? "")"),URLQueryItem(name: "reference_number", value: "\(random(digits: 8))"),URLQueryItem(name: "transaction_uuid", value: random(digits: 8))]
+        let queryItems = [URLQueryItem(name: "amount", value: "\(amount)"), URLQueryItem(name: "bill_to_forename", value: self.getAddrsses?.billing?.billing_person_name),URLQueryItem(name: "bill_to_surname", value: self.getAddrsses?.billing?.billing_person_name),URLQueryItem(name: "bill_to_address_line1", value: self.getAddrsses?.billing?.billing_address),URLQueryItem(name: "bill_to_address_city", value: self.getAddrsses?.billing?.billing_city),URLQueryItem(name: "bill_to_address_state", value: self.getAddrsses?.billing?.billing_state),URLQueryItem(name: "bill_to_address_postal_code", value: self.getAddrsses?.billing?.billing_zipcode),URLQueryItem(name: "bill_to_phone", value: self.getAddrsses?.billing?.billing_phone),URLQueryItem(name: "bill_to_email", value: ShareData.shareInfo.userInfo?.customer?.email),URLQueryItem(name: "ship_to_forename", value: self.getAddrsses?.shipping?.shipping_person_name),URLQueryItem(name: "ship_to_surname", value: self.getAddrsses?.shipping?.shipping_person_name),URLQueryItem(name: "ship_to_address_line1", value: self.getAddrsses?.shipping?.shipping_address),URLQueryItem(name: "ship_to_address_city", value: self.getAddrsses?.shipping?.shipping_city),URLQueryItem(name: "ship_to_address_state", value: self.getAddrsses?.shipping?.shipping_state),URLQueryItem(name: "ship_to_address_postal_code", value: self.getAddrsses?.shipping?.shipping_zipcode),URLQueryItem(name: "ship_to_phone", value: self.getAddrsses?.shipping?.shipping_phone),URLQueryItem(name: "ship_to_email", value: ShareData.shareInfo.userInfo?.customer?.email),URLQueryItem(name: "ship_to_phone", value: self.getAddrsses?.shipping?.shipping_phone),URLQueryItem(name: "consumer_id", value: "\(customer_id)"),URLQueryItem(name: "customer_ip_address", value: "\(getIP() ?? "")"),URLQueryItem(name: "reference_number", value: "\(random(digits: 8))"),URLQueryItem(name: "transaction_uuid", value: random(digits: 8)),URLQueryItem(name: "merchant_defined_data3", value: catids),URLQueryItem(name: "merchant_defined_data4", value: productnames) ]
         
          var urlComps = URLComponents(string: "https://zaraat.com/hblapiform")!
          urlComps.queryItems = queryItems
@@ -104,6 +106,7 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
                 print(res.reason_code!)
                 
                 if res.reason_code == "100" {
+                    self.webView.isHidden = true
                     self.PlaceOrderApi()
                 } else {
                     self.alertMessage(message: "Sorry! We Are Unable To Proceed, Try Again!", completionHandler: {

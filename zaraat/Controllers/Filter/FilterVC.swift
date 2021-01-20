@@ -117,7 +117,7 @@ class FilterVC: UIViewController {
     @IBAction func SearchAction(_ sender: UIButton) {
         
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
         vc?.cateid = self.cateid
         vc?.childid = self.childid
         vc?.colorid = colorid

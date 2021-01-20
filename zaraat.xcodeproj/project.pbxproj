@@ -54,6 +54,9 @@
 		CE3A92992418A90D0097B215 /* ShareData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A92982418A90D0097B215 /* ShareData.swift */; };
 		CE40BAC6240D225B0034C708 /* ZaraatZalert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */; };
 		CE449D4C2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE449D4A2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift */; };
+		CE48E86325A70F9F00243977 /* ReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48E86125A70F9F00243977 /* ReviewsCell.swift */; };
+		CE48E86425A70F9F00243977 /* ReviewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE48E86225A70F9F00243977 /* ReviewsCell.xib */; };
+		CE48E86625A71C2100243977 /* WriteCommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48E86525A71C2100243977 /* WriteCommentsVC.swift */; };
 		CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */; };
 		CE49D827240E7682009ECFD5 /* ChangePasswordZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */; };
 		CE4A34D62549B1B9001F70EA /* CoupanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A34D52549B1B9001F70EA /* CoupanModel.swift */; };
@@ -146,6 +149,8 @@
 		CE59074A253ECA4C00C32BE9 /* ZMartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE590749253ECA4C00C32BE9 /* ZMartModel.swift */; };
 		CE59074C253EFA2F00C32BE9 /* ProductListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */; };
 		CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */; };
+		CE5B476925ADB92A00D7CF34 /* VendorInquriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B476825ADB92A00D7CF34 /* VendorInquriesVC.swift */; };
+		CE5B476B25ADB94C00D7CF34 /* InquiresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B476A25ADB94C00D7CF34 /* InquiresVC.swift */; };
 		CE5D6E5C256D26D80004495A /* HBLBillingFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */; };
 		CE60479025889E0F00E0CAA3 /* PlaceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60478F25889E0F00E0CAA3 /* PlaceOrderModel.swift */; };
 		CE61849B2540378600EFCF3E /* ProductDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE61849A2540378600EFCF3E /* ProductDetailModel.swift */; };
@@ -275,6 +280,8 @@
 		CECB92EE2535BEAF009F0C04 /* ChildCateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB92ED2535BEAF009F0C04 /* ChildCateModel.swift */; };
 		CECB92F02535D247009F0C04 /* SubCateProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB92EF2535D247009F0C04 /* SubCateProductsModel.swift */; };
 		CECB92F22535E254009F0C04 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB92F12535E254009F0C04 /* TrendingModel.swift */; };
+		CEEA93A325B71A58001D5258 /* SplashZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C724092A4B0079C3C5 /* SplashZaraatVC.swift */; };
+		CEEA93A425B71A59001D5258 /* SplashZaraatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAED9C724092A4B0079C3C5 /* SplashZaraatVC.swift */; };
 		CEEB1E50241A65410069104B /* SliderCLCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB1E4E241A65410069104B /* SliderCLCell.swift */; };
 		CEEB1E51241A65410069104B /* SliderCLCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEB1E4F241A65410069104B /* SliderCLCell.xib */; };
 		CEEB1E54241A66220069104B /* TablCLViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB1E52241A66220069104B /* TablCLViewCell.swift */; };
@@ -356,6 +363,9 @@
 		CE3A92982418A90D0097B215 /* ShareData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareData.swift; sourceTree = "<group>"; };
 		CE40BAC5240D225B0034C708 /* ZaraatZalert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZaraatZalert.swift; sourceTree = "<group>"; };
 		CE449D4A2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPharmacyClViewShopeCategoriesCell.swift; sourceTree = "<group>"; };
+		CE48E86125A70F9F00243977 /* ReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCell.swift; sourceTree = "<group>"; };
+		CE48E86225A70F9F00243977 /* ReviewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewsCell.xib; sourceTree = "<group>"; };
+		CE48E86525A71C2100243977 /* WriteCommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentsVC.swift; sourceTree = "<group>"; };
 		CE49D824240E5FE6009ECFD5 /* CodeVerificationZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVerificationZaraatVC.swift; sourceTree = "<group>"; };
 		CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordZaraatVC.swift; sourceTree = "<group>"; };
 		CE4A34D52549B1B9001F70EA /* CoupanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupanModel.swift; sourceTree = "<group>"; };
@@ -431,6 +441,8 @@
 		CE590749253ECA4C00C32BE9 /* ZMartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMartModel.swift; sourceTree = "<group>"; };
 		CE59074B253EFA2F00C32BE9 /* ProductListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModel.swift; sourceTree = "<group>"; };
 		CE5A78E92417B6ED00796126 /* Storyboard_Ipad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard_Ipad.storyboard; sourceTree = "<group>"; };
+		CE5B476825ADB92A00D7CF34 /* VendorInquriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInquriesVC.swift; sourceTree = "<group>"; };
+		CE5B476A25ADB94C00D7CF34 /* InquiresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiresVC.swift; sourceTree = "<group>"; };
 		CE5D6E5B256D26D80004495A /* HBLBillingFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBLBillingFormVC.swift; sourceTree = "<group>"; };
 		CE60478F25889E0F00E0CAA3 /* PlaceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderModel.swift; sourceTree = "<group>"; };
 		CE61849A2540378600EFCF3E /* ProductDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailModel.swift; sourceTree = "<group>"; };
@@ -618,6 +630,9 @@
 			children = (
 				437BD1A0242C8D6B003C55C2 /* ProductDetailVC.swift */,
 				CE61849C2540535400EFCF3E /* SellerProfileVC.swift */,
+				CE48E86125A70F9F00243977 /* ReviewsCell.swift */,
+				CE48E86225A70F9F00243977 /* ReviewsCell.xib */,
+				CE48E86525A71C2100243977 /* WriteCommentsVC.swift */,
 			);
 			path = "Product Detail";
 			sourceTree = "<group>";
@@ -911,6 +926,8 @@
 				CE52C864255BCCA300E96CE4 /* MyinquiresCell.swift */,
 				CE52C865255BCCA300E96CE4 /* MyinquiresCell.xib */,
 				CE52C86A255BFB7E00E96CE4 /* InquiresViewVC.swift */,
+				CE5B476825ADB92A00D7CF34 /* VendorInquriesVC.swift */,
+				CE5B476A25ADB94C00D7CF34 /* InquiresVC.swift */,
 			);
 			path = Myinquiries;
 			sourceTree = "<group>";
@@ -1761,6 +1778,7 @@
 				CEAED9D324092A4E0079C3C5 /* LaunchScreen.storyboard in Resources */,
 				CE76D98D24FD0162005078D6 /* WeeklySellerCell.xib in Resources */,
 				CE5A78EA2417B6ED00796126 /* Storyboard_Ipad.storyboard in Resources */,
+				CE48E86425A70F9F00243977 /* ReviewsCell.xib in Resources */,
 				CEEC5073250F5DAE001A774C /* ChatCell.xib in Resources */,
 				437BD189242C87D0003C55C2 /* Poppins-ExtraBoldItalic.otf in Resources */,
 				437BD18A242C87D0003C55C2 /* Poppins-Italic.otf in Resources */,
@@ -1965,6 +1983,7 @@
 				CE59074C253EFA2F00C32BE9 /* ProductListModel.swift in Sources */,
 				43C1BBDB243B0F3C0089ED55 /* CartCell.swift in Sources */,
 				CE73BBDA2524ADE80069B861 /* HomeCatePartOneCell.swift in Sources */,
+				CE48E86325A70F9F00243977 /* ReviewsCell.swift in Sources */,
 				CE797651251B29D7009A9FC0 /* B2BViewController.swift in Sources */,
 				CE79764B251B29D7009A9FC0 /* B2BBasicCell.swift in Sources */,
 				CE543176255A885E00FC4116 /* InquiryDocModel.swift in Sources */,
@@ -1979,6 +1998,7 @@
 				CE49D825240E5FE7009ECFD5 /* CodeVerificationZaraatVC.swift in Sources */,
 				CE94EC712510DB5F00010DA0 /* ViewProfileVC.swift in Sources */,
 				CE52C863255BCC8100E96CE4 /* MyinquiresVC.swift in Sources */,
+				CE5B476925ADB92A00D7CF34 /* VendorInquriesVC.swift in Sources */,
 				CE73BBCB252471CC0069B861 /* HomeButtonClViewPartOneCell.swift in Sources */,
 				CE138EA925232DD3008DC888 /* ZPharmacyClViewPartOneCell.swift in Sources */,
 				CE55BAE02534764400780C9D /* B2BCateModel.swift in Sources */,
@@ -2042,6 +2062,7 @@
 				CE8C9DB2250F661500973CD1 /* SenderImageCell.swift in Sources */,
 				CE76D99A24FD1FB6005078D6 /* FeaturedProductsCell.swift in Sources */,
 				CE8DF4EB259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */,
+				CE48E86625A71C2100243977 /* WriteCommentsVC.swift in Sources */,
 				CE5D6E5C256D26D80004495A /* HBLBillingFormVC.swift in Sources */,
 				CE449D4C2523193400313736 /* ZPharmacyClViewShopeCategoriesCell.swift in Sources */,
 				CE797662251B5FEE009A9FC0 /* ClviewOtherChenlsCell.swift in Sources */,
@@ -2051,6 +2072,7 @@
 				CEC07C822552C3C6004D9B4B /* PushNotificationManager.swift in Sources */,
 				CE92D8AD25221168001C63C8 /* ZMartClViewPartTwoCell.swift in Sources */,
 				CE4BBF442410CF25000DAAB4 /* InboxVC.swift in Sources */,
+				CE5B476B25ADB94C00D7CF34 /* InquiresVC.swift in Sources */,
 				CE52C866255BCCA300E96CE4 /* MyinquiresCell.swift in Sources */,
 				CE138EBD2523603F008DC888 /* ZDigitalClViewPartOneCell.swift in Sources */,
 				CEBBE01324FE755400190E91 /* MenuCell.swift in Sources */,
@@ -2081,6 +2103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8DF4EC259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */,
+				CEEA93A325B71A58001D5258 /* SplashZaraatVC.swift in Sources */,
 				CEAED9DE24092A4E0079C3C5 /* zaraatTests.swift in Sources */,
 				CE797652251B29D7009A9FC0 /* B2BViewController.swift in Sources */,
 				CE79765D251B2FDA009A9FC0 /* B2BHomeVC.swift in Sources */,
@@ -2108,6 +2131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8DF4ED259085E000514D18 /* InAppSDKDemoStringValidator.m in Sources */,
+				CEEA93A425B71A59001D5258 /* SplashZaraatVC.swift in Sources */,
 				CEAED9E924092A4E0079C3C5 /* zaraatUITests.swift in Sources */,
 				CE797653251B29D7009A9FC0 /* B2BViewController.swift in Sources */,
 				CE79765E251B2FDA009A9FC0 /* B2BHomeVC.swift in Sources */,
@@ -2215,13 +2239,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -2269,12 +2294,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2288,6 +2314,7 @@
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2305,7 +2332,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDevelopementProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2319,6 +2346,7 @@
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2335,7 +2363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDevelopementProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

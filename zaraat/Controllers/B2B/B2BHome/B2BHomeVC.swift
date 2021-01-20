@@ -167,7 +167,7 @@ class B2BHomeVC: UIViewController {
     @IBAction func LiveStockAction(_ sender: UIButton) {
         
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+               let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
              vc?.id =  1
         
                self.navigationController?.pushViewController(vc!, animated: true)
@@ -176,7 +176,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func SeedsAction(_ sender: UIButton) {
          let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  2
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -184,7 +184,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func PesticidesAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  3
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -193,7 +193,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func IrrigationAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  4
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -201,7 +201,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func ColdStorageAction(_ sender: UIButton) {
        let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                     let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                     let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                    vc?.id =  5
               
                      self.navigationController?.pushViewController(vc!, animated: true)
@@ -211,7 +211,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func TunnelFarmingAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  6
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -219,7 +219,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func FertilizersAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  7
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -227,7 +227,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func Machinery(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id = 8
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -235,7 +235,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func CropsAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  9
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -243,7 +243,7 @@ class B2BHomeVC: UIViewController {
     
     @IBAction func PrintingPackageAction(_ sender: UIButton) {
         let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                      let vc =  StoryBoard.instantiateViewController(identifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
+                      let vc =  StoryBoard.instantiateViewController(withIdentifier: "B2BHomeButtonsVC") as?  B2BHomeButtonsVC
                     vc?.id =  10
                
                       self.navigationController?.pushViewController(vc!, animated: true)
@@ -456,27 +456,27 @@ class B2BHomeVC: UIViewController {
             
             if collectionView ==  ChanelClView {
                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                 vc?.id =  self.b2bHomedata?.other_channels?[indexPath.row].products_id ?? 0
                 vc?.isb2b = 2
                 self.navigationController?.pushViewController(vc!, animated: true)
                
             } else if collectionView == secOneClView {
                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                 vc?.id =  self.b2bHomedata?.section_1?[indexPath.row].products_id ?? 0
                 vc?.isb2b = 2
                 self.navigationController?.pushViewController(vc!, animated: true)
               
             } else if collectionView == sectwoClView {
                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                 vc?.id =  self.b2bHomedata?.section_2?[indexPath.row].products_id ?? 0
                 vc?.isb2b = 2
                 self.navigationController?.pushViewController(vc!, animated: true)
             } else {
                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                 vc?.id =  self.b2bHomedata?.section_3?[indexPath.row].products_id ?? 0
                 vc?.isb2b = 2
                 self.navigationController?.pushViewController(vc!, animated: true)

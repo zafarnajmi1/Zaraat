@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class SplashVC: ZaraatBaseVC {
 
     override func viewDidLoad() {
@@ -23,8 +24,8 @@ class SplashVC: ZaraatBaseVC {
         if UIDevice.current.userInterfaceIdiom == .pad {
             
         let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Ipad, bundle: nil)
-        let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.navigationController?.pushViewController(vc, animated: true)
         
         } else {
         
@@ -35,7 +36,7 @@ class SplashVC: ZaraatBaseVC {
     }
     
     func CheckLogin() {
-        if ShareData.shareInfo.autologin == true  {
+        if ShareData.shareInfo.token?.isEmpty == false {
             LoginClient()
         } else {
            moveOnLogin()
@@ -44,15 +45,16 @@ class SplashVC: ZaraatBaseVC {
     
     func LoginClient() {
 
-              let dic : [String:Any] = ["email" : ShareData.shareInfo.email!,"password":ShareData.shareInfo.password!,"fcm_token": ShareData.shareInfo.fcmToken!]
+             // let dic : [String:Any] = ["email" : ShareData.shareInfo.email!,"password":ShareData.shareInfo.password!,"fcm_token": ShareData.shareInfo.fcmToken!]
            ShareData.showProgress()
-              userhandler.login(parms: dic, Success: {response in
+              userhandler.loginSession( Success: {response in
                 ShareData.hideProgress()
                   ShareData.hideProgress()
                   if response.success == 1{
-                   ShareData.shareInfo.userInfo = response
+                     ShareData.shareInfo.token = response.token!
+                    //ShareData.shareInfo.userData(User: response)
 
-                   
+                    ShareData.shareInfo.userInfo = response
                         self.movetoHome()
                    
 

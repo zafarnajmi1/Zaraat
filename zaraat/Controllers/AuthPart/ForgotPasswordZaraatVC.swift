@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class ForgotPasswordVC: ZaraatBaseVC {
 
     @IBOutlet weak var btnNext: UIButton!

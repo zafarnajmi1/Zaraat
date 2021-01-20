@@ -107,7 +107,7 @@ class TrendsVC: UIViewController {
     @IBAction func OneImageDaily(_ sender: UIButton) {
         
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
         vc!.id =  self.trendData?.top_trending?[0].categories_id ?? 0
           vc?.typeno = 1
         self.navigationController?.pushViewController(vc!, animated: true)
@@ -117,21 +117,21 @@ class TrendsVC: UIViewController {
     
     @IBAction func twoImageDaily(_ sender: UIButton) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                vc!.id =  self.trendData?.top_trending?[1].categories_id ?? 0
                  vc?.typeno = 1
                self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func threeImageDaily(_ sender: UIButton) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                vc!.id =  self.trendData?.top_trending?[2].categories_id ?? 0
                  vc?.typeno = 1
                self.navigationController?.pushViewController(vc!, animated: true)
     }
     @IBAction func foureImageDaily(_ sender: UIButton) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                vc!.id =  self.trendData?.top_trending?[3].categories_id ?? 0
                  vc?.typeno = 1
                self.navigationController?.pushViewController(vc!, animated: true)
@@ -140,7 +140,7 @@ class TrendsVC: UIViewController {
     @IBAction func fiveImageDaily(_ sender: UIButton) {
         
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+               let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                vc!.id =  self.trendData?.top_trending?[4].categories_id ?? 0
                  vc?.typeno = 1
                self.navigationController?.pushViewController(vc!, animated: true)
@@ -199,7 +199,7 @@ extension TrendsVC :  UICollectionViewDelegate, UICollectionViewDataSource, UICo
         if collectionView == trendClView {
 
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                 vc!.id =  self.trendData?.stores![indexPath.row].categories_id ?? 0
                   vc?.typeno = 1
                 self.navigationController?.pushViewController(vc!, animated: true)
@@ -207,14 +207,14 @@ extension TrendsVC :  UICollectionViewDelegate, UICollectionViewDataSource, UICo
             } else if collectionView == secOneClView {
                 
                       let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                       let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                       let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                       vc?.id =  self.trendData?.section_1![indexPath.row].products_id ?? 0
                        self.navigationController?.pushViewController(vc!, animated: true)
         
             } else {
                 
                          let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                          let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                          let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                          vc?.id =   self.trendData?.section_2![indexPath.row].products_id ?? 0
                           self.navigationController?.pushViewController(vc!, animated: true)
                 }

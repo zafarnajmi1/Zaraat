@@ -128,7 +128,7 @@ struct HomeCateSection_2 : Codable {
     let created_at : String?
     let updated_at : String?
     let vendor_package : Vendor_package?
-
+    let avg_rating : Double?
     enum CodingKeys: String, CodingKey {
 
         case products_id = "products_id"
@@ -157,6 +157,7 @@ struct HomeCateSection_2 : Codable {
         case created_at = "created_at"
         case updated_at = "updated_at"
         case vendor_package = "vendor_package"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -187,6 +188,7 @@ struct HomeCateSection_2 : Codable {
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
         vendor_package = try values.decodeIfPresent(Vendor_package.self, forKey: .vendor_package)
+        avg_rating =  try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }
@@ -218,7 +220,7 @@ struct HomeCateSection_1 : Codable {
     let created_at : String?
     let updated_at : String?
     let vendor_package : Vendor_package?
-
+    let avg_rating : Double?
     enum CodingKeys: String, CodingKey {
 
         case products_id = "products_id"
@@ -247,6 +249,7 @@ struct HomeCateSection_1 : Codable {
         case created_at = "created_at"
         case updated_at = "updated_at"
         case vendor_package = "vendor_package"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -277,6 +280,7 @@ struct HomeCateSection_1 : Codable {
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
         vendor_package = try values.decodeIfPresent(Vendor_package.self, forKey: .vendor_package)
+        avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }

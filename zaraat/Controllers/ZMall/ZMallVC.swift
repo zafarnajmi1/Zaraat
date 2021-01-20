@@ -81,7 +81,7 @@ class ZMallVC: UIViewController {
     @IBAction func dailyOneAction(_ sender: UIButton) {
         if (self.Zmalldata?.daily?.indices.contains(0))! {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                            vc!.id =  self.Zmalldata?.daily![0].subcategory_id ?? 0
                              vc?.typeno = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -92,7 +92,7 @@ class ZMallVC: UIViewController {
     @IBAction func DailytwoAction(_ sender: UIButton) {
         if (self.Zmalldata?.daily?.indices.contains(1))! {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                            vc!.id =  self.Zmalldata?.daily![1].subcategory_id ?? 0
                              vc?.typeno = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -102,7 +102,7 @@ class ZMallVC: UIViewController {
     @IBAction func dailythreeAction(_ sender: UIButton) {
         if (self.Zmalldata?.daily?.indices.contains(2))! {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                           let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                            vc!.id =  self.Zmalldata?.daily![2].subcategory_id ?? 0
                              vc?.typeno = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -139,10 +139,11 @@ class ZMallVC: UIViewController {
                     self.adimg.sd_setImage(with: URL(string: self.Zmalldata?.ad_2?.category_image ?? "Text"))
                 }
                 
+               
                 if self.Zmalldata?.daily?.count ?? 0 != 0 {
-                    self.topBrandOneImg.sd_setImage(with: URL(string:self.Zmalldata?.daily![0].featured_image ?? "Text"))
-                    self.topBrandTwoImage.sd_setImage(with: URL(string: self.Zmalldata?.daily![1].featured_image ?? "Text"))
-                    self.topBrandThreeImg.sd_setImage(with: URL(string: self.Zmalldata?.daily![2].featured_image ?? "Text"))
+                    self.topBrandOneImg.sd_setImage(with: URL(string:self.Zmalldata?.daily?[0].featured_image ?? "Text"))
+                    self.topBrandTwoImage.sd_setImage(with: URL(string: self.Zmalldata?.daily?[1].featured_image ?? "Text"))
+                    self.topBrandThreeImg.sd_setImage(with: URL(string: self.Zmalldata?.daily?[2].featured_image ?? "Text"))
                 }
                 
                 
@@ -201,8 +202,8 @@ extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ZMallClViewPartOneCell", for: indexPath) as? ZMallClViewPartOneCell
                 
                     cell?.lbltitl.text =  self.Zmalldata?.section_1![indexPath.row].product_title_en
-                              cell?.lblprice.text =  self.Zmalldata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
-                              cell?.lblstock.text =  self.Zmalldata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.lblprice.text = "PKR :" + (self.Zmalldata?.section_1![indexPath.row].selling_price)!
+                cell?.lblstock.text =   "Pieces(InStock) :" + (self.Zmalldata?.section_1![indexPath.row].product_stock)!
                               cell?.img.sd_setImage(with: URL(string: self.Zmalldata?.section_1![indexPath.row].featured_image ?? "Text"))
                 
                 return cell!
@@ -213,8 +214,8 @@ extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ZMallClViewPartTwoCell", for: indexPath) as? ZMallClViewPartTwoCell
                 
                         cell?.lbltitl.text =  self.Zmalldata?.section_2![indexPath.row].product_title_en
-                         cell?.lblprice.text =  self.Zmalldata?.section_2![indexPath.row].selling_price ?? "" + " PKR"
-                         cell?.lblstock.text =  self.Zmalldata?.section_2![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                cell?.lblprice.text = "PKR :" + (self.Zmalldata?.section_2![indexPath.row].selling_price)!
+                cell?.lblstock.text =  "Pieces(InStock) :" + (self.Zmalldata?.section_2![indexPath.row].product_stock)!
                          cell?.img.sd_setImage(with: URL(string: self.Zmalldata?.section_2![indexPath.row].featured_image ?? "Text"))
                        return cell!
                 
@@ -229,7 +230,7 @@ extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 if collectionView == ClViewStore {
 
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                     vc!.id =  self.Zmalldata?.subcategories![indexPath.row].child_categories_id ?? 0
                       vc?.typeno = 2
                     self.navigationController?.pushViewController(vc!, animated: true)
@@ -237,14 +238,14 @@ extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 } else if collectionView == secOneClView {
                     
                           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                           let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                           vc?.id =   self.Zmalldata?.section_1![indexPath.row].products_id ?? 0
                            self.navigationController?.pushViewController(vc!, animated: true)
             
                 } else {
                     
                              let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                              vc?.id =   self.Zmalldata?.section_2![indexPath.row].products_id ?? 0
                               self.navigationController?.pushViewController(vc!, animated: true)
                     }

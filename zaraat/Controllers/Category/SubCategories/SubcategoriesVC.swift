@@ -137,7 +137,7 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
               let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-              let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+              let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                 vc!.id =  self.childCate[indexPath.row].child_categories_id ?? 0
                 vc!.market = market
                 vc?.typeno = 3
@@ -145,7 +145,7 @@ extension SubcategoriesVC: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
             vc?.id = self.SubProductdata?.products![indexPath.row].products_id ?? 0
             if market == "b2b" {
             vc?.isb2b = 2

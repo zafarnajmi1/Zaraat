@@ -168,12 +168,16 @@ class B2BViewController: UIViewController {
     
     
     @IBAction func searchAction(_ sender: UIButton) {
-        
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-               let vc =  storyBoard.instantiateViewController(identifier: "SearchVC") as? SearchVC
-               vc?.keyword =  self.txtsearch.text!
-        vc?.hidesBottomBarWhenPushed = true 
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+               let vc = storyboard.instantiateViewController(withIdentifier: "SearchVC") as? SearchVC
+               //vc!.modalPresentationStyle = .popover
                self.navigationController?.pushViewController(vc!, animated: true)
+        
+//        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+//               let vc =  storyBoard.instantiateViewController(identifier: "SearchVC") as? SearchVC
+//               vc?.keyword =  self.txtsearch.text!
+//        vc?.hidesBottomBarWhenPushed = true
+//               self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     

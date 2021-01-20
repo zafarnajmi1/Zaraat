@@ -81,8 +81,13 @@ class B2BHomeCateVC: UIViewController {
                 if response.success == 1 {
                     self.HomeCatedata =  response.data
                     
+                    if self.self.HomeCatedata?.ad_1?.category_image == "" {
+                        self.adimg.isHidden = true
+                    } else {
+                         self.adimg.isHidden = false
+                        self.adimg.sd_setImage(with: URL(string: self.self.HomeCatedata?.ad_1?.category_image ?? "Text"))
+                    }
                     
-                    self.adimg.sd_setImage(with: URL(string: self.self.HomeCatedata?.ad_1?.category_image ?? "Text"))
                     
                     self.bannerimg.sd_setImage(with: URL(string:self.HomeCatedata?.ad_2?.category_image ?? "Text"))
                     
@@ -155,7 +160,7 @@ class B2BHomeCateVC: UIViewController {
             if collectionView == storeForyouClView {
 
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                     vc!.id =  self.HomeCatedata?.sub_categories![indexPath.row].subcategory_id ?? 0
                       vc?.typeno = 2
                     self.navigationController?.pushViewController(vc!, animated: true)
@@ -163,7 +168,7 @@ class B2BHomeCateVC: UIViewController {
                 } else if collectionView == seconeClview {
                     
                           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                           let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                           vc?.id =  self.HomeCatedata?.section_1![indexPath.row].products_id ?? 0
                           vc?.isb2b = 2
                            self.navigationController?.pushViewController(vc!, animated: true)
@@ -171,7 +176,7 @@ class B2BHomeCateVC: UIViewController {
                 } else {
                     
                              let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                              vc?.id =   self.HomeCatedata?.section_2![indexPath.row].products_id ?? 0
                               vc?.isb2b = 2
                               self.navigationController?.pushViewController(vc!, animated: true)

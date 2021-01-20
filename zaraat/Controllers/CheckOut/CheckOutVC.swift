@@ -50,6 +50,7 @@ class CheckOutVC: UIViewController {
     var addresstype = 0
     var qty = 0
     var productName = ""
+     var catid = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         addBackButton()
@@ -71,6 +72,7 @@ class CheckOutVC: UIViewController {
             qty += item.quantity ?? 0
             productName += "," + productName  + (item.product?.product_title_en)!
             print(productName)
+            catid += "," + catid + "\(item.product?.category_id ?? 0)"
          }
         
         
@@ -79,6 +81,11 @@ class CheckOutVC: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController!.isNavigationBarHidden = false
+        
+    }
     
     func getAddresses() {
         ShareData.showProgress()
@@ -196,6 +203,8 @@ class CheckOutVC: UIViewController {
                             vc?.hidesBottomBarWhenPushed = true
                             vc?.amount = payment
                             vc!.cartData =  self.cartData
+                            vc?.catids = catid
+                            vc?.productnames = productName
                             self.navigationController?.pushViewController(vc!, animated: true)
                            
                   } else {
@@ -205,6 +214,8 @@ class CheckOutVC: UIViewController {
                             vc?.hidesBottomBarWhenPushed = true
                             vc?.amount = payment
                             vc!.cartData =  self.cartData
+                            vc?.catids = catid
+                            vc?.productnames = productName
                             self.navigationController?.pushViewController(vc!, animated: true)
                         }
             }

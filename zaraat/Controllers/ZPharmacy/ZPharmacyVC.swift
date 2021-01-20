@@ -82,8 +82,15 @@ class ZPharmacyVC: UIViewController {
                 if response.success == 1 {
                     self.Pharmacydata = response.data
                     
+                    if self.Pharmacydata?.ad_2?.category_image == "" {
+                        self.adimg.isHidden = true
+                    } else {
+                         self.adimg.isHidden = false
+                        self.adimg.sd_setImage(with: URL(string: self.Pharmacydata?.ad_2?.category_image ?? "Text"))
+                    }
+                    
                     self.bannerimg.sd_setImage(with: URL(string: self.Pharmacydata?.ad_1?.category_image ?? "Text"))
-                    self.adimg.sd_setImage(with: URL(string: self.Pharmacydata?.ad_2?.category_image ?? "Text"))
+                    
                     if self.Pharmacydata?.daily?.count ?? 0 != 0 {
                         self.topBrandOneImg.sd_setImage(with: URL(string:self.Pharmacydata?.daily![0].featured_image ?? "Text"))
                         self.topBrandTwoImage.sd_setImage(with: URL(string: self.Pharmacydata?.daily![1].featured_image ?? "Text"))
@@ -110,7 +117,7 @@ class ZPharmacyVC: UIViewController {
     @IBAction func adImageAction(_ sender: UIButton) {
         if (self.Pharmacydata?.daily?.indices.contains(0))! {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
             vc!.id =  self.Pharmacydata?.daily![0].subcategory_id ?? 0
              vc?.typeno = 2
             self.navigationController?.pushViewController(vc!, animated: true)
@@ -121,7 +128,7 @@ class ZPharmacyVC: UIViewController {
     @IBAction func adtwoAction(_ sender: UIButton) {
          if (self.Pharmacydata?.daily?.indices.contains(1))! {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
             vc!.id =  self.Pharmacydata?.daily![1].subcategory_id ?? 0
              vc?.typeno = 2
             self.navigationController?.pushViewController(vc!, animated: true)
@@ -131,7 +138,7 @@ class ZPharmacyVC: UIViewController {
     @IBAction func AdthreeAction(_ sender: UIButton) {
          if (self.Pharmacydata?.daily?.indices.contains(2))! {
             let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-            let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+            let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
             vc!.id =  self.Pharmacydata?.daily![2].subcategory_id ?? 0
             vc?.typeno = 2
             self.navigationController?.pushViewController(vc!, animated: true)
@@ -193,7 +200,7 @@ extension ZPharmacyVC :   UICollectionViewDelegate,UICollectionViewDataSource , 
                 if collectionView == clViewCate {
 
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductListsVC") as? ProductListsVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductListsVC") as? ProductListsVC
                     vc!.id =  self.Pharmacydata?.subcategories![indexPath.row].subcategory_id ?? 0
                       vc?.typeno = 2
                     self.navigationController?.pushViewController(vc!, animated: true)
@@ -201,14 +208,14 @@ extension ZPharmacyVC :   UICollectionViewDelegate,UICollectionViewDataSource , 
                 } else if collectionView == secOneClView {
                     
                           let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                           let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                           let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                           vc?.id =  self.Pharmacydata?.section_1![indexPath.row].products_id ?? 0
                            self.navigationController?.pushViewController(vc!, animated: true)
             
                 } else {
                     
                              let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                              let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                              let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                              vc?.id =   self.Pharmacydata?.section_2![indexPath.row].products_id ?? 0
                               self.navigationController?.pushViewController(vc!, animated: true)
                     }

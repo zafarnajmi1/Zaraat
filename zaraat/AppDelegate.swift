@@ -16,6 +16,8 @@ import FBSDKLoginKit
 import UserNotifications
 import Firebase
 import FirebaseMessaging
+
+@available(iOS 13.0, *)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 var menuViewController:MenuVC!

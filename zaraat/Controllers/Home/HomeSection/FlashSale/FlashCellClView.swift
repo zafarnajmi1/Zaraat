@@ -32,11 +32,11 @@ class FlashCellClView: UICollectionViewCell {
     
     func LoadData(obj:Sales) {
         
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR :" + obj.sale_price!)
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: "PKR :" + obj.actual_price!)
         attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
         lblpkr.attributedText =  attributeString
        
-       self.lblprice.text =  "PKR :" + obj.actual_price!
+       self.lblprice.text =  "PKR :" + obj.sale_price!
         self.lbltitle.text = obj.product?.product_title_en
         self.img.sd_setImage(with: URL(string: obj.product?.featured_image ?? ""))
     }

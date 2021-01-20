@@ -24,6 +24,7 @@ class CartCell: UITableViewCell {
     @IBOutlet weak var lbltitle: UILabel!
     @IBOutlet weak var img: UIImageView!
     
+    @IBOutlet weak var lblVariations: UILabel!
     var delegate:ItemDelete?
     var addiremDelegate : Additems?
     override func awakeFromNib() {
@@ -41,6 +42,7 @@ class CartCell: UITableViewCell {
     
     
     func loadData(obj:Cart) {
+        self.lblVariations.text = obj.variations
         self.lblprice.text = obj.product?.selling_price
         self.lbltitle.text =  obj.product?.product_title_en
         self.stper.value = Double(obj.quantity ?? 0)

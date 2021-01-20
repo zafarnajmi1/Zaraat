@@ -58,7 +58,7 @@ extension MyinquiresVC : UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc =  storyboard.instantiateViewController(identifier: "InquiresViewVC") as? InquiresViewVC
+        let vc =  storyboard.instantiateViewController(withIdentifier: "InquiresViewVC") as? InquiresViewVC
         vc?.quiresData = self.inquiresdata?.enquiries![indexPath.row]
         self.navigationController?.pushViewController(vc!, animated: true)
     }

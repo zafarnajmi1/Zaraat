@@ -100,7 +100,7 @@ struct Top_products : Codable {
     let category_description_en : String?
     let category_description_urdu : String?
     let status : Int?
-
+    let avg_rating : Double?
     enum CodingKeys: String, CodingKey {
 
         case products_id = "products_id"
@@ -136,6 +136,7 @@ struct Top_products : Codable {
         case category_description_en = "category_description_en"
         case category_description_urdu = "category_description_urdu"
         case status = "status"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -173,6 +174,7 @@ struct Top_products : Codable {
         category_description_en = try values.decodeIfPresent(String.self, forKey: .category_description_en)
         category_description_urdu = try values.decodeIfPresent(String.self, forKey: .category_description_urdu)
         status = try values.decodeIfPresent(Int.self, forKey: .status)
+        avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }
@@ -352,7 +354,7 @@ struct Weekly_products : Codable {
     let category_description_en : String?
     let category_description_urdu : String?
     let status : Int?
-
+    let avg_rating : Double?
     enum CodingKeys: String, CodingKey {
 
         case products_id = "products_id"
@@ -388,6 +390,7 @@ struct Weekly_products : Codable {
         case category_description_en = "category_description_en"
         case category_description_urdu = "category_description_urdu"
         case status = "status"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -425,6 +428,7 @@ struct Weekly_products : Codable {
         category_description_en = try values.decodeIfPresent(String.self, forKey: .category_description_en)
         category_description_urdu = try values.decodeIfPresent(String.self, forKey: .category_description_urdu)
         status = try values.decodeIfPresent(Int.self, forKey: .status)
+        avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }
@@ -464,7 +468,7 @@ struct Featured_products : Codable {
     let category_description_en : String?
     let category_description_urdu : String?
     let status : Int?
-
+    let avg_rating : Double?
     enum CodingKeys: String, CodingKey {
 
         case products_id = "products_id"
@@ -500,6 +504,7 @@ struct Featured_products : Codable {
         case category_description_en = "category_description_en"
         case category_description_urdu = "category_description_urdu"
         case status = "status"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -537,6 +542,8 @@ struct Featured_products : Codable {
         category_description_en = try values.decodeIfPresent(String.self, forKey: .category_description_en)
         category_description_urdu = try values.decodeIfPresent(String.self, forKey: .category_description_urdu)
         status = try values.decodeIfPresent(Int.self, forKey: .status)
+        avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
+        
     }
 
 }

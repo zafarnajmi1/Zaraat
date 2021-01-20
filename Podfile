@@ -29,7 +29,7 @@ target 'zaraat' do
 
 
  pod 'DZNEmptyDataSet'
- pod 'PayPal-iOS-SDK'
+ #pod 'PayPal-iOS-SDK'
  pod 'BadgeHub'
 
  pod 'Firebase/Core'
@@ -41,5 +41,5 @@ target 'zaraat' do
  pod 'SideMenu'
   pod 'AnimatableReload'
   pod 'KRProgressHUD'
- pod 'cybersource-ios-sdk' 
+ pod 'cybersource-ios-sdk'
 end

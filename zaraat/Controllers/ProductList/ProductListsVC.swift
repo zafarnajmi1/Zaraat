@@ -219,7 +219,7 @@ extension ProductListsVC : UITableViewDataSource, UITableViewDelegate {
         if typeno == 1{
             
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
                 
               if market == "b2b" {
                 vc?.isb2b = 2
@@ -232,7 +232,7 @@ extension ProductListsVC : UITableViewDataSource, UITableViewDelegate {
             } else if typeno == 2 {
             
                         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                        let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
             if market == "b2b" {
             vc?.isb2b = 2
             } else {
@@ -243,7 +243,7 @@ extension ProductListsVC : UITableViewDataSource, UITableViewDelegate {
             
             } else {
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
             if market == "b2b" {
             vc?.isb2b = 2
             } else {
@@ -300,7 +300,7 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
             if typeno == 1{
             
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
                 vc?.id =  self.MainCatedata?.products?[indexPath.row].products_id ?? 0
                 if market == "b2b" {
                 vc?.isb2b = 2
@@ -312,7 +312,7 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
             } else if typeno == 2 {
             
                         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                        let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                        let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
                         vc?.id =  self.SubProductdata?.products?[indexPath.row].products_id ?? 0
                 if market == "b2b" {
                 vc?.isb2b = 2
@@ -323,7 +323,7 @@ extension ProductListsVC :  UICollectionViewDataSource, UICollectionViewDelegate
             
             } else {
                     let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                    let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                    let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
                     vc?.id =  self.Productdata?.products?[indexPath.row].products_id ?? 0
                 if market == "b2b" {
                 vc?.isb2b = 2

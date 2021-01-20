@@ -71,7 +71,7 @@ extension WishListVC : UITableViewDataSource, UITableViewDelegate {
        
             
                 let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                let vc =  storyBoard.instantiateViewController(identifier: "ProductDetailVC") as? ProductDetailVC
+                let vc =  storyBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as? ProductDetailVC
                
                vc?.id =  self.wishdata?.wishlist?[indexPath.row].product?.products_id ?? 0
                 self.navigationController?.pushViewController(vc!, animated: true)

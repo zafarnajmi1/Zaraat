@@ -204,14 +204,14 @@ extension ViewAllProductsVC :  UICollectionViewDelegate, UICollectionViewDataSou
         if viewAll == 1 {
             
                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                 let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                 let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                 vc?.id =   self.flashSaleData?.data?.sales?[indexPath.row].product_id ?? 0
                  self.navigationController?.pushViewController(vc!, animated: true)
             
         } else {
             
                 let StoryBoard =  UIStoryboard.init(name: "Main", bundle: nil)
-                 let vc =  StoryBoard.instantiateViewController(identifier: "ProductDetailVC") as?  ProductDetailVC
+                 let vc =  StoryBoard.instantiateViewController(withIdentifier: "ProductDetailVC") as?  ProductDetailVC
                 vc?.id =   self.weeklyViewAll?.data?.products?[indexPath.row].products_id ?? 0
                  self.navigationController?.pushViewController(vc!, animated: true)
         }
