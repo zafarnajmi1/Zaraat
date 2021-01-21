@@ -60,6 +60,7 @@ struct Products : Codable {
     let feature : Feature?
     let images : [Images]?
     let vendor_package : Vendor_package?
+    let avg_rating : Double?
 
     enum CodingKeys: String, CodingKey {
 
@@ -91,6 +92,7 @@ struct Products : Codable {
         case feature = "feature"
         case images = "images"
         case vendor_package = "vendor_package"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -123,6 +125,7 @@ struct Products : Codable {
         feature = try values.decodeIfPresent(Feature.self, forKey: .feature)
         images = try values.decodeIfPresent([Images].self, forKey: .images)
         vendor_package = try values.decodeIfPresent(Vendor_package.self, forKey: .vendor_package)
+        avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }

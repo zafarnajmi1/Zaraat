@@ -209,6 +209,7 @@ struct Section_1 : Codable {
     let category_description_urdu : String?
     let status : Int?
     let vendor_package : Vendor_package?
+    let avg_rating: Double?
 
     enum CodingKeys: String, CodingKey {
 
@@ -246,6 +247,7 @@ struct Section_1 : Codable {
         case category_description_urdu = "category_description_urdu"
         case status = "status"
         case vendor_package = "vendor_package"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -284,6 +286,7 @@ struct Section_1 : Codable {
         category_description_urdu = try values.decodeIfPresent(String.self, forKey: .category_description_urdu)
         status = try values.decodeIfPresent(Int.self, forKey: .status)
         vendor_package = try values.decodeIfPresent(Vendor_package.self, forKey: .vendor_package)
+        avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }
@@ -322,6 +325,7 @@ struct Section_2 : Codable {
     let category_description_urdu : String?
     let status : Int?
     let vendor_package : Vendor_package?
+    let avg_rating : Double?
 
     enum CodingKeys: String, CodingKey {
 
@@ -359,6 +363,7 @@ struct Section_2 : Codable {
         case category_description_urdu = "category_description_urdu"
         case status = "status"
         case vendor_package = "vendor_package"
+        case avg_rating = "avg_rating"
     }
 
     init(from decoder: Decoder) throws {
@@ -397,6 +402,7 @@ struct Section_2 : Codable {
         category_description_urdu = try values.decodeIfPresent(String.self, forKey: .category_description_urdu)
         status = try values.decodeIfPresent(Int.self, forKey: .status)
         vendor_package = try values.decodeIfPresent(Vendor_package.self, forKey: .vendor_package)
+         avg_rating = try values.decodeIfPresent(Double.self, forKey: .avg_rating)
     }
 
 }

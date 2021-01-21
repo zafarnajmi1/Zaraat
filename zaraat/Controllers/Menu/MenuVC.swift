@@ -49,6 +49,7 @@ class MenuVC: UIViewController {
         menuarray.append(menuDate(title: "Settings", imgae: UIImage.init(named: "settings")))
         menuarray.append(menuDate(title: "Support", imgae: UIImage.init(named: "Support")))
         menuarray.append(menuDate(title: "Terms & Condition", imgae: UIImage.init(named: "Terms&Condition")))
+         menuarray.append(menuDate(title: "Become Seller", imgae: UIImage.init(named: "seller")))
         menuarray.append(menuDate(title: "Logout", imgae: UIImage.init(named: "logout")))
     }
     
@@ -153,7 +154,13 @@ extension MenuVC : UITableViewDelegate, UITableViewDataSource {
             let vc =  storyBoard.instantiateViewController(withIdentifier: "TermsConditionVC") as? TermsConditionVC
             vc?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc!, animated: true)
-        } else {
+        } else if indexPath.row == 7 {
+            
+            if let url = URL(string: "https://apps.apple.com/us/app/zaraat-seller/id1527561511") {
+                UIApplication.shared.open(url)
+            }
+        }
+        else {
             alertForLogout()
             
         }

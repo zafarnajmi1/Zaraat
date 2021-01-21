@@ -76,15 +76,24 @@ class SaveAddressesVC: UIViewController {
         @IBOutlet weak var btncontinoue: UIButton!
         override func viewDidLoad() {
             super.viewDidLoad()
-
+            
+            self.navigationController?.isNavigationBarHidden = false
             addBackButton()
-            setNavigationBarWhiteColor()
+            
             btncontinoue.roundButton()
-            self.title  = "TCS Detail"
+            self.title  = "Address Detail"
             getAddress()
             btnCheck.setImage(UIImage.init(named: "unchcecked"), for: .normal)
         }
         
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard (self.navigationController?.isNavigationBarHidden) != nil else {
+            return
+        }
+        self.navigationController?.isNavigationBarHidden =  false
+    }
 
     
     func getAddress() {
@@ -309,7 +318,7 @@ class SaveAddressesVC: UIViewController {
         userhandler.StoreAddress(parms: dic, Success: {response in
              ShareData.hideProgress()
             if response.success == 1 {
-                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 0)
+                ZaraatZalert.ZshareAlert.showAlert(title: "Alert", message: response.message ?? "", messagetype: 1)
                 ShareData.shareInfo.saveBillingShipping(add: response)
                 
                 self.navigationController?.popViewController(animated: true)

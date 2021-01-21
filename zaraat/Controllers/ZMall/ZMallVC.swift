@@ -205,6 +205,7 @@ extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                 cell?.lblprice.text = "PKR :" + (self.Zmalldata?.section_1![indexPath.row].selling_price)!
                 cell?.lblstock.text =   "Pieces(InStock) :" + (self.Zmalldata?.section_1![indexPath.row].product_stock)!
                               cell?.img.sd_setImage(with: URL(string: self.Zmalldata?.section_1![indexPath.row].featured_image ?? "Text"))
+                cell?.rating.rating = self.Zmalldata?.section_1![indexPath.row].avg_rating ?? 0
                 
                 return cell!
                 
@@ -216,7 +217,8 @@ extension ZMallVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                         cell?.lbltitl.text =  self.Zmalldata?.section_2![indexPath.row].product_title_en
                 cell?.lblprice.text = "PKR :" + (self.Zmalldata?.section_2![indexPath.row].selling_price)!
                 cell?.lblstock.text =  "Pieces(InStock) :" + (self.Zmalldata?.section_2![indexPath.row].product_stock)!
-                         cell?.img.sd_setImage(with: URL(string: self.Zmalldata?.section_2![indexPath.row].featured_image ?? "Text"))
+                cell?.img.sd_setImage(with: URL(string: self.Zmalldata?.section_2![indexPath.row].featured_image ?? "Text"))
+                cell?.rating.rating = self.Zmalldata?.section_2![indexPath.row].avg_rating ?? 0
                        return cell!
                 
             }

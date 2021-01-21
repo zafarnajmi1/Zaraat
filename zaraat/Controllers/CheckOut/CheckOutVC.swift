@@ -72,7 +72,7 @@ class CheckOutVC: UIViewController {
             qty += item.quantity ?? 0
             productName += "," + productName  + (item.product?.product_title_en)!
             print(productName)
-            catid += "," + catid + "\(item.product?.category_id ?? 0)"
+            catid += "," + catid + "\(item.product?.category ?? "")"
          }
         
         

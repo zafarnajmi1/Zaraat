@@ -95,7 +95,7 @@ class CartProduct : Codable {
     var featured_image : String?
     var created_at : String?
     var updated_at : String?
-
+    var category : String?
     enum CodingKeys: String, CodingKey {
 
         case products_id = "products_id"
@@ -123,6 +123,7 @@ class CartProduct : Codable {
         case featured_image = "featured_image"
         case created_at = "created_at"
         case updated_at = "updated_at"
+        case category = "category"
     }
 
     required init(from decoder: Decoder) throws {
@@ -152,6 +153,7 @@ class CartProduct : Codable {
         featured_image = try values.decodeIfPresent(String.self, forKey: .featured_image)
         created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
         updated_at = try values.decodeIfPresent(String.self, forKey: .updated_at)
+        category = try values.decodeIfPresent(String.self, forKey: .category)
     }
 
 }

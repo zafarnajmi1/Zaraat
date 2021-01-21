@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import Cosmos
 class ZMartClViewPartOneCell: UICollectionViewCell {
     
+    @IBOutlet weak var rating: CosmosView!
     @IBOutlet weak var sellerimg: UIImageView!
            @IBOutlet weak var pkgimg: UIImageView!
     @IBOutlet weak var mainView: ShadowView!

@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import Cosmos
 class ProductListCell: UITableViewCell {
     @IBOutlet weak var fvrtImg: UIImageView!
      
-     @IBOutlet weak var lblprice: UILabel!
+    @IBOutlet weak var rating: CosmosView!
+    @IBOutlet weak var lblprice: UILabel!
      @IBOutlet weak var lbldiscountPrice: UILabel!
      @IBOutlet weak var lbltitle: UILabel!
      @IBOutlet weak var mainView: UIView!
@@ -51,6 +52,7 @@ class ProductListCell: UITableViewCell {
         self.lbltitle.text =  obj.product_title_en
         
         self.img.sd_setImage(with: URL(string: obj.featured_image ?? ""), placeholderImage: UIImage.init(named: "Machinery Product Image 4"))
+        self.rating.rating = obj.avg_rating ?? 0
     }
     
     func loadWishListData(obj:Wishlist) {

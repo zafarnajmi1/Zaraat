@@ -28,7 +28,7 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
        self.webView.isHidden = false
         addBackButton()
         setNavigationBarWhiteColor()
-       
+       self.navigationController?.isNavigationBarHidden = false
         self.title  = "HBL Payment Detail"
         webView.allowsBackForwardNavigationGestures = true
         webView.allowsLinkPreview = true
@@ -41,7 +41,12 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.customer_id = cartData?.cart![0].customer_id ?? 0
-        self.getAddrsses =  ShareData.shareInfo.billingshippignAddress
+        if ShareData.shareInfo.billingshippignAddress?.shipping == nil || ShareData.shareInfo.billingshippignAddress?.billing == nil {
+            editAddress(UIButton())
+        } else {
+            
+           self.getAddrsses =  ShareData.shareInfo.billingshippignAddress
+        }
         settheValue()
     }
    
@@ -270,7 +275,7 @@ class HBLBillingFormVC: UIViewController,WKNavigationDelegate  {
         
             let storyBoard = UIStoryboard.init(name: ShareData.shareInfo.Iphone, bundle: nil)
             let vc =  storyBoard.instantiateViewController(withIdentifier: "SaveAddressesVC") as? SaveAddressesVC
-            vc?.hidesBottomBarWhenPushed = true
+            
 
             self.navigationController?.pushViewController(vc!, animated: true)
         

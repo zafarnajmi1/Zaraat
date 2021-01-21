@@ -193,6 +193,7 @@ extension ZMartVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
             cell?.lblprice.text =  self.Martdata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
             cell?.lblstock.text =  self.Martdata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
             cell?.img.sd_setImage(with: URL(string: self.Martdata?.section_1![indexPath.row].featured_image ?? "Text"))
+            cell?.rating.rating = self.Martdata?.section_1![indexPath.row].avg_rating ?? 0
                   return cell!
               } else {
             
@@ -202,6 +203,7 @@ extension ZMartVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICo
                        cell?.lblprice.text =  self.Martdata?.section_2![indexPath.row].selling_price ?? "" + " PKR"
                        cell?.lblstock.text =  self.Martdata?.section_2![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
                        cell?.img.sd_setImage(with: URL(string: self.Martdata?.section_2![indexPath.row].featured_image ?? "Text"))
+            cell?.rating.rating = self.Martdata?.section_2![indexPath.row].avg_rating ?? 0
                   return cell!
               }
     }

@@ -116,6 +116,7 @@
                 <outlet property="lblprice" destination="BmB-L1-eYB" id="teS-d6-AMf"/>
                 <outlet property="lbltitle" destination="gfm-9A-C1k" id="gZ1-AX-XLc"/>
                 <outlet property="mainView" destination="Bqt-Q6-UEj" id="QjI-iw-46F"/>
+                <outlet property="rating" destination="V8w-xh-AKw" id="rHk-c8-SOC"/>
             </connections>
             <point key="canvasLocation" x="161.59420289855075" y="11.71875"/>
         </tableViewCell>

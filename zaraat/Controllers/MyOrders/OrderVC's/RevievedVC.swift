@@ -11,7 +11,7 @@ import  DZNEmptyDataSet
 import  XLPagerTabStrip
 class RevievedVC: UIViewController ,IndicatorInfoProvider  {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Recieved")
+        return IndicatorInfo(title: "Shipped")
     }
     
     
@@ -28,13 +28,17 @@ class RevievedVC: UIViewController ,IndicatorInfoProvider  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getInprogressDataApi()
+       
                 self.tblView.register(UINib.init(nibName: "InprogressCell", bundle: nil), forCellReuseIdentifier: "InprogressCell")
             }
             
 
            
-            
+            override func viewWillAppear(_ animated: Bool) {
+                   super.viewWillAppear(animated)
+                   getInprogressDataApi()
+               }
+    
             func getInprogressDataApi() {
                 ShareData.showProgress()
                 userhandler.getInprogressOrders(Success: {response in
@@ -66,12 +70,17 @@ class RevievedVC: UIViewController ,IndicatorInfoProvider  {
             }
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell =  tableView.dequeueReusableCell(withIdentifier: "InprogressCell") as? InprogressCell
-                cell?.lblprice.text = "Total Price :" + (self.progressData?.orders?[indexPath.row].total_price)!
-                cell?.lblorderDate.text =  "Order Date :" + (self.progressData?.orders?[indexPath.row].order_date!)!
-                cell?.lblorderNo.text =  " Order Number : \(self.progressData?.orders?[indexPath.row].order_id ?? 0)"
-                cell?.lblstatus.text = "Status :" + (self.progressData?.orders?[indexPath.row].status)!
-                return  cell!
+                if self.progressData?.orders?[indexPath.row].status == "shipped" {
+                    let cell =  tableView.dequeueReusableCell(withIdentifier: "InprogressCell") as? InprogressCell
+                    cell?.lblprice.text = "Total Price :" + (self.progressData?.orders?[indexPath.row].total_price)!
+                    cell?.lblorderDate.text =  "Order Date :" + (self.progressData?.orders?[indexPath.row].order_date!)!
+                    cell?.lblorderNo.text =  " Order Number : \(self.progressData?.orders?[indexPath.row].order_id ?? 0)"
+                    cell?.lblstatus.text = "Status :" + (self.progressData?.orders?[indexPath.row].status)!
+                    return  cell!
+                } else {
+                    
+                    return UITableViewCell()
+                }
             }
             
             

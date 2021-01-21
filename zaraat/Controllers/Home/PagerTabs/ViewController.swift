@@ -104,7 +104,7 @@ class ViewController: UIViewController {
     func addNavigation()
        {
         
-        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let btn2 = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         btn2.setBackgroundImage(UIImage(named: "filter"), for: .normal)
         
         btn2.addTarget(self, action: #selector(btnFilterClick(_:)), for: .touchUpInside)
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
     
     
     func cartCountnButton() -> UIBarButtonItem{
-        let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
                 btn1.setBackgroundImage(UIImage(named: "cart"), for: .normal)
                 
                 btn1.addTarget(self, action: #selector(btnCartClick(_:)), for: .touchUpInside)

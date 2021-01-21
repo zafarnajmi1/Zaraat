@@ -11,7 +11,7 @@ import  XLPagerTabStrip
 import  DZNEmptyDataSet
 class ShipmentVC: UIViewController, IndicatorInfoProvider  {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Shipment")
+        return IndicatorInfo(title: "Processing")
     }
     
     
@@ -28,11 +28,14 @@ class ShipmentVC: UIViewController, IndicatorInfoProvider  {
         super.viewDidLoad()
 
         
-        getInprogressDataApi()
+        
                 self.tblView.register(UINib.init(nibName: "InprogressCell", bundle: nil), forCellReuseIdentifier: "InprogressCell")
             }
             
-
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           getInprogressDataApi()
+       }
            
             
             func getInprogressDataApi() {
@@ -66,12 +69,18 @@ class ShipmentVC: UIViewController, IndicatorInfoProvider  {
             }
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                
+                if self.progressData?.orders?[indexPath.row].status == "processing" {
                 let cell =  tableView.dequeueReusableCell(withIdentifier: "InprogressCell") as? InprogressCell
                 cell?.lblprice.text = "Total Price :" + (self.progressData?.orders?[indexPath.row].total_price)!
                 cell?.lblorderDate.text =  "Order Date :" + (self.progressData?.orders?[indexPath.row].order_date!)!
                 cell?.lblorderNo.text =  " Order Number : \(self.progressData?.orders?[indexPath.row].order_id ?? 0)"
                 cell?.lblstatus.text = "Status :" + (self.progressData?.orders?[indexPath.row].status)!
                 return  cell!
+                } else {
+                    
+                    return UITableViewCell()
+                }
             }
             
             

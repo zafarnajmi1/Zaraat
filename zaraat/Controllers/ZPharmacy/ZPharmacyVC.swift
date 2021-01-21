@@ -174,6 +174,7 @@ extension ZPharmacyVC :   UICollectionViewDelegate,UICollectionViewDataSource , 
                        cell?.lblprice.text =  self.Pharmacydata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
                        cell?.lblstock.text = self.Pharmacydata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
                        cell?.img.sd_setImage(with: URL(string: self.Pharmacydata?.section_1![indexPath.row].featured_image ?? "Text"))
+            cell?.rating.rating = self.Pharmacydata?.section_1![indexPath.row].avg_rating ?? 0
                              return cell!
             
             
@@ -182,10 +183,11 @@ extension ZPharmacyVC :   UICollectionViewDelegate,UICollectionViewDataSource , 
 
             
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ZPharmacyClViewPartTwoCell", for: indexPath) as? ZPharmacyClViewPartTwoCell
-                                 cell?.lbltitl.text = self.Pharmacydata?.section_1![indexPath.row].product_title_en
-                                 cell?.lblprice.text =  self.Pharmacydata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
-                                 cell?.lblstock.text = self.Pharmacydata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
-                                 cell?.img.sd_setImage(with: URL(string: self.Pharmacydata?.section_1![indexPath.row].featured_image ?? "Text"))
+                                 cell?.lbltitl.text = self.Pharmacydata?.section_2![indexPath.row].product_title_en
+                                 cell?.lblprice.text =  self.Pharmacydata?.section_2![indexPath.row].selling_price ?? "" + " PKR"
+                                 cell?.lblstock.text = self.Pharmacydata?.section_2![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
+                                 cell?.img.sd_setImage(with: URL(string: self.Pharmacydata?.section_2![indexPath.row].featured_image ?? "Text"))
+            cell?.rating.rating = self.Pharmacydata?.section_2![indexPath.row].avg_rating ?? 0
                                        return cell!
             
             

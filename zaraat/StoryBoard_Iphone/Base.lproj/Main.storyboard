@@ -24,10 +24,10 @@
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
-        <array key="Poppins-Regular.ttf">
+        <array key="Poppins-Regular.otf">
             <string>Poppins-Regular</string>
         </array>
-        <array key="Poppins-SemiBold.ttf">
+        <array key="Poppins-SemiBold.otf">
             <string>Poppins-SemiBold</string>
         </array>
         <array key="TimesNewRoman.ttf">
@@ -6111,10 +6111,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1072"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H13-0e-Wd9">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1305"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1247.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h62-tW-CV0">
-                                                <rect key="frame" x="20" y="216" width="278" height="25.5"/>
+                                                <rect key="frame" x="20" y="216" width="278" height="21"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -6149,13 +6149,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTX-Jr-07O">
-                                                <rect key="frame" x="20" y="246" width="20" height="17"/>
+                                                <rect key="frame" x="20" y="241.5" width="14.5" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npw-0V-uOa" customClass="CosmosView" customModule="Cosmos">
-                                                <rect key="frame" x="20" y="298.5" width="154" height="24"/>
+                                                <rect key="frame" x="20" y="287.5" width="154" height="24"/>
                                                 <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="M0C-gE-nyq"/>
@@ -6177,13 +6177,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEI-gc-vfG">
-                                                <rect key="frame" x="20" y="362.5" width="374" height="22.5"/>
+                                                <rect key="frame" x="20" y="351.5" width="374" height="19"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                 <color key="textColor" red="0.333293438" green="0.33335629109999998" blue="0.33328947419999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWZ-uf-v88">
-                                                <rect key="frame" x="107" y="861" width="200" height="50"/>
+                                                <rect key="frame" x="107" y="819.5" width="200" height="50"/>
                                                 <color key="backgroundColor" red="0.9905504584" green="0.7299582362" blue="0.0076472782529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="K3F-Tf-umB"/>
@@ -6198,16 +6198,16 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="e5L-nN-cW7">
-                                                <rect key="frame" x="20" y="270.5" width="49" height="20"/>
+                                                <rect key="frame" x="20" y="263" width="33" height="16.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-08-wCQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="24.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="16.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" red="0.98764985800000005" green="0.015970852229999999" blue="0.038076356050000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWR-nu-I0i">
-                                                        <rect key="frame" x="24.5" y="0.0" width="24.5" height="20"/>
+                                                        <rect key="frame" x="16.5" y="0.0" width="16.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -6215,22 +6215,22 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghX-b4-AHx">
-                                                <rect key="frame" x="20" y="661" width="374" height="180"/>
+                                                <rect key="frame" x="20" y="630.5" width="374" height="169"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supplier Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ6-nl-YdI">
-                                                        <rect key="frame" x="10" y="8" width="121" height="26.5"/>
+                                                        <rect key="frame" x="10" y="8" width="109" height="19"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                                         <color key="textColor" red="0.4940490723" green="0.49407678840000002" blue="0.49813747409999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N51-0K-ufm">
-                                                        <rect key="frame" x="10" y="38.5" width="37.5" height="22.5"/>
+                                                        <rect key="frame" x="10" y="31" width="25" height="19"/>
                                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2N-ZH-mUn">
-                                                        <rect key="frame" x="10" y="66" width="354" height="66"/>
+                                                        <rect key="frame" x="10" y="55" width="354" height="66"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="ZEI-kz-nCc"/>
                                                         </constraints>
@@ -6239,7 +6239,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSg-ii-Ra3">
-                                                        <rect key="frame" x="0.0" y="140" width="374" height="40"/>
+                                                        <rect key="frame" x="0.0" y="129" width="374" height="40"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoin" translatesAutoresizingMaskIntoConstraints="NO" id="lVf-cp-vvS">
                                                                 <rect key="frame" x="174" y="13" width="20" height="20"/>
@@ -6256,7 +6256,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6k-fB-HfG">
-                                                                <rect key="frame" x="237" y="4" width="117" height="32"/>
+                                                                <rect key="frame" x="248" y="7" width="106" height="26"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                 <state key="normal" title="See Supplier Profile">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -6273,7 +6273,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH4-jc-EeN">
-                                                                <rect key="frame" x="36" y="12.5" width="34" height="18.5"/>
+                                                                <rect key="frame" x="36" y="15.5" width="34" height="15.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="34" id="iUS-D9-g8J"/>
                                                                 </constraints>
@@ -6377,7 +6377,7 @@
                                                 <color key="currentPageIndicatorTintColor" red="0.9905504584" green="0.7299582362" blue="0.0076472782529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </pageControl>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ApV-cg-Pvm">
-                                                <rect key="frame" x="50" y="861" width="314" height="50"/>
+                                                <rect key="frame" x="50" y="819.5" width="314" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dH-8f-Si7">
                                                         <rect key="frame" x="0.0" y="0.0" width="147" height="50"/>
@@ -6408,7 +6408,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Details :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF7-24-DCZ">
-                                                <rect key="frame" x="20" y="330.5" width="126.5" height="20.5"/>
+                                                <rect key="frame" x="20" y="319.5" width="126.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -6443,7 +6443,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-46-WKn">
-                                                <rect key="frame" x="20" y="300" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="289" width="374" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1T-hq-qxi">
                                                         <rect key="frame" x="0.0" y="0.0" width="118" height="50"/>
@@ -6466,7 +6466,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Krj-UD-bsb">
-                                                <rect key="frame" x="20" y="984" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="934.5" width="374" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Visa Card" translatesAutoresizingMaskIntoConstraints="NO" id="stH-l6-gAO">
                                                         <rect key="frame" x="0.0" y="0.0" width="73" height="50"/>
@@ -6489,13 +6489,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payments :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi2-Me-jOb">
-                                                <rect key="frame" x="20" y="936" width="96.5" height="28"/>
+                                                <rect key="frame" x="20" y="894.5" width="85.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-aX-vin">
-                                                <rect key="frame" x="20" y="1092" width="374" height="188"/>
+                                                <rect key="frame" x="20" y="1034.5" width="374" height="188"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="188" id="NBj-U0-nJJ"/>
@@ -6506,19 +6506,19 @@
                                                 </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjF-eJ-2nC">
-                                                <rect key="frame" x="20" y="1049" width="79.5" height="28"/>
+                                                <rect key="frame" x="20" y="999.5" width="73.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGy-Xg-dSN">
-                                                <rect key="frame" x="20" y="415" width="33.5" height="28"/>
+                                                <rect key="frame" x="20" y="400.5" width="32.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ES-5d-t77">
-                                                <rect key="frame" x="20" y="463" width="374" height="60"/>
+                                                <rect key="frame" x="20" y="440.5" width="374" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="5ge-UA-K1Y"/>
@@ -6578,13 +6578,13 @@
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPi-MK-o8X">
-                                                <rect key="frame" x="20" y="543" width="46" height="28"/>
+                                                <rect key="frame" x="20" y="520.5" width="41.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="76A-gh-nhq">
-                                                <rect key="frame" x="20" y="591" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="560.5" width="374" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="LWP-jB-bEM"/>
@@ -8877,7 +8877,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                 <rect key="frame" x="0.0" y="44" width="414" height="1822"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vam-AX-hbq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1630"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1626"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ira-yl-0qY">
                                                 <rect key="frame" x="20" y="0.0" width="374" height="100"/>
@@ -8901,22 +8901,22 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="f4R-QQ-5Rg">
-                                                        <rect key="frame" x="10" y="68" width="354" height="36.5"/>
+                                                        <rect key="frame" x="10" y="68" width="354" height="15.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fresh Vegetables" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tz-PX-Mcn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Groceries Items" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYW-Mc-JjQ">
-                                                                <rect key="frame" x="122" y="0.0" width="110" height="36.5"/>
+                                                                <rect key="frame" x="122" y="0.0" width="110" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fastest Delivery" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1H-mI-LkV">
-                                                                <rect key="frame" x="244" y="0.0" width="110" height="36.5"/>
+                                                                <rect key="frame" x="244" y="0.0" width="110" height="15.5"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -8942,7 +8942,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products For Daily Routine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGr-WW-bzv">
-                                                <rect key="frame" x="20" y="296" width="225.5" height="30"/>
+                                                <rect key="frame" x="20" y="296" width="204" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="scs-cd-oho"/>
                                                 </constraints>
@@ -8951,7 +8951,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You want somthing?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlG-Tq-bwt">
-                                                <rect key="frame" x="20" y="334" width="156.5" height="20"/>
+                                                <rect key="frame" x="20" y="334" width="136.5" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="FcJ-wV-jfG"/>
                                                 </constraints>
@@ -8998,13 +8998,13 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shope By Categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ys5-1Z-JPe">
-                                                <rect key="frame" x="20" y="637" width="179.5" height="24"/>
+                                                <rect key="frame" x="20" y="637" width="161.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HmR-xw-5FM">
-                                                <rect key="frame" x="20" y="669" width="374" height="102"/>
+                                                <rect key="frame" x="20" y="665" width="374" height="102"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="102" id="Wlr-hA-GJg"/>
@@ -9082,7 +9082,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </connections>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoM-Wo-v9O">
-                                                <rect key="frame" x="0.0" y="779" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="775" width="414" height="320"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-oS-Vag">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -9254,6 +9254,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="CVb-8Y-dao" id="Btj-Fu-Zdk"/>
                                                                     <outlet property="mainView" destination="rfy-Pl-TaE" id="BVG-pg-DnJ"/>
                                                                     <outlet property="pkgimg" destination="gby-bx-0E3" id="X0e-aO-GeV"/>
+                                                                    <outlet property="rating" destination="opv-cb-ZPc" id="eAw-YB-RJw"/>
                                                                     <outlet property="sellerimg" destination="pLS-d6-SYn" id="bnE-pl-boJ"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -9273,7 +9274,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4zk-Pl-B5R">
-                                                <rect key="frame" x="20" y="1107" width="374" height="170"/>
+                                                <rect key="frame" x="20" y="1103" width="374" height="170"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="RTh-3m-4Zw">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
@@ -9284,7 +9285,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqv-J9-wye">
-                                                <rect key="frame" x="0.0" y="1285" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="1281" width="414" height="320"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ind-pn-ck8">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -9365,20 +9366,20 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Pieces (In Stock)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3q-8O-XLH">
-                                                                                    <rect key="frame" x="8" y="258" width="160" height="18.5"/>
+                                                                                    <rect key="frame" x="8" y="258" width="160" height="15.5"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoin" translatesAutoresizingMaskIntoConstraints="NO" id="vrJ-7d-5QE">
-                                                                                    <rect key="frame" x="8" y="283.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="8" y="280.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="B5A-4h-0oC"/>
                                                                                         <constraint firstAttribute="width" constant="15" id="loJ-tL-gy2"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Verified" translatesAutoresizingMaskIntoConstraints="NO" id="KtI-hJ-unh">
-                                                                                    <rect key="frame" x="38" y="283.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="38" y="280.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="NGY-Kl-ej3"/>
                                                                                         <constraint firstAttribute="width" constant="15" id="X0u-LT-HWT"/>
@@ -9456,6 +9457,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="QQM-6x-M8k" id="kAN-T7-jmO"/>
                                                                     <outlet property="mainView" destination="vWb-zE-kYw" id="mmF-Uc-Y2G"/>
                                                                     <outlet property="pkgimg" destination="KtI-hJ-unh" id="kvU-3n-Vy2"/>
+                                                                    <outlet property="rating" destination="waw-td-UHx" id="So6-Pb-Hna"/>
                                                                     <outlet property="sellerimg" destination="vrJ-7d-5QE" id="LgC-bZ-YgV"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -9893,6 +9895,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="67B-9g-8dW" id="fqC-aO-dAd"/>
                                                                     <outlet property="mainView" destination="67R-Pg-k5k" id="Mey-9e-gYO"/>
                                                                     <outlet property="pkgimg" destination="7z2-Tk-031" id="m9h-zc-kIq"/>
+                                                                    <outlet property="rating" destination="Mfn-UF-gzW" id="yfk-PA-ZcO"/>
                                                                     <outlet property="sellerimg" destination="6PC-jx-ZEt" id="93K-dd-etC"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -10095,6 +10098,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="ZFs-iA-Ah8" id="nlL-OB-8AA"/>
                                                                     <outlet property="mainView" destination="G6A-hk-RKF" id="3RV-iB-WBI"/>
                                                                     <outlet property="pkgimg" destination="3F3-DS-IKP" id="dUr-Zm-uQo"/>
+                                                                    <outlet property="rating" destination="Xwp-1Q-6uP" id="yfQ-rb-3jJ"/>
                                                                     <outlet property="sellerimg" destination="z6R-5J-1sH" id="8HD-cQ-9du"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -10216,7 +10220,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                 <rect key="frame" x="0.0" y="44" width="414" height="1922"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-Ww-fi6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1690"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1682"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wye-Af-Ovh">
                                                 <rect key="frame" x="0.0" y="70" width="414" height="1"/>
@@ -10239,7 +10243,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Innovative Ideas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piv-Up-z7C">
-                                                                <rect key="frame" x="41" y="13" width="75.5" height="34"/>
+                                                                <rect key="frame" x="41" y="16" width="75.5" height="28"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -10289,7 +10293,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology Solutions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCm-D4-amb">
-                                                                <rect key="frame" x="41" y="13" width="76" height="34"/>
+                                                                <rect key="frame" x="41" y="16" width="76" height="28"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -10331,7 +10335,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                         <rect key="frame" x="269.5" y="0.0" width="124.5" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloud Services" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1I1-HA-hW0">
-                                                                <rect key="frame" x="41" y="13" width="75.5" height="34"/>
+                                                                <rect key="frame" x="41" y="16" width="75.5" height="28"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -10385,49 +10389,49 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Products you Want" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-d8-xau">
-                                                <rect key="frame" x="20" y="267" width="224.5" height="24"/>
+                                                <rect key="frame" x="20" y="267" width="197.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="wlg-Wp-myu">
-                                                <rect key="frame" x="20" y="299" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="295" width="374" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="nuW-Md-XTx"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="Tn7-ZZ-GzF">
-                                                <rect key="frame" x="20" y="437" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="433" width="374" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="vOb-i8-dnV"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="ZZO-oY-9Or">
-                                                <rect key="frame" x="20" y="575" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="571" width="374" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="IP8-8P-rdG"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pE-bo-sZD">
-                                                <rect key="frame" x="20" y="299" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="295" width="374" height="130"/>
                                                 <connections>
                                                     <action selector="adoneAction:" destination="LJ7-Ge-wQT" eventType="touchUpInside" id="jfg-Ex-T0d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-AJ-k6K">
-                                                <rect key="frame" x="20" y="437" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="433" width="374" height="130"/>
                                                 <connections>
                                                     <action selector="adtwoAction:" destination="LJ7-Ge-wQT" eventType="touchUpInside" id="g6n-GJ-PhC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1a-xa-jO1">
-                                                <rect key="frame" x="20" y="575" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="571" width="374" height="130"/>
                                                 <connections>
                                                     <action selector="adthreeAction:" destination="LJ7-Ge-wQT" eventType="touchUpInside" id="tVZ-ia-BBV"/>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bIh-Pd-vgk">
-                                                <rect key="frame" x="20" y="737" width="374" height="102"/>
+                                                <rect key="frame" x="20" y="729" width="374" height="102"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="102" id="x6x-C3-lsv"/>
@@ -10505,13 +10509,13 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stores For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8b-VQ-Hlx">
-                                                <rect key="frame" x="20" y="713" width="122.5" height="24"/>
+                                                <rect key="frame" x="20" y="709" width="112.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnd-Tn-PI6">
-                                                <rect key="frame" x="0.0" y="847" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="839" width="414" height="320"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ycO-2D-EzX">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -10592,20 +10596,20 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Pieces (In Stock)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZQ-Z2-3hN">
-                                                                                    <rect key="frame" x="8" y="253" width="165" height="18.5"/>
+                                                                                    <rect key="frame" x="8" y="253" width="165" height="15.5"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoin" translatesAutoresizingMaskIntoConstraints="NO" id="Nrj-Ut-Q7W">
-                                                                                    <rect key="frame" x="8" y="278.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="8" y="275.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="SEs-Jp-6Jx"/>
                                                                                         <constraint firstAttribute="height" constant="15" id="Z8W-lq-D9d"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Verified" translatesAutoresizingMaskIntoConstraints="NO" id="UTq-s2-0Co">
-                                                                                    <rect key="frame" x="38" y="278.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="38" y="275.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="AoG-PI-bcv"/>
                                                                                         <constraint firstAttribute="width" constant="15" id="J78-GM-dLH"/>
@@ -10683,6 +10687,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="3uI-Bm-J66" id="Kff-ft-rtK"/>
                                                                     <outlet property="mainView" destination="3Cz-V5-OK8" id="BMs-fy-cK1"/>
                                                                     <outlet property="pkgimg" destination="UTq-s2-0Co" id="2Pl-za-JgR"/>
+                                                                    <outlet property="rating" destination="eKl-Mr-ART" id="Fyr-3t-cbD"/>
                                                                     <outlet property="sellerimg" destination="Nrj-Ut-Q7W" id="IT4-AC-zAV"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -10702,7 +10707,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ale-YW-2nu">
-                                                <rect key="frame" x="20" y="1175" width="374" height="170"/>
+                                                <rect key="frame" x="20" y="1167" width="374" height="170"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="4Ou-cN-efv">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
@@ -10713,7 +10718,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEU-X6-SwH">
-                                                <rect key="frame" x="0.0" y="1345" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="1337" width="414" height="320"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wsO-KH-kR7">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -10794,20 +10799,20 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Pieces (In Stock)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77j-mQ-HAn">
-                                                                                    <rect key="frame" x="8" y="256" width="165" height="18.5"/>
+                                                                                    <rect key="frame" x="8" y="256" width="165" height="15.5"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoin" translatesAutoresizingMaskIntoConstraints="NO" id="pli-GM-XL4">
-                                                                                    <rect key="frame" x="8" y="281.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="8" y="278.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="5Re-Oj-EyM"/>
                                                                                         <constraint firstAttribute="width" constant="15" id="7fI-XM-p9W"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Verified" translatesAutoresizingMaskIntoConstraints="NO" id="rkY-u5-Hva">
-                                                                                    <rect key="frame" x="38" y="281.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="38" y="278.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="QC5-g2-dMr"/>
                                                                                         <constraint firstAttribute="height" constant="15" id="epS-y5-jAs"/>
@@ -10885,6 +10890,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="EEE-QN-gGN" id="fKN-jG-XEa"/>
                                                                     <outlet property="mainView" destination="FAg-HR-BKZ" id="nZb-dM-UtS"/>
                                                                     <outlet property="pkgimg" destination="rkY-u5-Hva" id="F6P-bU-12g"/>
+                                                                    <outlet property="rating" destination="a91-zD-Xx5" id="u02-ch-u7o"/>
                                                                     <outlet property="sellerimg" destination="pli-GM-XL4" id="tA5-4r-e6L"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -11010,7 +11016,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                 <rect key="frame" x="0.0" y="44" width="414" height="1722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5K-O0-Teb">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1653"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1649"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-CK-N2g">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
@@ -11019,13 +11025,13 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See Fashin Week Sales" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBZ-pV-bgT">
-                                                <rect key="frame" x="20" y="188" width="195.5" height="24"/>
+                                                <rect key="frame" x="20" y="188" width="177" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="530-IW-Z43">
-                                                <rect key="frame" x="20" y="227" width="374" height="120"/>
+                                                <rect key="frame" x="20" y="223" width="374" height="120"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="Aim-vn-Vq4">
                                                         <rect key="frame" x="0.0" y="0.0" width="182" height="120"/>
@@ -11039,31 +11045,31 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="LmZ-hJ-3xj">
-                                                <rect key="frame" x="20" y="355" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="351" width="374" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="Ndg-Gs-zcL"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da9-yG-CnS">
-                                                <rect key="frame" x="20" y="227" width="182" height="120"/>
+                                                <rect key="frame" x="20" y="223" width="182" height="120"/>
                                                 <connections>
                                                     <action selector="adoneAction:" destination="xcX-hC-5Lv" eventType="touchUpInside" id="ZHP-cE-1S3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDj-f5-efx">
-                                                <rect key="frame" x="212" y="227" width="182" height="120"/>
+                                                <rect key="frame" x="212" y="223" width="182" height="120"/>
                                                 <connections>
                                                     <action selector="adtwoAction:" destination="xcX-hC-5Lv" eventType="touchUpInside" id="DqC-XR-CtF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmM-9G-gtX">
-                                                <rect key="frame" x="20" y="355" width="374" height="130"/>
+                                                <rect key="frame" x="20" y="351" width="374" height="130"/>
                                                 <connections>
                                                     <action selector="adThreeAction:" destination="xcX-hC-5Lv" eventType="touchUpInside" id="Rh0-jn-0gU"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSH-lT-XHX">
-                                                <rect key="frame" x="359" y="365" width="30" height="30"/>
+                                                <rect key="frame" x="359" y="361" width="30" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="LsQ-X4-f41">
                                                         <rect key="frame" x="8" y="8" width="14" height="14"/>
@@ -11082,7 +11088,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-eZ-oDt">
-                                                <rect key="frame" x="162" y="237" width="30" height="30"/>
+                                                <rect key="frame" x="162" y="233" width="30" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-4x-b5l">
                                                         <rect key="frame" x="8" y="8" width="14" height="14"/>
@@ -11101,7 +11107,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ard-LQ-Ilc">
-                                                <rect key="frame" x="354" y="237" width="30" height="30"/>
+                                                <rect key="frame" x="354" y="233" width="30" height="30"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-Vy-FPw">
                                                         <rect key="frame" x="8" y="8" width="14" height="14"/>
@@ -11120,7 +11126,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ewU-HT-ysm">
-                                                <rect key="frame" x="20" y="517" width="374" height="102"/>
+                                                <rect key="frame" x="20" y="509" width="374" height="102"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="102" id="HON-us-HKr"/>
@@ -11198,13 +11204,13 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stores For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B71-jL-GNU">
-                                                <rect key="frame" x="20" y="493" width="122.5" height="24"/>
+                                                <rect key="frame" x="20" y="489" width="112.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFS-Ic-NV9">
-                                                <rect key="frame" x="0.0" y="627" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="619" width="414" height="320"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-A0-zF6">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -11285,20 +11291,20 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Pieces (In Stock)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ED-6x-G4E">
-                                                                                    <rect key="frame" x="8" y="255" width="165" height="18.5"/>
+                                                                                    <rect key="frame" x="8" y="255" width="165" height="15.5"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoin" translatesAutoresizingMaskIntoConstraints="NO" id="PpS-gf-JxL">
-                                                                                    <rect key="frame" x="8" y="280.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="8" y="277.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="1kF-zD-k1H"/>
                                                                                         <constraint firstAttribute="height" constant="15" id="40u-I3-Rxh"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Verified" translatesAutoresizingMaskIntoConstraints="NO" id="Kyt-BP-q0h">
-                                                                                    <rect key="frame" x="38" y="280.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="38" y="277.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="15" id="3P4-jq-1t2"/>
                                                                                         <constraint firstAttribute="height" constant="15" id="j56-rB-DiA"/>
@@ -11376,6 +11382,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="xUR-js-Gtw" id="CS0-tl-4Rg"/>
                                                                     <outlet property="mainView" destination="CWW-0p-S9E" id="5bZ-IP-mJf"/>
                                                                     <outlet property="pkgimg" destination="Kyt-BP-q0h" id="F2l-mU-8WJ"/>
+                                                                    <outlet property="rating" destination="oOv-sG-y02" id="hHP-Mo-snu"/>
                                                                     <outlet property="sellerimg" destination="PpS-gf-JxL" id="uyw-wH-ODe"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -11395,7 +11402,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5vX-OC-TJb">
-                                                <rect key="frame" x="20" y="955" width="374" height="170"/>
+                                                <rect key="frame" x="20" y="947" width="374" height="170"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="nsH-jB-WYn">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
@@ -11406,7 +11413,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E14-OC-TLO">
-                                                <rect key="frame" x="0.0" y="1133" width="414" height="320"/>
+                                                <rect key="frame" x="0.0" y="1125" width="414" height="320"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bC9-0Z-naD">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -11487,20 +11494,20 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Pieces (In Stock)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-OE-Mpz">
-                                                                                    <rect key="frame" x="8" y="254" width="165" height="18.5"/>
+                                                                                    <rect key="frame" x="8" y="254" width="165" height="15.5"/>
                                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCoin" translatesAutoresizingMaskIntoConstraints="NO" id="sB8-VM-0qU">
-                                                                                    <rect key="frame" x="8" y="279.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="8" y="276.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="2hH-Yw-3PV"/>
                                                                                         <constraint firstAttribute="width" constant="15" id="tgh-l2-W0j"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Verified" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-ia-YbJ">
-                                                                                    <rect key="frame" x="38" y="279.5" width="15" height="15"/>
+                                                                                    <rect key="frame" x="38" y="276.5" width="15" height="15"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="15" id="Siy-go-wiD"/>
                                                                                         <constraint firstAttribute="width" constant="15" id="hSx-eq-JGN"/>
@@ -11578,6 +11585,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="xcj-iE-X6P" id="CdF-np-WV6"/>
                                                                     <outlet property="mainView" destination="ycU-fD-rGS" id="wQL-Jd-mtu"/>
                                                                     <outlet property="pkgimg" destination="KFe-ia-YbJ" id="MdK-4p-MDg"/>
+                                                                    <outlet property="rating" destination="sgD-aZ-QWw" id="5x4-kZ-TXy"/>
                                                                     <outlet property="sellerimg" destination="sB8-VM-0qU" id="ZRz-Oa-rOF"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -15149,7 +15157,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                     <constraint firstItem="2wZ-kL-5D5" firstAttribute="centerY" secondItem="AYJ-O7-Sk0" secondAttribute="centerY" id="qAu-TZ-wRd"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1 copy" translatesAutoresizingMaskIntoConstraints="NO" id="9c3-wp-hMl">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9c3-wp-hMl">
                                                 <rect key="frame" x="0.0" y="58" width="414" height="180"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="VeE-Fs-JCC"/>
@@ -15456,6 +15464,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="fhi-FM-eN9" id="Sxa-QS-V7X"/>
                                                                     <outlet property="mainView" destination="J6P-pA-lgL" id="Vci-TL-0Qa"/>
                                                                     <outlet property="pkgimg" destination="Yrr-YB-2a9" id="nRw-Pf-Bo7"/>
+                                                                    <outlet property="rating" destination="kog-jI-YYl" id="PBJ-kc-nzu"/>
                                                                     <outlet property="sellerimg" destination="NjA-BN-oh6" id="tHI-5c-9HV"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -15658,6 +15667,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                                                     <outlet property="lbltitl" destination="NdL-Qy-KjZ" id="yac-Et-cQm"/>
                                                                     <outlet property="mainView" destination="3v1-wz-fga" id="cva-Ie-BCj"/>
                                                                     <outlet property="pkgimg" destination="OhN-Yt-QW7" id="Nxl-iu-cpu"/>
+                                                                    <outlet property="rating" destination="gdg-mA-eOS" id="3Fp-Uq-MXI"/>
                                                                     <outlet property="sellerimg" destination="jg5-Le-3tX" id="Wb3-vw-QMY"/>
                                                                 </connections>
                                                             </collectionViewCell>
@@ -17217,7 +17227,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHI-ff-mTw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1622"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="1582"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phz-pm-DOa">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1520"/>
@@ -17932,7 +17942,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                                     <constraint firstItem="phz-pm-DOa" firstAttribute="width" secondItem="QHI-ff-mTw" secondAttribute="width" id="QZP-p4-C98"/>
                                     <constraint firstItem="phz-pm-DOa" firstAttribute="top" secondItem="QHI-ff-mTw" secondAttribute="top" id="YXC-mL-US9"/>
                                     <constraint firstAttribute="trailing" secondItem="phz-pm-DOa" secondAttribute="trailing" id="brG-JU-vPI"/>
-                                    <constraint firstAttribute="bottom" secondItem="phz-pm-DOa" secondAttribute="bottom" constant="8" id="noi-mM-jHk"/>
+                                    <constraint firstAttribute="bottom" secondItem="phz-pm-DOa" secondAttribute="bottom" constant="70" id="noi-mM-jHk"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="7i6-Em-G3V"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="36e-lk-oc4"/>
@@ -17940,7 +17950,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QHI-ff-mTw" firstAttribute="top" secondItem="l4b-k5-Ozb" secondAttribute="top" id="FFv-uu-cx5"/>
+                            <constraint firstItem="QHI-ff-mTw" firstAttribute="top" secondItem="l4b-k5-Ozb" secondAttribute="top" constant="40" id="FFv-uu-cx5"/>
                             <constraint firstItem="QHI-ff-mTw" firstAttribute="trailing" secondItem="l4b-k5-Ozb" secondAttribute="trailing" id="R5h-iY-fWS"/>
                             <constraint firstItem="QHI-ff-mTw" firstAttribute="bottom" secondItem="l4b-k5-Ozb" secondAttribute="bottom" id="agn-d3-PJy"/>
                             <constraint firstItem="QHI-ff-mTw" firstAttribute="leading" secondItem="l4b-k5-Ozb" secondAttribute="leading" id="gam-cq-xH4"/>
@@ -17975,7 +17985,7 @@ The Site reserves the right to change Terms and Conditions immediately in additi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J0-D2-odO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5790" y="4999"/>
+            <point key="canvasLocation" x="5789.8550724637689" y="4998.8839285714284"/>
         </scene>
         <!--Vendor InquriesVC-->
         <scene sceneID="hHP-Hm-EmV">

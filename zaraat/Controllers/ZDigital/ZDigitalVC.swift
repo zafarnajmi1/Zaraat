@@ -188,6 +188,7 @@ extension ZDigitalVC :   UICollectionViewDelegate,UICollectionViewDataSource , U
                                   cell?.lblprice.text =  self.ZDigitalydata?.section_1![indexPath.row].selling_price ?? "" + " PKR"
                                   cell?.lblstock.text = self.ZDigitalydata?.section_1![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
                                   cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_1![indexPath.row].featured_image ?? "Text"))
+            cell?.rating.rating = self.ZDigitalydata?.section_1![indexPath.row].avg_rating ?? 0
                                         return cell!
         } else {
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ZDigitalClViewPartTwoCell", for: indexPath) as? ZDigitalClViewPartTwoCell
@@ -195,6 +196,7 @@ extension ZDigitalVC :   UICollectionViewDelegate,UICollectionViewDataSource , U
                                   cell?.lblprice.text =  self.ZDigitalydata?.section_2![indexPath.row].selling_price ?? "" + " PKR"
                                   cell?.lblstock.text = self.ZDigitalydata?.section_2![indexPath.row].product_stock ?? "" + " Pieces(InStock)"
                                   cell?.img.sd_setImage(with: URL(string: self.ZDigitalydata?.section_2![indexPath.row].featured_image ?? "Text"))
+             cell?.rating.rating = self.ZDigitalydata?.section_2![indexPath.row].avg_rating ?? 0
                                         return cell!
         }
     }
