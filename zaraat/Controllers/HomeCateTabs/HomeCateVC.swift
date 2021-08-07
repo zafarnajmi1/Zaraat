@@ -41,6 +41,17 @@ class HomeCateVC: UIViewController {
             
             self.storeForyouClView.register(UINib.init(nibName: "SubcateGoriesCell", bundle: nil), forCellWithReuseIdentifier: "SubcateGoriesCell")
           
+            
+//            let screenWidth = UIScreen.main.bounds.width
+//               let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//               layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+//               layout.itemSize = CGSize(width: screenWidth/2 - 20, height: 285)
+//               layout.minimumInteritemSpacing = 5
+//               layout.minimumLineSpacing = 5
+//               seconeClview.collectionViewLayout = layout
+//
+//            sectwoclView.collectionViewLayout = layout
+            
         }
               
              
@@ -108,7 +119,12 @@ class HomeCateVC: UIViewController {
     
 }
   extension HomeCateVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           let height = collectionView.frame.height
+           let width = UIScreen.main.bounds.width / 4
+           let size = CGSize(width: 160, height: width)
+           return size
+       }
     
       func numberOfSections(in collectionView: UICollectionView) -> Int {
            return 1

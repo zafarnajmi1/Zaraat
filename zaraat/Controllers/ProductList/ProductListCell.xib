@@ -36,7 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black Nike Air Shoes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfm-9A-C1k">
-                                <rect key="frame" x="116" y="9" width="122.5" height="17"/>
+                                <rect key="frame" x="116" y="9" width="199" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -89,6 +89,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="MH3-Uc-ry1" secondAttribute="bottom" id="2w9-mS-WIq"/>
                             <constraint firstAttribute="bottom" secondItem="MH3-Uc-ry1" secondAttribute="bottom" id="8N6-j9-2ZJ"/>
+                            <constraint firstAttribute="trailing" secondItem="gfm-9A-C1k" secondAttribute="trailing" constant="8" id="E6g-fI-Xbv"/>
                             <constraint firstItem="BmB-L1-eYB" firstAttribute="top" secondItem="QLz-m0-Qdy" secondAttribute="bottom" id="Fvs-33-7DG"/>
                             <constraint firstItem="gfm-9A-C1k" firstAttribute="leading" secondItem="MH3-Uc-ry1" secondAttribute="trailing" constant="8" id="HZj-W7-ZZt"/>
                             <constraint firstItem="gfm-9A-C1k" firstAttribute="top" secondItem="Bqt-Q6-UEj" secondAttribute="top" constant="9" id="Hwk-xp-SK0"/>

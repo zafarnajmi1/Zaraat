@@ -41,6 +41,17 @@ class B2BHomeCateVC: UIViewController {
                 
                 self.storeForyouClView.register(UINib.init(nibName: "SubcateGoriesCell", bundle: nil), forCellWithReuseIdentifier: "SubcateGoriesCell")
               
+                
+                let screenWidth = UIScreen.main.bounds.width
+                          let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+                         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+                          layout.itemSize = CGSize(width: screenWidth/2 - 20, height: 250)
+                          layout.minimumInteritemSpacing = 5
+                          layout.minimumLineSpacing = 5
+                          sectwoclView.collectionViewLayout = layout
+
+                       seconeClview.collectionViewLayout = layout
+                
             }
                   
                  
