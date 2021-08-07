@@ -290,9 +290,21 @@ class ProductDetailVC: UIViewController {
     
     
     @IBAction func btnChatAction(_ sender: UIButton) {
-        
+        dialNumber(number: self.productData?.vendor?.business_phone ?? "")
     }
-    
+    func dialNumber(number : String) {
+
+     if let url = URL(string: "tel://\(number)"),
+       UIApplication.shared.canOpenURL(url) {
+          if #available(iOS 10, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler:nil)
+           } else {
+               UIApplication.shared.openURL(url)
+           }
+       } else {
+                // add error message here
+       }
+    }
     
     @IBAction func btnInquieriesAction(_ sender: UIButton) {
         let storyBoard =  UIStoryboard.init(name: "Main", bundle: nil)
@@ -491,14 +503,26 @@ extension ProductDetailVC :   UICollectionViewDelegate,UICollectionViewDataSourc
         
         self.sizename = self.sizeArray[indexPath.row]
               
-          } else {
+          } else if collectionView == colorClView{
               let cell = collectionView.cellForItem(at: indexPath) as? ColorCell
         cell?.toggleSelected()
                
                      
                    
-        self.colorName = self.colorData[indexPath.row].colorname!
-          }
+        self.colorName = self.colorData[indexPath.row].colorname ?? ""
+       } else {
+        
+        
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreviewImageVC") as! PreviewImageVC
+        vc.policyPath = self.productData?.images?[indexPath.row].file_path ?? ""
+        vc.modalPresentationStyle = .currentContext
+        vc.providesPresentationContextTransitionStyle = true
+        vc.definesPresentationContext = true
+        vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext;
+        vc.view.backgroundColor = UIColor.init(white: 1.0, alpha: 1.0)
+        self.present(vc, animated: true, completion: nil)
+        
+        }
       }
       
 
@@ -508,7 +532,7 @@ extension ProductDetailVC :   UICollectionViewDelegate,UICollectionViewDataSourc
                      cell.toggleSelected()
                      // sizeid = ""
                      
-                 } else {
+                 } else if collectionView == colorClView {
                      let cell = collectionView.cellForItem(at: indexPath) as! ColorCell
                      cell.toggleSelected()
                     //colorid = ""

@@ -12,6 +12,7 @@ class MyinquiresVC: UIViewController {
 
     @IBOutlet weak var tblView: UITableView!
     var inquiresdata :  GetInguiresModel?
+    var enquiries = [Enquiries]()
     override func viewDidLoad() {
         super.viewDidLoad()
          addBackButton()
@@ -26,8 +27,16 @@ class MyinquiresVC: UIViewController {
         ShareData.showProgress()
         userhandler.getMyinquires(Success: {response in
             ShareData.hideProgress()
+            
             if response.success == 1{
-                self.inquiresdata =  response
+                
+                for item in response.enquiries ?? [] {
+                    if item.status == 0 {
+                    self.enquiries.append(item)
+                    }
+                }
+                
+                //self.inquiresdata =  response
                 self.tblView.reloadData()
             } else {
                 ShareData.hideProgress()
@@ -46,21 +55,25 @@ extension MyinquiresVC : UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.inquiresdata?.enquiries?.count ?? 0
+        return self.enquiries.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyinquiresCell") as? MyinquiresCell
-        cell?.lblto.text =  "To :" + (self.inquiresdata?.enquiries![indexPath.row].owners_name)!
-        cell?.lbldate.text = " Inquiry Date :" + (self.inquiresdata?.enquiries![indexPath.row].updated_at)!
-        cell?.lbltitle.text = self.inquiresdata?.enquiries![indexPath.row].message
+        cell?.lblto.text =  "To :" + (enquiries[indexPath.row].owners_name)!
+        cell?.lbldate.text = " Inquiry Date :" + (self.enquiries[indexPath.row].updated_at)!
+        cell?.lbltitle.text = self.enquiries[indexPath.row].message
         return cell!
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc =  storyboard.instantiateViewController(withIdentifier: "InquiresViewVC") as? InquiresViewVC
-        vc?.quiresData = self.inquiresdata?.enquiries![indexPath.row]
+        vc?.quiresData = self.enquiries[indexPath.row]
         self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
     
 }
