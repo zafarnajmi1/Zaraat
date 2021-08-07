@@ -54,7 +54,7 @@ class HomeVC: UIViewController {
     
     
     var estimatedwidth = 160.0
-    var cellMargein = 16.0
+    var cellMargein = 10.0
     
     
     
@@ -71,6 +71,21 @@ class HomeVC: UIViewController {
         self.tblView.rowHeight = UITableView.automaticDimension;
 
         
+        
+        
+        
+        let screenWidth = UIScreen.main.bounds.width
+           let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+           layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+           layout.itemSize = CGSize(width: screenWidth/2 - 20, height: 250)
+           layout.minimumInteritemSpacing = 5
+           layout.minimumLineSpacing = 5
+           topProductClView.collectionViewLayout = layout
+        
+        FeaturedProductsClView.collectionViewLayout = layout
+        
+        
+        
     
         sliderClView.register(UINib.init(nibName: "SliderCLCell", bundle: nil), forCellWithReuseIdentifier: "SliderCLCell")
 
@@ -84,7 +99,7 @@ class HomeVC: UIViewController {
        
         NotificationCenter.default.addObserver(self, selector: #selector(self.showSpinningWheel(_:)), name: NSNotification.Name(rawValue: "MoreTab"), object: nil)
         
-        self.setGridView()
+        //self.setGridView()
 
     }
     
@@ -102,7 +117,12 @@ class HomeVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setGridView()
+        //self.setGridView()
+        
+        
+        
+        
+        
         let newHeighttop : CGFloat = topProductClView.contentSize.height//collectionViewLayout.collectionViewContentSize.height
              topProductClviewHeight.constant = newHeighttop 
         topProductClView.reloadData()
@@ -404,39 +424,34 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     
     
-    func setGridView() {
-        let flow  = topProductClView.collectionViewLayout as!  UICollectionViewFlowLayout
-        flow.minimumLineSpacing = CGFloat(cellMargein)
-        flow.minimumInteritemSpacing = CGFloat(cellMargein)
-        
-        let flow1  = FeaturedProductsClView.collectionViewLayout as!  UICollectionViewFlowLayout
-        flow1.minimumLineSpacing = CGFloat(cellMargein)
-        flow1.minimumInteritemSpacing = CGFloat(cellMargein)
-    }
-    
-    func calculatewith() -> CGFloat {
-        let estmateWidth = CGFloat(estimatedwidth)
-        let cellCount = floor(CGFloat(self.view.frame.size.width) / estmateWidth)
-        let margin = CGFloat(cellMargein * 2)
-        let width = (self.view.frame.size.width -  CGFloat(cellMargein) * (cellCount - 1) - margin) / cellCount
-        //let width1 = width / cellCount
-        
-        return width
-        
-    }
+//    func setGridView() {
+//        let flow  = topProductClView.collectionViewLayout as!  UICollectionViewFlowLayout
+//        flow.minimumLineSpacing = CGFloat(cellMargein)
+//        flow.minimumInteritemSpacing = CGFloat(cellMargein)
+//
+//        let flow1  = FeaturedProductsClView.collectionViewLayout as!  UICollectionViewFlowLayout
+//        flow1.minimumLineSpacing = CGFloat(cellMargein)
+//        flow1.minimumInteritemSpacing = CGFloat(cellMargein)
+//    }
+//
+//    func calculatewith() -> CGFloat {
+//        let estmateWidth = CGFloat(estimatedwidth)
+//        let cellCount = floor(CGFloat(self.view.frame.size.width) / estmateWidth)
+//        let margin = CGFloat(cellMargein * 2)
+//        let width = (self.view.frame.size.width -  CGFloat(cellMargein) * (cellCount - 1) - margin) / cellCount
+//        //let width1 = width / cellCount
+//
+//        return width
+//
+//    }
     }
 
 extension HomeVC :   UICollectionViewDelegate,UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
-   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt
-    indexPath: IndexPath) -> CGSize {
-
-   
-    let width =  self.calculatewith()
-    return CGSize(width: width, height: width)
-
-
-}
+//func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,sizeForItemAt indexPath: IndexPath) -> CGSize {
+//    return CGSize(width: screenWidth/3, height: screenWidth/3);
+//}
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
 //        if collectionView == sliderClView {

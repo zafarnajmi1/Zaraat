@@ -23,7 +23,7 @@ class func PostRequest(url: String, parameters: Parameters?, success:@escaping (
         //let brear = (ShareData.shareInfo.userInfo?.token_type ?? "") + " " + (ShareData.shareInfo.userInfo?.token ?? "")
         if let userToken = usertoken(){
             Headers = [
-                //"Accept": "application/json",
+                "Accept": "application/json",
                 "Authorization"  : "Bearer  " + userToken ,  //"Authorization"
             //"Content-Type": "application/x-www-form-urlencoded"//"multipart/form-data"
             ]

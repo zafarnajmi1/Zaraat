@@ -91,9 +91,6 @@
 		CE52C869255BEF7E00E96CE4 /* GetInquiresModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C868255BEF7E00E96CE4 /* GetInquiresModel.swift */; };
 		CE52C86B255BFB7E00E96CE4 /* InquiresViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C86A255BFB7E00E96CE4 /* InquiresViewVC.swift */; };
 		CE53357225A4679C0086D43B /* SaveAddressesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53357125A4679B0086D43B /* SaveAddressesVC.swift */; };
-		CE535D342552B85400B8AF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE535D332552B85400B8AF35 /* GoogleService-Info.plist */; };
-		CE535D352552B85500B8AF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE535D332552B85400B8AF35 /* GoogleService-Info.plist */; };
-		CE535D362552B85500B8AF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE535D332552B85400B8AF35 /* GoogleService-Info.plist */; };
 		CE538BA72542E067006912CC /* B2BHomeButtonsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE538BA62542E067006912CC /* B2BHomeButtonsVC.swift */; };
 		CE538BA92542FF77006912CC /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE538BA82542FF77006912CC /* UserProfileModel.swift */; };
 		CE543176255A885E00FC4116 /* InquiryDocModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE543175255A885E00FC4116 /* InquiryDocModel.swift */; };
@@ -288,6 +285,7 @@
 		CEEB1E55241A66220069104B /* TablCLViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEB1E53241A66220069104B /* TablCLViewCell.xib */; };
 		CEEC5072250F5DAE001A774C /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC5070250F5DAE001A774C /* ChatCell.swift */; };
 		CEEC5073250F5DAE001A774C /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEC5071250F5DAE001A774C /* ChatCell.xib */; };
+		CEF4291425BEBFAC00A90A1F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEF4291325BEBFAA00A90A1F /* GoogleService-Info.plist */; };
 		CEFBF1F224F90D4F003C1727 /* topRatedClView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBF1F024F90D4F003C1727 /* topRatedClView.swift */; };
 		CEFBF1F324F90D4F003C1727 /* topRatedClView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEFBF1F124F90D4F003C1727 /* topRatedClView.xib */; };
 		CEFBF1F624F90D65003C1727 /* topRatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBF1F424F90D65003C1727 /* topRatedCell.swift */; };
@@ -400,7 +398,6 @@
 		CE52C868255BEF7E00E96CE4 /* GetInquiresModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInquiresModel.swift; sourceTree = "<group>"; };
 		CE52C86A255BFB7E00E96CE4 /* InquiresViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiresViewVC.swift; sourceTree = "<group>"; };
 		CE53357125A4679B0086D43B /* SaveAddressesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAddressesVC.swift; sourceTree = "<group>"; };
-		CE535D332552B85400B8AF35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE538BA62542E067006912CC /* B2BHomeButtonsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B2BHomeButtonsVC.swift; sourceTree = "<group>"; };
 		CE538BA82542FF77006912CC /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		CE543175255A885E00FC4116 /* InquiryDocModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryDocModel.swift; sourceTree = "<group>"; };
@@ -569,6 +566,7 @@
 		CEEB1E53241A66220069104B /* TablCLViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TablCLViewCell.xib; sourceTree = "<group>"; };
 		CEEC5070250F5DAE001A774C /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		CEEC5071250F5DAE001A774C /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		CEF4291325BEBFAA00A90A1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEFBF1F024F90D4F003C1727 /* topRatedClView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topRatedClView.swift; sourceTree = "<group>"; };
 		CEFBF1F124F90D4F003C1727 /* topRatedClView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topRatedClView.xib; sourceTree = "<group>"; };
 		CEFBF1F424F90D65003C1727 /* topRatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topRatedCell.swift; sourceTree = "<group>"; };
@@ -827,7 +825,7 @@
 				CEEB1E4D241A53CF0069104B /* SliderAndTable */,
 				431AB763242DBD4A002346E7 /* Menu */,
 				CE4BBF3A2410C7B9000DAAB4 /* Home */,
-				CEAED9F6240938040079C3C5 /* AuthPart */,
+				CEAED9F6240938040079C3C5 /* AuthPartZaraat */,
 				CE56D13F25597BED00281A75 /* TermsConditionVC.swift */,
 			);
 			path = Controllers;
@@ -1521,7 +1519,7 @@
 				CEAED9C524092A4B0079C3C5 /* SceneDelegate.swift */,
 				CEAED9CF24092A4E0079C3C5 /* Assets.xcassets */,
 				CEAED9D124092A4E0079C3C5 /* LaunchScreen.storyboard */,
-				CE535D332552B85400B8AF35 /* GoogleService-Info.plist */,
+				CEF4291325BEBFAA00A90A1F /* GoogleService-Info.plist */,
 				CEAED9D424092A4E0079C3C5 /* Info.plist */,
 				CEAED9CC24092A4B0079C3C5 /* zaraat.xcdatamodeld */,
 				CE54C97E258CE56F00ACA9AC /* zaraat-Bridging-Header.h */,
@@ -1549,7 +1547,7 @@
 			path = zaraatUITests;
 			sourceTree = "<group>";
 		};
-		CEAED9F6240938040079C3C5 /* AuthPart */ = {
+		CEAED9F6240938040079C3C5 /* AuthPartZaraat */ = {
 			isa = PBXGroup;
 			children = (
 				CEAED9C724092A4B0079C3C5 /* SplashZaraatVC.swift */,
@@ -1560,7 +1558,7 @@
 				CE49D826240E7682009ECFD5 /* ChangePasswordZaraatVC.swift */,
 				CE820E4E24CB0EA50003B78E /* RestPasswordZaraatVC.swift */,
 			);
-			path = AuthPart;
+			path = AuthPartZaraat;
 			sourceTree = "<group>";
 		};
 		CEAED9F9240939260079C3C5 /* Extenssions */ = {
@@ -1785,7 +1783,6 @@
 				CEAED9D024092A4E0079C3C5 /* Assets.xcassets in Resources */,
 				CEB5CA4625025B8200137E48 /* SubcateGoriesCell.xib in Resources */,
 				437BD18F242C87D0003C55C2 /* Poppins-Light.ttf in Resources */,
-				CE535D342552B85400B8AF35 /* GoogleService-Info.plist in Resources */,
 				437BD182242C87D0003C55C2 /* Poppins-Light.otf in Resources */,
 				4312A10E243DC4890041FA82 /* CheckOutCell.xib in Resources */,
 				437BD183242C87D0003C55C2 /* Poppins-Regular.ttf in Resources */,
@@ -1811,6 +1808,7 @@
 				437BD180242C87D0003C55C2 /* Poppins-ExtraBold.otf in Resources */,
 				CE70E9C924F8DA1500FEEF5D /* FlashCellClView.xib in Resources */,
 				437BD188242C87D0003C55C2 /* Poppins-Medium.ttf in Resources */,
+				CEF4291425BEBFAC00A90A1F /* GoogleService-Info.plist in Resources */,
 				43C1BBDC243B0F3C0089ED55 /* CartCell.xib in Resources */,
 				CEEB1E55241A66220069104B /* TablCLViewCell.xib in Resources */,
 				CEAED9CB24092A4B0079C3C5 /* Main.storyboard in Resources */,
@@ -1828,7 +1826,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE535D352552B85500B8AF35 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1836,7 +1833,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE535D362552B85500B8AF35 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2312,9 +2308,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2327,9 +2323,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Zaraat.ARW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDevelopementProfile;
+				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDestributionProfile12;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -2344,9 +2341,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = zaraat/zaraat.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3VQ7UM9A59;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2359,9 +2356,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Zaraat.ARW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDevelopementProfile;
+				PROVISIONING_PROFILE_SPECIFIER = ZaraatAppDestributionProfile12;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/user/Documents/Project/Zaraat/zaraat-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

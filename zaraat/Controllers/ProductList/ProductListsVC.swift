@@ -51,10 +51,23 @@ class ProductListsVC: UIViewController {
             getFilterProductListapi()
         }
         
+        
+        
+        let screenWidth = UIScreen.main.bounds.width
+                  let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+                  layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+                  layout.itemSize = CGSize(width: screenWidth/2 - 20, height: 270)
+                  layout.minimumInteritemSpacing = 5
+                  layout.minimumLineSpacing = 5
+                  ClView.collectionViewLayout = layout
+               
+              
+        
+        
     }
     
 
-    
+   
     func setnavigationButton(){
         let btn1 = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         if isGride == true {
